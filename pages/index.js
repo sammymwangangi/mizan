@@ -18,12 +18,6 @@ import tabletMobile from "../public/images/homepage/tablate-mobile.svg";
 import miniMobileBanking from "../public/images/homepage/banking-mobile.svg";
 import cardMain from "../public/images/homepage/card-main.svg";
 import cardMainTablet from "../public/images/homepage/card-main-tablet.svg";
-// import feature1 from "../public/images/homepage/feature1.svg";
-// import feature2 from "../public/images/homepage/feature2.svg";
-// import feature3 from "../public/images/homepage/feature3.svg";
-// import feature4 from "../public/images/homepage/feature4.svg";
-// import feature5 from "../public/images/homepage/feature5.svg";
-// import feature6 from "../public/images/homepage/feature6.svg";
 import feature7 from "../public/images/homepage/feature7.svg";
 // import pattern from "../public/images/homepage/pattern.svg";
 import ups from "../public/images/homepage/ups.png";
@@ -229,8 +223,7 @@ export default function Home() {
                     alt=""
                   />
                   <Image
-                    src={tabletMobile}
-                    width="100%"
+                    loader={imageKitLoader} src="banking-mobile-img.svg" width={569} height={615}
                     className="banking-mobile-img"
                     alt=""
                   />
@@ -274,8 +267,8 @@ export default function Home() {
             </h1>
             <p>Pay or get paid, wherever, whenever.</p>
           </div>
-          <Image loader={imageKitLoader} src="card-main.svg" width={1440} height={1063} className="card-web" alt="car-main" />
-          <Image loader={imageKitLoader} src="card-main-tablet.svg" width={744} height={717} className="card-mobile" alt="ard-main-tablet" />
+          <img src="https://ik.imagekit.io/qqkp8wchu/card-main.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677761638198" width="100%" className="card-web" alt="car-main" />
+          <img src="https://ik.imagekit.io/qqkp8wchu/card-main-tablet.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677761656672" width="100%" className="card-mobile" alt="ard-main-tablet" />
         </section>
 
         <section className="feature">
