@@ -274,8 +274,8 @@ export default function Home() {
             </h1>
             <p>Pay or get paid, wherever, whenever.</p>
           </div>
-          <img src="/images/homepage/card-main.svg" width="100%" className="card-web" />
-      <img src="/images/homepage/card-main-tablet.svg" width="100%" className="card-mobile" />
+          <Image loader={imageKitLoader} src="card-main.svg" width={1440} height={1063} className="card-web" alt="car-main" />
+          <Image loader={imageKitLoader} src="card-main-tablet.svg" width={744} height={717} className="card-mobile" alt="ard-main-tablet" />
         </section>
 
         <section className="feature">
