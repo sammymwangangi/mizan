@@ -5,6 +5,18 @@ import Script from "next/script";
 import brandLogo from "../public/images/brandstory/brand-logo.svg";
 import logo from "../public/images/homepage/logo.svg";
 
+import dynamic from "next/dynamic";
+import React, { Suspense } from "react";
+
+
+const DynamicNav = dynamic(() => import("../components/nav"), {
+  suspense: true,
+});
+
+const DynamicFooter = dynamic(() => import("../components/footer"), {
+  suspense: true,
+});
+
 export default function BrandStory() {
   return (
     <>
@@ -16,67 +28,13 @@ export default function BrandStory() {
         <script src="/vendor/index.js" defer />
         <script src="/vendor/owl.carousel.min.js" defer />
       </Head>
+      
       <main>
-        <section className="header brand-header1" id="header">
-          <div className="container_costome">
-            <nav className="navbar navbar-expand-md">
-              <div className="container-fluid">
-                <Link className="navbar-brand m-0 brand-page-logo" href="/">
-                  <Image src={brandLogo} alt="image" />
-                </Link>
-                <Link
-                  className="navbar-brand m-0 home-page-logo"
-                  href="/"
-                >
-                  <Image src={logo} alt="image" />
-                </Link>
-                <div className="mobile-view-header d-flex align-items-center gap-4">
-                  <button
-                    className="navbar-toggler order-2"
-                    type="button"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
-                  >
-                    <img src="/images/homepage/toggle.svg" width="30px" />
-                  </button>
-                  <div className="navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                      <li className="nav-item">
-                        <Link
-                          className="nav-link"
-                          aria-current="page"
-                          href="/"
-                        >
-                          Personal
-                        </Link>
-                      </li>
-                      <li className="nav-item">
-                        <Link
-                          className="nav-link active"
-                          href="/brand-story"
-                          tabindex="-1"
-                          aria-disabled="true"
-                        >
-                          Brand Story
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="country-select order-1 pointer">
-                    <img
-                      className="pointer"
-                      src="/images/homepage/united-states.svg"
-                    />
-                    <select className="pointer">
-                      <option>ENG</option>
-                      <option>GUJ</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-            </nav>
-          </div>
-        </section>
+        {/* Nav */}
+        <Suspense fallback={`Loading...`}>
+          <DynamicNav />
+        </Suspense>
+        {/* End */}
 
         <section className="brand-story-hero">
           <div className="row m-0 align-items-center w-100">
@@ -452,177 +410,12 @@ export default function BrandStory() {
           <div className="last-img"></div>
         </section>
 
-        <footer className="footer footer-home brand-footer">
-          <div className="footer-working position-relative">
-            <div className="row">
-              <div className="col-lg-3 col-md-4 col-sm-12 ">
-                <div className="footer-box1">
-                  <img src="/images/homepage/footer-logo.svg" />
-                  <ul className="web-points">
-                    <li>
-                      <a href="">Terms and Conditions</a>
-                    </li>
-                    <li>
-                      <a href="">Privacy Policy</a>
-                    </li>
-                    <li>
-                      <a href="">Privacy Notice</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-12 mt-5 mt-md-0">
-                <div className="footer-box2">
-                  <h3>RESOURCES</h3>
-                  <ul>
-                    <li>
-                      <a href="">Support</a>
-                    </li>
-                    <li>
-                      <a href="">Mizan Donate</a>
-                    </li>
-                    <li>
-                      <a href="">Mizan Pay</a>
-                    </li>
-                    <li>
-                      <a href="">Mizan Invest</a>
-                    </li>
-                    <li>
-                      <a href="">Mizan Save</a>
-                    </li>
-                    <li>
-                      <a href="">Careers</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-12 mt-5 mt-md-0">
-                <div className="footer-box2">
-                  <h3>DOWNLOAD (BETA)</h3>
-                  <div className="download-btns">
-                    <button>
-                      <img src="/images/homepage/apple.svg" width="100%" />
-                    </button>
-                    <button>
-                      <img src="/images/homepage/play.svg" width="100%" />
-                    </button>
-                  </div>
-                </div>
-                <div className="footer-box2 tab-list-mobile mt-5 mt-md-3">
-                  <h3>FOLLOW THE MONEY</h3>
-                  <div className="on-social">
-                    <a href="">
-                      <img
-                        src="/images/homepage/LinkedIN.svg"
-                        width="34.97px"
-                        height="35.25px"
-                      />
-                    </a>
-                    <a href="">
-                      <img
-                        src="/images/homepage/youtube.svg"
-                        width="34.91px"
-                        height="27.44"
-                      />
-                    </a>
-                    <a href="">
-                      <img
-                        src="/images/homepage/facebook.svg"
-                        width="36.79"
-                        height="36.49"
-                      />
-                    </a>
-                    <a href="">
-                      <img
-                        src="/images/homepage/twitter.svg"
-                        width="34.91px"
-                        height="31.09"
-                      />
-                    </a>
-                  </div>
-                  <ul className="mobile-points mt-5 mt-md-0">
-                    <li>
-                      <a href="">Terms and Conditions</a>
-                    </li>
-                    <li>
-                      <a href="">Privacy Policy</a>
-                    </li>
-                    <li>
-                      <a href="">Privacy Notice</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-12 mt-5 mt-md-0">
-                <div className="footer-box2 tab-list-web">
-                  <h3>FOLLOW THE MONEY</h3>
-                  <div className="on-social">
-                    <a href="">
-                      <img
-                        src="/images/homepage/LinkedIN.svg"
-                        width="34.97px"
-                        height="35.25px"
-                      />
-                    </a>
-                    <a href="">
-                      <img
-                        src="/images/homepage/youtube.svg"
-                        width="34.91px"
-                        height="27.44"
-                      />
-                    </a>
-                    <a href="">
-                      <img
-                        src="/images/homepage/facebook.svg"
-                        width="36.79"
-                        height="36.49"
-                      />
-                    </a>
-                    <a href="">
-                      <img
-                        src="/images/homepage/twitter.svg"
-                        width="34.91px"
-                        height="31.09"
-                      />
-                    </a>
-                  </div>
-                  <ul className="mobile-points mt-5 mt-md-0">
-                    <li>
-                      <a href="">Terms and Conditions</a>
-                    </li>
-                    <li>
-                      <a href="">Privacy Policy</a>
-                    </li>
-                    <li>
-                      <a href="">Privacy Notice</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div className="row footer-last ">
-              <div className="col-lg-3 col-md-3 order-3 order-md-1">
-                <p>Mizan Financial Ltd.</p>
-                <p className="mt-2 mt-sm-1">All rights reserved 2022</p>
-              </div>
-              <div className="col-lg-7 col-md-7 order-1 order-md-2">
-                <span>
-                  Mizan Financial Ltd is a company registered in the Democratic
-                  Republic of Kenya (Certificate of Incorporation No. No.
-                  PVT-DLULVPV7) with a registered address: Le’Mac Towers, 4th
-                  floor, Rhapta road, Westlands, Nairobi, Kenya. Mizan Financial
-                  Ltd is a subsidiary of Mizan Group Ltd., registered in the
-                  Dubai International Financial Centre (License No. XXXX), with
-                  the registered address at: Unit 208, Level One, Gate Avenue,
-                  DIFC, Dubai, United Arab Emirates.
-                </span>
-              </div>
-              <div className="col-lg-2 col-md-2 order-2 order-md-3 footer-logo-img">
-                <img src="/images/homepage/dss.svg" />
-              </div>
-            </div>
-          </div>
-        </footer>
+        {/* Footer */}
+        <Suspense fallback={`Loading...`}>
+          <DynamicFooter />
+        </Suspense>
+        {/* End */}
+        
       </main>
 
       <div

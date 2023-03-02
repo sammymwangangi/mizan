@@ -5,9 +5,6 @@ import Script from "next/script";
 import cardsBG from "../public/images/homepage/cards-bg.svg";
 import cardsBGTab from "../public/images/homepage/cards-bg-tab.svg";
 import lastPageBg from "../public/images/homepage/last-page.svg";
-import Logo from "../public/images/homepage/logo.svg";
-import Toggle from "../public/images/homepage/toggle.svg";
-import US from "../public/images/homepage/united-states.svg";
 // import HomePageNew from "../public/images/homepage/phonenew.png";
 import showMoreBtn from "../public/images/homepage/show-more-btn.svg";
 import firstCo from "../public/images/homepage/company1.svg";
@@ -46,16 +43,18 @@ import voice from "../public/images/homepage/voice.svg";
 import zendesk from "../public/images/homepage/Zendesk.svg";
 // import chatUser from "../public/images/homepage/chat-user.svg";
 import typeIcon from "../public/images/homepage/type-icone.svg";
-import footerLogo from "../public/images/homepage/footer-logo.svg";
-import apple from "../public/images/homepage/apple.svg";
-import play from "../public/images/homepage/play.svg";
-import linkedin from "../public/images/homepage/LinkedIN.svg";
-import facebook from "../public/images/homepage/facebook.svg";
-import twitter from "../public/images/homepage/twitter.svg";
-import youtube from "../public/images/homepage/youtube.svg";
-import dss from "../public/images/homepage/dss.svg";
 import closeBtn from "../public/images/homepage/close.svg";
 import mobileLogo from "../public/images/homepage/mobile-logo.svg";
+
+import dynamic from "next/dynamic";
+import React, { Suspense } from "react";
+
+const DynamicNavbar = dynamic(() => import("../components/navbar"), {
+  suspense: true,
+});
+const DynamicFooter = dynamic(() => import("../components/footer"), {
+  suspense: true,
+});
 
 const imageKitLoader = ({ src, width, quality }) => {
   if(src[0] === "/") src = src.slice(1);
@@ -89,57 +88,11 @@ export default function Home() {
         <Image src={cardsBGTab} className="card-bg-tab" alt="image" />
         <Image src={lastPageBg} className="last-page-bg" alt="image" />
 
-        <section className="header" id="header">
-          <div className="container_costome">
-            <nav className="navbar navbar-expand-md">
-              <div className="container-fluid">
-                <Link className="navbar-brand m-0" href="/">
-                  <Image src={Logo} alt="image" />
-                </Link>
-                <div className="mobile-view-header d-flex align-items-center gap-4">
-                  <button
-                    className="navbar-toggler order-2"
-                    type="button"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
-                  >
-                    <Image src={Toggle} width="30px" alt="toggle" />
-                  </button>
-                  <div className="navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                      <li className="nav-item">
-                        <Link
-                          className="nav-link active"
-                          aria-current="page"
-                          href="/"
-                        >
-                          Personal
-                        </Link>
-                      </li>
-                      <li className="nav-item">
-                        <Link
-                          className="nav-link"
-                          href="/brand-story"
-                          tabIndex="-1"
-                          aria-disabled="true"
-                        >
-                          Brand Story
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="country-select order-1 pointer">
-                    <Image className="pointer" src={US} alt="us" />
-                    <select className="pointer">
-                      <option>ENG</option>
-                      <option>GUJ</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-            </nav>
-          </div>
-        </section>
+        {/* Navbar */}
+        <Suspense fallback={`Loading...`}>
+          <DynamicNavbar />
+        </Suspense>
+        {/* End */}
 
         <section className="hero">
           <div className="container_costome">
@@ -819,185 +772,11 @@ export default function Home() {
           </div>
         </section>
 
-        <footer className="footer footer-home">
-          <div className="footer-working position-relative">
-            <div className="row">
-              <div className="col-lg-3 col-md-4 col-sm-12 ">
-                <div className="footer-box1">
-                  <Image src={footerLogo} alt="" />
-                  <ul className="web-points">
-                    <li>
-                      <a href="">Terms and Conditions</a>
-                    </li>
-                    <li>
-                      <a href="">Privacy Policy</a>
-                    </li>
-                    <li>
-                      <a href="">Privacy Notice</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-12 mt-5 mt-md-0">
-                <div className="footer-box2">
-                  <h3>RESOURCES</h3>
-                  <ul>
-                    <li>
-                      <a href="">Support</a>
-                    </li>
-                    <li>
-                      <a href="">Mizan Donate</a>
-                    </li>
-                    <li>
-                      <a href="">Mizan Pay</a>
-                    </li>
-                    <li>
-                      <a href="">Mizan Invest</a>
-                    </li>
-                    <li>
-                      <a href="">Mizan Save</a>
-                    </li>
-                    <li>
-                      <a href="">Careers</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-12 mt-5 mt-md-0">
-                <div className="footer-box2">
-                  <h3>DOWNLOAD (BETA)</h3>
-                  <div className="download-btns">
-                    <button>
-                      <Image src={apple} width="100%" alt="" />
-                    </button>
-                    <button>
-                      <Image src={play} width="100%" alt="" />
-                    </button>
-                  </div>
-                </div>
-                <div className="footer-box2 tab-list-mobile mt-5 mt-md-3">
-                  <h3>FOLLOW THE MONEY</h3>
-                  <div className="on-social">
-                    <a href="">
-                      <Image
-                        src={linkedin}
-                        width="34.97px"
-                        height="35.25px"
-                        alt=""
-                      />
-                    </a>
-                    <a href="">
-                      <Image
-                        src={youtube}
-                        width="34.91px"
-                        height="27.44"
-                        alt=""
-                      />
-                    </a>
-                    <a href="">
-                      <Image
-                        src={facebook}
-                        width="36.79"
-                        height="36.49"
-                        alt=""
-                      />
-                    </a>
-                    <a href="">
-                      <Image
-                        src={twitter}
-                        width="34.91px"
-                        height="31.09"
-                        alt=""
-                      />
-                    </a>
-                  </div>
-                  <ul className="mobile-points mt-5 mt-md-0">
-                    <li>
-                      <a href="">Terms and Conditions</a>
-                    </li>
-                    <li>
-                      <a href="">Privacy Policy</a>
-                    </li>
-                    <li>
-                      <a href="">Privacy Notice</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-12 mt-5 mt-md-0">
-                <div className="footer-box2 tab-list-web">
-                  <h3>FOLLOW THE MONEY</h3>
-                  <div className="on-social">
-                    <a href="">
-                      <Image
-                        src={linkedin}
-                        width="34.97px"
-                        height="35.25px"
-                        alt=""
-                      />
-                    </a>
-                    <a href="">
-                      <Image
-                        src={youtube}
-                        width="34.91px"
-                        height="27.44"
-                        alt=""
-                      />
-                    </a>
-                    <a href="">
-                      <Image
-                        src={facebook}
-                        width="36.79"
-                        height="36.49"
-                        alt=""
-                      />
-                    </a>
-                    <a href="">
-                      <Image
-                        src={twitter}
-                        width="34.91px"
-                        height="31.09"
-                        alt=""
-                      />
-                    </a>
-                  </div>
-                  <ul className="mobile-points mt-5 mt-md-0">
-                    <li>
-                      <a href="">Terms and Conditions</a>
-                    </li>
-                    <li>
-                      <a href="">Privacy Policy</a>
-                    </li>
-                    <li>
-                      <a href="">Privacy Notice</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div className="row footer-last ">
-              <div className="col-lg-3 col-md-3 order-3 order-md-1">
-                <p>Mizan Financial Ltd.</p>
-                <p className="mt-2 mt-sm-1">All rights reserved 2022</p>
-              </div>
-              <div className="col-lg-7 col-md-7 order-1 order-md-2">
-                <span>
-                  Mizan Financial Ltd is a company registered in the Democratic
-                  Republic of Kenya (Certificate of Incorporation No. No.
-                  PVT-DLULVPV7) with a registered address: Le’Mac Towers, 4th
-                  floor, Rhapta road, Westlands, Nairobi, Kenya. Mizan Financial
-                  Ltd is a subsidiary of Mizan Group Ltd., registered in the
-                  Dubai International Financial Centre (License No. XXXX), with
-                  the registered address at: Unit 208, Level One, Gate Avenue,
-                  DIFC, Dubai, United Arab Emirates.
-                </span>
-              </div>
-              <div className="col-lg-2 col-md-2 text-center order-2 order-md-3 footer-logo-img">
-                <Image src={dss} alt="" />
-              </div>
-            </div>
-          </div>
-        </footer>
+        {/* Footer */}
+        <Suspense fallback={`Loading...`}>
+          <DynamicFooter />
+        </Suspense>
+        {/* End */}
       </main>
 
       {/* models */}
