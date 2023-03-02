@@ -415,13 +415,13 @@ export default function BrandStory() {
           <DynamicFooter />
         </Suspense>
         {/* End */}
-        
+
       </main>
 
       <div
         className="modal mobile-menu"
         id="exampleModal"
-        tabindex="-1"
+        tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >

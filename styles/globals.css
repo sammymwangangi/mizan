@@ -1,63 +1,63 @@
 @font-face {
   font-family: "Poppinsblack";
-  src: url("../font/Poppins-Black.woff2") format("woff2"),
-    url("../font/Poppins-Black.woff") format("woff");
+  src: url("/fonts/Poppins-Black.woff2") format("woff2"),
+    url("/fonts/Poppins-Black.woff") format("woff");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Poppinsitalic";
-  src: url("../font/Poppins-BlackItalic.woff2") format("woff2"),
-    url("../font/Poppins-BlackItalic.woff") format("woff");
+  src: url("/fonts/Poppins-BlackItalic.woff2") format("woff2"),
+    url("/fonts/Poppins-BlackItalic.woff") format("woff");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Poppinsbold";
-  src: url("../font/Poppins-Bold.woff2") format("woff2"),
-    url("../font/Poppins-Bold.woff") format("woff");
+  src: url("/fonts/Poppins-Bold.woff2") format("woff2"),
+    url("/fonts/Poppins-Bold.woff") format("woff");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Poppinsextrabold";
-  src: url("../font/Poppins-ExtraBold.woff2") format("woff2"),
-    url("../font/Poppins-ExtraBold.woff") format("woff");
+  src: url("/fonts/Poppins-ExtraBold.woff2") format("woff2"),
+    url("/fonts/Poppins-ExtraBold.woff") format("woff");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Poppinsexlight";
-  src: url("../font/Poppins-ExtraLight.woff2") format("woff2"),
-    url("../font/Poppins-ExtraLight.woff") format("woff");
+  src: url("/fonts/Poppins-ExtraLight.woff2") format("woff2"),
+    url("/fonts/Poppins-ExtraLight.woff") format("woff");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Poppinslightitalic";
-  src: url("../font/Poppins-ExtraLightItalic.woff2") format("woff2"),
-    url("../font/Poppins-ExtraLightItalic.woff") format("woff");
+  src: url("/fonts/Poppins-ExtraLightItalic.woff2") format("woff2"),
+    url("/fonts/Poppins-ExtraLightItalic.woff") format("woff");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Poppinsextrabolditalic";
-  src: url("../font/Poppins-ExtraBoldItalic.woff2") format("woff2"),
-    url("../font/Poppins-ExtraBoldItalic.woff") format("woff");
+  src: url("/fonts/Poppins-ExtraBoldItalic.woff2") format("woff2"),
+    url("/fonts/Poppins-ExtraBoldItalic.woff") format("woff");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Poppinslight";
-  src: url("../font/Poppins-Light.woff2") format("woff2"),
-    url("../font/Poppins-Light.woff") format("woff");
+  src: url("/fonts/Poppins-Light.woff2") format("woff2"),
+    url("/fonts/Poppins-Light.woff") format("woff");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Poppinslightitalic";
-  src: url("../font/Poppins-LightItalic.woff2") format("woff2"),
-    url("../font/Poppins-LightItalic.woff") format("woff");
+  src: url("/fonts/Poppins-LightItalic.woff2") format("woff2"),
+    url("/fonts/Poppins-LightItalic.woff") format("woff");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -65,50 +65,50 @@
 
 @font-face {
   font-family: "Poppinsregular";
-  src: url("../font/Poppins-Regular.woff2") format("woff2"),
-    url("../font/Poppins-Regular.woff") format("woff");
+  src: url("/fonts/Poppins-Regular.woff2") format("woff2"),
+    url("/fonts/Poppins-Regular.woff") format("woff");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Poppinssemibold";
-  src: url("../font/Poppins-SemiBold.woff2") format("woff2"),
-    url("../font/Poppins-SemiBold.woff") format("woff");
+  src: url("/fonts/Poppins-SemiBold.woff2") format("woff2"),
+    url("/fonts/Poppins-SemiBold.woff") format("woff");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Poppinsmeditalic";
-  src: url("../font/Poppins-MediumItalic.woff2") format("woff2"),
-    url("../font/Poppins-MediumItalic.woff") format("woff");
+  src: url("/fonts/Poppins-MediumItalic.woff2") format("woff2"),
+    url("/fonts/Poppins-MediumItalic.woff") format("woff");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Poppinsmedium";
-  src: url("../font/Poppins-Medium.woff2") format("woff2"),
-    url("../font/Poppins-Medium.woff") format("woff");
+  src: url("/fonts/Poppins-Medium.woff2") format("woff2"),
+    url("/fonts/Poppins-Medium.woff") format("woff");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Poppinsthin";
-  src: url("../font/Poppins-Thin.woff2") format("woff2"),
-    url("../font/Poppins-Thin.woff") format("woff");
+  src: url("/fonts/Poppins-Thin.woff2") format("woff2"),
+    url("/fonts/Poppins-Thin.woff") format("woff");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Poppinssemibolditalic";
-  src: url("../font/Poppins-SemiBoldItalic.woff2") format("woff2"),
-    url("../font/Poppins-SemiBoldItalic.woff") format("woff");
+  src: url("/fonts/Poppins-SemiBoldItalic.woff2") format("woff2"),
+    url("/fonts/Poppins-SemiBoldItalic.woff") format("woff");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Poppinsthinitalic";
-  src: url("../font/Poppins-ThinItalic.woff2") format("woff2"),
-    url("../font/Poppins-ThinItalic.woff") format("woff");
+  src: url("/fonts/Poppins-ThinItalic.woff2") format("woff2"),
+    url("/fonts/Poppins-ThinItalic.woff") format("woff");
   font-display: swap;
 }
 
@@ -174,7 +174,7 @@ p {
 }
 
 .header-scroll {
-  padding: 10px 0 !important;
+  padding: 1px 0 !important;
   background: #ffffff;
   box-shadow: 0px 20px 40px rgba(105, 67, 175, 0.1);
   border-radius: 0px 0px 25px 25px;
@@ -233,7 +233,7 @@ p {
   background: transparent;
   appearance: none;
   outline: none;
-  background-image: url("../img/homepage/down-arrow.svg");
+  background-image: url("/images/homepage/down-arrow.svg");
   background-repeat: no-repeat;
   background-size: 12px;
   background-position: calc(100% - 10px) 7px, calc(100% - 20px) 14px, 100% 0;
@@ -392,7 +392,7 @@ p {
 
 /* ======================== hero ======================== */
 .landing-bg {
-  background-image: url("../img/homepage/hero-bg.png");
+  background-image: url("/images/homepage/hero-bg.png");
   background-repeat: no-repeat;
   background-position: top right;
   background-size: 59%;
@@ -816,7 +816,7 @@ p {
   position: absolute;
   width: 40px;
   height: 40px;
-  background-image: url(../img/homepage/right-mark.svg);
+  background-image: url(/images/homepage/right-mark.svg);
   background-repeat: no-repeat;
   background-size: 40px;
   left: -35px;
@@ -879,7 +879,7 @@ p {
   }
 
   .banking .banking-right-box {
-    background-image: url("../img/homepage/banking-bg.png");
+    background-image: url("/images/homepage/banking-bg.png");
     background-repeat: no-repeat;
     background-position: right bottom;
     background-size: 342px;
@@ -903,7 +903,7 @@ p {
     position: absolute;
     width: 24px;
     height: 24px;
-    background-image: url(../img/homepage/right-mark.svg);
+    background-image: url(/images/homepage/right-mark.svg);
     background-repeat: no-repeat;
     background-size: 24px;
     left: -35px;
@@ -1315,7 +1315,7 @@ p {
   border-radius: 50%;
   width: 84px;
   height: 84px;
-  background-image: url("../img/homepage/left.svg") !important;
+  background-image: url("/images/homepage/left.svg") !important;
   background-repeat: no-repeat !important;
   background-size: 18px !important;
   background-position: center center !important;
@@ -1330,7 +1330,7 @@ p {
   border-radius: 50%;
   width: 84px;
   height: 84px;
-  background-image: url("../img/homepage/right.svg") !important;
+  background-image: url("/images/homepage/right.svg") !important;
   background-repeat: no-repeat !important;
   background-size: 18px !important;
   background-position: center center !important;
@@ -1402,7 +1402,7 @@ p {
   .feature .swiper-button-next {
     background: transparent !important;
     box-shadow: none !important;
-    background-image: url("../img/homepage/tab-right.svg") !important;
+    background-image: url("/images/homepage/tab-right.svg") !important;
     background-repeat: no-repeat !important;
     background-size: 100% !important;
     background-position: center center !important;
@@ -1413,7 +1413,7 @@ p {
   .feature .swiper-button-prev {
     background: transparent !important;
     box-shadow: none !important;
-    background-image: url("../img/homepage/tab-left.svg") !important;
+    background-image: url("/images/homepage/tab-left.svg") !important;
     background-repeat: no-repeat !important;
     background-size: 100% !important;
     background-position: center center !important;
@@ -1464,7 +1464,7 @@ p {
   .feature .swiper-button-next {
     background: transparent !important;
     box-shadow: none !important;
-    background-image: url("../img/homepage/tab-right.svg") !important;
+    background-image: url("/images/homepage/tab-right.svg") !important;
     background-repeat: no-repeat !important;
     background-size: 100% !important;
     background-position: center center !important;
@@ -1475,7 +1475,7 @@ p {
   .feature .swiper-button-prev {
     background: transparent !important;
     box-shadow: none !important;
-    background-image: url("../img/homepage/tab-left.svg") !important;
+    background-image: url("/images/homepage/tab-left.svg") !important;
     background-repeat: no-repeat !important;
     background-size: 100% !important;
     background-position: center center !important;
@@ -1686,7 +1686,7 @@ p {
   background: #ffffff;
   box-shadow: 0px -8px 100px rgba(105, 67, 175, 0.1);
   border-radius: 25px;
-  background-image: url("../img/homepage/ups-ring.svg");
+  background-image: url("/images/homepage/ups-ring.svg");
   background-repeat: no-repeat;
   background-size: 42%;
   background-position: top left;
@@ -2390,7 +2390,7 @@ p {
   height: 100px;
   top: 70px;
   left: 25px;
-  background-image: url("../img/homepage/erly-bg2.svg");
+  background-image: url("/images/homepage/erly-bg2.svg");
   background-size: 100%;
   background-repeat: no-repeat;
 }
@@ -2402,7 +2402,7 @@ p {
   height: 100px;
   bottom: -79px;
   right: 17px;
-  background-image: url("../img/homepage/erly-bg1.svg");
+  background-image: url("/images/homepage/erly-bg1.svg");
   background-size: 100%;
   background-repeat: no-repeat;
 }
@@ -2904,7 +2904,7 @@ p {
   position: absolute;
   width: 86%;
   height: 100%;
-  background-image: url(../img/homepage/mint-shadow.png);
+  background-image: url(/images/homepage/mint-shadow.png);
   background-repeat: no-repeat;
   top: 330px;
   right: 0px;
@@ -3337,7 +3337,7 @@ p {
   content: "";
   width: 550px;
   height: 550px;
-  background-image: url("../img/homepage/Group.svg");
+  background-image: url("/images/homepage/Group.svg");
   background-repeat: no-repeat;
   background-size: 100%;
   right: 20px;
@@ -3732,7 +3732,7 @@ p {
 .finance .finance-img {
   height: 835px;
   width: 100%;
-  background-image: url("../img/brandstory/finance-img.png");
+  background-image: url("/images/brandstory/finance-img.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -3740,7 +3740,7 @@ p {
 .finance .outside-img {
   height: 800px;
   width: 100%;
-  background-image: url("../img/homepage/outside.svg");
+  background-image: url("/images/homepage/outside.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -3749,7 +3749,7 @@ p {
 .finance .team-img {
   height: 835px;
   width: 100%;
-  background-image: url("../img/brandstory/team.svg");
+  background-image: url("/images/brandstory/team.svg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -3757,7 +3757,7 @@ p {
 .finance .last-img {
   height: 835px;
   width: 100%;
-  background-image: url("../img/brandstory/last.png");
+  background-image: url("/images/brandstory/last.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -3816,7 +3816,7 @@ p {
 .Neobank .Neobank-working {
   width: 82%;
   margin: 0 auto;
-  background-image: url("../img/brandstory/neobank-bg.svg");
+  background-image: url("/images/brandstory/neobank-bg.svg");
   background-repeat: no-repeat;
   background-size: 633px;
   background-position: right top;
@@ -3829,7 +3829,7 @@ p {
 }
 
 .outside-bg {
-  background-image: url("../img/brandstory/round.png") !important;
+  background-image: url("/images/brandstory/round.png") !important;
   background-repeat: no-repeat;
   background-size: 719px;
   background-position: right top;
@@ -4003,7 +4003,7 @@ p {
   position: absolute;
   width: 50px;
   height: 50px;
-  background-image: url("../img/brandstory/right-mark.png");
+  background-image: url("/images/brandstory/right-mark.png");
   background-repeat: no-repeat;
   background-size: cover;
   top: -10px;
@@ -4129,7 +4129,7 @@ p {
   position: absolute;
   width: 660px;
   height: 600px;
-  background-image: url(../img/brandstory/team-bg.png);
+  background-image: url(/images/brandstory/team-bg.png);
   background-size: cover;
   background-repeat: no-repeat;
   top: 12%;
