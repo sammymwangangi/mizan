@@ -63,6 +63,18 @@ import dss from "../public/images/homepage/dss.svg";
 import closeBtn from "../public/images/homepage/close.svg";
 import mobileLogo from "../public/images/homepage/mobile-logo.svg";
 
+const imageKitLoader = ({ src, width, quality }) => {
+  if(src[0] === "/") src = src.slice(1);
+  const params = [`w-${width}`];
+  if (quality) {
+    params.push(`q-${quality}`);
+  }
+  const paramsString = params.join(",");
+  var urlEndpoint = "https://ik.imagekit.io/qqkp8wchu";
+  if(urlEndpoint[urlEndpoint.length-1] === "/") urlEndpoint = urlEndpoint.substring(0, urlEndpoint.length - 1);
+  return `${urlEndpoint}/${src}?tr=${paramsString}`
+}
+
 export default function Home() {
   return (
     <>
@@ -346,7 +358,7 @@ export default function Home() {
                 <div className="light-border">
                   <div className="feature-card">
                     <div className="feature-card-img">
-                      <Image src="https://ik.imagekit.io/qqkp8wchu/feature5.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677757744980" width={440} height={374} alt="" />
+                      <Image loader={imageKitLoader} src="feature5.svg" width={440} height={374} alt="" />
                     </div>
                     <div className="feature-card-def">
                       <h3>Mizan Round-Ups</h3>
