@@ -8,7 +8,7 @@ import lastPageBg from "../public/images/homepage/last-page.svg";
 import Logo from "../public/images/homepage/logo.svg";
 import Toggle from "../public/images/homepage/toggle.svg";
 import US from "../public/images/homepage/united-states.svg";
-import HomePageNew from "../public/images/homepage/phonenew.png";
+// import HomePageNew from "../public/images/homepage/phonenew.png";
 import showMoreBtn from "../public/images/homepage/show-more-btn.svg";
 import firstCo from "../public/images/homepage/company1.svg";
 import secondCo from "../public/images/homepage/company2.svg";
@@ -18,14 +18,14 @@ import tabletMobile from "../public/images/homepage/tablate-mobile.svg";
 import miniMobileBanking from "../public/images/homepage/banking-mobile.svg";
 import cardMain from "../public/images/homepage/card-main.svg";
 import cardMainTablet from "../public/images/homepage/card-main-tablet.svg";
-import feature1 from "../public/images/homepage/feature1.svg";
-import feature2 from "../public/images/homepage/feature2.svg";
-import feature3 from "../public/images/homepage/feature3.svg";
-import feature4 from "../public/images/homepage/feature4.svg";
-import feature5 from "../public/images/homepage/feature5.svg";
-import feature6 from "../public/images/homepage/feature6.svg";
+// import feature1 from "../public/images/homepage/feature1.svg";
+// import feature2 from "../public/images/homepage/feature2.svg";
+// import feature3 from "../public/images/homepage/feature3.svg";
+// import feature4 from "../public/images/homepage/feature4.svg";
+// import feature5 from "../public/images/homepage/feature5.svg";
+// import feature6 from "../public/images/homepage/feature6.svg";
 import feature7 from "../public/images/homepage/feature7.svg";
-import pattern from "../public/images/homepage/pattern.svg";
+// import pattern from "../public/images/homepage/pattern.svg";
 import ups from "../public/images/homepage/ups.png";
 import graph from "../public/images/homepage/graph.svg";
 import purple from "../public/images/homepage/purpul.svg";
@@ -50,7 +50,7 @@ import provider3 from "../public/images/homepage/provider3.svg";
 import provider4 from "../public/images/homepage/provider4.svg";
 import voice from "../public/images/homepage/voice.svg";
 import zendesk from "../public/images/homepage/Zendesk.svg";
-import chatUser from "../public/images/homepage/chat-user.svg";
+// import chatUser from "../public/images/homepage/chat-user.svg";
 import typeIcon from "../public/images/homepage/type-icone.svg";
 import footerLogo from "../public/images/homepage/footer-logo.svg";
 import apple from "../public/images/homepage/apple.svg";
@@ -288,7 +288,7 @@ export default function Home() {
                 <div className="light-border">
                   <div className="feature-card">
                     <div className="feature-card-img">
-                      <Image src={feature1} alt="" />
+                      <Image loader={imageKitLoader} src="feature1.svg" width={440} height={374} alt="feature1" />
                     </div>
                     <div className="feature-card-def">
                       <h3>Mizan Pay - Shop now pay at your own pace</h3>
@@ -306,7 +306,7 @@ export default function Home() {
                 <div className="light-border">
                   <div className="feature-card">
                     <div className="feature-card-img">
-                      <Image src={feature2} alt="" />
+                      <Image loader={imageKitLoader} src="feature2.svg" width={440} height={374} alt="feature2" />
                     </div>
                     <div className="feature-card-def">
                       <h3>Track Ur buck. “The Ostrich-effect”</h3>
@@ -323,7 +323,7 @@ export default function Home() {
                 <div className="light-border">
                   <div className="feature-card">
                     <div className="feature-card-img">
-                      <Image src={feature3} alt="" />
+                      <Image loader={imageKitLoader} src="feature3.svg" width={440} height={374} alt="feature3" />
                     </div>
                     <div className="feature-card-def">
                       <h3>Donate to a cause you care. (Effortlessly)</h3>
@@ -341,7 +341,7 @@ export default function Home() {
                 <div className="light-border">
                   <div className="feature-card">
                     <div className="feature-card-img">
-                      <Image src={feature4} alt="" />
+                      <Image loader={imageKitLoader} src="feature4.svg" width={440} height={374} alt="feature4" />
                     </div>
                     <div className="feature-card-def">
                       <h3>Better Credit Score. Better future</h3>
@@ -358,7 +358,7 @@ export default function Home() {
                 <div className="light-border">
                   <div className="feature-card">
                     <div className="feature-card-img">
-                      <Image loader={imageKitLoader} src="feature5.svg" width={440} height={374} alt="" />
+                      <Image loader={imageKitLoader} src="feature5.svg" width={440} height={374} alt="feature5" />
                     </div>
                     <div className="feature-card-def">
                       <h3>Mizan Round-Ups</h3>
@@ -375,7 +375,7 @@ export default function Home() {
                 <div className="light-border">
                   <div className="feature-card">
                     <div className="feature-card-img">
-                      <Image src={feature6} alt="" />
+                      <Image loader={imageKitLoader} src="feature6.svg" width={440} height={374} alt="feature6" />
                     </div>
                     <div className="feature-card-def">
                       <h3>
@@ -795,9 +795,6 @@ export default function Home() {
               </div>
               <div className="col-lg-6 col-md-6 col-sm-12 text-start">
                 <div className="left-voice-img">
-                  {/* <Image src="/images/homepage/mails.svg" width="100%" className="mails" />
-              <Image src="/images/homepage/tab-chat.png" width="100%" className="tab-chat" />
-              <Image src="/images/homepage/mobile-chat.png" width="100%" className="mobile-chat" /> */}
                   <div className="chat-box-border">
                     <div className="chatbox-main">
                       <ul>
@@ -807,7 +804,7 @@ export default function Home() {
                             style={{ columnGap: "1.5rem" }}
                           >
                             <Image
-                              src={chatUser}
+                              loader={imageKitLoader} src="chat-user.svg" width={64} height={64}
                               style={{ position: "relative", zIndex: "99" }}
                               alt="user"
                             />
