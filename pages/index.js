@@ -49,7 +49,7 @@ import provider2 from "../public/images/homepage/provider2.svg";
 import provider3 from "../public/images/homepage/provider3.svg";
 import provider4 from "../public/images/homepage/provider4.svg";
 import voice from "../public/images/homepage/voice.svg";
-import zendesk from "../public/images/homepage/zendesk.svg";
+import zendesk from "../public/images/homepage/Zendesk.svg";
 import chatUser from "../public/images/homepage/chat-user.svg";
 import typeIcon from "../public/images/homepage/type-icone.svg";
 import footerLogo from "../public/images/homepage/footer-logo.svg";
@@ -75,9 +75,6 @@ export default function Home() {
           href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
         />
         
-        
-        <script src="/vendor/mySwiper.js" defer />
-        <script src="/vendor/featureSwiper.js" defer />
         <script src="/vendor/swiper.js" defer />
       </Head>
 
@@ -349,7 +346,7 @@ export default function Home() {
                 <div className="light-border">
                   <div className="feature-card">
                     <div className="feature-card-img">
-                      <Image src={feature5} alt="" />
+                      <Image src="https://ik.imagekit.io/qqkp8wchu/feature5.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677757744980" width={440} height={374} alt="" />
                     </div>
                     <div className="feature-card-def">
                       <h3>Mizan Round-Ups</h3>
@@ -1056,6 +1053,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <Script src="/vendor/mySwiper.js" />
+      <Script src="/vendor/featureSwiper.js" />
 
     </>
   );
