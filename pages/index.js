@@ -222,8 +222,8 @@ export default function Home() {
             </h1>
             <p>Pay or get paid, wherever, whenever.</p>
           </div>
-          <img src="https://ik.imagekit.io/qqkp8wchu/card-main.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677761638198" width="100%" className="card-web" alt="car-main" />
-          <img src="https://ik.imagekit.io/qqkp8wchu/card-main-tablet.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677761656672" width="100%" className="card-mobile" alt="ard-main-tablet" />
+          <img src="/images/homepage/card-main.svg" width="100%" className="card-web" alt="car-main" />
+          <img src="/images/homepage/card-main-tablet.svg" width="100%" className="card-mobile" alt="ard-main-tablet" />
         </section>
 
         <section className="feature">

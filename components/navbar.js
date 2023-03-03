@@ -4,12 +4,12 @@ import {Images} from "../components/images";
 
 export default function Navbar() {
   return (
-    <section className="header brand-header1" id="header">
+    <section className="header" id="header">
       <div className="container_costome">
         <nav className="navbar navbar-expand-md">
           <div className="container-fluid">
             <Link className="navbar-brand m-0" href="/">
-              <Image src={Images.Logo} alt="image" />
+              <Image src={Images.Logo} width={175} height={41} alt="image" />
             </Link>
             <div className="mobile-view-header d-flex align-items-center gap-4">
               <button
