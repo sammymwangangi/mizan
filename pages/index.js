@@ -58,6 +58,10 @@ const DynamicFooter = dynamic(() => import("../components/footer"), {
   suspense: true,
 });
 
+const DynamicNavModal = dynamic(() => import("../components/navModal"), {
+  suspense: true,
+});
+
 const imageKitLoader = ({ src, width, quality }) => {
   if(src[0] === "/") src = src.slice(1);
   const params = [`w-${width}`];
@@ -236,7 +240,7 @@ export default function Home() {
                 <div className="light-border">
                   <div className="feature-card">
                     <div className="feature-card-img">
-                      <Image loader={imageKitLoader} src="feature1.svg" width={440} height={374} alt="feature1" />
+                      <img src="https://ik.imagekit.io/qqkp8wchu/feature1.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677761579572" alt="feature1" />
                     </div>
                     <div className="feature-card-def">
                       <h3>Mizan Pay - Shop now pay at your own pace</h3>
@@ -254,7 +258,7 @@ export default function Home() {
                 <div className="light-border">
                   <div className="feature-card">
                     <div className="feature-card-img">
-                      <Image loader={imageKitLoader} src="feature2.svg" width={440} height={374} alt="feature2" />
+                      <img src="https://ik.imagekit.io/qqkp8wchu/feature2.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677798372941" alt="feature2" />
                     </div>
                     <div className="feature-card-def">
                       <h3>Track Ur buck. “The Ostrich-effect”</h3>
@@ -271,7 +275,7 @@ export default function Home() {
                 <div className="light-border">
                   <div className="feature-card">
                     <div className="feature-card-img">
-                      <Image loader={imageKitLoader} src="feature3.svg" width={440} height={374} alt="feature3" />
+                      <img src="https://ik.imagekit.io/qqkp8wchu/feature3.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677761792322" alt="feature3" />
                     </div>
                     <div className="feature-card-def">
                       <h3>Donate to a cause you care. (Effortlessly)</h3>
@@ -289,7 +293,7 @@ export default function Home() {
                 <div className="light-border">
                   <div className="feature-card">
                     <div className="feature-card-img">
-                      <Image loader={imageKitLoader} src="feature4.svg" width={440} height={374} alt="feature4" />
+                      <img src="https://ik.imagekit.io/qqkp8wchu/feature4.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677761790412" alt="feature4" />
                     </div>
                     <div className="feature-card-def">
                       <h3>Better Credit Score. Better future</h3>
@@ -306,7 +310,7 @@ export default function Home() {
                 <div className="light-border">
                   <div className="feature-card">
                     <div className="feature-card-img">
-                      <Image loader={imageKitLoader} src="feature5.svg" width={440} height={374} alt="feature5" />
+                      <img src="https://ik.imagekit.io/qqkp8wchu/feature5.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677757744980" alt="feature5" />
                     </div>
                     <div className="feature-card-def">
                       <h3>Mizan Round-Ups</h3>
@@ -323,7 +327,7 @@ export default function Home() {
                 <div className="light-border">
                   <div className="feature-card">
                     <div className="feature-card-img">
-                      <Image loader={imageKitLoader} src="feature6.svg" width={440} height={374} alt="feature6" />
+                      <img src="https://ik.imagekit.io/qqkp8wchu/feature6.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677761733541" alt="feature6" />
                     </div>
                     <div className="feature-card-def">
                       <h3>
@@ -341,7 +345,7 @@ export default function Home() {
                 <div className="light-border">
                   <div className="feature-card">
                     <div className="feature-card-img">
-                      <Image src={Images.feature7} alt="" />
+                      <img src="https://ik.imagekit.io/qqkp8wchu/feature7.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677798389210" alt="feature7" />
                     </div>
                     <div className="feature-card-def">
                       <h3>Mizan Early Salary via Direct Deposits</h3>
@@ -783,59 +787,9 @@ export default function Home() {
 
       {/* models */}
 
-      <div
-        className="modal mobile-menu"
-        id="exampleModal"
-        tabIndex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog modal-fullscreen-sm-down">
-          <div className="modal-content">
-            <button
-              type="button"
-              className="close-btn"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            >
-              <Image src={Images.closeBtn} width="20px" alt="" />
-            </button>
-            <div className="modal-body">
-              <div className="logo">
-                <Image src={Images.mobileLogo} alt="" />
-              </div>
-              <div className="mobile-menu-list mt-5">
-                <ul>
-                  <li>
-                    <Link className="active" href="/">
-                      Personal
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/brand-story">Brand Story</Link>
-                  </li>
-                </ul>
-              </div>
-              <button className="join-btn my-2">JOIN WAITLIST</button>
-              <div className="mobile-list mt-5">
-                <ul>
-                  <li>
-                    <a className="active" href="#">
-                      Terms and Conditions
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">Privacy Policy</a>
-                  </li>
-                  <li>
-                    <a href="#">Privacy Notice</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Suspense fallback={`Loading...`}>
+        <DynamicNavModal />
+      </Suspense>
 
       <Script src="/vendor/mySwiper.js" />
       <Script src="/vendor/featureSwiper.js" />
