@@ -222,8 +222,8 @@ export default function Home() {
             </h1>
             <p>Pay or get paid, wherever, whenever.</p>
           </div>
-          <img src="/images/homepage/card-main.svg" width="100%" className="card-web" alt="car-main" />
-          <img src="/images/homepage/card-main-tablet.svg" width="100%" className="card-mobile" alt="ard-main-tablet" />
+          <img src="https://res.cloudinary.com/dyto3sfmh/image/upload/v1677853930/card-main_fka8u6.svg" width="100%" className="card-web" alt="car-main" />
+          <img src="https://res.cloudinary.com/dyto3sfmh/image/upload/v1677853890/card-main-tablet_ncybbe.svg" width="100%" className="card-mobile" alt="ard-main-tablet" />
         </section>
 
         <section className="feature">
