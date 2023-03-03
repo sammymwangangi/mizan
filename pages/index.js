@@ -46,7 +46,7 @@ import typeIcon from "../public/images/homepage/type-icone.svg";
 import closeBtn from "../public/images/homepage/close.svg";
 import mobileLogo from "../public/images/homepage/mobile-logo.svg";
 
-import {Images} from "../components/images";
+import { Images } from "../components/images";
 
 import dynamic from "next/dynamic";
 import React, { Suspense } from "react";
@@ -63,16 +63,76 @@ const DynamicNavModal = dynamic(() => import("../components/navModal"), {
 });
 
 const imageKitLoader = ({ src, width, quality }) => {
-  if(src[0] === "/") src = src.slice(1);
+  if (src[0] === "/") src = src.slice(1);
   const params = [`w-${width}`];
   if (quality) {
     params.push(`q-${quality}`);
   }
   const paramsString = params.join(",");
   var urlEndpoint = "https://ik.imagekit.io/qqkp8wchu";
-  if(urlEndpoint[urlEndpoint.length-1] === "/") urlEndpoint = urlEndpoint.substring(0, urlEndpoint.length - 1);
-  return `${urlEndpoint}/${src}?tr=${paramsString}`
-}
+  if (urlEndpoint[urlEndpoint.length - 1] === "/")
+    urlEndpoint = urlEndpoint.substring(0, urlEndpoint.length - 1);
+  return `${urlEndpoint}/${src}?tr=${paramsString}`;
+};
+
+const features = [
+  {
+    tag: "feature1",
+    title: "Mizan Pay - Shop now pay at your own pace",
+    description:
+      "With our aethetically appealing mizan metal card, you can easily spread your payments upto 12 months. No late payment fees, no penalties. What you borrow is what you will pay. Let’s just keep it at that.",
+    imageUrl:
+      "https://ik.imagekit.io/qqkp8wchu/feature1.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677761579572",
+  },
+  {
+    tag: "feature2",
+    title: "Track Ur buck. “The Ostrich-effect”",
+    description:
+      "Here’s the thing,none of us like bad news, so we tend to bury our heads in the sand and pretend we did not just purchase that overpriced bag.",
+    imageUrl:
+      "https://ik.imagekit.io/qqkp8wchu/feature2.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677798372941",
+  },
+  {
+    tag: "feature3",
+    title: "Donate to a cause you care. (Effortlessly)",
+    description:
+      "Do you want to build your own palace made of golden bricks and silver in Paradise? Or just want to hang out with the prophet muhammad (P.BU.H)? Well, no one lives forever, so start prepping for tomorrow.",
+    imageUrl:
+      "https://ik.imagekit.io/qqkp8wchu/feature3.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677761792322",
+  },
+  {
+    tag: "feature4",
+    title: "Better Credit Score. Better future",
+    description:
+      "It takes years to build reputation and seconds to destory it. Sometimes we really dont know whether we are building a better credit score or destroying it.",
+    imageUrl:
+      "https://ik.imagekit.io/qqkp8wchu/feature4.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677761790412",
+  },
+  {
+    tag: "featur5",
+    title: "Mizan Round-Ups",
+    description:
+      "Whether that’s a new phone, a pair of sneakers or a ticket to Space - we can help you form the right saving habits to achive your goal.",
+    imageUrl:
+      "https://ik.imagekit.io/qqkp8wchu/feature5.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677757744980",
+  },
+  {
+    tag: "feature6",
+    title: "Meet Robin-Habibi, Your BFF (Best Financial Friend)",
+    description:
+      "Automate the big picture,with award winning, robo-advisor we nicknamed “Robin-Habibi” .",
+    imageUrl:
+      "https://ik.imagekit.io/qqkp8wchu/feature6.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677761733541",
+  },
+  {
+    tag: "feature7",
+    title: "Mizan Early Salary via Direct Deposits",
+    description:
+      "Don’t wait until payday to have a play day. Why wait anyway? You’ve worked hard for your moolah.",
+    imageUrl:
+      "https://ik.imagekit.io/qqkp8wchu/feature7.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677798389210",
+  },
+];
 
 export default function Home() {
   return (
@@ -85,7 +145,7 @@ export default function Home() {
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
         />
-        
+
         <script src="/vendor/swiper.js" defer />
       </Head>
 
@@ -156,8 +216,18 @@ export default function Home() {
         <section className="logos">
           <div className="logos-div d-flex align-items-center justify-content-center">
             <div className="logos-img d-flex align-items-center justify-content-center">
-              <Image src={Images.firstCo} className="img1" width="190.05px" alt="" />
-              <Image src={Images.secondCo} className="img2" width="160.46px" alt="" />
+              <Image
+                src={Images.firstCo}
+                className="img1"
+                width="190.05px"
+                alt=""
+              />
+              <Image
+                src={Images.secondCo}
+                className="img2"
+                width="160.46px"
+                alt=""
+              />
             </div>
             <div className="logos-img d-flex align-items-center justify-content-center">
               <Image
@@ -182,7 +252,10 @@ export default function Home() {
                     alt=""
                   />
                   <Image
-                    loader={imageKitLoader} src="banking-mobile-img.svg" width={569} height={615}
+                    loader={imageKitLoader}
+                    src="banking-mobile-img.svg"
+                    width={569}
+                    height={615}
                     className="banking-mobile-img"
                     alt=""
                   />
@@ -226,8 +299,18 @@ export default function Home() {
             </h1>
             <p>Pay or get paid, wherever, whenever.</p>
           </div>
-          <img src="https://res.cloudinary.com/dyto3sfmh/image/upload/v1677853930/card-main_fka8u6.svg" width="100%" className="card-web" alt="car-main" />
-          <img src="https://res.cloudinary.com/dyto3sfmh/image/upload/v1677853890/card-main-tablet_ncybbe.svg" width="100%" className="card-mobile" alt="ard-main-tablet" />
+          <img
+            src="https://res.cloudinary.com/dyto3sfmh/image/upload/v1677853930/card-main_fka8u6.svg"
+            width="100%"
+            className="card-web"
+            alt="car-main"
+          />
+          <img
+            src="https://res.cloudinary.com/dyto3sfmh/image/upload/v1677853890/card-main-tablet_ncybbe.svg"
+            width="100%"
+            className="card-mobile"
+            alt="ard-main-tablet"
+          />
         </section>
 
         <section className="feature">
@@ -236,127 +319,21 @@ export default function Home() {
           </div>
           <div className="swiper featureSwiper">
             <div className="swiper-wrapper">
-              <div className="swiper-slide">
-                <div className="light-border">
-                  <div className="feature-card">
-                    <div className="feature-card-img">
-                      <img src="https://ik.imagekit.io/qqkp8wchu/feature1.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677761579572" alt="feature1" />
-                    </div>
-                    <div className="feature-card-def">
-                      <h3>Mizan Pay - Shop now pay at your own pace</h3>
-                      <p>
-                        With our aethetically appealing mizan metal card, you
-                        can easily spread your payments upto 12 months. No late
-                        payment fees, no penalties. What you borrow is what you
-                        will pay. Let’s just keep it at that.
-                      </p>
+              {features.map((feature) => (
+                <div className="swiper-slide">
+                  <div className="light-border">
+                    <div className="feature-card">
+                      <div className="feature-card-img">
+                        <img src={feature.imageUrl} alt={feature.tag} />
+                      </div>
+                      <div className="feature-card-def">
+                        <h3>{feature.title}</h3>
+                        <p>{feature.description}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="swiper-slide">
-                <div className="light-border">
-                  <div className="feature-card">
-                    <div className="feature-card-img">
-                      <img src="https://ik.imagekit.io/qqkp8wchu/feature2.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677798372941" alt="feature2" />
-                    </div>
-                    <div className="feature-card-def">
-                      <h3>Track Ur buck. “The Ostrich-effect”</h3>
-                      <p>
-                        Here’s the thing,none of us like bad news, so we tend to
-                        bury our heads in the sand and pretend we did not just
-                        purchase that overpriced bag.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="swiper-slide">
-                <div className="light-border">
-                  <div className="feature-card">
-                    <div className="feature-card-img">
-                      <img src="https://ik.imagekit.io/qqkp8wchu/feature3.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677761792322" alt="feature3" />
-                    </div>
-                    <div className="feature-card-def">
-                      <h3>Donate to a cause you care. (Effortlessly)</h3>
-                      <p>
-                        Do you want to build your own palace made of golden
-                        bricks and silver in Paradise? Or just want to hang out
-                        with the prophet muhammad (P.BU.H)? Well, no one lives
-                        forever, so start prepping for tomorrow.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="swiper-slide">
-                <div className="light-border">
-                  <div className="feature-card">
-                    <div className="feature-card-img">
-                      <img src="https://ik.imagekit.io/qqkp8wchu/feature4.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677761790412" alt="feature4" />
-                    </div>
-                    <div className="feature-card-def">
-                      <h3>Better Credit Score. Better future</h3>
-                      <p>
-                        It takes years to build reputation and seconds to
-                        destory it. Sometimes we really dont know whether we are
-                        building a better credit score or destroying it.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="swiper-slide">
-                <div className="light-border">
-                  <div className="feature-card">
-                    <div className="feature-card-img">
-                      <img src="https://ik.imagekit.io/qqkp8wchu/feature5.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677757744980" alt="feature5" />
-                    </div>
-                    <div className="feature-card-def">
-                      <h3>Mizan Round-Ups</h3>
-                      <p>
-                        Whether that’s a new phone, a pair of sneakers or a
-                        ticket to Space - we can help you form the right saving
-                        habits to achive your goal.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="swiper-slide">
-                <div className="light-border">
-                  <div className="feature-card">
-                    <div className="feature-card-img">
-                      <img src="https://ik.imagekit.io/qqkp8wchu/feature6.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677761733541" alt="feature6" />
-                    </div>
-                    <div className="feature-card-def">
-                      <h3>
-                        Meet Robin-Habibi, Your BFF (Best Financial Friend)
-                      </h3>
-                      <p>
-                        Automate the big picture,with award winning,
-                        robo-advisor we nicknamed “Robin-Habibi” .
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="swiper-slide">
-                <div className="light-border">
-                  <div className="feature-card">
-                    <div className="feature-card-img">
-                      <img src="https://ik.imagekit.io/qqkp8wchu/feature7.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677798389210" alt="feature7" />
-                    </div>
-                    <div className="feature-card-def">
-                      <h3>Mizan Early Salary via Direct Deposits</h3>
-                      <p>
-                        Don’t wait until payday to have a play day. Why wait
-                        anyway? You’ve worked hard for your moolah.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
             <div className="swiper-button-next"></div>
             <div className="swiper-button-prev"></div>
@@ -366,7 +343,7 @@ export default function Home() {
 
         <section className="ups-work ">
           <div className="ups-box position-relative">
-          <img src="/images/homepage/pattern.svg" className="ups-bg" />
+            <img src="/images/homepage/pattern.svg" className="ups-bg" />
             <div className="row ">
               <div className="col-xl-5 col-lg-5 col-md-12">
                 <div className="ups-left-box">
@@ -383,7 +360,7 @@ export default function Home() {
               </div>
               <div className="col-xl-7 col-lg-7 col-md-12">
                 <div className="ups-right-box">
-                <img src="/images/homepage/ups.png" width="100%" />
+                  <img src="/images/homepage/ups.png" width="100%" />
                 </div>
               </div>
             </div>
@@ -680,7 +657,12 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <Image src={Images.phoneMind} className="peace-img" width="50%" alt="" />
+              <Image
+                src={Images.phoneMind}
+                className="peace-img"
+                width="50%"
+                alt=""
+              />
             </div>
           </div>
           <section className="provider">
@@ -692,14 +674,22 @@ export default function Home() {
                     <div className="col col-xs-6">
                       <div className="provider-border">
                         <div className="provider-box d-flex align-items-center justify-content-center">
-                          <Image src={Images.provider1} className="provider1" alt="" />
+                          <Image
+                            src={Images.provider1}
+                            className="provider1"
+                            alt=""
+                          />
                         </div>
                       </div>
                     </div>
                     <div className="col col-xs-6">
                       <div className="provider-border">
                         <div className="provider-box d-flex align-items-center justify-content-center">
-                          <Image src={Images.provider2} className="provider2" alt="" />
+                          <Image
+                            src={Images.provider2}
+                            className="provider2"
+                            alt=""
+                          />
                         </div>
                       </div>
                     </div>
@@ -710,14 +700,22 @@ export default function Home() {
                     <div className="col mt-3 mt-lg-0">
                       <div className="provider-border">
                         <div className="provider-box d-flex align-items-center justify-content-center">
-                          <Image src={Images.provider3} className="provider3" alt="" />
+                          <Image
+                            src={Images.provider3}
+                            className="provider3"
+                            alt=""
+                          />
                         </div>
                       </div>
                     </div>
                     <div className="col mt-3 mt-lg-0">
                       <div className="provider-border">
                         <div className="provider-box d-flex align-items-center justify-content-center">
-                          <Image src={Images.provider4} className="provider4" alt="" />
+                          <Image
+                            src={Images.provider4}
+                            className="provider4"
+                            alt=""
+                          />
                         </div>
                       </div>
                     </div>
@@ -756,7 +754,10 @@ export default function Home() {
                             style={{ columnGap: "1.5rem" }}
                           >
                             <Image
-                              loader={imageKitLoader} src="chat-user.svg" width={64} height={64}
+                              loader={imageKitLoader}
+                              src="chat-user.svg"
+                              width={64}
+                              height={64}
                               style={{ position: "relative", zIndex: "99" }}
                               alt="user"
                             />
@@ -793,7 +794,6 @@ export default function Home() {
 
       <Script src="/vendor/mySwiper.js" />
       <Script src="/vendor/featureSwiper.js" />
-
     </>
   );
 }
