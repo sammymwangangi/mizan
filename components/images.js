@@ -53,6 +53,10 @@ import dss from "../public/images/homepage/dss.svg";
 import closeBtn from "../public/images/homepage/close.svg";
 import mobileLogo from "../public/images/homepage/mobile-logo.svg";
 import brandLogo from "../public/images/brandstory/brand-logo.svg";
+import payOne from "../public/images/brandstory/pay1.svg";
+import payTwo from "../public/images/brandstory/pay2.svg";
+import outside1 from "../public/images/brandstory/outside1.svg";
+import outside2 from "../public/images/brandstory/outside2.svg";
 
 export const Images = {
   cardsBG,
@@ -106,5 +110,9 @@ export const Images = {
   dss,
   closeBtn,
   mobileLogo,
-  brandLogo
+  brandLogo,
+  payOne,
+  payTwo,
+  outside1,
+  outside2,
 };

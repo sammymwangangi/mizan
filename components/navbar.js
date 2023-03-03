@@ -4,7 +4,7 @@ import {Images} from "../components/images";
 
 export default function Navbar() {
   return (
-    <section className="header" id="header">
+    <section className="header brand-header1" id="header">
       <div className="container_costome">
         <nav className="navbar navbar-expand-md">
           <div className="container-fluid">

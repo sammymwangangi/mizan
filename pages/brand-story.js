@@ -2,8 +2,8 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
-import brandLogo from "../public/images/brandstory/brand-logo.svg";
-import logo from "../public/images/homepage/logo.svg";
+
+import {Images} from "../components/images";
 
 import dynamic from "next/dynamic";
 import React, { Suspense } from "react";
@@ -16,6 +16,7 @@ const DynamicNav = dynamic(() => import("../components/nav"), {
 const DynamicFooter = dynamic(() => import("../components/footer"), {
   suspense: true,
 });
+
 
 export default function BrandStory() {
   return (
@@ -41,7 +42,7 @@ export default function BrandStory() {
             <div className="col-lg-5 col-md-6 col-sm-12 ps-0">
               <div className="brand-logo">
                 <img
-                  src="/images/brandstory/brand-story.svg"
+                  src="https://ik.imagekit.io/qqkp8wchu/brand-story.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677796255045"
                   alt=""
                   width="100%"
                 />
@@ -135,7 +136,7 @@ export default function BrandStory() {
             <div className="row">
               <div className="col-lg-6 col-md-6 col-sm-12 order-md-1 order-2">
                 <img
-                  src="/images/brandstory/neobank1.svg"
+                  src="https://ik.imagekit.io/qqkp8wchu/neobank1.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677796279480"
                   alt=""
                   width="100%"
                   className="neobank1"
@@ -143,7 +144,7 @@ export default function BrandStory() {
               </div>
               <div className="col-lg-6 col-md-6 col-sm-12 order-md-2 order-1">
                 <img
-                  src="/images/brandstory/neobank2.svg"
+                  src="https://ik.imagekit.io/qqkp8wchu/neobank2.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677796264438"
                   alt=""
                   width="100%"
                   className="neobank2"
@@ -170,7 +171,7 @@ export default function BrandStory() {
                   <ul>
                     <li>
                       <img
-                        src="/images/brandstory/right-mark.png"
+                        src="https://ik.imagekit.io/qqkp8wchu/right-mark.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677796303005"
                         width="58px"
                         height="58px"
                       />
@@ -179,7 +180,7 @@ export default function BrandStory() {
                     </li>
                     <li>
                       <img
-                        src="/images/brandstory/right-mark.png"
+                        src="https://ik.imagekit.io/qqkp8wchu/right-mark.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677796303005"
                         width="58px"
                         height="58px"
                       />
@@ -188,7 +189,7 @@ export default function BrandStory() {
                     </li>
                     <li>
                       <img
-                        src="/images/brandstory/right-mark.png"
+                        src="https://ik.imagekit.io/qqkp8wchu/right-mark.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677796303005"
                         width="58px"
                         height="58px"
                       />
@@ -196,7 +197,7 @@ export default function BrandStory() {
                     </li>
                     <li>
                       <img
-                        src="/images/brandstory/right-mark.png"
+                        src="https://ik.imagekit.io/qqkp8wchu/right-mark.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677796303005"
                         width="58px"
                         height="58px"
                       />
@@ -204,7 +205,7 @@ export default function BrandStory() {
                     </li>
                     <li>
                       <img
-                        src="/images/brandstory/right-mark.png"
+                        src="https://ik.imagekit.io/qqkp8wchu/right-mark.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677796303005"
                         width="58px"
                         height="58px"
                       />
@@ -255,7 +256,7 @@ export default function BrandStory() {
             <div className="row">
               <div className="col-lg-6 col-md-6 col-sm-12 ">
                 <img
-                  src="/images/brandstory/outside2.svg"
+                  src="https://ik.imagekit.io/qqkp8wchu/outside2.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677796939572"
                   alt=""
                   width="100%"
                   className="outside1"
@@ -263,7 +264,7 @@ export default function BrandStory() {
               </div>
               <div className="col-lg-6 col-md-6 col-sm-12 ">
                 <img
-                  src="/images/brandstory/outside1.svg"
+                  src="https://ik.imagekit.io/qqkp8wchu/central-img.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677797005449"
                   alt=""
                   width="100%"
                   className="outside2"
@@ -299,7 +300,7 @@ export default function BrandStory() {
                 </div>
                 <div className="col-lg-6 col-md-6 col-sm-12 mt-5 mt-md-0">
                   <img
-                    src="/images/brandstory/central-img.svg"
+                    src="https://ik.imagekit.io/qqkp8wchu/central-img.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677797005449"
                     alt=""
                     width="100%"
                     className="central-img"
@@ -357,7 +358,7 @@ export default function BrandStory() {
             <div className="row">
               <div className="col-lg-6 col-md-6 col-sm-12 ">
                 <img
-                  src="/images/brandstory/pay2.svg"
+                  src="https://ik.imagekit.io/qqkp8wchu/pay2.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677796318651"
                   alt=""
                   width="100%"
                   className="outside1"
@@ -365,7 +366,7 @@ export default function BrandStory() {
               </div>
               <div className="col-lg-6 col-md-6 col-sm-12 ">
                 <img
-                  src="/images/brandstory/pay1.svg"
+                  src="https://ik.imagekit.io/qqkp8wchu/pay1.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677796885101"
                   alt=""
                   width="100%"
                   className="outside2"
@@ -433,11 +434,11 @@ export default function BrandStory() {
               data-bs-dismiss="modal"
               aria-label="Close"
             >
-              <img src="/images/homepage/close.svg" width="20px" />
+              <Image src={Images.closeBtn} width="20px" alt="" />
             </button>
             <div className="modal-body">
               <div className="logo">
-                <img src="/images/homepage/mobile-logo.svg" />
+              <Image src={Images.mobileLogo} alt="" />
               </div>
               <div className="mobile-menu-list mt-5">
                 <ul>

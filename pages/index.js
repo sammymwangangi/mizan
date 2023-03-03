@@ -46,6 +46,8 @@ import typeIcon from "../public/images/homepage/type-icone.svg";
 import closeBtn from "../public/images/homepage/close.svg";
 import mobileLogo from "../public/images/homepage/mobile-logo.svg";
 
+import {Images} from "../components/images";
+
 import dynamic from "next/dynamic";
 import React, { Suspense } from "react";
 
@@ -84,9 +86,9 @@ export default function Home() {
       </Head>
 
       <main className="landing-bg position-relative">
-        <Image src={cardsBG} className="card-bg" alt="image" />
-        <Image src={cardsBGTab} className="card-bg-tab" alt="image" />
-        <Image src={lastPageBg} className="last-page-bg" alt="image" />
+        <Image src={Images.cardsBG} className="card-bg" alt="image" />
+        <Image src={Images.cardsBGTab} className="card-bg-tab" alt="image" />
+        <Image src={Images.lastPageBg} className="last-page-bg" alt="image" />
 
         {/* Navbar */}
         <Suspense fallback={`Loading...`}>
@@ -137,7 +139,7 @@ export default function Home() {
                     <div className="border-gradient">
                       <button className="see-now">
                         SEE HOW
-                        <Image src={showMoreBtn} width="15px" alt="" />
+                        <Image src={Images.showMoreBtn} width="15px" alt="" />
                       </button>
                     </div>
                   </div>
@@ -150,12 +152,12 @@ export default function Home() {
         <section className="logos">
           <div className="logos-div d-flex align-items-center justify-content-center">
             <div className="logos-img d-flex align-items-center justify-content-center">
-              <Image src={firstCo} className="img1" width="190.05px" alt="" />
-              <Image src={secondCo} className="img2" width="160.46px" alt="" />
+              <Image src={Images.firstCo} className="img1" width="190.05px" alt="" />
+              <Image src={Images.secondCo} className="img2" width="160.46px" alt="" />
             </div>
             <div className="logos-img d-flex align-items-center justify-content-center">
               <Image
-                src={thirdCo}
+                src={Images.thirdCo}
                 className="img3 order-2 order-md-1"
                 width="118.79px"
                 alt=""
@@ -170,7 +172,7 @@ export default function Home() {
               <div className="col-xl-5 col-lg-5 col-md-5 col-sm-12">
                 <div className="position-relative">
                   <Image
-                    src={mobileBanking}
+                    src={Images.mobileBanking}
                     width="100%"
                     className="banking-web-img"
                     alt=""
@@ -181,7 +183,7 @@ export default function Home() {
                     alt=""
                   />
                   <Image
-                    src={miniMobileBanking}
+                    src={Images.miniMobileBanking}
                     width="100%"
                     className="banking-mobile-img-mini"
                     alt=""
@@ -339,7 +341,7 @@ export default function Home() {
                 <div className="light-border">
                   <div className="feature-card">
                     <div className="feature-card-img">
-                      <Image src={feature7} alt="" />
+                      <Image src={Images.feature7} alt="" />
                     </div>
                     <div className="feature-card-def">
                       <h3>Mizan Early Salary via Direct Deposits</h3>
@@ -399,7 +401,7 @@ export default function Home() {
               <div className="col-xl-7 col-lg-7 col-md-12">
                 <div className="mizan-round-right p-4">
                   <div className="chart-box position-relative">
-                    <Image src={graph} className="chart-img" alt="" />
+                    <Image src={Images.graph} className="chart-img" alt="" />
                     <div className="weekly-depo-border set-position">
                       <button className="weekly-depo chart-depo">$500</button>
                     </div>
@@ -461,7 +463,7 @@ export default function Home() {
                         <li>Customizable Virtual Cards</li>
                       </ul>
                       <Image
-                        src={purple}
+                        src={Images.purple}
                         width="100%"
                         style={{
                           filter:
@@ -499,7 +501,7 @@ export default function Home() {
                           <li>Save Better +</li>
                         </ul>
                       </div>
-                      <Image src={premium} width="100%" alt="" />
+                      <Image src={Images.premium} width="100%" alt="" />
                     </div>
                   </div>
                   <button className="purple-subscribe premium-bg">
@@ -529,7 +531,7 @@ export default function Home() {
                           <li>Invest better Pro</li>
                         </ul>
                       </div>
-                      <Image src={metal} width="100%" alt="" />
+                      <Image src={Images.metal} width="100%" alt="" />
                     </div>
                   </div>
                   <button className="purple-subscribe metal-bg">
@@ -545,9 +547,9 @@ export default function Home() {
           <div className="early-user-working">
             <div className="early-user-header d-flex justify-content-center">
               <div className="header-img">
-                <Image src={avatar1} className="avtar1" alt="" />
-                <Image src={avatar2} className="avtar2" alt="" />
-                <Image src={avatar3} className="avtar3" alt="" />
+                <Image src={Images.avatar1} className="avtar1" alt="" />
+                <Image src={Images.avatar2} className="avtar2" alt="" />
+                <Image src={Images.avatar3} className="avtar3" alt="" />
                 <h1>What our “Early Users” say</h1>
                 <p>(Don’t just take our word for it).</p>
               </div>
@@ -560,14 +562,14 @@ export default function Home() {
                   <div className="early-user-border">
                     <div className="early-user-box p-4">
                       <div className="user-info d-flex align-items-center gap-3">
-                        <Image src={user} alt="" />
+                        <Image src={Images.user} alt="" />
                         <div className="user-name">
                           <span>Aldo P.</span>
-                          <Image src={rating} alt="" />
+                          <Image src={Images.rating} alt="" />
                         </div>
                       </div>
                       <div className="verified d-flex align-items-center gap-2 mt-3">
-                        <Image src={verified} alt="" />
+                        <Image src={Images.verified} alt="" />
                         <label>Verified Testimonial</label>
                       </div>
                       <p>
@@ -583,14 +585,14 @@ export default function Home() {
                   <div className="early-user-border">
                     <div className="early-user-box p-4">
                       <div className="user-info d-flex align-items-center gap-3">
-                        <Image src={user} alt="" />
+                        <Image src={Images.user} alt="" />
                         <div className="user-name">
                           <span>Aldo P.</span>
-                          <Image src={rating} alt="" />
+                          <Image src={Images.rating} alt="" />
                         </div>
                       </div>
                       <div className="verified d-flex align-items-center gap-2 mt-3">
-                        <Image src={verified} alt="" />
+                        <Image src={Images.verified} alt="" />
                         <label>Verified Testimonial</label>
                       </div>
                       <p>
@@ -606,14 +608,14 @@ export default function Home() {
                   <div className="early-user-border">
                     <div className="early-user-box p-4">
                       <div className="user-info d-flex align-items-center gap-3">
-                        <Image src={user} alt="" />
+                        <Image src={Images.user} alt="" />
                         <div className="user-name">
                           <span>Aldo P.</span>
-                          <Image src={rating} alt="" />
+                          <Image src={Images.rating} alt="" />
                         </div>
                       </div>
                       <div className="verified d-flex align-items-center gap-2 mt-3">
-                        <Image src={verified} alt="" />
+                        <Image src={Images.verified} alt="" />
                         <label>Verified Testimonial</label>
                       </div>
                       <p>
@@ -632,7 +634,7 @@ export default function Home() {
         </section>
 
         <section className="peace-of-mind">
-          <Image src={avatar4} className="avatar4" alt="" />
+          <Image src={Images.avatar4} className="avatar4" alt="" />
           <div className="container_costome">
             <div className="row position-relative">
               <div className="col-lg-6 col-md-6 col-sm-12">
@@ -646,26 +648,26 @@ export default function Home() {
                   />
                   <div className="mind-mobile-view">
                     <div className="peace-box d-flex align-items-center gap-3 p-4 mt-5">
-                      <Image src={frame1} width="58px" alt="" />
+                      <Image src={Images.frame1} width="58px" alt="" />
                       <label>
                         Swiss level bank security with PCI /DSS certified.
                       </label>
                     </div>
                     <div className="peace-box d-flex align-items-center gap-3 p-4">
-                      <Image src={frame2} width="58px" alt="" />
+                      <Image src={Images.frame2} width="58px" alt="" />
                       <label>
                         Instantly freeze your lost card, wherever, whenever.
                       </label>
                     </div>
                     <div className="peace-box d-flex align-items-center gap-3 p-4">
-                      <Image src={frame3} width="58px" alt="" />
+                      <Image src={Images.frame3} width="58px" alt="" />
                       <label>
                         Biometrics login, with enhanced 2FA.
                         <br /> No more (xh!#12@?3) passwords.
                       </label>
                     </div>
                     <div className="peace-box d-flex align-items-center gap-3 p-4">
-                      <Image src={frame4} width="58px" alt="" />
+                      <Image src={Images.frame4} width="58px" alt="" />
                       <label>
                         Built on blockchain technology (will take <br />{" "}
                         approximately 1,000,000,000,000 years to crack).
@@ -674,7 +676,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <Image src={phoneMind} className="peace-img" width="50%" alt="" />
+              <Image src={Images.phoneMind} className="peace-img" width="50%" alt="" />
             </div>
           </div>
           <section className="provider">
@@ -686,14 +688,14 @@ export default function Home() {
                     <div className="col col-xs-6">
                       <div className="provider-border">
                         <div className="provider-box d-flex align-items-center justify-content-center">
-                          <Image src={provider1} className="provider1" alt="" />
+                          <Image src={Images.provider1} className="provider1" alt="" />
                         </div>
                       </div>
                     </div>
                     <div className="col col-xs-6">
                       <div className="provider-border">
                         <div className="provider-box d-flex align-items-center justify-content-center">
-                          <Image src={provider2} className="provider2" alt="" />
+                          <Image src={Images.provider2} className="provider2" alt="" />
                         </div>
                       </div>
                     </div>
@@ -704,14 +706,14 @@ export default function Home() {
                     <div className="col mt-3 mt-lg-0">
                       <div className="provider-border">
                         <div className="provider-box d-flex align-items-center justify-content-center">
-                          <Image src={provider3} className="provider3" alt="" />
+                          <Image src={Images.provider3} className="provider3" alt="" />
                         </div>
                       </div>
                     </div>
                     <div className="col mt-3 mt-lg-0">
                       <div className="provider-border">
                         <div className="provider-box d-flex align-items-center justify-content-center">
-                          <Image src={provider4} className="provider4" alt="" />
+                          <Image src={Images.provider4} className="provider4" alt="" />
                         </div>
                       </div>
                     </div>
@@ -735,8 +737,8 @@ export default function Home() {
             <div className="row align-items-center mt-5">
               <div className="col-lg-6 col-md-6 col-sm-12 text-start">
                 <div className="left-voice-img voice-img">
-                  <Image src={voice} className="voice" alt="" />
-                  <Image src={zendesk} alt="" />
+                  <Image src={Images.voice} className="voice" alt="" />
+                  <Image src={Images.zendesk} alt="" />
                 </div>
               </div>
               <div className="col-lg-6 col-md-6 col-sm-12 text-start">
@@ -761,7 +763,7 @@ export default function Home() {
                         </li>
                       </ul>
                       <div className="typing-box d-flex align-items-center gap-3">
-                        <Image src={typeIcon} alt="" />
+                        <Image src={Images.typeIcon} alt="" />
                         <input type="text" placeholder="Start typing.." />
                       </div>
                     </div>
@@ -796,11 +798,11 @@ export default function Home() {
               data-bs-dismiss="modal"
               aria-label="Close"
             >
-              <Image src={closeBtn} width="20px" alt="" />
+              <Image src={Images.closeBtn} width="20px" alt="" />
             </button>
             <div className="modal-body">
               <div className="logo">
-                <Image src={mobileLogo} alt="" />
+                <Image src={Images.mobileLogo} alt="" />
               </div>
               <div className="mobile-menu-list mt-5">
                 <ul>
