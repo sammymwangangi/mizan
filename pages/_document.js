@@ -13,6 +13,8 @@ export default function Document() {
 
         <script src="/vendor/jquery.js" defer />
         <script src="/vendor/index.js" defer />
+        <script src="/vendor/owl.carousel.min.js" defer />
+        <script src="/vendor/swiper-bundle.min.js" defer />
       </Head>
       <body>
         <Main />

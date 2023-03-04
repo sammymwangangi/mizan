@@ -28,9 +28,7 @@ export default function BrandStory() {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Mizan Money - Brand Story</title>
-        <script src="/vendor/jquery.js" defer />
-        <script src="/vendor/index.js" defer />
-        <script src="/vendor/owl.carousel.min.js" defer />
+        
       </Head>
       
       <main>

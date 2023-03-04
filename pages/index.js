@@ -54,6 +54,7 @@ import React, { Suspense } from "react";
 const DynamicNavbar = dynamic(() => import("../components/navbar"), {
   suspense: true,
 });
+
 const DynamicFooter = dynamic(() => import("../components/footer"), {
   suspense: true,
 });
@@ -145,8 +146,6 @@ export default function Home() {
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
         />
-
-        <script src="/vendor/swiper.js" defer />
       </Head>
 
       <main className="landing-bg position-relative">
@@ -173,7 +172,7 @@ export default function Home() {
                   <img
                     src="https://res.cloudinary.com/dyto3sfmh/image/upload/v1677517396/phonenew_kudnab.png"
                     className="hero-img-mobile"
-                    width="100%"
+                    style={{width: "100%", height: "auto"}}
                     alt=""
                   />
                 </div>
@@ -188,7 +187,7 @@ export default function Home() {
                   <img
                     src="https://res.cloudinary.com/dyto3sfmh/image/upload/v1677517396/phonenew_kudnab.png"
                     className="hero-img"
-                    width="100%"
+                    style={{width: "100%", height: "auto"}}
                     alt=""
                   />
                 </div>
@@ -320,7 +319,7 @@ export default function Home() {
           <div className="swiper featureSwiper">
             <div className="swiper-wrapper">
               {features.map((feature) => (
-                <div className="swiper-slide">
+                <div key={feature.tag} className="swiper-slide">
                   <div className="light-border">
                     <div className="feature-card">
                       <div className="feature-card-img">
@@ -512,7 +511,8 @@ export default function Home() {
                           <li>Invest better Pro</li>
                         </ul>
                       </div>
-                      <Image src={Images.metal} width="100%" alt="" />
+                      <Image src={Images.metal} style={{width: "auto", height: "auto"}} alt="" />
+
                     </div>
                   </div>
                   <button className="purple-subscribe metal-bg">
