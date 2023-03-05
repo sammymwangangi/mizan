@@ -172,7 +172,7 @@ export default function Home() {
                   <img
                     src="https://res.cloudinary.com/dyto3sfmh/image/upload/v1677517396/phonenew_kudnab.png"
                     className="hero-img-mobile"
-                    style={{width: "100%", height: "auto"}}
+                    width="100%"
                     alt=""
                   />
                 </div>
@@ -187,7 +187,7 @@ export default function Home() {
                   <img
                     src="https://res.cloudinary.com/dyto3sfmh/image/upload/v1677517396/phonenew_kudnab.png"
                     className="hero-img"
-                    style={{width: "100%", height: "auto"}}
+                    width="100%"
                     alt=""
                   />
                 </div>
