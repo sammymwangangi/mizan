@@ -63,23 +63,23 @@ export default function Footer() {
             <div className="footer-box2 tab-list-mobile mt-5 mt-md-3">
               <h3>FOLLOW THE MONEY</h3>
               <div className="on-social">
-                <a href="https://www.linkedin.com/">
+                <Link href="https://www.linkedin.com/">
                   <Image
                     src={Images.linkedin}
                     width="34.97px"
                     height="35.25px"
                     alt=""
                   />
-                </a>
-                <a href="https://youtube.com">
+                </Link>
+                <Link href="https://youtube.com">
                   <Image src={Images.youtube} width="34.91px" height="27.44" alt="" />
-                </a>
-                <a href="https://www.facebook.com/">
+                </Link>
+                <Link href="https://www.facebook.com/">
                   <Image src={Images.facebook} width="36.79" height="36.49" alt="" />
-                </a>
-                <a href="https://twitter.com/">
+                </Link>
+                <Link href="https://twitter.com/">
                   <Image src={Images.twitter} width="34.91px" height="31.09" alt="" />
-                </a>
+                </Link>
               </div>
               <ul className="mobile-points mt-5 mt-md-0">
                 <li>
@@ -98,23 +98,23 @@ export default function Footer() {
             <div className="footer-box2 tab-list-web">
               <h3>FOLLOW THE MONEY</h3>
               <div className="on-social">
-                <a href="https://www.linkedin.com/">
+                <Link href="https://www.linkedin.com/">
                   <Image
                     src={Images.linkedin}
                     width="34.97px"
                     height="35.25px"
                     alt=""
                   />
-                </a>
-                <a href="https://youtube.com">
+                </Link>
+                <Link href="https://youtube.com">
                   <Image src={Images.youtube} width="34.91px" height="27.44" alt="" />
-                </a>
-                <a href="https://www.facebook.com/">
+                </Link>
+                <Link href="https://www.facebook.com/">
                   <Image src={Images.facebook} width="36.79" height="36.49" alt="" />
-                </a>
-                <a href="https://twitter.com/">
+                </Link>
+                <Link href="https://twitter.com/">
                   <Image src={Images.twitter} width="34.91px" height="31.09" alt="" />
-                </a>
+                </Link>
               </div>
               <ul className="mobile-points mt-5 mt-md-0">
                 <li>
