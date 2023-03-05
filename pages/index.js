@@ -173,6 +173,7 @@ export default function Home() {
                     src="https://res.cloudinary.com/dyto3sfmh/image/upload/v1677517396/phonenew_kudnab.png"
                     className="hero-img-mobile"
                     width="100%"
+                    fetchpriority="high"
                     alt=""
                   />
                 </div>
@@ -188,6 +189,7 @@ export default function Home() {
                     src="https://res.cloudinary.com/dyto3sfmh/image/upload/v1677517396/phonenew_kudnab.png"
                     className="hero-img"
                     width="100%"
+                    fetchpriority="high"
                     alt=""
                   />
                 </div>
