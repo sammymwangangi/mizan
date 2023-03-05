@@ -12,13 +12,13 @@ export default function Footer() {
               <Image src={Images.footerLogo} alt="" />
               <ul className="web-points">
                 <li>
-                  <a href="#">Terms and Conditions</a>
+                  <Link href="/">Terms and Conditions</Link>
                 </li>
                 <li>
-                  <a href="#">Privacy Policy</a>
+                  <Link href="/">Privacy Policy</Link>
                 </li>
                 <li>
-                  <a href="#">Privacy Notice</a>
+                  <Link href="/">Privacy Notice</Link>
                 </li>
               </ul>
             </div>
@@ -28,22 +28,22 @@ export default function Footer() {
               <h3>RESOURCES</h3>
               <ul>
                 <li>
-                  <a href="#">Support</a>
+                  <Link href="/">Support</Link>
                 </li>
                 <li>
-                  <a href="#">Mizan Donate</a>
+                  <Link href="/">Mizan Donate</Link>
                 </li>
                 <li>
-                  <a href="#">Mizan Pay</a>
+                  <Link href="/">Mizan Pay</Link>
                 </li>
                 <li>
-                  <a href="#">Mizan Invest</a>
+                  <Link href="/">Mizan Invest</Link>
                 </li>
                 <li>
-                  <a href="#">Mizan Save</a>
+                  <Link href="/">Mizan Save</Link>
                 </li>
                 <li>
-                  <a href="#">Careers</a>
+                  <Link href="/">Careers</Link>
                 </li>
               </ul>
             </div>
@@ -63,7 +63,7 @@ export default function Footer() {
             <div className="footer-box2 tab-list-mobile mt-5 mt-md-3">
               <h3>FOLLOW THE MONEY</h3>
               <div className="on-social">
-                <a href="#">
+                <a href="https://www.linkedin.com/">
                   <Image
                     src={Images.linkedin}
                     width="34.97px"
@@ -71,25 +71,25 @@ export default function Footer() {
                     alt=""
                   />
                 </a>
-                <a href="#">
+                <a href="https://youtube.com">
                   <Image src={Images.youtube} width="34.91px" height="27.44" alt="" />
                 </a>
-                <a href="#">
+                <a href="https://www.facebook.com/">
                   <Image src={Images.facebook} width="36.79" height="36.49" alt="" />
                 </a>
-                <a href="#">
+                <a href="https://twitter.com/">
                   <Image src={Images.twitter} width="34.91px" height="31.09" alt="" />
                 </a>
               </div>
               <ul className="mobile-points mt-5 mt-md-0">
                 <li>
-                  <a href="#">Terms and Conditions</a>
+                  <Link href="/">Terms and Conditions</Link>
                 </li>
                 <li>
-                  <a href="#">Privacy Policy</a>
+                  <Link href="/">Privacy Policy</Link>
                 </li>
                 <li>
-                  <a href="#">Privacy Notice</a>
+                  <Link href="/">Privacy Notice</Link>
                 </li>
               </ul>
             </div>
@@ -98,7 +98,7 @@ export default function Footer() {
             <div className="footer-box2 tab-list-web">
               <h3>FOLLOW THE MONEY</h3>
               <div className="on-social">
-                <a href="#">
+                <a href="https://www.linkedin.com/">
                   <Image
                     src={Images.linkedin}
                     width="34.97px"
@@ -106,25 +106,25 @@ export default function Footer() {
                     alt=""
                   />
                 </a>
-                <a href="#">
+                <a href="https://youtube.com">
                   <Image src={Images.youtube} width="34.91px" height="27.44" alt="" />
                 </a>
-                <a href="#">
+                <a href="https://www.facebook.com/">
                   <Image src={Images.facebook} width="36.79" height="36.49" alt="" />
                 </a>
-                <a href="#">
+                <a href="https://twitter.com/">
                   <Image src={Images.twitter} width="34.91px" height="31.09" alt="" />
                 </a>
               </div>
               <ul className="mobile-points mt-5 mt-md-0">
                 <li>
-                  <a href="#">Terms and Conditions</a>
+                  <Link href="/">Terms and Conditions</Link>
                 </li>
                 <li>
-                  <a href="#">Privacy Policy</a>
+                  <Link href="/">Privacy Policy</Link>
                 </li>
                 <li>
-                  <a href="#">Privacy Notice</a>
+                  <Link href="/">Privacy Notice</Link>
                 </li>
               </ul>
             </div>
