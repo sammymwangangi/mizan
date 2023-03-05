@@ -21,6 +21,39 @@ const DynamicNavModal = dynamic(() => import("../components/navModal"), {
   suspense: true,
 });
 
+const marks = [
+  {
+    tag: "mark1",
+    title: "First shariah compliant buy now pay <br /> later in Africa.",
+    imageUrl:
+      "https://ik.imagekit.io/qqkp8wchu/right-mark.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677796303005",
+  },
+  {
+    tag: "mark2",
+    title: "Globally recognized shariah <br /> independent audit committee.",
+    imageUrl:
+      "https://ik.imagekit.io/qqkp8wchu/right-mark.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677796303005",
+  },
+  {
+    tag: "mark3",
+    title: "Shariah compliant investment banking <br /> (coming soon).",
+    imageUrl:
+      "https://ik.imagekit.io/qqkp8wchu/right-mark.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677796303005",
+  },
+  {
+    tag: "mark4",
+    title: "Sukuks, and Islamic fund structuring <br /> (coming soon).",
+    imageUrl:
+      "https://ik.imagekit.io/qqkp8wchu/right-mark.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677796303005",
+  },
+  {
+    tag: "mark5",
+    title: "Shariah merchant & corporate <br /> banking (coming soon).",
+    imageUrl:
+      "https://ik.imagekit.io/qqkp8wchu/right-mark.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677796303005",
+  },
+];
+
 export default function BrandStory() {
   return (
     <>
@@ -170,48 +203,16 @@ export default function BrandStory() {
                 </div>
                 <div className="col-lg-6 col-md-6 col-sm-12 mt-5 mt-md-0">
                   <ul>
-                    <li>
+                  {marks.map((mark) => (
+                    <li key={mark.tag}>
                       <img
-                        src="https://ik.imagekit.io/qqkp8wchu/right-mark.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677796303005"
+                        src={mark.imageUrl}
                         width="58px"
                         height="58px"
                       />
-                      First shariah compliant buy now pay <br /> later in
-                      Africa.
+                      {mark.title}
                     </li>
-                    <li>
-                      <img
-                        src="https://ik.imagekit.io/qqkp8wchu/right-mark.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677796303005"
-                        width="58px"
-                        height="58px"
-                      />
-                      Globally recognized shariah
-                      <br /> independent audit committee.
-                    </li>
-                    <li>
-                      <img
-                        src="https://ik.imagekit.io/qqkp8wchu/right-mark.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677796303005"
-                        width="58px"
-                        height="58px"
-                      />
-                      Shariah compliant investment banking <br /> (coming soon).
-                    </li>
-                    <li>
-                      <img
-                        src="https://ik.imagekit.io/qqkp8wchu/right-mark.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677796303005"
-                        width="58px"
-                        height="58px"
-                      />
-                      Sukuks, and Islamic fund structuring <br /> (coming soon).
-                    </li>
-                    <li>
-                      <img
-                        src="https://ik.imagekit.io/qqkp8wchu/right-mark.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677796303005"
-                        width="58px"
-                        height="58px"
-                      />
-                      Shariah merchant & corporate <br /> banking (coming soon).
-                    </li>
+                  ))}
                   </ul>
                 </div>
               </div>

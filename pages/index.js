@@ -87,7 +87,7 @@ const features = [
   },
   {
     tag: "feature2",
-    title: "Track Ur buck. “The Ostrich-effect”",
+    title: "Track Ur buck. 'The Ostrich-effect'",
     description:
       "Here’s the thing,none of us like bad news, so we tend to bury our heads in the sand and pretend we did not just purchase that overpriced bag.",
     imageUrl:
@@ -110,7 +110,7 @@ const features = [
       "https://ik.imagekit.io/qqkp8wchu/feature4.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677761790412",
   },
   {
-    tag: "featur5",
+    tag: "feature5",
     title: "Mizan Round-Ups",
     description:
       "Whether that’s a new phone, a pair of sneakers or a ticket to Space - we can help you form the right saving habits to achive your goal.",
