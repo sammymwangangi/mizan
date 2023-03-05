@@ -303,11 +303,13 @@ export default function Home() {
             width="100%"
             className="card-web"
             alt="car-main"
+            fetchpriority="high"
           />
           <img
             src="https://res.cloudinary.com/dyto3sfmh/image/upload/v1677853890/card-main-tablet_ncybbe.svg"
             width="100%"
             className="card-mobile"
+            fetchpriority="high"
             alt="ard-main-tablet"
           />
         </section>
@@ -323,7 +325,7 @@ export default function Home() {
                   <div className="light-border">
                     <div className="feature-card">
                       <div className="feature-card-img">
-                        <img src={feature.imageUrl} alt={feature.tag} />
+                        <img src={feature.imageUrl} alt={feature.tag} loading="lazy" />
                       </div>
                       <div className="feature-card-def">
                         <h3>{feature.title}</h3>
