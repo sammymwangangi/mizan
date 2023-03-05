@@ -346,7 +346,7 @@ export default function Home() {
 
         <section className="ups-work ">
           <div className="ups-box position-relative">
-            <img src="/images/homepage/pattern.svg" className="ups-bg" />
+            <img src="/images/homepage/pattern.svg" className="ups-bg" alt="pattern" />
             <div className="row ">
               <div className="col-xl-5 col-lg-5 col-md-12">
                 <div className="ups-left-box">
@@ -363,7 +363,7 @@ export default function Home() {
               </div>
               <div className="col-xl-7 col-lg-7 col-md-12">
                 <div className="ups-right-box">
-                  <img src="/images/homepage/ups.png" width="100%" />
+                  <img src="/images/homepage/ups.png" width="100%" alt="ups" />
                 </div>
               </div>
             </div>
