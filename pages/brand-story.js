@@ -210,7 +210,7 @@ export default function BrandStory() {
                         width="58px"
                         height="58px"
                       />
-                      {mark.title}
+                      <div dangerouslySetInnerHTML={{ __html: mark.title }} />
                     </li>
                   ))}
                   </ul>
