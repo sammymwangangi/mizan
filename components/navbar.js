@@ -1,15 +1,43 @@
 import Link from "next/link";
 import Image from "next/image";
 import {Images} from "../components/images";
+import { useEffect, useState } from 'react';
 
 export default function Navbar() {
+  const [imageDimensions, setImageDimensions] = useState({
+    width: 150,
+    height: 76.36,
+  });
+
+  useEffect(() => {
+    function handleScroll() {
+      const header = document.getElementById('header');
+      if (header.classList.contains('header-scroll')) {
+        setImageDimensions({
+          width: 175,
+          height: 41,
+        });
+      } else {
+        setImageDimensions({
+          width: 150,
+          height: 76.36,
+        });
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     <section className="header" id="header">
       <div className="container_costome">
         <nav className="navbar navbar-expand-md">
           <div className="container-fluid">
-            <Link className="navbar-brand m-0" href="/">
-              <Image src={Images.Logo} width={175} height={41} alt="image" />
+            <Link className="navbar-brand m-0 brand-page-logo" href="/">
+              <Image src={Images.Logo} width={imageDimensions.width} height={imageDimensions.height} alt="image" />
             </Link>
             <div className="mobile-view-header d-flex align-items-center gap-4">
               <button

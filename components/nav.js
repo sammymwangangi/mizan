@@ -11,6 +11,7 @@ export default function Nav() {
                 <Link className="navbar-brand m-0 brand-page-logo" href="/">
                   <Image src={Images.brandLogo} alt="image" />
                 </Link>
+                
                 <Link
                   className="navbar-brand m-0 home-page-logo"
                   href="/"
