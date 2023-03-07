@@ -146,7 +146,7 @@ export default function Home() {
   useEffect(() => {
     const interval = setInterval(() => {
       setLoveIndex((loveIndex) => (loveIndex + 1) % 2);
-    }, 4000);
+    }, 3500);
 
     return () => clearInterval(interval);
   }, []);
@@ -156,6 +156,15 @@ export default function Home() {
     const interval = setInterval(() => {
       setThumbIndex((thumbIndex) => (thumbIndex + 1) % 2);
     }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const [googlesIndex, setGooglesIndex] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setGooglesIndex((googlesIndex) => (googlesIndex + 1) % 2);
+    }, 4500);
 
     return () => clearInterval(interval);
   }, []);
@@ -567,7 +576,7 @@ export default function Home() {
           <div className="early-user-working">
             <div className="early-user-header d-flex justify-content-center">
               <div className="header-img">
-              <Image
+                <Image
                   src={avatarIndex === 0 ? Images.avatar1 : Images.hijab2}
                   className="avtar1"
                   alt=""
@@ -666,7 +675,11 @@ export default function Home() {
         </section>
 
         <section className="peace-of-mind">
-          <Image src={Images.avatar4} className="avatar4" alt="" />
+          <Image
+            src={googlesIndex === 0 ? Images.avatar4 : Images.googles}
+            className="avatar4"
+            alt=""
+          />
           <div className="container_costome">
             <div className="row position-relative">
               <div className="col-lg-6 col-md-6 col-sm-12">
