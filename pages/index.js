@@ -87,7 +87,7 @@ const features = [
     description:
       "Here’s the thing,none of us like bad news, so we tend to bury our heads in the sand and pretend we did not just purchase that overpriced bag.",
     imageUrl:
-      "https://ik.imagekit.io/qqkp8wchu/feature2.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677798372941",
+      "https://ik.imagekit.io/qqkp8wchu/feature2.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677761791695",
   },
   {
     tag: "feature3",
