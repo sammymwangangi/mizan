@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import '@/styles/globals.css';
+// import '../styles/globals.css';
+import '@/styles/main.css';
 import '@/styles/owl.carousel.min.css';
 import { useEffect } from "react";
 

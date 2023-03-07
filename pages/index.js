@@ -22,10 +22,6 @@ import graph from "../public/images/homepage/graph.svg";
 import purple from "../public/images/homepage/purpul.svg";
 import premium from "../public/images/homepage/premium.svg";
 import metal from "../public/images/homepage/matel.svg";
-import avatar1 from "../public/images/homepage/avtar1.svg";
-import avatar2 from "../public/images/homepage/avtar2.svg";
-import avatar3 from "../public/images/homepage/avtar3.svg";
-import avatar4 from "../public/images/homepage/avatar4.svg";
 import user from "../public/images/homepage/user.svg";
 import rating from "../public/images/homepage/rating.png";
 import verified from "../public/images/homepage/verified.svg";
@@ -49,7 +45,7 @@ import mobileLogo from "../public/images/homepage/mobile-logo.svg";
 import { Images } from "../components/images";
 
 import dynamic from "next/dynamic";
-import React, { Suspense } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 
 const DynamicNavbar = dynamic(() => import("../components/navbar"), {
   suspense: true,
@@ -136,6 +132,34 @@ const features = [
 ];
 
 export default function Home() {
+  const [avatarIndex, setAvatarIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAvatarIndex((avatarIndex) => (avatarIndex + 1) % 2);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const [loveIndex, setLoveIndex] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setLoveIndex((loveIndex) => (loveIndex + 1) % 2);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const [thumbIndex, setThumbIndex] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setThumbIndex((thumbIndex) => (thumbIndex + 1) % 2);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
       <Head>
@@ -327,7 +351,11 @@ export default function Home() {
                   <div className="light-border">
                     <div className="feature-card">
                       <div className="feature-card-img">
-                        <img src={feature.imageUrl} alt={feature.tag} loading="lazy" />
+                        <img
+                          src={feature.imageUrl}
+                          alt={feature.tag}
+                          loading="lazy"
+                        />
                       </div>
                       <div className="feature-card-def">
                         <h3>{feature.title}</h3>
@@ -346,7 +374,11 @@ export default function Home() {
 
         <section className="ups-work ">
           <div className="ups-box position-relative">
-            <img src="/images/homepage/pattern.svg" className="ups-bg" alt="pattern" />
+            <img
+              src="/images/homepage/pattern.svg"
+              className="ups-bg"
+              alt="pattern"
+            />
             <div className="row ">
               <div className="col-xl-5 col-lg-5 col-md-12">
                 <div className="ups-left-box">
@@ -515,8 +547,11 @@ export default function Home() {
                           <li>Invest better Pro</li>
                         </ul>
                       </div>
-                      <Image src={Images.metal} style={{width: "auto", height: "auto"}} alt="" />
-
+                      <Image
+                        src={Images.metal}
+                        style={{ width: "auto", height: "auto" }}
+                        alt=""
+                      />
                     </div>
                   </div>
                   <button className="purple-subscribe metal-bg">
@@ -532,9 +567,21 @@ export default function Home() {
           <div className="early-user-working">
             <div className="early-user-header d-flex justify-content-center">
               <div className="header-img">
-                <Image src={Images.avatar1} className="avtar1" alt="" />
-                <Image src={Images.avatar2} className="avtar2" alt="" />
-                <Image src={Images.avatar3} className="avtar3" alt="" />
+              <Image
+                  src={avatarIndex === 0 ? Images.avatar1 : Images.hijab2}
+                  className="avtar1"
+                  alt=""
+                />
+                <Image
+                  src={loveIndex === 0 ? Images.avatar2 : Images.thumbsup}
+                  className="avtar2"
+                  alt=""
+                />
+                <Image
+                  src={thumbIndex === 0 ? Images.avatar3 : Images.love}
+                  className="avtar3"
+                  alt=""
+                />
                 <h1>What our “Early Users” say</h1>
                 <p>(Don’t just take our word for it).</p>
               </div>

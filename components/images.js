@@ -25,6 +25,10 @@ import avatar1 from "../public/images/homepage/avtar1.svg";
 import avatar2 from "../public/images/homepage/avtar2.svg";
 import avatar3 from "../public/images/homepage/avtar3.svg";
 import avatar4 from "../public/images/homepage/avatar4.svg";
+import hijab2 from "../public/images/homepage/avatar3.svg";
+import love from "../public/images/homepage/avatar5.svg";
+import thumbsup from "../public/images/homepage/avatar7.svg";
+import googles from "../public/images/homepage/avatar6.svg";
 import user from "../public/images/homepage/user.svg";
 import rating from "../public/images/homepage/rating.png";
 import verified from "../public/images/homepage/verified.svg";
@@ -84,6 +88,10 @@ export const Images = {
   avatar2,
   avatar3,
   avatar4,
+  hijab2,
+  love,
+  thumbsup,
+  googles,
   user,
   rating,
   verified,
