@@ -301,7 +301,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="col-xl-7 col-lg-7 col-md-7 col-sm-12">
-                <div className="banking-right-box">
+              <div className="banking-right-box">
                   <h1>Islamic Banking Reimagined</h1>
                   <ul>
                     <li>Halal ready without compromise.</li>
@@ -738,9 +738,16 @@ export default function Home() {
                       <div className="provider-border">
                         <div className="provider-box d-flex align-items-center justify-content-center">
                           <Image
-                            src={Images.provider1}
+                            src={Images.awsColor}
                             className="provider1"
+                            width={123}
                             alt=""
+                            style={{ 
+                              filter: 'grayscale(100%)', 
+                              transition: 'filter 0.5s' 
+                            }}
+                            onMouseOver={(e) => e.target.style.filter = 'none'}
+                            onMouseOut={(e) => e.target.style.filter = 'grayscale(100%)'}
                           />
                         </div>
                       </div>
@@ -775,9 +782,16 @@ export default function Home() {
                       <div className="provider-border">
                         <div className="provider-box d-flex align-items-center justify-content-center">
                           <Image
-                            src={Images.provider4}
+                            src={Images.googleCloud}
                             className="provider4"
                             alt=""
+                            width={202.86}
+                            style={{ 
+                              filter: 'grayscale(100%)', 
+                              transition: 'filter 0.5s' 
+                            }}
+                            onMouseOver={(e) => e.target.style.filter = 'none'}
+                            onMouseOut={(e) => e.target.style.filter = 'grayscale(100%)'}
                           />
                         </div>
                       </div>

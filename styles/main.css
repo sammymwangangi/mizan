@@ -780,7 +780,7 @@
     border-radius: 25px;
     max-height: 100%;
     width: 100%;
-    padding: 66px 57px 71px 93px;
+    padding: 50px 57px 71px 81px;
   }
   
   .banking .banking-right-box h1 {
@@ -792,6 +792,7 @@
     width: fit-content;
     font-weight: 700;
     font-size: 40px;
+    line-height: 60px;
     font-family: Poppinsbold;
   }
   
@@ -2881,6 +2882,9 @@
   
   .provider .provider1 {
     width: 120px;
+  }
+  .provider .provider1:hover {
+    filter: none;
   }
   
   .provider .provider2 {
