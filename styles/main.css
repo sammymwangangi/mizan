@@ -2837,6 +2837,75 @@
       padding-bottom: 25px;
     }
   }
+
+   /* ======================== yallah ======================== */
+
+  .yallah {
+    padding: 0 50px;
+    margin-top: 20%;
+    padding-bottom: 55px;
+  }
+  
+  .yallah .yallah-main-box {
+    position: relative;
+    background: linear-gradient(80.75deg, #D155FF 4.6%, #B532F2 17.14%, #A016E8 29.4%, #9406E2 40.22%, #8F00E0 48.46%, #A08CFF 92.32%);
+    box-shadow: 0px 20px 70px rgba(105, 67, 175, 0.4);
+    border-radius: 25px;
+    height: 570px;
+    padding: 60px;
+  }
+
+  .yallah .yallah-main-box h1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 62px;
+    line-height: 93px;
+    color: #FFFFFF;
+    margin-top: 35px;
+  }
+  .yallah .yallah-main-box p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    margin-top: 20px;
+    color: #FFFFFF;
+  }
+
+  .yallah .yallah-main-box button {
+    width: 320px;
+    height: 55px;
+    background: #1B1C39;
+    border-radius: 40px;
+    border: none;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 19px;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    margin-top: 64px;
+  }
+  .yallah .yallah-main-box .yallah1 {
+    position: absolute;
+    width: 918px;
+    height: 918px;
+    right: 330px;
+    top: 0;
+    /* transform: rotate(89.49deg); */
+  }
+
+  .yallah .yallah-main-box .yallah2 {
+    position: absolute;
+left: 105.57%;
+right: -52.02%;
+top: 94.26%;
+bottom: -103.85%;
+
+opacity: 0.2;
+transform: matrix(0, -1, -1, 0, 0, 0);
+  }
   
   /* ======================== provider ======================== */
   .provider {

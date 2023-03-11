@@ -801,6 +801,25 @@ export default function Home() {
               </div>
             </div>
           </section>
+
+          <section className="yallah">
+            <div className="yallah-main-box">
+              <h1 className="text-center">Yallah, let’s<br/> get started</h1>
+              <p className="text-center">
+                Open an account in minutes - no queues,<br/> no credit check and no minimum deposit.
+              </p>
+              <div className="text-center">
+
+              <button className="yallah-waitlist">JOIN WAITLIST</button>
+              </div>
+              <div className="yallah1">
+                <img src="/images/homepage/yallah1.svg" alt="yallah1"></img>
+              </div>
+              <div className="yallah2">
+                <img src="/images/homepage/yallah-bg.svg" alt="yallah2"></img>
+              </div>
+            </div>
+          </section>
         </section>
 
         <section className="questions">
