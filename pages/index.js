@@ -299,7 +299,6 @@ export default function Home() {
               <div className="col-xl-7 col-lg-7 col-md-7 col-sm-12">
               <div className="banking-right-box">
                   <h1>Islamic Banking Reimagined</h1>
-                  <h2 className="tw-text-red-800">Tewst tailwindcss</h2>
                   <ul>
                     <li>Halal ready without compromise.</li>
                     <li>Open your account in minutes (Goodbye paper work).</li>
