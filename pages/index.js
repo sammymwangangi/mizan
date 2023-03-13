@@ -2,59 +2,18 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
-import cardsBG from "../public/images/homepage/cards-bg.svg";
-import cardsBGTab from "../public/images/homepage/cards-bg-tab.svg";
-import lastPageBg from "../public/images/homepage/last-page.svg";
-// import HomePageNew from "../public/images/homepage/phonenew.png";
-import showMoreBtn from "../public/images/homepage/show-more-btn.svg";
-import firstCo from "../public/images/homepage/company1.svg";
-import secondCo from "../public/images/homepage/company2.svg";
-import thirdCo from "../public/images/homepage/company3.svg";
-import mobileBanking from "../public/images/homepage/banking-mobile-img.svg";
-import tabletMobile from "../public/images/homepage/tablate-mobile.svg";
-import miniMobileBanking from "../public/images/homepage/banking-mobile.svg";
-import cardMain from "../public/images/homepage/card-main.svg";
-import cardMainTablet from "../public/images/homepage/card-main-tablet.svg";
-import feature7 from "../public/images/homepage/feature7.svg";
-// import pattern from "../public/images/homepage/pattern.svg";
-import ups from "../public/images/homepage/ups.png";
-import graph from "../public/images/homepage/graph.svg";
-import purple from "../public/images/homepage/purpul.svg";
-import premium from "../public/images/homepage/premium.svg";
-import metal from "../public/images/homepage/matel.svg";
-import user from "../public/images/homepage/user.svg";
-import rating from "../public/images/homepage/rating.png";
-import verified from "../public/images/homepage/verified.svg";
-import mobileViewMint from "../public/images/homepage/mobile-view-mint.png";
-import frame1 from "../public/images/homepage/frame1.svg";
-import frame2 from "../public/images/homepage/frame2.svg";
-import frame3 from "../public/images/homepage/frame3.svg";
-import frame4 from "../public/images/homepage/frame4.svg";
-import phoneMind from "../public/images/homepage/phone-mind.svg";
-import provider1 from "../public/images/homepage/provider1.svg";
-import provider2 from "../public/images/homepage/provider2.svg";
-import provider3 from "../public/images/homepage/provider3.svg";
-import provider4 from "../public/images/homepage/provider4.svg";
-import voice from "../public/images/homepage/voice.svg";
-import zendesk from "../public/images/homepage/Zendesk.svg";
-// import chatUser from "../public/images/homepage/chat-user.svg";
-import typeIcon from "../public/images/homepage/type-icone.svg";
-import closeBtn from "../public/images/homepage/close.svg";
-import mobileLogo from "../public/images/homepage/mobile-logo.svg";
-
 import { Images } from "../components/images";
-
+import styles from "../styles/Home.module.css";
 import dynamic from "next/dynamic";
-import React, { Suspense, useState, useEffect } from "react";
+import { Dialog, Transition } from "@headlessui/react";
+import { XMarkIcon,EnvelopeIcon } from "@heroicons/react/24/outline";
+import React, { Suspense, Fragment, useState, useEffect } from "react";
 
-const DynamicNavbar = dynamic(() => import("../components/navbar"), {
-});
+const DynamicNavbar = dynamic(() => import("../components/navbar"), {});
 
-const DynamicFooter = dynamic(() => import("../components/footer"), {
-});
+const DynamicFooter = dynamic(() => import("../components/footer"), {});
 
-const DynamicNavModal = dynamic(() => import("../components/navModal"), {
-});
+const DynamicNavModal = dynamic(() => import("../components/navModal"), {});
 
 const imageKitLoader = ({ src, width, quality }) => {
   if (src[0] === "/") src = src.slice(1);
@@ -166,6 +125,16 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
+  let [isOpen, setIsOpen] = useState(false);
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
   return (
     <>
       <Head>
@@ -183,7 +152,7 @@ export default function Home() {
         <Image src={Images.lastPageBg} className="last-page-bg" alt="image" />
 
         {/* Navbar */}
-        
+
         <DynamicNavbar />
         {/* End */}
 
@@ -228,7 +197,176 @@ export default function Home() {
                 <div className="join-our-team">
                   <label>Join our waiting list.</label>
                   <div className="join-btn-group d-flex align-items-center">
-                    <button className="join">JOIN WAITLIST</button>
+                    <button onClick={openModal} className="join">
+                      JOIN WAITLIST
+                    </button>
+                    <Transition appear show={isOpen} as={Fragment}>
+                      <Dialog
+                        as="div"
+                        className="tw-relative tw-z-10"
+                        onClose={closeModal}
+                      >
+                        <Transition.Child
+                          as={Fragment}
+                          enter="tw-ease-out tw-duration-300"
+                          enterFrom="tw-opacity-0"
+                          enterTo="tw-opacity-100"
+                          leave="tw-ease-in tw-duration-200"
+                          leaveFrom="tw-opacity-100"
+                          leaveTo="tw-opacity-0"
+                        >
+                          <div className="tw-fixed tw-inset-0 tw-bg-black tw-bg-opacity-25" />
+                        </Transition.Child>
+
+                        <div className="tw-fixed tw-inset-0 tw-overflow-y-auto">
+                          <div className="tw-flex tw-min-h-full tw-items-center tw-justify-center tw-p-4">
+                            <Transition.Child
+                              as={Fragment}
+                              enter="tw-ease-out tw-duration-300"
+                              enterFrom="tw-opacity-0 tw-scale-95"
+                              enterTo="tw-opacity-100 tw-scale-100"
+                              leave="tw-ease-in tw-duration-200"
+                              leaveFrom="tw-opacity-100 tw-scale-100"
+                              leaveTo="tw-opacity-0 tw-scale-95"
+                            >
+                              <Dialog.Panel className="tw-w-[1148px] tw-px-[338px] tw-transform tw-overflow-hidden tw-rounded-2xl tw-bg-white tw-p-6 tw-align-middle tw-shadow-xl tw-transition-all">
+                                <div className="tw-absolute tw-top-0 tw-right-0 tw-hidden tw-pt-4 tw-pr-4 sm:tw-block">
+                                  <button
+                                    type="button"
+                                    className="tw-border-0 tw-bg-white tw-text-[#6D6E8A] focus:tw-outline-none"
+                                    onClick={() => setIsOpen(false)}
+                                  >
+                                    <span className="tw-sr-only">Close</span>
+                                    <XMarkIcon
+                                      className="tw-h-6 tw-w-6"
+                                      aria-hidden="true"
+                                    />
+                                  </button>
+                                </div>
+                                <Dialog.Title
+                                  as="h2"
+                                  className="tw-text-lg tw-text-center tw-font-medium tw-leading-6 tw-text-gray-900"
+                                >
+                                  <h2 className={styles.myModal}>Join our waiting list</h2>
+                                </Dialog.Title>
+                                <div className="tw-mt-5 tw-text-center">
+                                  <p className="tw-text-xl tw-leading-9 tw-text-[#1B1C39]">
+                                  Get closer to us and keep up-to-date with all the latest news about our products
+                                  </p>
+                                </div>
+
+                                <div className="tw-mt-12">
+                                  <label htmlFor="name" className="tw-block tw-text-base tw-font-medium tw-leading-6 tw-text-[#6D6E8A]">
+                                  What's your name?
+                                  </label>
+                                  <div className="tw-relative tw-mt-3 tw-rounded-full">
+                                    <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
+                                      <svg className="tw-h-6 tw-w-6 tw-text-gray-400" aria-hidden="true" width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_6860_16691)">
+                                        <path d="M20.0117 14.8051V18.4273H6.51172L1.01172 22.4766V3.47656H4.53966" stroke="#A276FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <circle cx="14.5227" cy="8.75019" r="7.04804" stroke="#A276FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M16.502 9.58204C15.4087 10.6753 13.6362 10.6753 12.543 9.58204" stroke="#A276FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <circle cx="11.3973" cy="6.87826" r="1.1141" fill="#A276FF"/>
+                                        <circle cx="17.6473" cy="6.87826" r="1.1141" fill="#A276FF"/>
+                                        </g>
+                                        <defs>
+                                        <clipPath id="clip0_6860_16691">
+                                        <rect width="23" height="24" fill="white"/>
+                                        </clipPath>
+                                        </defs>
+                                      </svg>
+                                    </div>
+                                    <input
+                                      type="text"
+                                      name="name"
+                                      id="name"
+                                      className="tw-block tw-w-full tw-bg-[#F3F1F9] tw-h-[62px] tw-rounded-full tw-border-0 tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] focus:tw-ring-2 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
+                                      placeholder="Name"
+                                    />
+                                  </div>
+                                </div>
+                                <div className="tw-mt-4">
+                                  <label htmlFor="phone" className="tw-block tw-text-base tw-font-medium tw-leading-6 tw-text-[#6D6E8A]">
+                                  Could you leave us your phone number?
+                                  </label>
+                                  <div className="tw-relative tw-mt-3 tw-rounded-full">
+                                    <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
+                                      <svg className="tw-h-6 tw-w-6 tw-text-gray-400" aria-hidden="true" width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_6860_16691)">
+                                        <path d="M20.0117 14.8051V18.4273H6.51172L1.01172 22.4766V3.47656H4.53966" stroke="#A276FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <circle cx="14.5227" cy="8.75019" r="7.04804" stroke="#A276FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M16.502 9.58204C15.4087 10.6753 13.6362 10.6753 12.543 9.58204" stroke="#A276FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <circle cx="11.3973" cy="6.87826" r="1.1141" fill="#A276FF"/>
+                                        <circle cx="17.6473" cy="6.87826" r="1.1141" fill="#A276FF"/>
+                                        </g>
+                                        <defs>
+                                        <clipPath id="clip0_6860_16691">
+                                        <rect width="23" height="24" fill="white"/>
+                                        </clipPath>
+                                        </defs>
+                                      </svg>
+                                    </div>
+                                    <input
+                                      type="text"
+                                      name="phone"
+                                      id="phone"
+                                      className="tw-block tw-w-full tw-bg-[#F3F1F9] tw-h-[62px] tw-rounded-full tw-border-0 tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] focus:tw-ring-2 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
+                                      placeholder="Phone number"
+                                    />
+                                  </div>
+                                </div>
+                                <div className="tw-mt-4">
+                                  <label htmlFor="email" className="tw-block tw-text-base tw-font-medium tw-leading-6 tw-text-[#6D6E8A]">
+                                  Could you share your Email?
+                                  </label>
+                                  <div className="tw-relative tw-mt-3 tw-rounded-full">
+                                    <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
+                                      <svg className="tw-h-6 tw-w-6 tw-text-gray-400" aria-hidden="true" width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_6860_16691)">
+                                        <path d="M20.0117 14.8051V18.4273H6.51172L1.01172 22.4766V3.47656H4.53966" stroke="#A276FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <circle cx="14.5227" cy="8.75019" r="7.04804" stroke="#A276FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M16.502 9.58204C15.4087 10.6753 13.6362 10.6753 12.543 9.58204" stroke="#A276FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <circle cx="11.3973" cy="6.87826" r="1.1141" fill="#A276FF"/>
+                                        <circle cx="17.6473" cy="6.87826" r="1.1141" fill="#A276FF"/>
+                                        </g>
+                                        <defs>
+                                        <clipPath id="clip0_6860_16691">
+                                        <rect width="23" height="24" fill="white"/>
+                                        </clipPath>
+                                        </defs>
+                                      </svg>
+                                    </div>
+                                    <input
+                                      type="email"
+                                      name="email"
+                                      id="email"
+                                      className="tw-block tw-w-full tw-bg-[#F3F1F9] tw-h-[62px] tw-rounded-full tw-border-0 tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] focus:tw-ring-2 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
+                                      placeholder="Email"
+                                    />
+                                  </div>
+                                </div>
+                                <div className="tw-relative tw-flex tw-items-center tw-mt-[44px]">
+                                  <div className="tw-flex tw-h-6 tw-items-center">
+                                    <input
+                                      id="comments"
+                                      aria-describedby="comments-description"
+                                      name="comments"
+                                      type="checkbox"
+                                      className="tw-h-4 tw-w-4 tw-rounded tw-border tw-border-gray-900 tw-text-indigo-600 focus:tw-ring-indigo-600"
+                                    />
+                                  </div>
+                                  <div className="tw-ml-3 tw-text-[10px] tw-leading-[16.5px]">
+                                    <span id="comments-description" className="tw-text-black">
+                                    I agree that Mizan may contact me to keep me up-to-date about their news. I can unsubscribe at any time using the unsubscribe link.
+                                    </span>
+                                  </div>
+                                </div>
+                              </Dialog.Panel>
+                            </Transition.Child>
+                          </div>
+                        </div>
+                      </Dialog>
+                    </Transition>
                     <div className="border-gradient">
                       <button className="see-now">
                         SEE HOW
@@ -297,7 +435,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="col-xl-7 col-lg-7 col-md-7 col-sm-12">
-              <div className="banking-right-box">
+                <div className="banking-right-box">
                   <h1>Islamic Banking Reimagined</h1>
                   <ul>
                     <li>Halal ready without compromise.</li>
@@ -738,12 +876,16 @@ export default function Home() {
                             className="provider1"
                             width={123}
                             alt=""
-                            style={{ 
-                              filter: 'grayscale(100%)', 
-                              transition: 'filter 0.5s' 
+                            style={{
+                              filter: "grayscale(100%)",
+                              transition: "filter 0.5s",
                             }}
-                            onMouseOver={(e) => e.target.style.filter = 'none'}
-                            onMouseOut={(e) => e.target.style.filter = 'grayscale(100%)'}
+                            onMouseOver={(e) =>
+                              (e.target.style.filter = "none")
+                            }
+                            onMouseOut={(e) =>
+                              (e.target.style.filter = "grayscale(100%)")
+                            }
                           />
                         </div>
                       </div>
@@ -782,12 +924,16 @@ export default function Home() {
                             className="provider4"
                             alt=""
                             width={202.86}
-                            style={{ 
-                              filter: 'grayscale(100%)', 
-                              transition: 'filter 0.5s' 
+                            style={{
+                              filter: "grayscale(100%)",
+                              transition: "filter 0.5s",
                             }}
-                            onMouseOver={(e) => e.target.style.filter = 'none'}
-                            onMouseOut={(e) => e.target.style.filter = 'grayscale(100%)'}
+                            onMouseOver={(e) =>
+                              (e.target.style.filter = "none")
+                            }
+                            onMouseOut={(e) =>
+                              (e.target.style.filter = "grayscale(100%)")
+                            }
                           />
                         </div>
                       </div>
@@ -800,13 +946,16 @@ export default function Home() {
 
           <section className="yallah">
             <div className="yallah-main-box">
-              <h1 className="text-center">Yallah, let’s<br/> get started</h1>
+              <h1 className="text-center">
+                Yallah, let’s
+                <br /> get started
+              </h1>
               <p className="text-center">
-                Open an account in minutes - no queues,<br/> no credit check and no minimum deposit.
+                Open an account in minutes - no queues,
+                <br /> no credit check and no minimum deposit.
               </p>
               <div className="text-center">
-
-              <button className="yallah-waitlist">JOIN WAITLIST</button>
+                <button className="yallah-waitlist">JOIN WAITLIST</button>
               </div>
               <div className="yallah1">
                 <img src="/images/homepage/yallah1.svg" alt="yallah1"></img>
@@ -872,13 +1021,13 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-          <DynamicFooter />
+        <DynamicFooter />
         {/* End */}
       </main>
 
       {/* models */}
 
-        <DynamicNavModal />
+      <DynamicNavModal />
 
       <Script src="/vendor/mySwiper.js" />
       <Script src="/vendor/featureSwiper.js" />

@@ -15,7 +15,6 @@ import miniMobileBanking from "../public/images/homepage/banking-mobile.svg";
 import cardMain from "../public/images/homepage/card-main.svg";
 import cardMainTablet from "../public/images/homepage/card-main-tablet.svg";
 import feature7 from "../public/images/homepage/feature7.svg";
-// import pattern from "../public/images/homepage/pattern.svg";
 import ups from "../public/images/homepage/ups.png";
 import graph from "../public/images/homepage/graph.svg";
 import purple from "../public/images/homepage/purpul.svg";
