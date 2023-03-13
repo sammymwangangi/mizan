@@ -10,15 +10,12 @@ import React, { Suspense } from "react";
 
 
 const DynamicNav = dynamic(() => import("../components/nav"), {
-  suspense: true,
 });
 
 const DynamicFooter = dynamic(() => import("../components/footer"), {
-  suspense: true,
 });
 
 const DynamicNavModal = dynamic(() => import("../components/navModal"), {
-  suspense: true,
 });
 
 const marks = [
@@ -65,9 +62,7 @@ export default function BrandStory() {
       
       <main>
         {/* Nav */}
-        <Suspense fallback={`Loading...`}>
           <DynamicNav />
-        </Suspense>
         {/* End */}
 
         <section className="brand-story-hero">
@@ -413,17 +408,14 @@ export default function BrandStory() {
         </section>
 
         {/* Footer */}
-        <Suspense fallback={`Loading...`}>
+        
           <DynamicFooter />
-        </Suspense>
         {/* End */}
 
       </main>
 
       {/* models */}
-      <Suspense fallback={`Loading...`}>
         <DynamicNavModal />
-      </Suspense>
 
     </>
   );

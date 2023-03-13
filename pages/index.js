@@ -48,15 +48,12 @@ import dynamic from "next/dynamic";
 import React, { Suspense, useState, useEffect } from "react";
 
 const DynamicNavbar = dynamic(() => import("../components/navbar"), {
-  suspense: true,
 });
 
 const DynamicFooter = dynamic(() => import("../components/footer"), {
-  suspense: true,
 });
 
 const DynamicNavModal = dynamic(() => import("../components/navModal"), {
-  suspense: true,
 });
 
 const imageKitLoader = ({ src, width, quality }) => {
@@ -186,9 +183,8 @@ export default function Home() {
         <Image src={Images.lastPageBg} className="last-page-bg" alt="image" />
 
         {/* Navbar */}
-        <Suspense fallback={`Loading...`}>
-          <DynamicNavbar />
-        </Suspense>
+        
+        <DynamicNavbar />
         {/* End */}
 
         <section className="hero">
@@ -303,6 +299,7 @@ export default function Home() {
               <div className="col-xl-7 col-lg-7 col-md-7 col-sm-12">
               <div className="banking-right-box">
                   <h1>Islamic Banking Reimagined</h1>
+                  <h2 className="tw-text-red-800">Tewst tailwindcss</h2>
                   <ul>
                     <li>Halal ready without compromise.</li>
                     <li>Open your account in minutes (Goodbye paper work).</li>
@@ -876,17 +873,13 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <Suspense fallback={`Loading...`}>
           <DynamicFooter />
-        </Suspense>
         {/* End */}
       </main>
 
       {/* models */}
 
-      <Suspense fallback={`Loading...`}>
         <DynamicNavModal />
-      </Suspense>
 
       <Script src="/vendor/mySwiper.js" />
       <Script src="/vendor/featureSwiper.js" />
