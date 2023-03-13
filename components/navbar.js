@@ -138,7 +138,7 @@ export default function Navbar() {
                                 <a
                                   key={item.name}
                                   href={item.href}
-                                  className="-tw-m-3 tw-flex tw-items-center tw-rounded-lg tw-p-2 tw-transition tw-duration-150 tw-ease-in-out hover:tw-bg-gray-50 focus:tw-outline-none focus-visible:tw-ring focus-visible:ring-orange-500 focus-visible:tw-ring-opacity-50"
+                                  className="-tw-m-3 tw-flex tw-items-center tw-rounded-lg tw-p-2 tw-transition tw-duration-150 tw-ease-in-out hover:tw-bg-gray-50 focus:tw-outline-none focus-visible:tw-ring focus-visible:ring-orange-500 focus-visible:tw-ring-opacity-50 tw-no-underline"
                                 >
                                   <div className="tw-flex tw-h-10 tw-w-10 shrink-0 tw-items-center tw-justify-center tw-text-white sm:tw-h-12 sm:tw-w-12">
                                     <item.icon aria-hidden="true" />
