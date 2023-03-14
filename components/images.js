@@ -37,7 +37,8 @@ import frame2 from "../public/images/homepage/frame2.svg";
 import frame3 from "../public/images/homepage/frame3.svg";
 import frame4 from "../public/images/homepage/frame4.svg";
 import phoneMind from "../public/images/homepage/phone-mind.svg";
-import aws from "../public/images/homepage/aws.png";
+import aws from "../public/images/homepage/aws2.png";
+import google from "../public/images/homepage/google.png";
 import awsColor from "../public/images/homepage/aws-color.webp";
 import googleCloud from "../public/images/homepage/google-cloud.webp";
 import provider1 from "../public/images/homepage/provider1.svg";
@@ -104,6 +105,7 @@ export const Images = {
   frame4,
   phoneMind,
   aws,
+  google,
   awsColor,
   googleCloud,
   provider1,

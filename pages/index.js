@@ -7,7 +7,7 @@ import styles from "../styles/Home.module.css";
 import dynamic from "next/dynamic";
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
-import React, { Suspense, Fragment,useRef, useState, useEffect } from "react";
+import React, { Suspense, Fragment, useRef, useState, useEffect } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -15,7 +15,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import { Autoplay,Pagination } from "swiper";
+import { Autoplay, Pagination } from "swiper";
 
 const DynamicNavbar = dynamic(() => import("../components/navbar"), {});
 
@@ -965,7 +965,7 @@ export default function Home() {
                   spaceBetween: 20,
                 },
               }}
-              modules={[Autoplay,Pagination]}
+              modules={[Autoplay, Pagination]}
               className="mySwiper mt-5"
             >
               {testimonials.map((testimonial) => (
@@ -983,15 +983,13 @@ export default function Home() {
                         <Image src={Images.verified} alt="" />
                         <label>{testimonial.label}</label>
                       </div>
-                      <p>
-                        {testimonial.description}
-                      </p>
+                      <p>{testimonial.description}</p>
                     </div>
                   </div>
                 </SwiperSlide>
-                ))}
+              ))}
             </Swiper>
-            </div>
+          </div>
         </section>
 
         <section className="peace-of-mind">
@@ -1059,20 +1057,10 @@ export default function Home() {
                       <div className="provider-border">
                         <div className="provider-box d-flex align-items-center justify-content-center">
                           <Image
-                            src={Images.awsColor}
+                            src={Images.aws}
                             className="provider1"
                             width={123}
                             alt=""
-                            style={{
-                              filter: "grayscale(100%)",
-                              transition: "filter 0.5s",
-                            }}
-                            onMouseOver={(e) =>
-                              (e.target.style.filter = "none")
-                            }
-                            onMouseOut={(e) =>
-                              (e.target.style.filter = "grayscale(100%)")
-                            }
                           />
                         </div>
                       </div>
@@ -1107,20 +1095,10 @@ export default function Home() {
                       <div className="provider-border">
                         <div className="provider-box d-flex align-items-center justify-content-center">
                           <Image
-                            src={Images.googleCloud}
+                            src={Images.google}
                             className="provider4"
                             alt=""
                             width={202.86}
-                            style={{
-                              filter: "grayscale(100%)",
-                              transition: "filter 0.5s",
-                            }}
-                            onMouseOver={(e) =>
-                              (e.target.style.filter = "none")
-                            }
-                            onMouseOut={(e) =>
-                              (e.target.style.filter = "grayscale(100%)")
-                            }
                           />
                         </div>
                       </div>
@@ -1164,9 +1142,7 @@ export default function Home() {
           <div className="questions-working">
             <div className="questions-header">
               <h1>Any questions?</h1>
-              <p className="mt-3">
-              Chat with our Award Winning Robo Advisor 
-              </p>
+              <p className="mt-3">Chat with our Award Winning Robo Advisor</p>
             </div>
             <div className="row align-items-center mt-5">
               <div className="col-lg-6 col-md-6 col-sm-12 text-start">

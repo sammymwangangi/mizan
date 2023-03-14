@@ -3001,9 +3001,11 @@ p {
 
 .provider .provider1 {
   width: 120px;
+  mix-blend-mode: darken;
 }
 .provider .provider1:hover {
   filter: none;
+  mix-blend-mode: normal;
 }
 
 .provider .provider2 {
