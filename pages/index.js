@@ -1088,33 +1088,6 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="yallah">
-            <div className="yallah-main-box tw-relative tw-overflow-hidden">
-              <img
-                src="/images/homepage/yallahbg.svg"
-                className="yallah-bg"
-                alt="pattern"
-              />
-              <img
-                src="/images/homepage/yallah1.svg"
-                className="yallah-bg2"
-                alt="pattern"
-              />
-              <div className="text-center">
-                <h1>
-                  Yallah, let’s
-                  <br /> get started
-                </h1>
-                <p>
-                  Open an account in minutes - no queues,
-                  <br /> no credit check and no minimum deposit.
-                </p>
-                <button onClick={openModal} className="yallah-waitlist">
-                  JOIN WAITLIST
-                </button>
-              </div>
-            </div>
-          </section>
         </section>
 
         <section className="questions">
@@ -1122,9 +1095,7 @@ export default function Home() {
             <div className="questions-header">
               <h1>Any questions?</h1>
               <p className="mt-3">
-                Did not understand some products? Need any further explantion?
-                or have a suggestion? <br /> Do let us know, we dont like
-                leaving anything to chance
+              Chat with our Award Winning Robo Advisor 
               </p>
             </div>
             <div className="row align-items-center mt-5">
