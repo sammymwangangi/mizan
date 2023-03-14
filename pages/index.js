@@ -940,12 +940,30 @@ export default function Home() {
           </div>
           <div className="early-user-slider slider-working">
             <Swiper
-              slidesPerView={3}
-              spaceBetween={30}
+              slidesPerView={1}
+              spaceBetween={20}
               loop={true}
               autoplay={{
                 delay: 2500,
                 disableOnInteraction: false,
+              }}
+              breakpoints={{
+                640: {
+                  slidesPerView: 1,
+                  spaceBetween: 20,
+                },
+                768: {
+                  slidesPerView: 2,
+                  spaceBetween: 20,
+                },
+                1024: {
+                  slidesPerView: 3,
+                  spaceBetween: 20,
+                },
+                1440: {
+                  slidesPerView: 3,
+                  spaceBetween: 20,
+                },
               }}
               modules={[Autoplay,Pagination]}
               className="mySwiper mt-5"
