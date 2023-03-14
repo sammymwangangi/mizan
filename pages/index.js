@@ -7,7 +7,15 @@ import styles from "../styles/Home.module.css";
 import dynamic from "next/dynamic";
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
-import React, { Suspense, Fragment, useState, useEffect } from "react";
+import React, { Suspense, Fragment,useRef, useState, useEffect } from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+
+import { Autoplay,Pagination } from "swiper";
 
 const DynamicNavbar = dynamic(() => import("../components/navbar"), {});
 
@@ -874,81 +882,158 @@ export default function Home() {
             </div>
           </div>
           <div className="early-user-slider slider-working">
-            <div className="swiper mySwiper mt-5">
-              <div className="swiper-wrapper">
-                <div className="swiper-slide">
-                  <div className="early-user-border">
-                    <div className="early-user-box p-4">
-                      <div className="user-info d-flex align-items-center gap-3">
-                        <Image src={Images.user} alt="" />
-                        <div className="user-name">
-                          <span>Aldo P.</span>
-                          <Image src={Images.rating} alt="" />
-                        </div>
+            <Swiper
+              slidesPerView={3}
+              spaceBetween={30}
+              loop={true}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              modules={[Autoplay,Pagination]}
+              className="mySwiper mt-5"
+            >
+              <SwiperSlide>
+                <div className="early-user-border">
+                  <div className="early-user-box p-4">
+                    <div className="user-info d-flex align-items-center gap-3">
+                      <Image src={Images.user} alt="" />
+                      <div className="user-name">
+                        <span>Aldo P.</span>
+                        <Image src={Images.rating} alt="" />
                       </div>
-                      <div className="verified d-flex align-items-center gap-2 mt-3">
-                        <Image src={Images.verified} alt="" />
-                        <label>Verified Testimonial</label>
-                      </div>
-                      <p>
-                        Just wow, i used revolut in the UK, when i came to
-                        Africa, i came across Mizan App, it took minutes to
-                        setup. I’d say its like the Islamic “Revolt App”
-                        version.
-                      </p>
                     </div>
+                    <div className="verified d-flex align-items-center gap-2 mt-3">
+                      <Image src={Images.verified} alt="" />
+                      <label>Verified Testimonial</label>
+                    </div>
+                    <p>
+                      Just wow, i used revolut in the UK, when i came to
+                      Africa, i came across Mizan App, it took minutes to
+                      setup. I’d say its like the Islamic “Revolt App”
+                      version.
+                    </p>
                   </div>
                 </div>
-                <div className="swiper-slide">
-                  <div className="early-user-border">
-                    <div className="early-user-box p-4">
-                      <div className="user-info d-flex align-items-center gap-3">
-                        <Image src={Images.user} alt="" />
-                        <div className="user-name">
-                          <span>Aldo P.</span>
-                          <Image src={Images.rating} alt="" />
-                        </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="early-user-border">
+                  <div className="early-user-box p-4">
+                    <div className="user-info d-flex align-items-center gap-3">
+                      <Image src={Images.user} alt="" />
+                      <div className="user-name">
+                        <span>Aldo P.</span>
+                        <Image src={Images.rating} alt="" />
                       </div>
-                      <div className="verified d-flex align-items-center gap-2 mt-3">
-                        <Image src={Images.verified} alt="" />
-                        <label>Verified Testimonial</label>
-                      </div>
-                      <p>
-                        Convenience comes from not having to worry about having
-                        too much (or too little) cash on hand, Mizan comes in
-                        handy especially with the Mizan app that works seemlessy
-                        with the card.
-                      </p>
                     </div>
+                    <div className="verified d-flex align-items-center gap-2 mt-3">
+                      <Image src={Images.verified} alt="" />
+                      <label>Verified Testimonial</label>
+                    </div>
+                    <p>
+                      Just wow, i used revolut in the UK, when i came to
+                      Africa, i came across Mizan App, it took minutes to
+                      setup. I’d say its like the Islamic “Revolt App”
+                      version.
+                    </p>
                   </div>
                 </div>
-                <div className="swiper-slide">
-                  <div className="early-user-border">
-                    <div className="early-user-box p-4">
-                      <div className="user-info d-flex align-items-center gap-3">
-                        <Image src={Images.user} alt="" />
-                        <div className="user-name">
-                          <span>Aldo P.</span>
-                          <Image src={Images.rating} alt="" />
-                        </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="early-user-border">
+                  <div className="early-user-box p-4">
+                    <div className="user-info d-flex align-items-center gap-3">
+                      <Image src={Images.user} alt="" />
+                      <div className="user-name">
+                        <span>Aldo P.</span>
+                        <Image src={Images.rating} alt="" />
                       </div>
-                      <div className="verified d-flex align-items-center gap-2 mt-3">
-                        <Image src={Images.verified} alt="" />
-                        <label>Verified Testimonial</label>
-                      </div>
-                      <p>
-                        Convenience comes from not having to worry about having
-                        too much (or too little) cash on hand, Mizan comes in
-                        handy especially with the Mizan app that works seemlessy
-                        with the card.
-                      </p>
                     </div>
+                    <div className="verified d-flex align-items-center gap-2 mt-3">
+                      <Image src={Images.verified} alt="" />
+                      <label>Verified Testimonial</label>
+                    </div>
+                    <p>
+                      Just wow, i used revolut in the UK, when i came to
+                      Africa, i came across Mizan App, it took minutes to
+                      setup. I’d say its like the Islamic “Revolt App”
+                      version.
+                    </p>
                   </div>
                 </div>
-              </div>
-              <div className="swiper-pagination"></div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="early-user-border">
+                  <div className="early-user-box p-4">
+                    <div className="user-info d-flex align-items-center gap-3">
+                      <Image src={Images.user} alt="" />
+                      <div className="user-name">
+                        <span>Aldo P.</span>
+                        <Image src={Images.rating} alt="" />
+                      </div>
+                    </div>
+                    <div className="verified d-flex align-items-center gap-2 mt-3">
+                      <Image src={Images.verified} alt="" />
+                      <label>Verified Testimonial</label>
+                    </div>
+                    <p>
+                      Just wow, i used revolut in the UK, when i came to
+                      Africa, i came across Mizan App, it took minutes to
+                      setup. I’d say its like the Islamic “Revolt App”
+                      version.
+                    </p>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="early-user-border">
+                  <div className="early-user-box p-4">
+                    <div className="user-info d-flex align-items-center gap-3">
+                      <Image src={Images.user} alt="" />
+                      <div className="user-name">
+                        <span>Aldo P.</span>
+                        <Image src={Images.rating} alt="" />
+                      </div>
+                    </div>
+                    <div className="verified d-flex align-items-center gap-2 mt-3">
+                      <Image src={Images.verified} alt="" />
+                      <label>Verified Testimonial</label>
+                    </div>
+                    <p>
+                      Just wow, i used revolut in the UK, when i came to
+                      Africa, i came across Mizan App, it took minutes to
+                      setup. I’d say its like the Islamic “Revolt App”
+                      version.
+                    </p>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="early-user-border">
+                  <div className="early-user-box p-4">
+                    <div className="user-info d-flex align-items-center gap-3">
+                      <Image src={Images.user} alt="" />
+                      <div className="user-name">
+                        <span>Aldo P.</span>
+                        <Image src={Images.rating} alt="" />
+                      </div>
+                    </div>
+                    <div className="verified d-flex align-items-center gap-2 mt-3">
+                      <Image src={Images.verified} alt="" />
+                      <label>Verified Testimonial</label>
+                    </div>
+                    <p>
+                      Just wow, i used revolut in the UK, when i came to
+                      Africa, i came across Mizan App, it took minutes to
+                      setup. I’d say its like the Islamic “Revolt App”
+                      version.
+                    </p>
+                  </div>
+                </div>
+              </SwiperSlide>
+              
+            </Swiper>
             </div>
-          </div>
         </section>
 
         <section className="peace-of-mind">
@@ -1088,6 +1173,33 @@ export default function Home() {
             </div>
           </section>
 
+          <section className="yallah">
+            <div className="yallah-main-box tw-relative tw-overflow-hidden">
+              <img
+                src="/images/homepage/yallahbg.svg"
+                className="yallah-bg"
+                alt="pattern"
+              />
+              <img
+                src="/images/homepage/yallah1.svg"
+                className="yallah-bg2"
+                alt="pattern"
+              />
+              <div className="text-center">
+                <h1>
+                  Yallah, let’s
+                  <br /> get started
+                </h1>
+                <p>
+                  Open an account in minutes - no queues,
+                  <br /> no credit check and no minimum deposit.
+                </p>
+                <button onClick={openModal} className="yallah-waitlist">
+                  JOIN WAITLIST
+                </button>
+              </div>
+            </div>
+          </section>
         </section>
 
         <section className="questions">
