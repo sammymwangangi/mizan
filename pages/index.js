@@ -95,6 +95,63 @@ const features = [
   },
 ];
 
+const testimonials = [
+  {
+    id: "1",
+    name: "Aldo P.",
+    label: "Verified Testimonial",
+    imageUrl: Images.user,
+    ratingImageUrl: Images.rating,
+    description:
+      "Just wow, i used revolut in the UK, when i came to Africa, i came across Mizan App, it took minutes to setup. I’d say its like the Islamic “Revolt App” version.",
+  },
+  {
+    id: "2",
+    name: "Aldo P.",
+    label: "Verified Testimonial",
+    imageUrl: Images.user,
+    ratingImageUrl: Images.rating,
+    description:
+      "Convenience comes from not having to worry about having too much (or too little) cash on hand, Mizan comes in handy especially with the Mizan app that works seemlessy with the card.",
+  },
+  {
+    id: "3",
+    name: "Aldo P.",
+    label: "Verified Testimonial",
+    imageUrl: Images.user,
+    ratingImageUrl: Images.rating,
+    description:
+      "When i joined beta program, i got to experience first hand how my financial future will be revolutionized. Ditching my bank for G.",
+  },
+  {
+    id: "4",
+    name: "Aldo P.",
+    label: "Verified Testimonial",
+    imageUrl: Images.user,
+    ratingImageUrl: Images.rating,
+    description:
+      "Just wow, i used revolut in the UK, when i came to Africa, i came across Mizan App, it took minutes to setup. I’d say its like the Islamic “Revolt App” version.",
+  },
+  {
+    id: "5",
+    name: "Aldo P.",
+    label: "Verified Testimonial",
+    imageUrl: Images.user,
+    ratingImageUrl: Images.rating,
+    description:
+      "Convenience comes from not having to worry about having too much (or too little) cash on hand, Mizan comes in handy especially with the Mizan app that works seemlessy with the card.",
+  },
+  {
+    id: "6",
+    name: "Aldo P.",
+    label: "Verified Testimonial",
+    imageUrl: Images.user,
+    ratingImageUrl: Images.rating,
+    description:
+      "When i joined beta program, i got to experience first hand how my financial future will be revolutionized. Ditching my bank for G.",
+  },
+];
+
 export default function Home() {
   const [avatarIndex, setAvatarIndex] = useState(0);
 
@@ -893,145 +950,28 @@ export default function Home() {
               modules={[Autoplay,Pagination]}
               className="mySwiper mt-5"
             >
-              <SwiperSlide>
-                <div className="early-user-border">
-                  <div className="early-user-box p-4">
-                    <div className="user-info d-flex align-items-center gap-3">
-                      <Image src={Images.user} alt="" />
-                      <div className="user-name">
-                        <span>Aldo P.</span>
-                        <Image src={Images.rating} alt="" />
+              {testimonials.map((testimonial) => (
+                <SwiperSlide>
+                  <div className="early-user-border">
+                    <div className="early-user-box p-4">
+                      <div className="user-info d-flex align-items-center gap-3">
+                        <Image src={testimonial.imageUrl} alt="" />
+                        <div className="user-name">
+                          <span>Aldo P.</span>
+                          <Image src={testimonial.ratingImageUrl} alt="" />
+                        </div>
                       </div>
-                    </div>
-                    <div className="verified d-flex align-items-center gap-2 mt-3">
-                      <Image src={Images.verified} alt="" />
-                      <label>Verified Testimonial</label>
-                    </div>
-                    <p>
-                      Just wow, i used revolut in the UK, when i came to
-                      Africa, i came across Mizan App, it took minutes to
-                      setup. I’d say its like the Islamic “Revolt App”
-                      version.
-                    </p>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="early-user-border">
-                  <div className="early-user-box p-4">
-                    <div className="user-info d-flex align-items-center gap-3">
-                      <Image src={Images.user} alt="" />
-                      <div className="user-name">
-                        <span>Aldo P.</span>
-                        <Image src={Images.rating} alt="" />
+                      <div className="verified d-flex align-items-center gap-2 mt-3">
+                        <Image src={Images.verified} alt="" />
+                        <label>{testimonial.label}</label>
                       </div>
+                      <p>
+                        {testimonial.description}
+                      </p>
                     </div>
-                    <div className="verified d-flex align-items-center gap-2 mt-3">
-                      <Image src={Images.verified} alt="" />
-                      <label>Verified Testimonial</label>
-                    </div>
-                    <p>
-                      Just wow, i used revolut in the UK, when i came to
-                      Africa, i came across Mizan App, it took minutes to
-                      setup. I’d say its like the Islamic “Revolt App”
-                      version.
-                    </p>
                   </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="early-user-border">
-                  <div className="early-user-box p-4">
-                    <div className="user-info d-flex align-items-center gap-3">
-                      <Image src={Images.user} alt="" />
-                      <div className="user-name">
-                        <span>Aldo P.</span>
-                        <Image src={Images.rating} alt="" />
-                      </div>
-                    </div>
-                    <div className="verified d-flex align-items-center gap-2 mt-3">
-                      <Image src={Images.verified} alt="" />
-                      <label>Verified Testimonial</label>
-                    </div>
-                    <p>
-                      Just wow, i used revolut in the UK, when i came to
-                      Africa, i came across Mizan App, it took minutes to
-                      setup. I’d say its like the Islamic “Revolt App”
-                      version.
-                    </p>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="early-user-border">
-                  <div className="early-user-box p-4">
-                    <div className="user-info d-flex align-items-center gap-3">
-                      <Image src={Images.user} alt="" />
-                      <div className="user-name">
-                        <span>Aldo P.</span>
-                        <Image src={Images.rating} alt="" />
-                      </div>
-                    </div>
-                    <div className="verified d-flex align-items-center gap-2 mt-3">
-                      <Image src={Images.verified} alt="" />
-                      <label>Verified Testimonial</label>
-                    </div>
-                    <p>
-                      Just wow, i used revolut in the UK, when i came to
-                      Africa, i came across Mizan App, it took minutes to
-                      setup. I’d say its like the Islamic “Revolt App”
-                      version.
-                    </p>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="early-user-border">
-                  <div className="early-user-box p-4">
-                    <div className="user-info d-flex align-items-center gap-3">
-                      <Image src={Images.user} alt="" />
-                      <div className="user-name">
-                        <span>Aldo P.</span>
-                        <Image src={Images.rating} alt="" />
-                      </div>
-                    </div>
-                    <div className="verified d-flex align-items-center gap-2 mt-3">
-                      <Image src={Images.verified} alt="" />
-                      <label>Verified Testimonial</label>
-                    </div>
-                    <p>
-                      Just wow, i used revolut in the UK, when i came to
-                      Africa, i came across Mizan App, it took minutes to
-                      setup. I’d say its like the Islamic “Revolt App”
-                      version.
-                    </p>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="early-user-border">
-                  <div className="early-user-box p-4">
-                    <div className="user-info d-flex align-items-center gap-3">
-                      <Image src={Images.user} alt="" />
-                      <div className="user-name">
-                        <span>Aldo P.</span>
-                        <Image src={Images.rating} alt="" />
-                      </div>
-                    </div>
-                    <div className="verified d-flex align-items-center gap-2 mt-3">
-                      <Image src={Images.verified} alt="" />
-                      <label>Verified Testimonial</label>
-                    </div>
-                    <p>
-                      Just wow, i used revolut in the UK, when i came to
-                      Africa, i came across Mizan App, it took minutes to
-                      setup. I’d say its like the Islamic “Revolt App”
-                      version.
-                    </p>
-                  </div>
-                </div>
-              </SwiperSlide>
-              
+                </SwiperSlide>
+                ))}
             </Swiper>
             </div>
         </section>
