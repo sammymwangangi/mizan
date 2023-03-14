@@ -944,7 +944,7 @@ export default function Home() {
             </div>
           </section>
 
-          {/* <section className="yallah">
+          <section className="yallah">
             <div className="yallah-main-box">
               <h1 className="text-center">
                 Yallah, let’s
@@ -957,14 +957,9 @@ export default function Home() {
               <div className="text-center">
                 <button className="yallah-waitlist">JOIN WAITLIST</button>
               </div>
-              <div className="yallah1">
-                <img src="/images/homepage/yallah1.svg" alt="yallah1"></img>
-              </div>
-              <div className="yallah2">
-                <img src="/images/homepage/yallah-bg.svg" alt="yallah2"></img>
-              </div>
+              
             </div>
-          </section> */}
+          </section>
         </section>
 
         <section className="questions">
