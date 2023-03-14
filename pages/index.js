@@ -6,7 +6,7 @@ import { Images } from "../components/images";
 import styles from "../styles/Home.module.css";
 import dynamic from "next/dynamic";
 import { Dialog, Transition } from "@headlessui/react";
-import { XMarkIcon,EnvelopeIcon } from "@heroicons/react/24/outline";
+import { XMarkIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 import React, { Suspense, Fragment, useState, useEffect } from "react";
 
 const DynamicNavbar = dynamic(() => import("../components/navbar"), {});
@@ -247,32 +247,80 @@ export default function Home() {
                                   as="h2"
                                   className="tw-text-lg tw-text-center tw-font-medium tw-leading-6 tw-text-gray-900"
                                 >
-                                  <h2 className={styles.myModal}>Join our waiting list</h2>
+                                  <h2 className={styles.myModal}>
+                                    Join our waiting list
+                                  </h2>
                                 </Dialog.Title>
                                 <div className="tw-mt-5 tw-text-center">
                                   <p className="tw-text-xl tw-leading-9 tw-text-[#1B1C39]">
-                                  Get closer to us and keep up-to-date with all the latest news about our products
+                                    Get closer to us and keep up-to-date with
+                                    all the latest news about our products
                                   </p>
                                 </div>
 
                                 <div className="tw-mt-12">
-                                  <label htmlFor="name" className="tw-block tw-text-base tw-font-medium tw-leading-6 tw-text-[#6D6E8A]">
-                                  What's your name?
+                                  <label
+                                    htmlFor="name"
+                                    className="tw-block tw-text-base tw-font-medium tw-leading-6 tw-text-[#6D6E8A]"
+                                  >
+                                    What's your name?
                                   </label>
                                   <div className="tw-relative tw-mt-3 tw-rounded-full">
                                     <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
-                                      <svg className="tw-h-6 tw-w-6 tw-text-gray-400" aria-hidden="true" width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <svg
+                                        className="tw-h-6 tw-w-6 tw-text-gray-400"
+                                        aria-hidden="true"
+                                        width="23"
+                                        height="24"
+                                        viewBox="0 0 23 24"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
                                         <g clip-path="url(#clip0_6860_16691)">
-                                        <path d="M20.0117 14.8051V18.4273H6.51172L1.01172 22.4766V3.47656H4.53966" stroke="#A276FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <circle cx="14.5227" cy="8.75019" r="7.04804" stroke="#A276FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M16.502 9.58204C15.4087 10.6753 13.6362 10.6753 12.543 9.58204" stroke="#A276FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <circle cx="11.3973" cy="6.87826" r="1.1141" fill="#A276FF"/>
-                                        <circle cx="17.6473" cy="6.87826" r="1.1141" fill="#A276FF"/>
+                                          <path
+                                            d="M20.0117 14.8051V18.4273H6.51172L1.01172 22.4766V3.47656H4.53966"
+                                            stroke="#A276FF"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                          />
+                                          <circle
+                                            cx="14.5227"
+                                            cy="8.75019"
+                                            r="7.04804"
+                                            stroke="#A276FF"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                          />
+                                          <path
+                                            d="M16.502 9.58204C15.4087 10.6753 13.6362 10.6753 12.543 9.58204"
+                                            stroke="#A276FF"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                          />
+                                          <circle
+                                            cx="11.3973"
+                                            cy="6.87826"
+                                            r="1.1141"
+                                            fill="#A276FF"
+                                          />
+                                          <circle
+                                            cx="17.6473"
+                                            cy="6.87826"
+                                            r="1.1141"
+                                            fill="#A276FF"
+                                          />
                                         </g>
                                         <defs>
-                                        <clipPath id="clip0_6860_16691">
-                                        <rect width="23" height="24" fill="white"/>
-                                        </clipPath>
+                                          <clipPath id="clip0_6860_16691">
+                                            <rect
+                                              width="23"
+                                              height="24"
+                                              fill="white"
+                                            />
+                                          </clipPath>
                                         </defs>
                                       </svg>
                                     </div>
@@ -286,23 +334,68 @@ export default function Home() {
                                   </div>
                                 </div>
                                 <div className="tw-mt-4">
-                                  <label htmlFor="phone" className="tw-block tw-text-base tw-font-medium tw-leading-6 tw-text-[#6D6E8A]">
-                                  Could you leave us your phone number?
+                                  <label
+                                    htmlFor="phone"
+                                    className="tw-block tw-text-base tw-font-medium tw-leading-6 tw-text-[#6D6E8A]"
+                                  >
+                                    Could you leave us your phone number?
                                   </label>
                                   <div className="tw-relative tw-mt-3 tw-rounded-full">
                                     <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
-                                      <svg className="tw-h-6 tw-w-6 tw-text-gray-400" aria-hidden="true" width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <svg
+                                        className="tw-h-6 tw-w-6 tw-text-gray-400"
+                                        aria-hidden="true"
+                                        width="23"
+                                        height="24"
+                                        viewBox="0 0 23 24"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
                                         <g clip-path="url(#clip0_6860_16691)">
-                                        <path d="M20.0117 14.8051V18.4273H6.51172L1.01172 22.4766V3.47656H4.53966" stroke="#A276FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <circle cx="14.5227" cy="8.75019" r="7.04804" stroke="#A276FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M16.502 9.58204C15.4087 10.6753 13.6362 10.6753 12.543 9.58204" stroke="#A276FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <circle cx="11.3973" cy="6.87826" r="1.1141" fill="#A276FF"/>
-                                        <circle cx="17.6473" cy="6.87826" r="1.1141" fill="#A276FF"/>
+                                          <path
+                                            d="M20.0117 14.8051V18.4273H6.51172L1.01172 22.4766V3.47656H4.53966"
+                                            stroke="#A276FF"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                          />
+                                          <circle
+                                            cx="14.5227"
+                                            cy="8.75019"
+                                            r="7.04804"
+                                            stroke="#A276FF"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                          />
+                                          <path
+                                            d="M16.502 9.58204C15.4087 10.6753 13.6362 10.6753 12.543 9.58204"
+                                            stroke="#A276FF"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                          />
+                                          <circle
+                                            cx="11.3973"
+                                            cy="6.87826"
+                                            r="1.1141"
+                                            fill="#A276FF"
+                                          />
+                                          <circle
+                                            cx="17.6473"
+                                            cy="6.87826"
+                                            r="1.1141"
+                                            fill="#A276FF"
+                                          />
                                         </g>
                                         <defs>
-                                        <clipPath id="clip0_6860_16691">
-                                        <rect width="23" height="24" fill="white"/>
-                                        </clipPath>
+                                          <clipPath id="clip0_6860_16691">
+                                            <rect
+                                              width="23"
+                                              height="24"
+                                              fill="white"
+                                            />
+                                          </clipPath>
                                         </defs>
                                       </svg>
                                     </div>
@@ -316,23 +409,68 @@ export default function Home() {
                                   </div>
                                 </div>
                                 <div className="tw-mt-4">
-                                  <label htmlFor="email" className="tw-block tw-text-base tw-font-medium tw-leading-6 tw-text-[#6D6E8A]">
-                                  Could you share your Email?
+                                  <label
+                                    htmlFor="email"
+                                    className="tw-block tw-text-base tw-font-medium tw-leading-6 tw-text-[#6D6E8A]"
+                                  >
+                                    Could you share your Email?
                                   </label>
                                   <div className="tw-relative tw-mt-3 tw-rounded-full">
                                     <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
-                                      <svg className="tw-h-6 tw-w-6 tw-text-gray-400" aria-hidden="true" width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <svg
+                                        className="tw-h-6 tw-w-6 tw-text-gray-400"
+                                        aria-hidden="true"
+                                        width="23"
+                                        height="24"
+                                        viewBox="0 0 23 24"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
                                         <g clip-path="url(#clip0_6860_16691)">
-                                        <path d="M20.0117 14.8051V18.4273H6.51172L1.01172 22.4766V3.47656H4.53966" stroke="#A276FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <circle cx="14.5227" cy="8.75019" r="7.04804" stroke="#A276FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M16.502 9.58204C15.4087 10.6753 13.6362 10.6753 12.543 9.58204" stroke="#A276FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <circle cx="11.3973" cy="6.87826" r="1.1141" fill="#A276FF"/>
-                                        <circle cx="17.6473" cy="6.87826" r="1.1141" fill="#A276FF"/>
+                                          <path
+                                            d="M20.0117 14.8051V18.4273H6.51172L1.01172 22.4766V3.47656H4.53966"
+                                            stroke="#A276FF"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                          />
+                                          <circle
+                                            cx="14.5227"
+                                            cy="8.75019"
+                                            r="7.04804"
+                                            stroke="#A276FF"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                          />
+                                          <path
+                                            d="M16.502 9.58204C15.4087 10.6753 13.6362 10.6753 12.543 9.58204"
+                                            stroke="#A276FF"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                          />
+                                          <circle
+                                            cx="11.3973"
+                                            cy="6.87826"
+                                            r="1.1141"
+                                            fill="#A276FF"
+                                          />
+                                          <circle
+                                            cx="17.6473"
+                                            cy="6.87826"
+                                            r="1.1141"
+                                            fill="#A276FF"
+                                          />
                                         </g>
                                         <defs>
-                                        <clipPath id="clip0_6860_16691">
-                                        <rect width="23" height="24" fill="white"/>
-                                        </clipPath>
+                                          <clipPath id="clip0_6860_16691">
+                                            <rect
+                                              width="23"
+                                              height="24"
+                                              fill="white"
+                                            />
+                                          </clipPath>
                                         </defs>
                                       </svg>
                                     </div>
@@ -356,8 +494,14 @@ export default function Home() {
                                     />
                                   </div>
                                   <div className="tw-ml-3 tw-text-[10px] tw-leading-[16.5px]">
-                                    <span id="comments-description" className="tw-text-black">
-                                    I agree that Mizan may contact me to keep me up-to-date about their news. I can unsubscribe at any time using the unsubscribe link.
+                                    <span
+                                      id="comments-description"
+                                      className="tw-text-black"
+                                    >
+                                      I agree that Mizan may contact me to keep
+                                      me up-to-date about their news. I can
+                                      unsubscribe at any time using the
+                                      unsubscribe link.
                                     </span>
                                   </div>
                                 </div>
@@ -945,19 +1089,30 @@ export default function Home() {
           </section>
 
           <section className="yallah">
-            <div className="yallah-main-box">
-              <h1 className="text-center">
-                Yallah, let’s
-                <br /> get started
-              </h1>
-              <p className="text-center">
-                Open an account in minutes - no queues,
-                <br /> no credit check and no minimum deposit.
-              </p>
+            <div className="yallah-main-box tw-relative tw-overflow-hidden">
+              <img
+                src="/images/homepage/yallahbg.svg"
+                className="yallah-bg"
+                alt="pattern"
+              />
+              <img
+                src="/images/homepage/yallah1.svg"
+                className="yallah-bg2"
+                alt="pattern"
+              />
               <div className="text-center">
-                <button className="yallah-waitlist">JOIN WAITLIST</button>
+                <h1>
+                  Yallah, let’s
+                  <br /> get started
+                </h1>
+                <p>
+                  Open an account in minutes - no queues,
+                  <br /> no credit check and no minimum deposit.
+                </p>
+                <button onClick={openModal} className="yallah-waitlist">
+                  JOIN WAITLIST
+                </button>
               </div>
-              
             </div>
           </section>
         </section>
