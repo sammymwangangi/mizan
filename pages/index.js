@@ -944,7 +944,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="yallah">
+          {/* <section className="yallah">
             <div className="yallah-main-box">
               <h1 className="text-center">
                 Yallah, let’s
@@ -964,7 +964,7 @@ export default function Home() {
                 <img src="/images/homepage/yallah-bg.svg" alt="yallah2"></img>
               </div>
             </div>
-          </section>
+          </section> */}
         </section>
 
         <section className="questions">
