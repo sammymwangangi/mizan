@@ -56,7 +56,7 @@ export default function Navbar() {
       <div className="container_costome">
         <nav className="navbar navbar-expand-md">
           <div className="container-fluid">
-            <Link className="navbar-brand m-0 brand-page-logo" href="/">
+            <Link className="navbar-brand -tw-ml-2.5 brand-page-logo" href="/">
               <Image
                 src={Images.Logo}
                 width={imageDimensions.width}
@@ -96,12 +96,9 @@ export default function Navbar() {
                   </li>
                 </ul>
               </div>
+
+              {/* Flags */}
               <div className="country-select order-1 pointer">
-                {/* <Image className="pointer" src={Images.US} alt="us" />
-                <select className="pointer">
-                  <option>ENG</option>
-                  <option>GUJ</option>
-                </select> */}
                 <Popover
                   className="tw-relative tw-items-center"
                   value={selected}
@@ -158,6 +155,7 @@ export default function Navbar() {
                   )}
                 </Popover>
               </div>
+              {/* End Flags */}
             </div>
           </div>
         </nav>
