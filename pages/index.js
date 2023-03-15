@@ -1148,7 +1148,7 @@ export default function Home() {
               <div className="col-lg-6 col-md-6 col-sm-12 text-start">
                 <div className="left-voice-img voice-img">
                   <Image src={Images.voice} className="voice" alt="" />
-                  <Image src={Images.zendesk} alt="" />
+                  {/* <Image src={Images.zendesk} alt="" /> */}
                 </div>
               </div>
               <div className="col-lg-6 col-md-6 col-sm-12 text-start">
