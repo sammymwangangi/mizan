@@ -2862,7 +2862,7 @@ p {
 
 .yallah {
   padding: 0 50px;
-  margin-top: 20%;
+  margin-top: 160px;
   padding-bottom: 55px;
 }
 
@@ -2895,6 +2895,13 @@ p {
   width: 32%;
   top: 0px;
   left: -16px;
+}
+.yallah-big {
+  position: absolute;
+  top: 1000px;
+  left: 0px;
+  transform: rotate(-380deg);
+  z-index: -1;
 }
 
 .yallah .yallah-main-box h1 {

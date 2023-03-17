@@ -1109,6 +1109,11 @@ export default function Home() {
             </div>
           </section>
 
+          <img
+            src="/images/homepage/yallahbig.svg"
+            className="yallah-big"
+            alt="pattern"
+          />
           <section className="yallah">
             <div className="yallah-main-box tw-relative tw-overflow-hidden">
               <img
