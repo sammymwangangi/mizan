@@ -638,7 +638,8 @@ export default function Home({ features }) {
             <h1>Features</h1>
           </div>
           <Swiper
-            spaceBetween={20}
+            slidesPerView={"auto"}
+            spaceBetween={30}
             loop={true}
             pagination={{
               clickable: true,
@@ -1152,9 +1153,6 @@ export default function Home({ features }) {
       {/* models */}
 
       <DynamicNavModal />
-
-      <Script src="/vendor/mySwiper.js" />
-      <Script src="/vendor/featureSwiper.js" />
     </>
   );
 }

@@ -1,11 +1,3 @@
-$(window).scroll(function () {
-  if ($(this).scrollTop() > 50) {
-    $("#header").addClass("header-scroll");
-  } else {
-    $("#header").removeClass("header-scroll");
-  }
-});
-
 $(document).on("click", ".pricing .pricing-top-btn button", function () {
   $(".pricing .pricing-top-btn button").removeClass("active");
   $(this).addClass("active");
