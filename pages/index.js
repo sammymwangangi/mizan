@@ -142,6 +142,54 @@ export default function Home({ features }) {
     setIsOpen(true);
   }
 
+  useEffect(() => {
+    function handleButtonClick(event) {
+      const target = event.target;
+      const buttons = document.querySelectorAll('.pricing .pricing-top-btn button');
+      buttons.forEach((button) => {
+        button.classList.remove('active');
+      });
+      target.classList.add('active');
+    }
+
+    function handlePurpleClick() {
+      document.getElementById('purple-show').style.display = 'block';
+      document.getElementById('metal-show').style.display = 'none';
+      document.getElementById('premium-show').style.display = 'none';
+    }
+
+    function handlePremiumClick() {
+      document.getElementById('purple-show').style.display = 'none';
+      document.getElementById('metal-show').style.display = 'none';
+      document.getElementById('premium-show').style.display = 'block';
+    }
+
+    function handleMetalClick() {
+      document.getElementById('purple-show').style.display = 'none';
+      document.getElementById('metal-show').style.display = 'block';
+      document.getElementById('premium-show').style.display = 'none';
+    }
+
+    const buttons = document.querySelectorAll('.pricing .pricing-top-btn button');
+    buttons.forEach((button) => {
+      button.addEventListener('click', handleButtonClick);
+    });
+
+    document.getElementById('purple').addEventListener('click', handlePurpleClick);
+    document.getElementById('premium').addEventListener('click', handlePremiumClick);
+    document.getElementById('metal').addEventListener('click', handleMetalClick);
+
+    // Cleanup function to remove the event listeners when the component unmounts
+    return () => {
+      buttons.forEach((button) => {
+        button.removeEventListener('click', handleButtonClick);
+      });
+      document.getElementById('purple').removeEventListener('click', handlePurpleClick);
+      document.getElementById('premium').removeEventListener('click', handlePremiumClick);
+      document.getElementById('metal').removeEventListener('click', handleMetalClick);
+    };
+  }, []);
+
   return (
     <>
       <Head>
