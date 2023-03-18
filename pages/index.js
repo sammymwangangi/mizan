@@ -955,30 +955,31 @@ export default function Home({ features }) {
               slidesPerView={1}
               spaceBetween={20}
               loop={true}
+              grabCursor={true}
+              centeredSlides={true}
               autoplay={{
                 delay: 2500,
                 disableOnInteraction: false,
               }}
               breakpoints={{
-                640: {
+                0: {
                   slidesPerView: 1,
-                  spaceBetween: 20,
                 },
-                768: {
+                769: {
                   slidesPerView: 2,
                   spaceBetween: 20,
                 },
-                1024: {
+                1025: {
                   slidesPerView: 3,
                   spaceBetween: 20,
                 },
-                1440: {
+                1441: {
                   slidesPerView: 3,
                   spaceBetween: 20,
                 },
               }}
               modules={[Autoplay, Pagination]}
-              className="mySwiper mt-5 tw-w-full"
+              className="swiper mySwiper mt-5"
             >
               {testimonials.map((testimonial) => (
                 <SwiperSlide>
@@ -1121,12 +1122,13 @@ export default function Home({ features }) {
             </div>
           </section>
 
+        </section>
+          <section className="yallah">
           <img
             src="/images/homepage/yallahbig.svg"
             className="yallah-big"
             alt="pattern"
           />
-          <section className="yallah">
             <div className="yallah-main-box tw-relative tw-overflow-hidden">
               <img
                 src="/images/homepage/yallahbg.svg"
@@ -1153,7 +1155,6 @@ export default function Home({ features }) {
               </div>
             </div>
           </section>
-        </section>
 
         <section className="questions">
           <div className="questions-working">

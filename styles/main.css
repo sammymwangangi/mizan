@@ -2898,9 +2898,9 @@ p {
 }
 .yallah-big {
   position: absolute;
-  top: 950px;
-  left: 20px;
-  transform: rotate(-365deg);
+  top: 7750px;
+  left: 0px;
+  transform: rotate(-360deg);
   z-index: -1;
 }
 
