@@ -132,16 +132,6 @@ export default function Home({ features }) {
     return () => clearInterval(interval);
   }, []);
 
-  let [isOpen, setIsOpen] = useState(false);
-
-  function closeModal() {
-    setIsOpen(false);
-  }
-
-  function openModal() {
-    setIsOpen(true);
-  }
-
   useEffect(() => {
     function handleButtonClick(event) {
       const target = event.target;
@@ -184,11 +174,23 @@ export default function Home({ features }) {
       buttons.forEach((button) => {
         button.removeEventListener('click', handleButtonClick);
       });
-      document.getElementById('purple').removeEventListener('click', handlePurpleClick);
-      document.getElementById('premium').removeEventListener('click', handlePremiumClick);
-      document.getElementById('metal').removeEventListener('click', handleMetalClick);
-    };
+      document.getElementById('purple')?.removeEventListener('click', handlePurpleClick);
+    document.getElementById('premium')?.removeEventListener('click', handlePremiumClick);
+    document.getElementById('metal')?.removeEventListener('click', handleMetalClick);
+  };
   }, []);
+
+  let [isOpen, setIsOpen] = useState(false);
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  
 
   return (
     <>
