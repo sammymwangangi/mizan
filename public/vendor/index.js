@@ -1,5 +1,4 @@
 
-
 $(document).on("click", ".pricing .pricing-top-btn button", function () {
   $(".pricing .pricing-top-btn button").removeClass("active");
   $(this).addClass("active");

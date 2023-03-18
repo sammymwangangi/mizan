@@ -11,7 +11,7 @@ export default function Document() {
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         />
 
-        {/* <script src="/vendor/jquery.js" defer /> */}
+        <script src="/vendor/jquery.js" defer />
         <script src="/vendor/index.js" defer />
       </Head>
       <body>
