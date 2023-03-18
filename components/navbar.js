@@ -39,6 +39,12 @@ export default function Navbar() {
           height: 76.36,
         });
       }
+
+      if (window.scrollY > 50) {
+        header.classList.add('header-scroll');
+      } else {
+        header.classList.remove('header-scroll');
+      }
     }
 
     window.addEventListener("scroll", handleScroll);

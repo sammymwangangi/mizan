@@ -638,13 +638,24 @@ export default function Home({ features }) {
             <h1>Features</h1>
           </div>
           <Swiper
-            slidesPerView={"auto"}
+            slidesPerView={2}
             spaceBetween={30}
             loop={true}
+            grabCursor={true}
+            centeredSlides={true}
             pagination={{
               clickable: true,
             }}
             navigation={true}
+            breakpoints={{
+              769: {
+                slidesPerView: 2,
+              },
+              0: {
+                slidesPerView: 1,
+              },
+            }}
+            speed= {1000}
             modules={[Pagination, Navigation]}
             className="swiper featureSwiper"
           >
