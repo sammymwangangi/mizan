@@ -10,12 +10,12 @@ import { XMarkIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 import React, { Suspense, Fragment, useRef, useState, useEffect } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-
-import { Autoplay, Pagination } from "swiper";
+import "swiper/css/navigation";
+import { Autoplay, Pagination, Navigation } from "swiper";
+import { createClient } from "contentful";
 
 const DynamicNavbar = dynamic(() => import("../components/navbar"), {});
 
@@ -35,65 +35,6 @@ const imageKitLoader = ({ src, width, quality }) => {
     urlEndpoint = urlEndpoint.substring(0, urlEndpoint.length - 1);
   return `${urlEndpoint}/${src}?tr=${paramsString}`;
 };
-
-const features = [
-  {
-    tag: "feature1",
-    title: "Mizan Pay - Shop now pay at your own pace",
-    description:
-      "With our aethetically appealing mizan metal card, you can easily spread your payments upto 12 months. No late payment fees, no penalties. What you borrow is what you will pay. Let’s just keep it at that.",
-    imageUrl:
-      "https://ik.imagekit.io/qqkp8wchu/feature1.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677761579572",
-  },
-  {
-    tag: "feature2",
-    title: "Track Ur buck. 'The Ostrich-effect'",
-    description:
-      "Here’s the thing,none of us like bad news, so we tend to bury our heads in the sand and pretend we did not just purchase that overpriced bag.",
-    imageUrl:
-      "https://ik.imagekit.io/qqkp8wchu/feature2.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677761791695",
-  },
-  {
-    tag: "feature3",
-    title: "Donate to a cause you care. (Effortlessly)",
-    description:
-      "Do you want to build your own palace made of golden bricks and silver in Paradise? Or just want to hang out with the prophet muhammad (P.BU.H)? Well, no one lives forever, so start prepping for tomorrow.",
-    imageUrl:
-      "https://ik.imagekit.io/qqkp8wchu/feature3.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677761792322",
-  },
-  {
-    tag: "feature4",
-    title: "Better Credit Score. Better future",
-    description:
-      "It takes years to build reputation and seconds to destory it. Sometimes we really dont know whether we are building a better credit score or destroying it.",
-    imageUrl:
-      "https://ik.imagekit.io/qqkp8wchu/feature4.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677761790412",
-  },
-  {
-    tag: "feature5",
-    title: "Mizan Round-Ups",
-    description:
-      "Whether that’s a new phone, a pair of sneakers or a ticket to Space - we can help you form the right saving habits to achive your goal.",
-    imageUrl:
-      "https://ik.imagekit.io/qqkp8wchu/feature5.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677757744980",
-  },
-  {
-    tag: "feature6",
-    title: "Meet Robin-Habibi, Your BFF (Best Financial Friend)",
-    description:
-      "Automate the big picture,with award winning, robo-advisor we nicknamed “Robin-Habibi” .",
-    imageUrl:
-      "https://ik.imagekit.io/qqkp8wchu/feature6.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677761733541",
-  },
-  {
-    tag: "feature7",
-    title: "Mizan Early Salary via Direct Deposits",
-    description:
-      "Don’t wait until payday to have a play day. Why wait anyway? You’ve worked hard for your moolah.",
-    imageUrl:
-      "https://ik.imagekit.io/qqkp8wchu/feature7.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677798389210",
-  },
-];
 
 const testimonials = [
   {
@@ -152,7 +93,8 @@ const testimonials = [
   },
 ];
 
-export default function Home() {
+export default function Home({ features }) {
+  // console.log(features);
   const [avatarIndex, setAvatarIndex] = useState(0);
 
   useEffect(() => {
@@ -695,32 +637,42 @@ export default function Home() {
           <div className="feature-header">
             <h1>Features</h1>
           </div>
-          <div className="swiper featureSwiper">
-            <div className="swiper-wrapper">
-              {features.map((feature) => (
-                <div key={feature.tag} className="swiper-slide">
-                  <div className="light-border">
-                    <div className="feature-card">
-                      <div className="feature-card-img">
-                        <img
-                          src={feature.imageUrl}
-                          alt={feature.tag}
-                          loading="lazy"
-                        />
-                      </div>
-                      <div className="feature-card-def">
-                        <h3>{feature.title}</h3>
-                        <p>{feature.description}</p>
-                      </div>
+          <Swiper
+            spaceBetween={20}
+            loop={true}
+            pagination={{
+              clickable: true,
+            }}
+            navigation={true}
+            modules={[Pagination, Navigation]}
+            className="swiper featureSwiper"
+          >
+            {features.map((feature) => (
+              <SwiperSlide key={feature.sys.id} className="swiper-slide">
+                <div className="light-border">
+                  <div className="feature-card">
+                    <div className="feature-card-img">
+                      <Image
+                        src={feature.fields.image.fields.file.url}
+                        alt={feature.fields.image.fields.title}
+                        loading="lazy"
+                        width={
+                          feature.fields.image.fields.file.details.image.width
+                        }
+                        height={
+                          feature.fields.image.fields.file.details.image.height
+                        }
+                      />
+                    </div>
+                    <div className="feature-card-def">
+                      <h3>{feature.fields.title}</h3>
+                      <p>{feature.fields.description}</p>
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
-            <div className="swiper-button-next"></div>
-            <div className="swiper-button-prev"></div>
-            <div className="swiper-pagination"></div>
-          </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </section>
 
         <section className="ups-work ">
@@ -966,7 +918,7 @@ export default function Home() {
                 },
               }}
               modules={[Autoplay, Pagination]}
-              className="mySwiper mt-5"
+              className="mySwiper mt-5 tw-w-full"
             >
               {testimonials.map((testimonial) => (
                 <SwiperSlide>
@@ -1205,4 +1157,19 @@ export default function Home() {
       <Script src="/vendor/featureSwiper.js" />
     </>
   );
+}
+
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  });
+
+  const res = await client.getEntries({ content_type: "feature" });
+
+  return {
+    props: {
+      features: res.items,
+    }, // will be passed to the page component as props
+  };
 }
