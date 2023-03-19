@@ -1148,8 +1148,7 @@ export default function Home({ features }) {
                   <br /> get started
                 </h1>
                 <p>
-                  Open an account in minutes - no queues,
-                  <br /> no credit check and no minimum deposit.
+                Habibi, its time to level up your money <br />game, be part of the first 1,000 subscribers. 
                 </p>
                 <button onClick={openModal} className="yallah-waitlist">
                   JOIN WAITLIST
