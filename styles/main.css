@@ -2957,11 +2957,15 @@ p {
   transform: matrix(0, -1, -1, 0, 0, 0);
 }
 
-/* @media (min-width: 1440px) {
-  .yallah {
-    display: none;
+@media (min-width: 1440px) {
+  .yallah-big {
+    position: absolute;
+    top: 7990px;
+    left: 0px;
+    transform: rotate(-360deg);
+    z-index: -1;
   }
-} */
+}
 
 /* ======================== provider ======================== */
 .provider {
