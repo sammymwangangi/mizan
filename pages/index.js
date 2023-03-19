@@ -191,7 +191,15 @@ export default function Home({ features }) {
     setIsOpen(true);
   }
 
-  
+  const swiperRefLocal = useRef()
+
+    const handleMouseEnter = () => {
+        swiperRefLocal?.current?.swiper?.autoplay?.stop()
+    };
+
+    const handleMouseLeave = () => {
+        swiperRefLocal?.current?.swiper?.autoplay?.start()
+    };
 
   return (
     <>
@@ -688,60 +696,63 @@ export default function Home({ features }) {
           <div className="feature-header">
             <h1>Features</h1>
           </div>
-          <Swiper
-            slidesPerView={2}
-            spaceBetween={30}
-            loop={true}
-            grabCursor={true}
-            centeredSlides={true}
-            pagination={{
-              clickable: true,
-            }}
-            navigation={true}
-            freeMode={true}
-            freeModeMomentum={false}
-            autoplay={{
-              delay: 0,
-              disableOnInteraction: false,
-            }}
-            breakpoints={{
-              769: {
-                slidesPerView: 2,
-              },
-              0: {
-                slidesPerView: 1,
-              },
-            }}
-            speed= {3000}
-            modules={[FreeMode, Autoplay, Pagination, Navigation]}
-            className="swiper featureSwiper"
-          >
-            {features.map((feature) => (
-              <SwiperSlide key={feature.sys.id} className="swiper-slide">
-                <div className="light-border">
-                  <div className="feature-card">
-                    <div className="feature-card-img">
-                      <Image
-                        src={feature.fields.image.fields.file.url}
-                        alt={feature.fields.image.fields.title}
-                        loading="lazy"
-                        width={
-                          feature.fields.image.fields.file.details.image.width
-                        }
-                        height={
-                          feature.fields.image.fields.file.details.image.height
-                        }
-                      />
-                    </div>
-                    <div className="feature-card-def">
-                      <h3>{feature.fields.title}</h3>
-                      <p>{feature.fields.description}</p>
+          <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+            <Swiper
+              slidesPerView={2}
+              ref={swiperRefLocal}
+              spaceBetween={30}
+              loop={true}
+              grabCursor={true}
+              centeredSlides={true}
+              pagination={{
+                clickable: true,
+              }}
+              navigation={true}
+              freeMode={true}
+              freeModeMomentum={false}
+              autoplay={{
+                delay: 0,
+                disableOnInteraction: false,
+              }}
+              breakpoints={{
+                769: {
+                  slidesPerView: 2,
+                },
+                0: {
+                  slidesPerView: 1,
+                },
+              }}
+              speed= {3000}
+              modules={[FreeMode, Autoplay, Pagination, Navigation]}
+              className="swiper featureSwiper"
+            >
+              {features.map((feature) => (
+                <SwiperSlide key={feature.sys.id} className="swiper-slide">
+                  <div className="light-border">
+                    <div className="feature-card">
+                      <div className="feature-card-img">
+                        <Image
+                          src={feature.fields.image.fields.file.url}
+                          alt={feature.fields.image.fields.title}
+                          loading="lazy"
+                          width={
+                            feature.fields.image.fields.file.details.image.width
+                          }
+                          height={
+                            feature.fields.image.fields.file.details.image.height
+                          }
+                        />
+                      </div>
+                      <div className="feature-card-def">
+                        <h3>{feature.fields.title}</h3>
+                        <p>{feature.fields.description}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </section>
 
         <section className="ups-work ">
@@ -959,9 +970,10 @@ export default function Home({ features }) {
               </div>
             </div>
           </div>
-          <div className="early-user-slider slider-working">
+          <div className="early-user-slider slider-working" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <Swiper
               slidesPerView={3}
+              ref={swiperRefLocal}
               spaceBetween={20}
               loop={true}
               centeredSlides={true}
@@ -969,7 +981,7 @@ export default function Home({ features }) {
               freeModeMomentum={false}
               autoplay={{
                 delay: 0,
-                disableOnInteraction: false
+                disableOnInteraction: true
               }}
               speed= {3000}
               breakpoints={{
