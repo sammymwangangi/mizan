@@ -2957,11 +2957,11 @@ p {
   transform: matrix(0, -1, -1, 0, 0, 0);
 }
 
-@media (min-width: 1440px) {
+/* @media (min-width: 1440px) {
   .yallah {
     display: none;
   }
-}
+} */
 
 /* ======================== provider ======================== */
 .provider {
