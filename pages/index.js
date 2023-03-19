@@ -14,7 +14,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Autoplay, Pagination, Navigation } from "swiper";
+import "swiper/css/free-mode";
+import { FreeMode, Autoplay, Pagination, Navigation } from "swiper";
 import { createClient } from "contentful";
 
 const DynamicNavbar = dynamic(() => import("../components/navbar"), {});
@@ -697,6 +698,12 @@ export default function Home({ features }) {
               clickable: true,
             }}
             navigation={true}
+            freeMode={true}
+            freeModeMomentum={false}
+            autoplay={{
+              delay: 0,
+              disableOnInteraction: false,
+            }}
             breakpoints={{
               769: {
                 slidesPerView: 2,
@@ -705,8 +712,8 @@ export default function Home({ features }) {
                 slidesPerView: 1,
               },
             }}
-            speed= {1000}
-            modules={[Pagination, Navigation]}
+            speed= {3000}
+            modules={[FreeMode, Autoplay, Pagination, Navigation]}
             className="swiper featureSwiper"
           >
             {features.map((feature) => (
@@ -954,15 +961,17 @@ export default function Home({ features }) {
           </div>
           <div className="early-user-slider slider-working">
             <Swiper
-              slidesPerView={1}
+              slidesPerView={3}
               spaceBetween={20}
               loop={true}
-              grabCursor={true}
               centeredSlides={true}
+              freeMode={true}
+              freeModeMomentum={false}
               autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
+                delay: 0,
+                disableOnInteraction: false
               }}
+              speed= {3000}
               breakpoints={{
                 0: {
                   slidesPerView: 1,
@@ -980,7 +989,7 @@ export default function Home({ features }) {
                   spaceBetween: 20,
                 },
               }}
-              modules={[Autoplay, Pagination]}
+              modules={[FreeMode, Autoplay]}
               className="swiper mySwiper mt-5"
             >
               {testimonials.map((testimonial) => (
