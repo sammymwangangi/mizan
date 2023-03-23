@@ -325,9 +325,10 @@ export default function Home({ features }) {
                   <label>Join our waiting list.</label>
                   <div className="join-btn-group d-flex align-items-center">
                     <button onClick={openModal} className="join">
-                      {/* <button className="join"> */}
                       JOIN WAITLIST
                     </button>
+
+                    {/* Join Waitlist Modal */}
                     <Transition appear show={isOpen} as={Fragment}>
                       <Dialog
                         as="div"
@@ -357,7 +358,7 @@ export default function Home({ features }) {
                               leaveFrom="tw-opacity-100 tw-scale-100"
                               leaveTo="tw-opacity-0 tw-scale-95"
                             >
-                              <Dialog.Panel className="tw-w-[1148px] tw-mx-auto tw-transform tw-overflow-hidden tw-rounded-2xl tw-bg-white tw-p-6 tw-align-middle tw-shadow-xl tw-transition-all">
+                              <Dialog.Panel className="tw-w-[1148px] tw-transform tw-overflow-hidden tw-rounded-2xl tw-bg-white tw-p-6 tw-align-middle tw-shadow-xl tw-transition-all">
                                 {/* close */}
                                 <div className="tw-absolute tw-top-0 tw-right-0 tw-hidden tw-pt-4 tw-pr-4 sm:tw-block">
                                   <button
@@ -382,7 +383,7 @@ export default function Home({ features }) {
                                   />
                                 </div>
                                 {/* main */}
-                                <div className="tw-flex">
+                                <div className="tw-flex tw-py-4 tw-pl-[54px] tw-pr-[76px]">
                                   <div className="-tw-z-1 tw-w-1/2 tw-mx-auto">
                                     <Image
                                       src={Images.join}
@@ -401,19 +402,19 @@ export default function Home({ features }) {
                                       </h2>
                                     </Dialog.Title>
                                     {/* description */}
-                                    <div className="tw-mt-5">
-                                      <p className="tw-text-[11px] tw-leading-[16.5px] tw-text-[#1B1C39]">
-                                        Mizan is the result of people who work to
-                                        challenge the restraints of traditional
-                                        banking. Join a movement, where people speak
-                                        your language, understand your hopes and
-                                        help you reach your financial goals. Help us
-                                        to fix banking for G. (In Shaa Allah).
+                                    <div className="tw-mt-4 tw-w-[445px]">
+                                      <p className="tw-text-[11px] tw-leading-[16.5px] tw-font-medium tw-text-[#6D6E8A]">
+                                        Mizan is the result of people who work
+                                        to challenge the restraints of
+                                        traditional banking. Join a movement,
+                                        where people speak your language,
+                                        understand your hopes and help you reach
+                                        your financial goals. Help us to fix
+                                        banking for G. (In Shaa Allah).
                                       </p>
                                     </div>
                                     {/* form */}
                                     <div className="tw-mt-4">
-                                      
                                       <div className="tw-relative tw-mt-3 tw-rounded-full">
                                         <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
                                           <Image
@@ -433,7 +434,6 @@ export default function Home({ features }) {
                                       </div>
                                     </div>
                                     <div className="tw-mt-4">
-                                      
                                       <div className="tw-relative tw-mt-3 tw-rounded-full">
                                         <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
                                           <Image
@@ -479,6 +479,7 @@ export default function Home({ features }) {
                         </div>
                       </Dialog>
                     </Transition>
+
                     <div className="border-gradient">
                       <button className="see-now">
                         SEE HOW
