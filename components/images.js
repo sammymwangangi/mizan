@@ -60,6 +60,11 @@ import youtube from "../public/images/homepage/youtube.svg";
 import dss from "../public/images/homepage/dss.svg";
 import closeBtn from "../public/images/homepage/close.svg";
 import mobileLogo from "../public/images/homepage/mobile-logo.svg";
+import join from "../public/images/homepage/join.png";
+import joinLogo from "../public/images/homepage/join-logo.svg";
+import smileJoin from "../public/images/homepage/smile.svg";
+import phoneJoin from "../public/images/homepage/phone.svg";
+import mailJoin from "../public/images/homepage/mail.svg";
 import brandLogo from "../public/images/brandstory/brand-logo.svg";
 import payOne from "../public/images/brandstory/pay1.svg";
 import payTwo from "../public/images/brandstory/pay2.svg";
@@ -133,4 +138,9 @@ export const Images = {
   outside2,
   chatUser,
   chatBot,
+  join,
+  joinLogo,
+  smileJoin,
+  phoneJoin,
+  mailJoin,
 };

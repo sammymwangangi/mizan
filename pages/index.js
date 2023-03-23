@@ -324,8 +324,8 @@ export default function Home({ features }) {
                 <div className="join-our-team">
                   <label>Join our waiting list.</label>
                   <div className="join-btn-group d-flex align-items-center">
-                    {/* <button onClick={openModal} className="join"> */}
-                    <button className="join">
+                    <button onClick={openModal} className="join">
+                    {/* <button className="join"> */}
                       JOIN WAITLIST
                     </button>
                     <Transition appear show={isOpen} as={Fragment}>
@@ -365,24 +365,23 @@ export default function Home({ features }) {
                                     onClick={() => setIsOpen(false)}
                                   >
                                     <span className="tw-sr-only">Close</span>
-                                    <XMarkIcon
-                                      className="tw-h-6 tw-w-6"
-                                      aria-hidden="true"
-                                    />
+                                    <span className="tw-text-[#6D6E8A] tw-underline" aria-hidden="true">exit beta</span> {'>'}
                                   </button>
+                                </div>
+                                <div className="tw-absolute tw-bottom-0 tw-left-0 tw-pb-4 tw-pl-[74px]">
+                                  <Image src={Images.joinLogo} alt={"join-logo"} />
                                 </div>
                                 <Dialog.Title
                                   as="h2"
                                   className="tw-text-lg tw-text-center tw-font-medium tw-leading-6 tw-text-gray-900"
                                 >
                                   <h2 className={styles.myModal}>
-                                    Join our waiting list
+                                  Apply for zero interest, 100% Islamic neobank coming to Kenya. 
                                   </h2>
                                 </Dialog.Title>
                                 <div className="tw-mt-5 tw-text-center">
-                                  <p className="tw-text-xl tw-leading-9 tw-text-[#1B1C39]">
-                                    Get closer to us and keep up-to-date with
-                                    all the latest news about our products
+                                  <p className="tw-text-[11px] tw-leading-[16.5px] tw-text-[#1B1C39]">
+                                  Mizan is the result of people who work to challenge the restraints of traditional banking. Join a movement, where people speak your language, understand your hopes and help you reach your financial goals. Help us to fix banking for G. (In Shaa Allah).
                                   </p>
                                 </div>
 
@@ -395,70 +394,17 @@ export default function Home({ features }) {
                                   </label>
                                   <div className="tw-relative tw-mt-3 tw-rounded-full">
                                     <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
-                                      <svg
-                                        className="tw-h-6 tw-w-6 tw-text-gray-400"
-                                        aria-hidden="true"
-                                        width="23"
-                                        height="24"
-                                        viewBox="0 0 23 24"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <g clip-path="url(#clip0_6860_16691)">
-                                          <path
-                                            d="M20.0117 14.8051V18.4273H6.51172L1.01172 22.4766V3.47656H4.53966"
-                                            stroke="#A276FF"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                          />
-                                          <circle
-                                            cx="14.5227"
-                                            cy="8.75019"
-                                            r="7.04804"
-                                            stroke="#A276FF"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                          />
-                                          <path
-                                            d="M16.502 9.58204C15.4087 10.6753 13.6362 10.6753 12.543 9.58204"
-                                            stroke="#A276FF"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                          />
-                                          <circle
-                                            cx="11.3973"
-                                            cy="6.87826"
-                                            r="1.1141"
-                                            fill="#A276FF"
-                                          />
-                                          <circle
-                                            cx="17.6473"
-                                            cy="6.87826"
-                                            r="1.1141"
-                                            fill="#A276FF"
-                                          />
-                                        </g>
-                                        <defs>
-                                          <clipPath id="clip0_6860_16691">
-                                            <rect
-                                              width="23"
-                                              height="24"
-                                              fill="white"
-                                            />
-                                          </clipPath>
-                                        </defs>
-                                      </svg>
+                                      <Image src={Images.smileJoin} alt={"smile-join"} />
                                     </div>
-                                    <input
-                                      type="text"
-                                      name="name"
-                                      id="name"
-                                      className="tw-block tw-w-full tw-bg-[#F3F1F9] tw-h-[62px] tw-rounded-full tw-border-0 tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] focus:tw-ring-2 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
-                                      placeholder="Name"
-                                    />
+                                    <div className="join-input">
+                                      <input
+                                        type="text"
+                                        name="name"
+                                        id="name"
+                                        className="tw-block tw-w-full tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] focus:tw-ring-2 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
+                                        placeholder="What is your name?"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                                 <div className="tw-mt-4">
@@ -470,70 +416,17 @@ export default function Home({ features }) {
                                   </label>
                                   <div className="tw-relative tw-mt-3 tw-rounded-full">
                                     <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
-                                      <svg
-                                        className="tw-h-6 tw-w-6 tw-text-gray-400"
-                                        aria-hidden="true"
-                                        width="23"
-                                        height="24"
-                                        viewBox="0 0 23 24"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <g clip-path="url(#clip0_6860_16691)">
-                                          <path
-                                            d="M20.0117 14.8051V18.4273H6.51172L1.01172 22.4766V3.47656H4.53966"
-                                            stroke="#A276FF"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                          />
-                                          <circle
-                                            cx="14.5227"
-                                            cy="8.75019"
-                                            r="7.04804"
-                                            stroke="#A276FF"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                          />
-                                          <path
-                                            d="M16.502 9.58204C15.4087 10.6753 13.6362 10.6753 12.543 9.58204"
-                                            stroke="#A276FF"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                          />
-                                          <circle
-                                            cx="11.3973"
-                                            cy="6.87826"
-                                            r="1.1141"
-                                            fill="#A276FF"
-                                          />
-                                          <circle
-                                            cx="17.6473"
-                                            cy="6.87826"
-                                            r="1.1141"
-                                            fill="#A276FF"
-                                          />
-                                        </g>
-                                        <defs>
-                                          <clipPath id="clip0_6860_16691">
-                                            <rect
-                                              width="23"
-                                              height="24"
-                                              fill="white"
-                                            />
-                                          </clipPath>
-                                        </defs>
-                                      </svg>
+                                    <Image src={Images.phoneJoin} alt={"phone-join"} />
                                     </div>
-                                    <input
-                                      type="text"
-                                      name="phone"
-                                      id="phone"
-                                      className="tw-block tw-w-full tw-bg-[#F3F1F9] tw-h-[62px] tw-rounded-full tw-border-0 tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] focus:tw-ring-2 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
-                                      placeholder="Phone number"
-                                    />
+                                    <div className="join-input">
+                                      <input
+                                        type="text"
+                                        name="phone"
+                                        id="phone"
+                                        className="tw-block tw-w-full tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] focus:tw-ring-2 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
+                                        placeholder="How can we reach out to you?"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                                 <div className="tw-mt-4">
@@ -545,70 +438,18 @@ export default function Home({ features }) {
                                   </label>
                                   <div className="tw-relative tw-mt-3 tw-rounded-full">
                                     <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
-                                      <svg
-                                        className="tw-h-6 tw-w-6 tw-text-gray-400"
-                                        aria-hidden="true"
-                                        width="23"
-                                        height="24"
-                                        viewBox="0 0 23 24"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <g clip-path="url(#clip0_6860_16691)">
-                                          <path
-                                            d="M20.0117 14.8051V18.4273H6.51172L1.01172 22.4766V3.47656H4.53966"
-                                            stroke="#A276FF"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                          />
-                                          <circle
-                                            cx="14.5227"
-                                            cy="8.75019"
-                                            r="7.04804"
-                                            stroke="#A276FF"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                          />
-                                          <path
-                                            d="M16.502 9.58204C15.4087 10.6753 13.6362 10.6753 12.543 9.58204"
-                                            stroke="#A276FF"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                          />
-                                          <circle
-                                            cx="11.3973"
-                                            cy="6.87826"
-                                            r="1.1141"
-                                            fill="#A276FF"
-                                          />
-                                          <circle
-                                            cx="17.6473"
-                                            cy="6.87826"
-                                            r="1.1141"
-                                            fill="#A276FF"
-                                          />
-                                        </g>
-                                        <defs>
-                                          <clipPath id="clip0_6860_16691">
-                                            <rect
-                                              width="23"
-                                              height="24"
-                                              fill="white"
-                                            />
-                                          </clipPath>
-                                        </defs>
-                                      </svg>
+                                    <Image src={Images.mailJoin} alt={"mail-join"} />
                                     </div>
-                                    <input
-                                      type="email"
-                                      name="email"
-                                      id="email"
-                                      className="tw-block tw-w-full tw-bg-[#F3F1F9] tw-h-[62px] tw-rounded-full tw-border-0 tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] focus:tw-ring-2 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
-                                      placeholder="Email"
-                                    />
+                                    <div className="join-input">
+                                      <input
+                                        type="email"
+                                        name="email"
+                                        id="email"
+                                        className="tw-block tw-w-full tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] focus:tw-ring-2 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
+                                        placeholder="or write to you?"
+                                      />
+                                    </div>
+
                                   </div>
                                 </div>
                                 <div className="tw-relative tw-flex tw-items-center tw-mt-[44px]">
