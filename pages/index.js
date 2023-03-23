@@ -358,7 +358,7 @@ export default function Home({ features }) {
                               leaveFrom="tw-opacity-100 tw-scale-100"
                               leaveTo="tw-opacity-0 tw-scale-95"
                             >
-                              <Dialog.Panel className="tw-w-[1148px] tw-transform tw-overflow-hidden tw-rounded-2xl tw-bg-white tw-p-6 tw-align-middle tw-shadow-xl tw-transition-all">
+                              <Dialog.Panel className="tw-w-[1148px] tw-h-[645px] tw-transform tw-overflow-hidden tw-rounded-2xl tw-bg-white tw-p-6 tw-align-middle tw-shadow-xl tw-transition-all">
                                 {/* close */}
                                 <div className="tw-absolute tw-top-0 tw-right-0 tw-hidden tw-pt-4 tw-pr-4 sm:tw-block">
                                   <button
@@ -388,6 +388,7 @@ export default function Home({ features }) {
                                     <Image
                                       src={Images.join}
                                       width={500}
+                                      className="tw-absolute tw-bottom-0"
                                       alt={"join"}
                                     />
                                   </div>
