@@ -324,7 +324,8 @@ export default function Home({ features }) {
                 <div className="join-our-team">
                   <label>Join our waiting list.</label>
                   <div className="join-btn-group d-flex align-items-center">
-                    <button onClick={openModal} className="join">
+                    {/* <button onClick={openModal} className="join"> */}
+                    <button className="join">
                       JOIN WAITLIST
                     </button>
                     <Transition appear show={isOpen} as={Fragment}>
