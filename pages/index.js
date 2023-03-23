@@ -757,10 +757,9 @@ export default function Home({ features }) {
           <div className="feature-header">
             <h1>Features</h1>
           </div>
-          <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+          <div>
             <Swiper
               slidesPerView={2}
-              ref={swiperRefLocal}
               spaceBetween={30}
               loop={true}
               grabCursor={true}
@@ -769,11 +768,6 @@ export default function Home({ features }) {
                 clickable: true,
               }}
               navigation={true}
-              freeMode={true}
-              autoplay={{
-                delay: 0,
-                disableOnInteraction: false,
-              }}
               breakpoints={{
                 769: {
                   slidesPerView: 2,
@@ -783,7 +777,7 @@ export default function Home({ features }) {
                 },
               }}
               speed={3000}
-              modules={[FreeMode, Autoplay, Pagination, Navigation]}
+              modules={[Pagination, Navigation]}
               className="swiper featureSwiper"
             >
               {features.map((feature) => (
