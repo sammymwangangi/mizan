@@ -386,7 +386,7 @@ export default function Home({ features }) {
                                 <div className="tw-flex tw-py-4 tw-pl-[54px] tw-pr-[76px]">
                                   <div className="-tw-z-1 tw-w-1/2 tw-mx-auto">
                                     <Image
-                                      src={Images.join}
+                                      src={Images.join2}
                                       width={500}
                                       className="tw-absolute tw-bottom-0"
                                       alt={"join"}
@@ -471,6 +471,11 @@ export default function Home({ features }) {
                                           />
                                         </div>
                                       </div>
+                                    </div>
+                                    <div className="tw-mt-4">
+                                      <button className="apply-beta">
+                                        APPLY FOR TRIAL
+                                      </button>
                                     </div>
                                   </div>
                                 </div>

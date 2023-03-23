@@ -4383,9 +4383,7 @@ p {
   border-radius: 50px;
   background: linear-gradient( 80.75deg, #D155FF 4.6%, #B532F2 17.14%, #A016E8 29.4%, #9406E2 40.22%, #8F00E0 48.46%, #A08CFF 92.32% );
 }
-/* background: linear-gradient(80.75deg, #D155FF 4.6%, #B532F2 17.14%, #A016E8 29.4%, #9406E2 40.22%, #8F00E0 48.46%, #A08CFF 92.32%),
-linear-gradient(0deg, #FFFFFF, #FFFFFF);
- */
+
 .typing-box input::-webkit-input-placeholder {
   font-weight: 300;
   font-family: Poppinsregular;
