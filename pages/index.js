@@ -325,7 +325,7 @@ export default function Home({ features }) {
                   <label>Join our waiting list.</label>
                   <div className="join-btn-group d-flex align-items-center">
                     <button onClick={openModal} className="join">
-                    {/* <button className="join"> */}
+                      {/* <button className="join"> */}
                       JOIN WAITLIST
                     </button>
                     <Transition appear show={isOpen} as={Fragment}>
@@ -358,6 +358,7 @@ export default function Home({ features }) {
                               leaveTo="tw-opacity-0 tw-scale-95"
                             >
                               <Dialog.Panel className="tw-w-[1148px] tw-px-[338px] tw-transform tw-overflow-hidden tw-rounded-2xl tw-bg-white tw-p-6 tw-align-middle tw-shadow-xl tw-transition-all">
+                                {/* close */}
                                 <div className="tw-absolute tw-top-0 tw-right-0 tw-hidden tw-pt-4 tw-pr-4 sm:tw-block">
                                   <button
                                     type="button"
@@ -365,36 +366,50 @@ export default function Home({ features }) {
                                     onClick={() => setIsOpen(false)}
                                   >
                                     <span className="tw-sr-only">Close</span>
-                                    <span className="tw-text-[#6D6E8A] tw-underline" aria-hidden="true">exit beta</span> {'>'}
+                                    <span
+                                      className="tw-text-[#6D6E8A] tw-underline"
+                                      aria-hidden="true"
+                                    >
+                                      exit beta
+                                    </span>{" "}
+                                    {">"}
                                   </button>
                                 </div>
                                 <div className="tw-absolute tw-bottom-0 tw-left-0 tw-pb-4 tw-pl-[74px]">
-                                  <Image src={Images.joinLogo} alt={"join-logo"} />
+                                  <Image
+                                    src={Images.joinLogo}
+                                    alt={"join-logo"}
+                                  />
                                 </div>
                                 <Dialog.Title
                                   as="h2"
                                   className="tw-text-lg tw-text-center tw-font-medium tw-leading-6 tw-text-gray-900"
                                 >
                                   <h2 className={styles.myModal}>
-                                  Apply for zero interest, 100% Islamic neobank coming to Kenya. 
+                                    Apply for zero interest, 100% Islamic
+                                    neobank coming to Kenya.
                                   </h2>
                                 </Dialog.Title>
+                                {/* description */}
                                 <div className="tw-mt-5 tw-text-center">
                                   <p className="tw-text-[11px] tw-leading-[16.5px] tw-text-[#1B1C39]">
-                                  Mizan is the result of people who work to challenge the restraints of traditional banking. Join a movement, where people speak your language, understand your hopes and help you reach your financial goals. Help us to fix banking for G. (In Shaa Allah).
+                                    Mizan is the result of people who work to
+                                    challenge the restraints of traditional
+                                    banking. Join a movement, where people speak
+                                    your language, understand your hopes and
+                                    help you reach your financial goals. Help us
+                                    to fix banking for G. (In Shaa Allah).
                                   </p>
                                 </div>
-
-                                <div className="tw-mt-12">
-                                  <label
-                                    htmlFor="name"
-                                    className="tw-block tw-text-base tw-font-medium tw-leading-6 tw-text-[#6D6E8A]"
-                                  >
-                                    What's your name?
-                                  </label>
+                                {/* form */}
+                                <div className="tw-mt-4">
+                                  
                                   <div className="tw-relative tw-mt-3 tw-rounded-full">
                                     <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
-                                      <Image src={Images.smileJoin} alt={"smile-join"} />
+                                      <Image
+                                        src={Images.smileJoin}
+                                        alt={"smile-join"}
+                                      />
                                     </div>
                                     <div className="join-input">
                                       <input
@@ -408,15 +423,13 @@ export default function Home({ features }) {
                                   </div>
                                 </div>
                                 <div className="tw-mt-4">
-                                  <label
-                                    htmlFor="phone"
-                                    className="tw-block tw-text-base tw-font-medium tw-leading-6 tw-text-[#6D6E8A]"
-                                  >
-                                    Could you leave us your phone number?
-                                  </label>
+                                  
                                   <div className="tw-relative tw-mt-3 tw-rounded-full">
                                     <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
-                                    <Image src={Images.phoneJoin} alt={"phone-join"} />
+                                      <Image
+                                        src={Images.phoneJoin}
+                                        alt={"phone-join"}
+                                      />
                                     </div>
                                     <div className="join-input">
                                       <input
@@ -430,15 +443,13 @@ export default function Home({ features }) {
                                   </div>
                                 </div>
                                 <div className="tw-mt-4">
-                                  <label
-                                    htmlFor="email"
-                                    className="tw-block tw-text-base tw-font-medium tw-leading-6 tw-text-[#6D6E8A]"
-                                  >
-                                    Could you share your Email?
-                                  </label>
+                                  
                                   <div className="tw-relative tw-mt-3 tw-rounded-full">
                                     <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
-                                    <Image src={Images.mailJoin} alt={"mail-join"} />
+                                      <Image
+                                        src={Images.mailJoin}
+                                        alt={"mail-join"}
+                                      />
                                     </div>
                                     <div className="join-input">
                                       <input
@@ -449,30 +460,11 @@ export default function Home({ features }) {
                                         placeholder="or write to you?"
                                       />
                                     </div>
-
                                   </div>
+
                                 </div>
                                 <div className="tw-relative tw-flex tw-items-center tw-mt-[44px]">
-                                  <div className="tw-flex tw-h-6 tw-items-center">
-                                    <input
-                                      id="comments"
-                                      aria-describedby="comments-description"
-                                      name="comments"
-                                      type="checkbox"
-                                      className="tw-h-4 tw-w-4 tw-rounded tw-border tw-border-gray-900 tw-text-indigo-600 focus:tw-ring-indigo-600"
-                                    />
-                                  </div>
-                                  <div className="tw-ml-3 tw-text-[10px] tw-leading-[16.5px]">
-                                    <span
-                                      id="comments-description"
-                                      className="tw-text-black"
-                                    >
-                                      I agree that Mizan may contact me to keep
-                                      me up-to-date about their news. I can
-                                      unsubscribe at any time using the
-                                      unsubscribe link.
-                                    </span>
-                                  </div>
+                                
                                 </div>
                               </Dialog.Panel>
                             </Transition.Child>
@@ -1098,21 +1090,22 @@ export default function Home({ features }) {
                       <div className="chatbox-main">
                         <ul>
                           <li>
-                          <div
-                                className="d-flex align-items-end"
-                                style={{ columnGap: "1.5rem" }}
-                              >
-                                <Image
-                                  loader={imageKitLoader}
-                                  src="chat-user.svg"
-                                  width={64}
-                                  height={64}
-                                  style={{ position: "relative", zIndex: "99" }}
-                                  alt="user"
-                                />
-                                <span>
-                                  Hi! My name’s Sofie, how can we help you?
-                                </span></div>
+                            <div
+                              className="d-flex align-items-end"
+                              style={{ columnGap: "1.5rem" }}
+                            >
+                              <Image
+                                loader={imageKitLoader}
+                                src="chat-user.svg"
+                                width={64}
+                                height={64}
+                                style={{ position: "relative", zIndex: "99" }}
+                                alt="user"
+                              />
+                              <span>
+                                Hi! My name’s Sofie, how can we help you?
+                              </span>
+                            </div>
                           </li>
                           {chatLog.map((message, index) => (
                             <li key={index}>
@@ -1121,7 +1114,11 @@ export default function Home({ features }) {
                                 style={{ columnGap: "1.5rem" }}
                               >
                                 <Image
-                                  src={message.type === "user" ? Images.chatBot : Images.chatUser}
+                                  src={
+                                    message.type === "user"
+                                      ? Images.chatBot
+                                      : Images.chatUser
+                                  }
                                   alt={message.type === "user" ? "user" : "bot"}
                                   width={64}
                                   height={64}
