@@ -357,7 +357,7 @@ export default function Home({ features }) {
                               leaveFrom="tw-opacity-100 tw-scale-100"
                               leaveTo="tw-opacity-0 tw-scale-95"
                             >
-                              <Dialog.Panel className="tw-w-[1148px] tw-px-[338px] tw-transform tw-overflow-hidden tw-rounded-2xl tw-bg-white tw-p-6 tw-align-middle tw-shadow-xl tw-transition-all">
+                              <Dialog.Panel className="tw-w-[1148px] tw-mx-auto tw-transform tw-overflow-hidden tw-rounded-2xl tw-bg-white tw-p-6 tw-align-middle tw-shadow-xl tw-transition-all">
                                 {/* close */}
                                 <div className="tw-absolute tw-top-0 tw-right-0 tw-hidden tw-pt-4 tw-pr-4 sm:tw-block">
                                   <button
@@ -381,90 +381,97 @@ export default function Home({ features }) {
                                     alt={"join-logo"}
                                   />
                                 </div>
-                                <Dialog.Title
-                                  as="h2"
-                                  className="tw-text-lg tw-text-center tw-font-medium tw-leading-6 tw-text-gray-900"
-                                >
-                                  <h2 className={styles.myModal}>
-                                    Apply for zero interest, 100% Islamic
-                                    neobank coming to Kenya.
-                                  </h2>
-                                </Dialog.Title>
-                                {/* description */}
-                                <div className="tw-mt-5 tw-text-center">
-                                  <p className="tw-text-[11px] tw-leading-[16.5px] tw-text-[#1B1C39]">
-                                    Mizan is the result of people who work to
-                                    challenge the restraints of traditional
-                                    banking. Join a movement, where people speak
-                                    your language, understand your hopes and
-                                    help you reach your financial goals. Help us
-                                    to fix banking for G. (In Shaa Allah).
-                                  </p>
-                                </div>
-                                {/* form */}
-                                <div className="tw-mt-4">
-                                  
-                                  <div className="tw-relative tw-mt-3 tw-rounded-full">
-                                    <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
-                                      <Image
-                                        src={Images.smileJoin}
-                                        alt={"smile-join"}
-                                      />
+                                {/* main */}
+                                <div className="tw-flex">
+                                  <div className="-tw-z-1 tw-w-1/2 tw-mx-auto">
+                                    <Image
+                                      src={Images.join}
+                                      width={500}
+                                      alt={"join"}
+                                    />
+                                  </div>
+                                  <div className="tw-w-1/2 tw-mx-auto">
+                                    <Dialog.Title
+                                      as="h2"
+                                      className="tw-text-lg tw-font-medium tw-leading-6 tw-text-gray-900"
+                                    >
+                                      <h2 className={styles.myModal}>
+                                        Apply for zero interest, 100% Islamic
+                                        neobank coming to Kenya.
+                                      </h2>
+                                    </Dialog.Title>
+                                    {/* description */}
+                                    <div className="tw-mt-5">
+                                      <p className="tw-text-[11px] tw-leading-[16.5px] tw-text-[#1B1C39]">
+                                        Mizan is the result of people who work to
+                                        challenge the restraints of traditional
+                                        banking. Join a movement, where people speak
+                                        your language, understand your hopes and
+                                        help you reach your financial goals. Help us
+                                        to fix banking for G. (In Shaa Allah).
+                                      </p>
                                     </div>
-                                    <div className="join-input">
-                                      <input
-                                        type="text"
-                                        name="name"
-                                        id="name"
-                                        className="tw-block tw-w-full tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] focus:tw-ring-2 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
-                                        placeholder="What is your name?"
-                                      />
+                                    {/* form */}
+                                    <div className="tw-mt-4">
+                                      
+                                      <div className="tw-relative tw-mt-3 tw-rounded-full">
+                                        <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
+                                          <Image
+                                            src={Images.smileJoin}
+                                            alt={"smile-join"}
+                                          />
+                                        </div>
+                                        <div className="join-input">
+                                          <input
+                                            type="text"
+                                            name="name"
+                                            id="name"
+                                            className="tw-block tw-w-full tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] focus:tw-ring-0 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
+                                            placeholder="What is your name?"
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div className="tw-mt-4">
+                                      
+                                      <div className="tw-relative tw-mt-3 tw-rounded-full">
+                                        <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
+                                          <Image
+                                            src={Images.phoneJoin}
+                                            alt={"phone-join"}
+                                          />
+                                        </div>
+                                        <div className="join-input">
+                                          <input
+                                            type="text"
+                                            name="phone"
+                                            id="phone"
+                                            className="tw-block tw-w-full tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] focus:tw-ring-0 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
+                                            placeholder="How can we reach out to you?"
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div className="tw-mt-4">
+                                      <div className="tw-relative tw-mt-3 tw-rounded-full">
+                                        <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
+                                          <Image
+                                            src={Images.mailJoin}
+                                            alt={"mail-join"}
+                                          />
+                                        </div>
+                                        <div className="join-input">
+                                          <input
+                                            type="email"
+                                            name="email"
+                                            id="email"
+                                            className="tw-block tw-w-full tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] focus:tw-ring-0 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
+                                            placeholder="or write to you?"
+                                          />
+                                        </div>
+                                      </div>
                                     </div>
                                   </div>
-                                </div>
-                                <div className="tw-mt-4">
-                                  
-                                  <div className="tw-relative tw-mt-3 tw-rounded-full">
-                                    <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
-                                      <Image
-                                        src={Images.phoneJoin}
-                                        alt={"phone-join"}
-                                      />
-                                    </div>
-                                    <div className="join-input">
-                                      <input
-                                        type="text"
-                                        name="phone"
-                                        id="phone"
-                                        className="tw-block tw-w-full tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] focus:tw-ring-2 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
-                                        placeholder="How can we reach out to you?"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="tw-mt-4">
-                                  
-                                  <div className="tw-relative tw-mt-3 tw-rounded-full">
-                                    <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
-                                      <Image
-                                        src={Images.mailJoin}
-                                        alt={"mail-join"}
-                                      />
-                                    </div>
-                                    <div className="join-input">
-                                      <input
-                                        type="email"
-                                        name="email"
-                                        id="email"
-                                        className="tw-block tw-w-full tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] focus:tw-ring-2 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
-                                        placeholder="or write to you?"
-                                      />
-                                    </div>
-                                  </div>
-
-                                </div>
-                                <div className="tw-relative tw-flex tw-items-center tw-mt-[44px]">
-                                
                                 </div>
                               </Dialog.Panel>
                             </Transition.Child>
