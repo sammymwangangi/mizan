@@ -17,6 +17,8 @@ import "swiper/css/navigation";
 import "swiper/css/free-mode";
 import { FreeMode, Autoplay, Pagination, Navigation } from "swiper";
 import { createClient } from "contentful";
+import openai from "../openai";
+import axios from "axios";
 
 const DynamicNavbar = dynamic(() => import("../components/navbar"), {});
 
@@ -95,6 +97,49 @@ const testimonials = [
 ];
 
 export default function Home({ features }) {
+  // chatGPT integration
+  const [inputValue, setInputValue] = useState("");
+  const [chatLog, setChatLog] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    setChatLog((prevChatLog) => [
+      ...prevChatLog,
+      { type: "user", message: inputValue },
+    ]);
+
+    sendMessage(inputValue);
+
+    setInputValue("");
+  };
+
+  const sendMessage = (message) => {
+    const url = "/api/chat";
+
+    const data = {
+      model: "gpt-3.5-turbo-0301",
+      messages: [{ role: "user", content: message }],
+    };
+
+    setIsLoading(true);
+
+    axios
+      .post(url, data)
+      .then((response) => {
+        console.log(response);
+        setChatLog((prevChatLog) => [
+          ...prevChatLog,
+          { type: "bot", message: response.data.choices[0].message.content },
+        ]);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        setIsLoading(false);
+        console.log(error);
+      });
+  };
   // console.log(features);
   const [avatarIndex, setAvatarIndex] = useState(0);
 
@@ -136,49 +181,65 @@ export default function Home({ features }) {
   useEffect(() => {
     function handleButtonClick(event) {
       const target = event.target;
-      const buttons = document.querySelectorAll('.pricing .pricing-top-btn button');
+      const buttons = document.querySelectorAll(
+        ".pricing .pricing-top-btn button"
+      );
       buttons.forEach((button) => {
-        button.classList.remove('active');
+        button.classList.remove("active");
       });
-      target.classList.add('active');
+      target.classList.add("active");
     }
 
     function handlePurpleClick() {
-      document.getElementById('purple-show').style.display = 'block';
-      document.getElementById('metal-show').style.display = 'none';
-      document.getElementById('premium-show').style.display = 'none';
+      document.getElementById("purple-show").style.display = "block";
+      document.getElementById("metal-show").style.display = "none";
+      document.getElementById("premium-show").style.display = "none";
     }
 
     function handlePremiumClick() {
-      document.getElementById('purple-show').style.display = 'none';
-      document.getElementById('metal-show').style.display = 'none';
-      document.getElementById('premium-show').style.display = 'block';
+      document.getElementById("purple-show").style.display = "none";
+      document.getElementById("metal-show").style.display = "none";
+      document.getElementById("premium-show").style.display = "block";
     }
 
     function handleMetalClick() {
-      document.getElementById('purple-show').style.display = 'none';
-      document.getElementById('metal-show').style.display = 'block';
-      document.getElementById('premium-show').style.display = 'none';
+      document.getElementById("purple-show").style.display = "none";
+      document.getElementById("metal-show").style.display = "block";
+      document.getElementById("premium-show").style.display = "none";
     }
 
-    const buttons = document.querySelectorAll('.pricing .pricing-top-btn button');
+    const buttons = document.querySelectorAll(
+      ".pricing .pricing-top-btn button"
+    );
     buttons.forEach((button) => {
-      button.addEventListener('click', handleButtonClick);
+      button.addEventListener("click", handleButtonClick);
     });
 
-    document.getElementById('purple').addEventListener('click', handlePurpleClick);
-    document.getElementById('premium').addEventListener('click', handlePremiumClick);
-    document.getElementById('metal').addEventListener('click', handleMetalClick);
+    document
+      .getElementById("purple")
+      .addEventListener("click", handlePurpleClick);
+    document
+      .getElementById("premium")
+      .addEventListener("click", handlePremiumClick);
+    document
+      .getElementById("metal")
+      .addEventListener("click", handleMetalClick);
 
     // Cleanup function to remove the event listeners when the component unmounts
     return () => {
       buttons.forEach((button) => {
-        button.removeEventListener('click', handleButtonClick);
+        button.removeEventListener("click", handleButtonClick);
       });
-      document.getElementById('purple')?.removeEventListener('click', handlePurpleClick);
-    document.getElementById('premium')?.removeEventListener('click', handlePremiumClick);
-    document.getElementById('metal')?.removeEventListener('click', handleMetalClick);
-  };
+      document
+        .getElementById("purple")
+        ?.removeEventListener("click", handlePurpleClick);
+      document
+        .getElementById("premium")
+        ?.removeEventListener("click", handlePremiumClick);
+      document
+        .getElementById("metal")
+        ?.removeEventListener("click", handleMetalClick);
+    };
   }, []);
 
   let [isOpen, setIsOpen] = useState(false);
@@ -191,15 +252,15 @@ export default function Home({ features }) {
     setIsOpen(true);
   }
 
-  const swiperRefLocal = useRef()
+  const swiperRefLocal = useRef();
 
-    const handleMouseEnter = () => {
-        swiperRefLocal?.current?.swiper?.autoplay?.stop()
-    };
+  const handleMouseEnter = () => {
+    swiperRefLocal?.current?.swiper?.autoplay?.stop();
+  };
 
-    const handleMouseLeave = () => {
-        swiperRefLocal?.current?.swiper?.autoplay?.start()
-    };
+  const handleMouseLeave = () => {
+    swiperRefLocal?.current?.swiper?.autoplay?.start();
+  };
 
   return (
     <>
@@ -709,7 +770,6 @@ export default function Home({ features }) {
               }}
               navigation={true}
               freeMode={true}
-              freeModeMomentum={false}
               autoplay={{
                 delay: 0,
                 disableOnInteraction: false,
@@ -722,7 +782,7 @@ export default function Home({ features }) {
                   slidesPerView: 1,
                 },
               }}
-              speed= {3000}
+              speed={3000}
               modules={[FreeMode, Autoplay, Pagination, Navigation]}
               className="swiper featureSwiper"
             >
@@ -739,7 +799,8 @@ export default function Home({ features }) {
                             feature.fields.image.fields.file.details.image.width
                           }
                           height={
-                            feature.fields.image.fields.file.details.image.height
+                            feature.fields.image.fields.file.details.image
+                              .height
                           }
                         />
                       </div>
@@ -970,7 +1031,11 @@ export default function Home({ features }) {
               </div>
             </div>
           </div>
-          <div className="early-user-slider slider-working" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+          <div
+            className="early-user-slider slider-working"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
             <Swiper
               slidesPerView={3}
               ref={swiperRefLocal}
@@ -978,12 +1043,11 @@ export default function Home({ features }) {
               loop={true}
               centeredSlides={true}
               freeMode={true}
-              freeModeMomentum={false}
               autoplay={{
                 delay: 0,
-                disableOnInteraction: true
+                disableOnInteraction: true,
               }}
-              speed= {3000}
+              speed={3000}
               breakpoints={{
                 0: {
                   slidesPerView: 1,
@@ -1144,39 +1208,39 @@ export default function Home({ features }) {
               </div>
             </div>
           </section>
-
         </section>
-          <section className="yallah">
+        <section className="yallah">
           <img
             src="/images/homepage/yallahbig.svg"
             className="yallah-big"
             alt="pattern"
           />
-            <div className="yallah-main-box tw-relative tw-overflow-hidden">
-              <img
-                src="/images/homepage/yallahbg.svg"
-                className="yallah-bg"
-                alt="pattern"
-              />
-              <img
-                src="/images/homepage/yallah1.svg"
-                className="yallah-bg2"
-                alt="pattern"
-              />
-              <div className="text-center">
-                <h1>
-                  Yallah, let’s
-                  <br /> get started
-                </h1>
-                <p>
-                Habibi, its time to level up your money <br />game, be part of the first 1,000 subscribers. 
-                </p>
-                <button onClick={openModal} className="yallah-waitlist">
-                  JOIN WAITLIST
-                </button>
-              </div>
+          <div className="yallah-main-box tw-relative tw-overflow-hidden">
+            <img
+              src="/images/homepage/yallahbg.svg"
+              className="yallah-bg"
+              alt="pattern"
+            />
+            <img
+              src="/images/homepage/yallah1.svg"
+              className="yallah-bg2"
+              alt="pattern"
+            />
+            <div className="text-center">
+              <h1>
+                Yallah, let’s
+                <br /> get started
+              </h1>
+              <p>
+                Habibi, its time to level up your money <br />
+                game, be part of the first 1,000 subscribers.
+              </p>
+              <button onClick={openModal} className="yallah-waitlist">
+                JOIN WAITLIST
+              </button>
             </div>
-          </section>
+          </div>
+        </section>
 
         <section className="questions">
           <div className="questions-working">
@@ -1194,32 +1258,72 @@ export default function Home({ features }) {
               <div className="col-lg-6 col-md-6 col-sm-12 text-start">
                 <div className="left-voice-img">
                   <div className="chat-box-border">
-                    <div className="chatbox-main">
-                      <ul>
-                        <li>
+                    <form onSubmit={handleSubmit}>
+                      <div className="chatbox-main">
+                        <ul>
+                          <li>
                           <div
-                            className="d-flex align-items-end"
-                            style={{ columnGap: "1.5rem" }}
-                          >
-                            <Image
-                              loader={imageKitLoader}
-                              src="chat-user.svg"
-                              width={64}
-                              height={64}
-                              style={{ position: "relative", zIndex: "99" }}
-                              alt="user"
-                            />
-                            <span>
-                              Hi! My name’s Sofie, how can we help you?
-                            </span>
-                          </div>
-                        </li>
-                      </ul>
-                      <div className="typing-box d-flex align-items-center gap-3">
-                        <Image src={Images.typeIcon} alt="" />
-                        <input type="text" placeholder="Start typing.." />
+                                className="d-flex align-items-end"
+                                style={{ columnGap: "1.5rem" }}
+                              >
+                                <Image
+                                  loader={imageKitLoader}
+                                  src="chat-user.svg"
+                                  width={64}
+                                  height={64}
+                                  style={{ position: "relative", zIndex: "99" }}
+                                  alt="user"
+                                />
+                                <span>
+                                  Hi! My name’s Sofie, how can we help you?
+                                </span></div>
+                          </li>
+                          {chatLog.map((message, index) => (
+                            <li key={index}>
+                              <div
+                                className="d-flex align-items-end"
+                                style={{ columnGap: "1.5rem" }}
+                              >
+                                <Image
+                                  src={message.type === "user" ? Images.chatBot : Images.chatUser}
+                                  alt={message.type === "user" ? "user" : "bot"}
+                                  width={64}
+                                  height={64}
+                                  style={{ position: "relative", zIndex: "99" }}
+                                />
+                                <div
+                                  key={index}
+                                  className={`tw-flex ${
+                                    message.type === "user"
+                                      ? "tw-justify-end"
+                                      : "tw-justify-start"
+                                  }`}
+                                >
+                                  <div
+                                    className={`${
+                                      message.type === "user"
+                                        ? "tw-bg-[#A276FF]"
+                                        : "tw-bg-[#6943AF1A] tw-text-gray-700"
+                                    } tw-rounded-lg tw-p-4 tw-text-white tw-max-w-sm`}
+                                  >
+                                    {message.message}
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                          ))}
+                        </ul>
+                        <div className="typing-box d-flex align-items-center gap-3">
+                          <Image src={Images.typeIcon} alt="" />
+                          <input
+                            type="text"
+                            placeholder="Start typing.."
+                            value={inputValue}
+                            onChange={(e) => setInputValue(e.target.value)}
+                          />
+                        </div>
                       </div>
-                    </div>
+                    </form>
                   </div>
                 </div>
               </div>

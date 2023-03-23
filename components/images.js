@@ -47,7 +47,8 @@ import provider3 from "../public/images/homepage/provider3.svg";
 import provider4 from "../public/images/homepage/provider4.svg";
 import voice from "../public/images/homepage/voice.svg";
 import zendesk from "../public/images/homepage/Zendesk.svg";
-// import chatUser from "../public/images/homepage/chat-user.svg";
+import chatUser from "../public/images/homepage/chat-user.svg";
+import chatBot from "../public/images/homepage/chat-bot.svg";
 import typeIcon from "../public/images/homepage/type-icone.svg";
 import footerLogo from "../public/images/homepage/footer-logo.svg";
 import apple from "../public/images/homepage/apple.svg";
@@ -130,4 +131,6 @@ export const Images = {
   payTwo,
   outside1,
   outside2,
+  chatUser,
+  chatBot,
 };
