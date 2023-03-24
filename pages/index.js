@@ -884,7 +884,6 @@ export default function Home({ features }) {
               ref={swiperRefLocal}
               spaceBetween={20}
               loop={true}
-              centeredSlides={true}
               freeMode={true}
               autoplay={{
                 delay: 0,
@@ -892,9 +891,6 @@ export default function Home({ features }) {
               }}
               speed={3000}
               breakpoints={{
-                0: {
-                  slidesPerView: 1,
-                },
                 769: {
                   slidesPerView: 2,
                   spaceBetween: 20,
