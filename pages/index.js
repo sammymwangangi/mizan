@@ -332,8 +332,9 @@ export default function Home({ features }) {
                     <Transition appear show={isOpen} as={Fragment}>
                       <Dialog
                         as="div"
-                        className="tw-relative tw-z-10"
+                        className="tw-relative"
                         onClose={closeModal}
+                        style={{zIndex: "1000"}}
                       >
                         <Transition.Child
                           as={Fragment}
