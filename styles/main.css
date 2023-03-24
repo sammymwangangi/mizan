@@ -3354,9 +3354,9 @@ p {
 }
 
 .questions .questions-header p {
-  font-weight: 600;
-  font-size: 20px;
-  background: linear-gradient(92.68deg, #000000 -26.9%, #a488ff 87.65%);
+  font-weight: 500;
+  font-size: 16px;
+  background: linear-gradient(92.68deg, #000000 -26.9%, #A488FF 87.65%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

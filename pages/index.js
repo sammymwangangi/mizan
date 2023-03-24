@@ -1086,8 +1086,12 @@ export default function Home({ features }) {
         <section className="questions">
           <div className="questions-working">
             <div className="questions-header">
-              <h1>Any questions?</h1>
-              <p className="mt-3">Chat with our Award Winning Robo Advisor</p>
+              <h1>Mizan Knowlege Central</h1>
+              <p className="mt-3">
+              Do you want learn more (about say, sukuks, ETFs or BNPL)? <br/>
+              Simply chat with our 24/7 A.I assistance.
+
+              </p>
             </div>
             <div className="row align-items-center mt-5">
               <div className="col-lg-6 col-md-6 col-sm-12 text-start">
@@ -1148,11 +1152,14 @@ export default function Home({ features }) {
                                   <div
                                     className={`${
                                       message.type === "user"
-                                        ? "tw-bg-[#A276FF]"
-                                        : "tw-bg-[#6943AF1A] tw-text-gray-700"
+                                        ? "tw-bg-white"
+                                        : "tw-bg-white"
                                     } tw-rounded-lg tw-p-4 tw-text-white tw-max-w-sm`}
                                   >
+                                    <span>
+
                                     {message.message}
+                                    </span>
                                   </div>
                                 </div>
                               </div>
