@@ -2879,8 +2879,8 @@ p {
   );
   box-shadow: 0px 20px 70px rgba(105, 67, 175, 0.4);
   border-radius: 25px;
-  height: 570px;
-  padding: 60px;
+  height: 571px;
+  /* padding: 60px; */
   z-index: -1;
 }
 
@@ -2923,7 +2923,7 @@ p {
   color: #ffffff;
 }
 
-.yallah .yallah-main-box button {
+/* .yallah .yallah-main-box button {
   width: 320px;
   height: 55px;
   background: #1b1c39;
@@ -2936,7 +2936,7 @@ p {
   text-transform: uppercase;
   color: white;
   margin-top: 64px;
-}
+} */
 .yallah .yallah-main-box .yallah1 {
   position: absolute;
   width: 918px;

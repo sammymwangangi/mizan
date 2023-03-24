@@ -569,7 +569,7 @@ export default function Home({ features }) {
                     they find a problem to solve. Thats why we’ve chosen to run
                     a beta phase.
                   </p>
-                  <button className="apply-beta">
+                  <button onClick={openModal} className="apply-beta">
                     Apply for the Beta Progam
                   </button>
                 </div>
@@ -776,7 +776,7 @@ export default function Home({ features }) {
                       />
                     </div>
                   </div>
-                  <button className="purple-subscribe">
+                  <button onClick={openModal} className="purple-subscribe">
                     Subscribe (Trial)
                   </button>
                 </div>
@@ -807,7 +807,7 @@ export default function Home({ features }) {
                       <Image src={Images.premium} width="100%" alt="" />
                     </div>
                   </div>
-                  <button className="purple-subscribe premium-bg">
+                  <button onClick={openModal} className="purple-subscribe premium-bg">
                     Subscribe (Trial)
                   </button>
                 </div>
@@ -841,7 +841,7 @@ export default function Home({ features }) {
                       />
                     </div>
                   </div>
-                  <button className="purple-subscribe metal-bg">
+                  <button onClick={openModal} className="purple-subscribe metal-bg">
                     Subscribe (Trial)
                   </button>
                 </div>
@@ -1058,18 +1058,20 @@ export default function Home({ features }) {
             className="yallah-big"
             alt="pattern"
           />
-          <div className="yallah-main-box tw-relative tw-overflow-hidden">
-            <img
-              src="/images/homepage/yallahbg.svg"
-              className="yallah-bg"
-              alt="pattern"
-            />
-            <img
-              src="/images/homepage/yallah1.svg"
-              className="yallah-bg2"
-              alt="pattern"
-            />
-            <div className="text-center">
+          <div className="yallah-main-box tw-overflow-hidden">
+            <div className="tw-relative">
+              <img
+                src="/images/homepage/yallahbg.svg"
+                className="yallah-bg"
+                alt="pattern"
+              />
+              <img
+                src="/images/homepage/yallah1.svg"
+                className="yallah-bg2"
+                alt="pattern"
+              />
+            </div>
+            <div className="text-center tw-z-10">
               <h1>
                 Yallah, let’s
                 <br /> get started
@@ -1078,7 +1080,7 @@ export default function Home({ features }) {
                 Habibi, its time to level up your money <br />
                 game, be part of the first 1,000 subscribers.
               </p>
-              <button onClick={openModal} className="yallah-waitlist">
+              <button onClick={openModal} className={styles.yallahWaitlist}>
                 JOIN WAITLIST
               </button>
             </div>
