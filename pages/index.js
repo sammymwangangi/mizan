@@ -405,14 +405,8 @@ export default function Home({ features }) {
                                     </Dialog.Title>
                                     {/* description */}
                                     <div className="tw-mt-4 tw-w-[445px]">
-                                      <p className="tw-text-[11px] tw-leading-[16.5px] tw-font-medium tw-text-[#6D6E8A]">
-                                        Mizan is the result of people who work
-                                        to challenge the restraints of
-                                        traditional banking. Join a movement,
-                                        where people speak your language,
-                                        understand your hopes and help you reach
-                                        your financial goals. Help us to fix
-                                        banking for G. (In Shaa Allah).
+                                      <p className="tw-text-[15px] tw-leading-[22.5px] tw-font-semibold tw-text-[#6D6E8A]">
+                                      Join a movement, where people speak your language,<br/> understand your hopes and help you reach your financial<br/> goals. Help us to fix banking for G. (In Shaa Allah).
                                       </p>
                                     </div>
                                     {/* form */}
