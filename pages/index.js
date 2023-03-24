@@ -698,7 +698,7 @@ export default function Home({ features }) {
                     nearest dollar and invests the spare change into your Invest
                     account portfolio or a charity of your choice.
                   </p>
-                  <button className="join-witlinst">JOIN WAITLIST</button>
+                  <button onClick={openModal} className="join-witlinst">JOIN WAITLIST</button>
                 </div>
               </div>
               <div className="col-xl-7 col-lg-7 col-md-12">
