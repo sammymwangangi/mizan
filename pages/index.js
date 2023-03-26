@@ -1124,17 +1124,18 @@ export default function Home({ features }) {
                                 className="d-flex align-items-end"
                                 style={{ columnGap: "1.5rem" }}
                               >
-                                <Image
-                                  src={
-                                    message.type === "user"
-                                      ? Images.chatBot
-                                      : Images.chatUser
-                                  }
-                                  alt={message.type === "user" ? "user" : "bot"}
-                                  width={64}
-                                  height={64}
-                                  style={{ position: "relative", zIndex: "99" }}
-                                />
+                                {message.type != "user" &&
+
+                                  <Image
+                                    src={
+                                      Images.chatUser
+                                    }
+                                    alt={"user"}
+                                    width={64}
+                                    height={64}
+                                    style={{ position: "relative", zIndex: "99" }}
+                                  />
+                                }
                                 <div
                                   key={index}
                                   className={`tw-flex ${
