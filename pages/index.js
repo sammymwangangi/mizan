@@ -405,14 +405,8 @@ export default function Home({ features }) {
                                     </Dialog.Title>
                                     {/* description */}
                                     <div className="tw-mt-4 tw-w-[445px]">
-                                      <p className="tw-text-[11px] tw-leading-[16.5px] tw-font-medium tw-text-[#6D6E8A]">
-                                        Mizan is the result of people who work
-                                        to challenge the restraints of
-                                        traditional banking. Join a movement,
-                                        where people speak your language,
-                                        understand your hopes and help you reach
-                                        your financial goals. Help us to fix
-                                        banking for G. (In Shaa Allah).
+                                      <p className="tw-text-[15px] tw-leading-[22.5px] tw-font-semibold tw-text-[#6D6E8A]">
+                                      Join a movement, where people speak your language,<br/> understand your hopes and help you reach your financial<br/> goals. Help us to fix banking for G. (In Shaa Allah).
                                       </p>
                                     </div>
                                     {/* form */}
@@ -1130,17 +1124,18 @@ export default function Home({ features }) {
                                 className="d-flex align-items-end"
                                 style={{ columnGap: "1.5rem" }}
                               >
-                                <Image
-                                  src={
-                                    message.type === "user"
-                                      ? Images.chatBot
-                                      : Images.chatUser
-                                  }
-                                  alt={message.type === "user" ? "user" : "bot"}
-                                  width={64}
-                                  height={64}
-                                  style={{ position: "relative", zIndex: "99" }}
-                                />
+                                {message.type != "user" &&
+
+                                  <Image
+                                    src={
+                                      Images.chatUser
+                                    }
+                                    alt={"user"}
+                                    width={64}
+                                    height={64}
+                                    style={{ position: "relative", zIndex: "99" }}
+                                  />
+                                }
                                 <div
                                   key={index}
                                   className={`tw-flex ${
