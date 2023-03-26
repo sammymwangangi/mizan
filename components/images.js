@@ -71,6 +71,14 @@ import payOne from "../public/images/brandstory/pay1.svg";
 import payTwo from "../public/images/brandstory/pay2.svg";
 import outside1 from "../public/images/brandstory/outside1.svg";
 import outside2 from "../public/images/brandstory/outside2.svg";
+import linkedin2 from "../public/images/homepage/social/linkedin.svg";
+import facebook2 from "../public/images/homepage/social/facebook.svg";
+import youtube2 from "../public/images/homepage/social/youtube.svg";
+import twitter2 from "../public/images/homepage/social/twitter.svg";
+import love2 from "../public/images/homepage/social/love.svg";
+import smile from "../public/images/homepage/social/smile.svg";
+import wink2 from "../public/images/homepage/social/wink.svg";
+import kiss from "../public/images/homepage/social/kiss.svg";
 
 export const Images = {
   cardsBG,
@@ -129,6 +137,10 @@ export const Images = {
   facebook,
   twitter,
   youtube,
+  linkedin2,
+  facebook2,
+  twitter2,
+  youtube2,
   dss,
   closeBtn,
   mobileLogo,
@@ -145,4 +157,8 @@ export const Images = {
   smileJoin,
   phoneJoin,
   mailJoin,
+  love2,
+  smile,
+  wink2,
+  kiss,
 };
