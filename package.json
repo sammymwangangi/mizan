@@ -18,14 +18,17 @@
     "contentful": "^9.3.5",
     "eslint": "8.35.0",
     "eslint-config-next": "13.2.1",
+    "formik": "^2.2.9",
     "framer-motion": "^10.3.1",
     "keen-slider": "^6.8.5",
     "next": "13.2.1",
     "openai": "^3.2.1",
     "react": "18.2.0",
+    "react-canvas-confetti": "^1.4.0",
     "react-dom": "18.2.0",
     "sharp": "^0.31.3",
-    "swiper": "^9.1.0"
+    "swiper": "^9.1.0",
+    "yup": "^1.0.2"
   },
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",

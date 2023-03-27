@@ -19,6 +19,9 @@ import { FreeMode, Autoplay, Pagination, Navigation } from "swiper";
 import { createClient } from "contentful";
 import openai from "../openai";
 import axios from "axios";
+import Confetti from "../components/Confetti";
+import { Formik, Form, Field, ErrorMessage, useFormik } from 'formik';
+import * as Yup from "yup";
 
 const DynamicNavbar = dynamic(() => import("../components/navbar"), {});
 
@@ -97,6 +100,30 @@ const testimonials = [
 ];
 
 export default function Home({ features }) {
+  // form
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      phone: "",
+      email: "",
+    },
+    validationSchema: Yup.object({
+      name: Yup.string()
+      .max(20, "Name must be 20 characters or less")
+      .required("Name is required"),
+      phone: Yup.string()
+      .required("Phone is required"),
+      email: Yup.string()
+      .email("Invalid email address")
+      .required("Email is required"),
+    }),
+    onSubmit: (values) => {
+      console.log(values);
+    },
+  });
+  // console.log(formik.values);
+  // confetti
+  const [isVisible, setIsVisible] = useState(false);
   // chatGPT integration
   const [inputValue, setInputValue] = useState("");
   const [chatLog, setChatLog] = useState([]);
@@ -344,7 +371,7 @@ export default function Home({ features }) {
                         as="div"
                         className="tw-relative"
                         onClose={closeModal}
-                        style={{zIndex: "1000"}}
+                        style={{ zIndex: "1000" }}
                       >
                         <Transition.Child
                           as={Fragment}
@@ -416,72 +443,91 @@ export default function Home({ features }) {
                                     {/* description */}
                                     <div className="tw-mt-4 tw-w-[445px]">
                                       <p className="tw-text-[15px] tw-leading-[22.5px] tw-font-semibold tw-text-[#6D6E8A]">
-                                      Join a movement, where people speak your language,<br/> understand your hopes and help you reach your financial<br/> goals. Help us to fix banking for G. (In Shaa Allah).
+                                        Join a movement, where people speak your
+                                        language,
+                                        <br /> understand your hopes and help
+                                        you reach your financial
+                                        <br /> goals. Help us to fix banking for
+                                        G. (In Shaa Allah).
                                       </p>
                                     </div>
                                     {/* form */}
-                                    <div className="tw-mt-4">
-                                      <div className="tw-relative tw-mt-3 tw-rounded-full">
-                                        <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
-                                          <Image
-                                            src={Images.smileJoin}
-                                            alt={"smile-join"}
-                                          />
-                                        </div>
-                                        <div className="join-input">
-                                          <input
-                                            type="text"
-                                            name="name"
-                                            id="name"
-                                            className="tw-block tw-w-full tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] focus:tw-ring-0 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
-                                            placeholder="What is your name?"
-                                          />
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div className="tw-mt-4">
-                                      <div className="tw-relative tw-mt-3 tw-rounded-full">
-                                        <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
-                                          <Image
-                                            src={Images.phoneJoin}
-                                            alt={"phone-join"}
-                                          />
-                                        </div>
-                                        <div className="join-input">
-                                          <input
-                                            type="text"
-                                            name="phone"
-                                            id="phone"
-                                            className="tw-block tw-w-full tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] focus:tw-ring-0 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
-                                            placeholder="How can we reach out to you?"
-                                          />
+                                    <form onSubmit={formik.handleSubmit}>
+                                      <div className="tw-mt-4">
+                                        <div className="tw-relative tw-mt-3 tw-rounded-full">
+                                          <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
+                                            <Image
+                                              src={Images.smileJoin}
+                                              alt={"smile-join"}
+                                            />
+                                          </div>
+                                          <div className="join-input">
+                                            <input
+                                              type="text"
+                                              name="name"
+                                              id="name"
+                                              value={formik.values.name}
+                                              onChange={formik.handleChange}
+                                              className="tw-block tw-w-full tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] focus:tw-ring-0 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
+                                              placeholder="What is your name?"
+                                            />
+                                          </div>
                                         </div>
                                       </div>
-                                    </div>
-                                    <div className="tw-mt-4">
-                                      <div className="tw-relative tw-mt-3 tw-rounded-full">
-                                        <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
-                                          <Image
-                                            src={Images.mailJoin}
-                                            alt={"mail-join"}
-                                          />
-                                        </div>
-                                        <div className="join-input">
-                                          <input
-                                            type="email"
-                                            name="email"
-                                            id="email"
-                                            className="tw-block tw-w-full tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] focus:tw-ring-0 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
-                                            placeholder="or write to you?"
-                                          />
+                                      <div className="tw-mt-4">
+                                        <div className="tw-relative tw-mt-3 tw-rounded-full">
+                                          <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
+                                            <Image
+                                              src={Images.phoneJoin}
+                                              alt={"phone-join"}
+                                            />
+                                          </div>
+                                          <div className="join-input">
+                                            <input
+                                              type="text"
+                                              name="phone"
+                                              id="phone"
+                                              value={formik.values.phone}
+                                              onChange={formik.handleChange}
+                                              className="tw-block tw-w-full tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] focus:tw-ring-0 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
+                                              placeholder="How can we reach out to you?"
+                                              required
+                                            />
+                                          </div>
                                         </div>
                                       </div>
-                                    </div>
-                                    <div className="tw-mt-4">
-                                      <button onClick={openModal2} className={styles.joinBtn}>
-                                        APPLY FOR TRIAL
-                                      </button>
-                                    </div>
+                                      <div className="tw-mt-4">
+                                        <div className="tw-relative tw-mt-3 tw-rounded-full">
+                                          <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
+                                            <Image
+                                              src={Images.mailJoin}
+                                              alt={"mail-join"}
+                                            />
+                                          </div>
+                                          <div className="join-input">
+                                            <input
+                                              type="email"
+                                              name="email"
+                                              id="email"
+                                              value={formik.values.email}
+                                              onChange={formik.handleChange}
+                                              className="tw-block tw-w-full tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] focus:tw-ring-0 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
+                                              placeholder="or write to you?"
+                                              required
+                                            />
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div className="tw-mt-4">
+                                        <button
+                                          type="submit"
+                                          onClick={() => { openModal2(); setIsVisible(true); }}
+                                          className={styles.joinBtn}
+                                        >
+                                          APPLY FOR TRIAL
+                                        </button>
+                                      </div>
+                                    </form>
                                   </div>
                                 </div>
                               </Dialog.Panel>
@@ -496,8 +542,9 @@ export default function Home({ features }) {
                         as="div"
                         className="tw-relative"
                         onClose={closeModal2}
-                        style={{zIndex: "1000"}}
+                        style={{ zIndex: "1000" }}
                       >
+                        
                         <Transition.Child
                           as={Fragment}
                           enter="tw-ease-out tw-duration-300"
@@ -522,6 +569,7 @@ export default function Home({ features }) {
                               leaveTo="tw-opacity-0 tw-scale-95"
                             >
                               <Dialog.Panel className="tw-w-[1148px] tw-h-[645px] tw-max-h-full tw-z-10 tw-transform tw-overflow-hidden tw-rounded-2xl tw-bg-white tw-p-6 tw-align-middle tw-shadow-xl tw-transition-all">
+                              {isVisible && <Confetti />}
                                 {/* close */}
                                 <div className="tw-absolute tw-top-0 tw-right-0 tw-hidden tw-pt-4 tw-pr-4 sm:tw-block">
                                   <button
@@ -546,22 +594,13 @@ export default function Home({ features }) {
                                   />
                                 </div>
                                 <div className="tw-absolute tw-top-60 tw-left-0 tw-pt-4 tw-pl-[74px]">
-                                  <Image
-                                    src={Images.kiss}
-                                    alt={"kiss"}
-                                  />
+                                  <Image src={Images.kiss} alt={"kiss"} />
                                 </div>
                                 <div className="tw-absolute tw-bottom-40 tw-right-0 tw-pb-4 tw-pr-[74px]">
-                                  <Image
-                                    src={Images.smile}
-                                    alt={"smile"}
-                                  />
+                                  <Image src={Images.smile} alt={"smile"} />
                                 </div>
                                 <div className="tw-absolute tw-bottom-[110px] tw-right-20 tw-pb-4 tw-pr-[80px]">
-                                  <Image
-                                    src={Images.wink2}
-                                    alt={"wink"}
-                                  />
+                                  <Image src={Images.wink2} alt={"wink"} />
                                 </div>
                                 {/* main */}
                                 <div className="tw-py-4 tw-pl-[54px] tw-pr-[76px]">
@@ -572,13 +611,17 @@ export default function Home({ features }) {
                                       className="tw-text-lg tw-font-medium tw-leading-6 tw-text-gray-900 tw-pt-4"
                                     >
                                       <h2 className={styles.myModal}>
-                                      A great big thank you Habibi!
+                                        A great big thank you Habibi!
                                       </h2>
                                     </Dialog.Title>
                                     {/* description */}
                                     <div className="tw-mt-4 tw-w-[445px]">
                                       <p className="tw-text-[15px] tw-leading-[22.5px] tw-font-medium tw-text-[#6D6E8A]">
-                                      Now sit back and relax, we’ll take it up from here. We’ll be in your inbox soon :-). It pays to be smart about your money, why not share with your smart friends?
+                                        Now sit back and relax, we’ll take it up
+                                        from here. We’ll be in your inbox soon
+                                        :-). It pays to be smart about your
+                                        money, why not share with your smart
+                                        friends?
                                       </p>
                                     </div>
                                     {/* social buttons */}
@@ -828,7 +871,9 @@ export default function Home({ features }) {
                     nearest dollar and invests the spare change into your Invest
                     account portfolio or a charity of your choice.
                   </p>
-                  <button onClick={openModal} className="join-witlinst">JOIN WAITLIST</button>
+                  <button onClick={openModal} className="join-witlinst">
+                    JOIN WAITLIST
+                  </button>
                 </div>
               </div>
               <div className="col-xl-7 col-lg-7 col-md-12">
@@ -937,7 +982,10 @@ export default function Home({ features }) {
                       <Image src={Images.premium} width="100%" alt="" />
                     </div>
                   </div>
-                  <button onClick={openModal} className="purple-subscribe premium-bg">
+                  <button
+                    onClick={openModal}
+                    className="purple-subscribe premium-bg"
+                  >
                     Subscribe (Trial)
                   </button>
                 </div>
@@ -971,7 +1019,10 @@ export default function Home({ features }) {
                       />
                     </div>
                   </div>
-                  <button onClick={openModal} className="purple-subscribe metal-bg">
+                  <button
+                    onClick={openModal}
+                    className="purple-subscribe metal-bg"
+                  >
                     Subscribe (Trial)
                   </button>
                 </div>
@@ -1218,9 +1269,8 @@ export default function Home({ features }) {
             <div className="questions-header">
               <h1>Mizan Knowlege Central</h1>
               <p className="mt-3">
-              Do you want learn more (about say, sukuks, ETFs or BNPL)? <br/>
-              Simply chat with our 24/7 A.I assistance.
-
+                Do you want learn more (about say, sukuks, ETFs or BNPL)? <br />
+                Simply chat with our 24/7 A.I assistance.
               </p>
             </div>
             <div className="row align-items-center mt-5">
@@ -1260,18 +1310,18 @@ export default function Home({ features }) {
                                 className="d-flex align-items-end"
                                 style={{ columnGap: "1.5rem" }}
                               >
-                                {message.type != "user" &&
-
+                                {message.type != "user" && (
                                   <Image
-                                    src={
-                                      Images.chatUser
-                                    }
+                                    src={Images.chatUser}
                                     alt={"user"}
                                     width={64}
                                     height={64}
-                                    style={{ position: "relative", zIndex: "99" }}
+                                    style={{
+                                      position: "relative",
+                                      zIndex: "99",
+                                    }}
                                   />
-                                }
+                                )}
                                 <div
                                   key={index}
                                   className={`tw-flex ${
@@ -1287,10 +1337,7 @@ export default function Home({ features }) {
                                         : "tw-bg-white"
                                     } tw-rounded-lg tw-p-4 tw-text-white tw-max-w-sm`}
                                   >
-                                    <span>
-
-                                    {message.message}
-                                    </span>
+                                    <span>{message.message}</span>
                                   </div>
                                 </div>
                               </div>
