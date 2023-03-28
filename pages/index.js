@@ -19,9 +19,10 @@ import { FreeMode, Autoplay, Pagination, Navigation } from "swiper";
 import { createClient } from "contentful";
 import openai from "../openai";
 import axios from "axios";
-import Confetti from "../components/Confetti";
+// import Confetti from "../components/Confetti";
 import { Formik, Form, Field, ErrorMessage, useFormik } from 'formik';
 import * as Yup from "yup";
+import Confetti from 'react-confetti';
 
 const DynamicNavbar = dynamic(() => import("../components/navbar"), {});
 
@@ -124,7 +125,17 @@ export default function Home({ features }) {
   
   // console.log(formik.values);
   // confetti
-  const [isVisible, setIsVisible] = useState(false);
+  const [pieces, setPieces] = useState(200);
+
+  const stopConfetti = () => {
+    setTimeout(() => {
+      setPieces(0);
+    }, 3000);
+  };
+
+  useEffect(() => {
+    stopConfetti();
+  }, []);
   // chatGPT integration
   const [inputValue, setInputValue] = useState("");
   const [chatLog, setChatLog] = useState([]);
@@ -525,11 +536,18 @@ export default function Home({ features }) {
                                       <div className="tw-mt-4">
                                         <button
                                           type="submit"
-                                          onClick={() => { openModal2(); setIsVisible(true); }}
+                                          onClick={openModal2}
                                           className={styles.joinBtn}
                                         >
                                           APPLY FOR TRIAL
                                         </button>
+                                        {/* <button
+                                          type="submit"
+                                          onClick={() => { openModal2(); setIsVisible(true); }}
+                                          className={styles.joinBtn}
+                                        >
+                                          APPLY FOR TRIAL
+                                        </button> */}
                                       </div>
                                     </form>
                                   </div>
@@ -573,7 +591,7 @@ export default function Home({ features }) {
                               leaveTo="tw-opacity-0 tw-scale-95"
                             >
                               <Dialog.Panel className="tw-w-[1148px] tw-h-[645px] tw-max-h-full tw-z-10 tw-transform tw-overflow-hidden tw-rounded-2xl tw-bg-white tw-p-6 tw-align-middle tw-shadow-xl tw-transition-all">
-                              {isVisible && <Confetti />}
+                              
                                 {/* close */}
                                 <div className="tw-absolute tw-top-0 tw-right-0 tw-hidden tw-pt-4 tw-pr-4 sm:tw-block">
                                   <button
@@ -657,6 +675,7 @@ export default function Home({ features }) {
                                     </div>
                                   </div>
                                 </div>
+                                <Confetti recycle={false} numberOfPieces={800} gravity={0.05} />
                               </Dialog.Panel>
                             </Transition.Child>
                           </div>

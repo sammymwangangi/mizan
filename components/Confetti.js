@@ -13,8 +13,8 @@ export default function Confetti() {
     refAnimationInstance.current &&
       refAnimationInstance.current({
         ...opts,
-        origin: { y: 0.7 },
-        particleCount: Math.floor(200 * particleRatio)
+        origin: { x: 0.7 },
+        particleCount: Math.floor(600 * particleRatio)
       });
   }, []);
 

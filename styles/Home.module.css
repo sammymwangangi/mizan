@@ -42,6 +42,28 @@
   font-family: "Poppinsmedium";
 }
 
+.joinBtn2 {
+  padding: 15px 0;
+  max-width: 100%;
+  width: 489px;
+  color: #fff;
+  border: none;
+  font-size: 17px;
+  border-radius: 50px;
+  background: linear-gradient(
+    75.68deg,
+    #d155ff 2.33%,
+    #b532f2 15.95%,
+    #a016e8 29.28%,
+    #9406e2 41.05%,
+    #8f00e0 50%,
+    #a08cff 97.67%
+  );
+  filter: drop-shadow(0px 15px 30px rgba(57, 26, 115, 0.15));
+  font-family: "Poppinsmedium";
+  opacity: 0.2;
+}
+
 .yallahWaitlist {
   width: 320px;
   height: 55px;
