@@ -140,6 +140,21 @@ export default function Home({ features }) {
   const [chatLog, setChatLog] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
+  // Disable Submit Button
+  const [formValues, setFormValues] = useState({
+    name: '',
+    email: '',
+    phone: '',
+  });
+
+  function handleInputChange(event) {
+    const { name, value } = event.target;
+    setFormValues({ ...formValues, [name]: value });
+  }
+
+  const { name, email, phone } = formValues;
+  const isFormEmpty = !name && !email && !phone;
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -477,8 +492,8 @@ export default function Home({ features }) {
                                               type="text"
                                               name="name"
                                               id="name"
-                                              value={formik.values.name}
-                                              onChange={formik.handleChange}
+                                              value={name}
+                                              onChange={handleInputChange}
                                               className="tw-block tw-w-full tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] placeholder:tw-font-[Poppinsregular] focus:tw-ring-0 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
                                               placeholder="What is your name?"
                                             />
@@ -501,8 +516,8 @@ export default function Home({ features }) {
                                               type="text"
                                               name="phone"
                                               id="phone"
-                                              value={formik.values.phone}
-                                              onChange={formik.handleChange}
+                                              value={phone}
+                                              onChange={handleInputChange}
                                               className="tw-block tw-w-full tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] placeholder:tw-font-[Poppinsregular] focus:tw-ring-0 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
                                               placeholder="How can we reach out to you?"
                                               required
@@ -526,8 +541,8 @@ export default function Home({ features }) {
                                               type="email"
                                               name="email"
                                               id="email"
-                                              value={formik.values.email}
-                                              onChange={formik.handleChange}
+                                              value={email}
+                                              onChange={handleInputChange}
                                               className="tw-block tw-w-full tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] placeholder:tw-font-[Poppinsregular] focus:tw-ring-0 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
                                               placeholder="or write to you?"
                                               required
@@ -542,6 +557,7 @@ export default function Home({ features }) {
                                         <button
                                           type="submit"
                                           onClick={openModal2}
+                                          disabled={isFormEmpty}
                                           className={styles.joinBtn}
                                         >
                                           APPLY FOR TRIAL
