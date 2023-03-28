@@ -20,9 +20,9 @@ import { createClient } from "contentful";
 import openai from "../openai";
 import axios from "axios";
 // import Confetti from "../components/Confetti";
-import { Formik, Form, Field, ErrorMessage, useFormik } from 'formik';
+import { Formik, Form, Field, ErrorMessage, useFormik } from "formik";
 import * as Yup from "yup";
-import Confetti from 'react-confetti';
+import Confetti from "react-confetti";
 
 const DynamicNavbar = dynamic(() => import("../components/navbar"), {});
 
@@ -110,19 +110,18 @@ export default function Home({ features }) {
     },
     validationSchema: Yup.object({
       name: Yup.string()
-      .max(20, "Name must be 20 characters or less")
-      .required("Name is required"),
-      phone: Yup.string()
-      .required("Phone is required"),
+        .max(20, "Name must be 20 characters or less")
+        .required("Name is required"),
+      phone: Yup.string().required("Phone is required"),
       email: Yup.string()
-      .email("Invalid email address")
-      .required("Email is required"),
+        .email("Invalid email address")
+        .required("Email is required"),
     }),
     onSubmit: (values) => {
       console.log(values);
     },
   });
-  
+
   // console.log(formik.values);
   // confetti
   const [pieces, setPieces] = useState(200);
@@ -485,7 +484,9 @@ export default function Home({ features }) {
                                             />
                                           </div>
                                         </div>
-                                          <div className="tw-text-red-700 tw-font-medium tw-p-1 tw-text-xs">{formik.errors.name}</div>
+                                        <div className="tw-text-red-700 tw-font-medium tw-p-1 tw-text-xs">
+                                          {formik.errors.name}
+                                        </div>
                                       </div>
                                       <div className="tw-mt-4">
                                         <div className="tw-relative tw-mt-3 tw-rounded-full">
@@ -508,7 +509,9 @@ export default function Home({ features }) {
                                             />
                                           </div>
                                         </div>
-                                        <div className="tw-text-red-700 tw-font-medium tw-p-1 tw-text-xs">{formik.errors.phone}</div>
+                                        <div className="tw-text-red-700 tw-font-medium tw-p-1 tw-text-xs">
+                                          {formik.errors.phone}
+                                        </div>
                                       </div>
                                       <div className="tw-mt-4">
                                         <div className="tw-relative tw-mt-3 tw-rounded-full">
@@ -531,7 +534,9 @@ export default function Home({ features }) {
                                             />
                                           </div>
                                         </div>
-                                        <div className="tw-text-red-700 tw-font-medium tw-p-1 tw-text-xs">{formik.errors.email}</div>
+                                        <div className="tw-text-red-700 tw-font-medium tw-p-1 tw-text-xs">
+                                          {formik.errors.email}
+                                        </div>
                                       </div>
                                       <div className="tw-mt-4">
                                         <button
@@ -566,7 +571,6 @@ export default function Home({ features }) {
                         onClose={closeModal2}
                         style={{ zIndex: "1000" }}
                       >
-                        
                         <Transition.Child
                           as={Fragment}
                           enter="tw-ease-out tw-duration-300"
@@ -591,7 +595,6 @@ export default function Home({ features }) {
                               leaveTo="tw-opacity-0 tw-scale-95"
                             >
                               <Dialog.Panel className="tw-w-[1148px] tw-h-[645px] tw-max-h-full tw-z-10 tw-transform tw-overflow-hidden tw-rounded-2xl tw-bg-white tw-p-6 tw-align-middle tw-shadow-xl tw-transition-all">
-                              
                                 {/* close */}
                                 <div className="tw-absolute tw-top-0 tw-right-0 tw-hidden tw-pt-4 tw-pr-4 sm:tw-block">
                                   <button
@@ -616,13 +619,37 @@ export default function Home({ features }) {
                                   />
                                 </div>
                                 <div className="tw-absolute tw-top-60 tw-left-0 tw-pt-4 tw-pl-[74px]">
-                                  <Image src={Images.kiss} alt={"kiss"} />
+                                  <Image
+                                    src={
+                                      thumbIndex === 0
+                                        ? Images.love
+                                        : Images.avatar3
+                                    }
+                                    className="avtar3 tw-rotate-[-10.28deg]"
+                                    alt=""
+                                  />
                                 </div>
                                 <div className="tw-absolute tw-bottom-40 tw-right-0 tw-pb-4 tw-pr-[74px]">
-                                  <Image src={Images.smile} alt={"smile"} />
+                                  <Image
+                                    src={
+                                      loveIndex === 0
+                                        ? Images.avatar2
+                                        : Images.thumbsup
+                                    }
+                                    className="avtar2"
+                                    alt=""
+                                  />
                                 </div>
                                 <div className="tw-absolute tw-bottom-[110px] tw-right-20 tw-pb-4 tw-pr-[80px]">
-                                  <Image src={Images.wink2} alt={"wink"} />
+                                  <Image
+                                    src={
+                                      thumbIndex === 0
+                                        ? Images.avatar3
+                                        : Images.love
+                                    }
+                                    className="avtar3"
+                                    alt=""
+                                  />
                                 </div>
                                 {/* main */}
                                 <div className="tw-py-4 tw-pl-[54px] tw-pr-[76px]">
@@ -675,7 +702,11 @@ export default function Home({ features }) {
                                     </div>
                                   </div>
                                 </div>
-                                <Confetti recycle={false} numberOfPieces={800} gravity={0.05} />
+                                <Confetti
+                                  recycle={false}
+                                  numberOfPieces={800}
+                                  gravity={0.05}
+                                />
                               </Dialog.Panel>
                             </Transition.Child>
                           </div>
