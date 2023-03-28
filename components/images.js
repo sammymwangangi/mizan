@@ -61,7 +61,7 @@ import dss from "../public/images/homepage/dss.svg";
 import closeBtn from "../public/images/homepage/close.svg";
 import mobileLogo from "../public/images/homepage/mobile-logo.svg";
 import join from "../public/images/homepage/join.png";
-import join2 from "../public/images/homepage/join.svg";
+import join2 from "../public/images/homepage/join2.svg";
 import joinLogo from "../public/images/homepage/join-logo.svg";
 import smileJoin from "../public/images/homepage/smile.svg";
 import phoneJoin from "../public/images/homepage/phone.svg";
