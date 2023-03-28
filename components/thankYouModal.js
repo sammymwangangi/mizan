@@ -1,6 +1,12 @@
-import React from "react";
+import React, { Suspense, Fragment, useRef, useState, useEffect } from "react";
+import { Dialog, Transition } from "@headlessui/react";
+import { XMarkIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
+import Confetti from "../components/Confetti";
+import styles from "../styles/Home.module.css";
 
-function thankYouModal() {
+export default function ThankYouModal() {
+    // confetti
+  const [isVisible, setIsVisible] = useState(false);
   return (
     <Transition appear show={isDone} as={Fragment}>
       <Dialog
@@ -108,4 +114,4 @@ function thankYouModal() {
   );
 }
 
-export default thankYouModal;
+

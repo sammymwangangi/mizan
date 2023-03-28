@@ -58,7 +58,7 @@ export default function Navbar() {
   const router = useRouter();
 
   return (
-    <section className="header" id="header">
+    <section className="header tw-fixed" id="header">
       <div className="container_costome">
         <nav className="navbar navbar-expand-md">
           <div className="container-fluid">
@@ -76,7 +76,7 @@ export default function Navbar() {
             >
               <Image src={Images.Logo} alt="image" />
             </Link>
-            <div className="mobile-view-header d-flex align-items-center gap-4">
+            <div className="mobile-view-header d-flex align-items-end gap-4">
               <button
                 className="navbar-toggler order-2"
                 type="button"
@@ -86,7 +86,7 @@ export default function Navbar() {
                 <Image src={Images.Toggle} width="30px" alt="toggle" />
               </button>
               <div className="navbar-collapse" id="navbarSupportedContent">
-                <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
                   <li className="nav-item">
                     <Link
                       className="nav-link active"

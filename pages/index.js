@@ -121,6 +121,7 @@ export default function Home({ features }) {
       console.log(values);
     },
   });
+  
   // console.log(formik.values);
   // confetti
   const [isVisible, setIsVisible] = useState(false);
@@ -473,6 +474,7 @@ export default function Home({ features }) {
                                             />
                                           </div>
                                         </div>
+                                          <div className="tw-text-red-700 tw-font-medium tw-p-1 tw-text-xs">{formik.errors.name}</div>
                                       </div>
                                       <div className="tw-mt-4">
                                         <div className="tw-relative tw-mt-3 tw-rounded-full">
@@ -495,6 +497,7 @@ export default function Home({ features }) {
                                             />
                                           </div>
                                         </div>
+                                        <div className="tw-text-red-700 tw-font-medium tw-p-1 tw-text-xs">{formik.errors.phone}</div>
                                       </div>
                                       <div className="tw-mt-4">
                                         <div className="tw-relative tw-mt-3 tw-rounded-full">
@@ -517,6 +520,7 @@ export default function Home({ features }) {
                                             />
                                           </div>
                                         </div>
+                                        <div className="tw-text-red-700 tw-font-medium tw-p-1 tw-text-xs">{formik.errors.email}</div>
                                       </div>
                                       <div className="tw-mt-4">
                                         <button
