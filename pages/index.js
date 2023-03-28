@@ -559,6 +559,7 @@ export default function Home({ features }) {
                                           onClick={openModal2}
                                           disabled={isFormEmpty}
                                           className={styles.joinBtn}
+                                          style={{ opacity: isFormEmpty ? 0.2 : 1 }}
                                         >
                                           APPLY FOR TRIAL
                                         </button>
