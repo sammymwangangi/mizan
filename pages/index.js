@@ -1252,7 +1252,7 @@ export default function Home({ features }) {
                 alt="pattern"
               />
             </div>
-            <div className="text-center tw-z-10">
+            <div className="text-center tw-z-10 tw-mt-[135px]">
               <h1>
                 Yallah, let’s
                 <br /> get started
