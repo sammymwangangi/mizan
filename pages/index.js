@@ -443,7 +443,7 @@ export default function Home({ features }) {
                                     </Dialog.Title>
                                     {/* description */}
                                     <div className="tw-mt-4 tw-w-[445px]">
-                                      <p className="tw-text-[15px] tw-leading-[22.5px] tw-font-semibold tw-text-[#6D6E8A]">
+                                      <p className="tw-text-[15px] tw-leading-[22.5px] tw-font-medium tw-font-[Poppinsmedium] tw-text-[#6D6E8A]">
                                         Join a movement, where people speak your
                                         language,
                                         <br /> understand your hopes and help
@@ -469,7 +469,7 @@ export default function Home({ features }) {
                                               id="name"
                                               value={formik.values.name}
                                               onChange={formik.handleChange}
-                                              className="tw-block tw-w-full tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] focus:tw-ring-0 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
+                                              className="tw-block tw-w-full tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] placeholder:tw-font-[Poppinsregular] focus:tw-ring-0 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
                                               placeholder="What is your name?"
                                             />
                                           </div>
@@ -491,7 +491,7 @@ export default function Home({ features }) {
                                               id="phone"
                                               value={formik.values.phone}
                                               onChange={formik.handleChange}
-                                              className="tw-block tw-w-full tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] focus:tw-ring-0 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
+                                              className="tw-block tw-w-full tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] placeholder:tw-font-[Poppinsregular] focus:tw-ring-0 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
                                               placeholder="How can we reach out to you?"
                                               required
                                             />
@@ -514,7 +514,7 @@ export default function Home({ features }) {
                                               id="email"
                                               value={formik.values.email}
                                               onChange={formik.handleChange}
-                                              className="tw-block tw-w-full tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] focus:tw-ring-0 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
+                                              className="tw-block tw-w-full tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] placeholder:tw-font-[Poppinsregular] focus:tw-ring-0 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
                                               placeholder="or write to you?"
                                               required
                                             />
@@ -620,7 +620,7 @@ export default function Home({ features }) {
                                     </Dialog.Title>
                                     {/* description */}
                                     <div className="tw-mt-4 tw-w-[445px]">
-                                      <p className="tw-text-[15px] tw-leading-[22.5px] tw-font-medium tw-text-[#6D6E8A]">
+                                      <p className="tw-text-[15px] tw-leading-[22.5px] tw-font-medium tw-font-[PoppinsMedium] tw-text-[#6D6E8A]">
                                         Now sit back and relax, we’ll take it up
                                         from here. We’ll be in your inbox soon
                                         :-). It pays to be smart about your
