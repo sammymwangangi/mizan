@@ -13,8 +13,10 @@ export default function Confetti() {
     refAnimationInstance.current &&
       refAnimationInstance.current({
         ...opts,
-        origin: { y: 0.7 },
-        particleCount: Math.floor(1200 * particleRatio)
+        origin: { y: 1 },
+        particleCount: Math.floor(1400 * particleRatio),
+        gravity: 0.06,
+        ticks: 370
       });
   }, []);
 
@@ -27,20 +29,18 @@ export default function Confetti() {
     });
 
     makeShot(0.2, {
-      spread: 100
+      spread: 360
     });
 
     makeShot(0.35, {
-      spread: 100,
-      decay: 0.91,
+      spread: 200,
       scalar: 0.8
     });
 
     makeShot(0.1, {
       spread: 220,
       startVelocity: 25,
-      decay: 0.92,
-      scalar: 1.2
+      scalar: 0.5
     });
 
     makeShot(0.1, {
