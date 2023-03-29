@@ -19,10 +19,10 @@ import { FreeMode, Autoplay, Pagination, Navigation } from "swiper";
 import { createClient } from "contentful";
 import openai from "../openai";
 import axios from "axios";
-// import Confetti from "../components/Confetti";
+import Confetti from "../components/Confetti";
 import { Formik, Form, Field, ErrorMessage, useFormik } from "formik";
 import * as Yup from "yup";
-import Confetti from "react-confetti";
+// import Confetti from "react-confetti";
 
 const DynamicNavbar = dynamic(() => import("../components/navbar"), {});
 
@@ -124,6 +124,8 @@ export default function Home({ features }) {
 
   // console.log(formik.values);
   // confetti
+  const [isVisible, setIsVisible] = useState(false);
+
   const [pieces, setPieces] = useState(200);
 
   const stopConfetti = () => {
@@ -557,7 +559,7 @@ export default function Home({ features }) {
                                           </div> */}
                                         </div>
                                         <div className="tw-mt-4">
-                                          <button
+                                          {/* <button
                                             type="submit"
                                             onClick={openModal2}
                                             disabled={isFormEmpty}
@@ -565,14 +567,16 @@ export default function Home({ features }) {
                                             style={{ opacity: isFormEmpty ? 0.2 : 1 }}
                                           >
                                             APPLY FOR TRIAL
-                                          </button>
-                                          {/* <button
+                                          </button> */}
+                                          <button
                                             type="submit"
                                             onClick={() => { openModal2(); setIsVisible(true); }}
+                                            disabled={isFormEmpty}
                                             className={styles.joinBtn}
+                                            style={{ opacity: isFormEmpty ? 0.2 : 1 }}
                                           >
                                             APPLY FOR TRIAL
-                                          </button> */}
+                                          </button>
                                         </div>
                                       </form>
                                     </div>
@@ -724,11 +728,12 @@ export default function Home({ features }) {
                                       </div>
                                     </div>
                                   </div>
-                                  <Confetti
+                                  {/* <Confetti
                                     recycle={false}
                                     numberOfPieces={800}
                                     gravity={0.05}
-                                  />
+                                  /> */}
+                                  {isVisible && <Confetti />}
                                 </Dialog.Panel>
                               </Transition.Child>
                             </div>

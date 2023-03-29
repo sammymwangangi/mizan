@@ -13,8 +13,8 @@ export default function Confetti() {
     refAnimationInstance.current &&
       refAnimationInstance.current({
         ...opts,
-        origin: { x: 0.7 },
-        particleCount: Math.floor(600 * particleRatio)
+        origin: { y: 0.7 },
+        particleCount: Math.floor(1200 * particleRatio)
       });
   }, []);
 
@@ -22,12 +22,12 @@ export default function Confetti() {
 
   const fire = useCallback(() => {
     makeShot(0.25, {
-      spread: 26,
+      spread: 106,
       startVelocity: 55
     });
 
     makeShot(0.2, {
-      spread: 60
+      spread: 100
     });
 
     makeShot(0.35, {
@@ -37,14 +37,14 @@ export default function Confetti() {
     });
 
     makeShot(0.1, {
-      spread: 120,
+      spread: 220,
       startVelocity: 25,
       decay: 0.92,
       scalar: 1.2
     });
 
     makeShot(0.1, {
-      spread: 120,
+      spread: 150,
       startVelocity: 45
     });
   }, [makeShot]);
