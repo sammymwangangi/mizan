@@ -1433,6 +1433,7 @@ export default function Home({ features }) {
                             placeholder="Start typing.."
                             value={inputValue}
                             onChange={(e) => setInputValue(e.target.value)}
+                            className="focus:tw-ring-0"
                           />
                         </div>
                       </div>
