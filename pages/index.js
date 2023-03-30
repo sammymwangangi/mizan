@@ -1371,7 +1371,7 @@ export default function Home({ features }) {
                   <div className="chat-box-border">
                     <form onSubmit={handleSubmit}>
                       <div className="chatbox-main">
-                        <ul ref={chatContainerRef}>
+                        <ul ref={chatContainerRef} className="tw-scrollbar-thin">
                           <li>
                             <div
                               className="d-flex align-items-end"

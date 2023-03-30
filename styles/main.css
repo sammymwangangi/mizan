@@ -4320,7 +4320,7 @@ p {
   margin: 0;
   list-style: none;
   height: 600px;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .chatbox-main ul li {
