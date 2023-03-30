@@ -1393,7 +1393,11 @@ export default function Home({ features }) {
                           {chatLog.map((message, index) => (
                             <li key={index}>
                               <div
-                                className="d-flex align-items-end"
+                                className={`d-flex align-items-end ${
+                                  message.type === "user"
+                                      ? "tw-justify-end"
+                                      : "tw-justify-start"
+                                }`}
                                 style={{ columnGap: "1.5rem" }}
                               >
                                 {message.type != "user" && (
