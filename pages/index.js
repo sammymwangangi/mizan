@@ -146,9 +146,9 @@ export default function Home({ features }) {
 
   // Disable Submit Button
   const [formValues, setFormValues] = useState({
-    name: '',
-    email: '',
-    phone: '',
+    name: "",
+    email: "",
+    phone: "",
   });
 
   function handleInputChange(event) {
@@ -159,7 +159,7 @@ export default function Home({ features }) {
   const { name, email, phone } = formValues;
   const isFormEmpty = !name && !email && !phone;
 
-  function handleSubmit (event) {
+  function handleSubmit(event) {
     event.preventDefault();
 
     setChatLog([...chatLog, { type: "user", message: inputValue }]);
@@ -167,11 +167,12 @@ export default function Home({ features }) {
     sendMessage(inputValue);
 
     setInputValue("");
-  };
+  }
   useEffect(() => {
     if (chatContainerRef.current) {
       // if the chat container reference exists
-      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight; // scroll to the bottom of the chat container
+      chatContainerRef.current.scrollTop =
+        chatContainerRef.current.scrollHeight; // scroll to the bottom of the chat container
     }
   }, [chatLog]); // re-run this effect whenever the chat log updates
 
@@ -304,7 +305,7 @@ export default function Home({ features }) {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModal2Open, setIsModal2Open] = useState(false);
-  
+
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -321,7 +322,6 @@ export default function Home({ features }) {
     setIsModal2Open(false);
     closeModal(); // Close the first modal as well
   };
-
 
   const swiperRefLocal = useRef();
 
@@ -478,12 +478,12 @@ export default function Home({ features }) {
                                       {/* description */}
                                       <div className="tw-mt-4 tw-w-[445px]">
                                         <p className="tw-text-[15px] tw-leading-[22.5px] tw-font-medium tw-font-[Poppinsmedium] tw-text-[#6D6E8A]">
-                                          Join a movement, where people speak your
-                                          language,
+                                          Join a movement, where people speak
+                                          your language,
                                           <br /> understand your hopes and help
                                           you reach your financial
-                                          <br /> goals. Help us to fix banking for
-                                          G. (In Shaa Allah).
+                                          <br /> goals. Help us to fix banking
+                                          for G. (In Shaa Allah).
                                         </p>
                                       </div>
                                       {/* form */}
@@ -574,10 +574,15 @@ export default function Home({ features }) {
                                           </button> */}
                                           <button
                                             type="submit"
-                                            onClick={() => { openModal2(); setIsVisible(true); }}
+                                            onClick={() => {
+                                              openModal2();
+                                              setIsVisible(true);
+                                            }}
                                             disabled={isFormEmpty}
                                             className={styles.joinBtn}
-                                            style={{ opacity: isFormEmpty ? 0.2 : 1 }}
+                                            style={{
+                                              opacity: isFormEmpty ? 0.2 : 1,
+                                            }}
                                           >
                                             APPLY FOR TRIAL
                                           </button>
@@ -696,11 +701,11 @@ export default function Home({ features }) {
                                       {/* description */}
                                       <div className="tw-mt-4 tw-w-[445px]">
                                         <p className="tw-text-[15px] tw-leading-[22.5px] tw-font-medium tw-font-[PoppinsMedium] tw-text-[#6D6E8A]">
-                                          Now sit back and relax, we’ll take it up
-                                          from here. We’ll be in your inbox soon
-                                          :-). It pays to be smart about your
-                                          money, why not share with your smart
-                                          friends?
+                                          Now sit back and relax, we’ll take it
+                                          up from here. We’ll be in your inbox
+                                          soon :-). It pays to be smart about
+                                          your money, why not share with your
+                                          smart friends?
                                         </p>
                                       </div>
                                       {/* social buttons */}
@@ -1371,7 +1376,10 @@ export default function Home({ features }) {
                   <div className="chat-box-border">
                     <form onSubmit={handleSubmit}>
                       <div className="chatbox-main">
-                        <ul ref={chatContainerRef} className="tw-scrollbar-thin">
+                        <ul
+                          ref={chatContainerRef}
+                          className="tw-scrollbar-thin"
+                        >
                           <li>
                             <div
                               className="d-flex align-items-end"
@@ -1395,8 +1403,8 @@ export default function Home({ features }) {
                               <div
                                 className={`d-flex align-items-end ${
                                   message.type === "user"
-                                      ? "tw-justify-end"
-                                      : "tw-justify-start"
+                                    ? "tw-justify-end"
+                                    : "tw-justify-start"
                                 }`}
                                 style={{ columnGap: "1.5rem" }}
                               >
@@ -1420,31 +1428,31 @@ export default function Home({ features }) {
                                       : "tw-justify-start"
                                   }`}
                                 >
-                                  <div
-                                    className={`${
-                                      message.type === "user"
-                                        ? "tw-bg-white"
-                                        : "tw-bg-white"
-                                    } tw-rounded-lg tw-p-4 tw-text-white tw-max-w-sm`}
-                                  >
-                                    <span className={`${
-                                      message.type === "user"
-                                      ? "tw-bg-[#A276FF] before:tw-bg-[#A276FF] after:tw-bg-[#A276FF] tw-text-white"
-                                      : ""
-                                    }`}>{message.message}</span>
+                                  <div className="tw-rounded-lg tw-p-4 tw-text-white tw-max-w-sm">
+                                    <span
+                                      className={`${
+                                        message.type === "user"
+                                          ? "tw-bg-[#A276FF] after:tw-content-[''] after:tw-bg-[#A276FF] tw-text-white"
+                                          : ""
+                                      }`}
+                                    >
+                                      {message.message}
+                                    </span>
                                   </div>
                                 </div>
                               </div>
                             </li>
                           ))}
-                          {
-              isLoading &&
-              <div key={chatLog.length} className="tw-flex tw-justify-start tw-mb-3">
-                  <div className="tw-bg-[#f0ecf7] tw-rounded-full tw-p-4 tw-text-[#6d6e8a] tw-max-w-sm">
-                    <TypingAnimation />
-                  </div>
-              </div>
-            }
+                          {isLoading && (
+                            <div
+                              key={chatLog.length}
+                              className="tw-flex tw-justify-start tw-mb-3"
+                            >
+                              <div className="tw-bg-[#f0ecf7] tw-rounded-full tw-p-4 tw-text-[#6d6e8a] tw-max-w-sm">
+                                <TypingAnimation />
+                              </div>
+                            </div>
+                          )}
                         </ul>
                         <div className="typing-box d-flex align-items-center gap-3">
                           <Image src={Images.typeIcon} alt="" />
