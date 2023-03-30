@@ -1386,7 +1386,7 @@ export default function Home({ features }) {
                                 alt="user"
                               />
                               <span>
-                                Hi! My name’s Sofie, how can we help you?
+                                Salaam, what would you like to learn today?
                               </span>
                             </div>
                           </li>
