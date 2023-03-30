@@ -22,6 +22,7 @@ import axios from "axios";
 import Confetti from "../components/Confetti";
 import { Formik, Form, Field, ErrorMessage, useFormik } from "formik";
 import * as Yup from "yup";
+import TypingAnimation from "../components/TypingAnimation";
 // import Confetti from "react-confetti";
 
 const DynamicNavbar = dynamic(() => import("../components/navbar"), {});
@@ -1428,6 +1429,14 @@ export default function Home({ features }) {
                               </div>
                             </li>
                           ))}
+                          {
+              isLoading &&
+              <div key={chatLog.length} className="tw-flex tw-justify-start tw-mb-3">
+                  <div className="tw-bg-[#f0ecf7] tw-rounded-full tw-p-4 tw-text-[#6d6e8a] tw-max-w-sm">
+                    <TypingAnimation />
+                  </div>
+              </div>
+            }
                         </ul>
                         <div className="typing-box d-flex align-items-center gap-3">
                           <Image src={Images.typeIcon} alt="" />
