@@ -138,6 +138,7 @@ export default function Home({ features }) {
     stopConfetti();
   }, []);
   // chatGPT integration
+  const chatContainerRef = useRef(null); // create a reference to the chat container
   const [inputValue, setInputValue] = useState("");
   const [chatLog, setChatLog] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -157,19 +158,21 @@ export default function Home({ features }) {
   const { name, email, phone } = formValues;
   const isFormEmpty = !name && !email && !phone;
 
-  const handleSubmit = (event) => {
+  function handleSubmit (event) {
     event.preventDefault();
 
-    setChatLog((prevChatLog) => [
-      ...prevChatLog,
-      { type: "user", message: inputValue },
-    ]);
+    setChatLog([...chatLog, { type: "user", message: inputValue }]);
 
     sendMessage(inputValue);
 
     setInputValue("");
-    setCurrentModal('successModal');
   };
+  useEffect(() => {
+    if (chatContainerRef.current) {
+      // if the chat container reference exists
+      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight; // scroll to the bottom of the chat container
+    }
+  }, [chatLog]); // re-run this effect whenever the chat log updates
 
   const sendMessage = (message) => {
     const url = "/api/chat";
@@ -1367,7 +1370,7 @@ export default function Home({ features }) {
                   <div className="chat-box-border">
                     <form onSubmit={handleSubmit}>
                       <div className="chatbox-main">
-                        <ul>
+                        <ul ref={chatContainerRef}>
                           <li>
                             <div
                               className="d-flex align-items-end"
