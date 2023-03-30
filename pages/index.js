@@ -1427,7 +1427,11 @@ export default function Home({ features }) {
                                         : "tw-bg-white"
                                     } tw-rounded-lg tw-p-4 tw-text-white tw-max-w-sm`}
                                   >
-                                    <span>{message.message}</span>
+                                    <span className={`${
+                                      message.type === "user"
+                                      ? "tw-bg-[#A276FF] before:tw-bg-[#A276FF] after:tw-bg-[#A276FF] tw-text-white"
+                                      : ""
+                                    }`}>{message.message}</span>
                                   </div>
                                 </div>
                               </div>
