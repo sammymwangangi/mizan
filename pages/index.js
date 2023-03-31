@@ -1366,7 +1366,7 @@ export default function Home({ features }) {
                 Give it a try, <span>type in any language?</span>  (Its free). 
               </p>
             </div>
-            <div className="row align-items-center mt-5">
+            <div className="row align-items-center -tw-mt-8">
               <div className="col-lg-6 col-md-6 col-sm-12 text-start">
                 <div className="left-voice-img voice-img">
                   <Image src={Images.voice} className="voice" alt="" />
