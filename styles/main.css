@@ -3365,6 +3365,11 @@ p {
   font-family: Poppinssemibold;
 }
 
+.questions .questions-header p span{
+  font-weight: 700;
+  font-family: Poppinsbold;
+}
+
 .questions .mails {
   display: block;
   transform: scale(1.1);
