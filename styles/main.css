@@ -4339,9 +4339,9 @@ p {
   position: relative;
   width: 100%;
   font-family: Poppinsregular;
-  margin-left: -10px;
+  /* margin-left: -10px; */
 }
-
+/* 
 .chatbox-main ul span::after {
   position: absolute;
   content: "";
@@ -4362,7 +4362,7 @@ p {
   border-radius: 0 0 20px 0;
   bottom: 0px;
   z-index: 9;
-}
+} */
 
 .typing-box {
   width: 100%;

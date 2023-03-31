@@ -1360,8 +1360,10 @@ export default function Home({ features }) {
             <div className="questions-header">
               <h1>Mizan Knowlege Central</h1>
               <p className="mt-3">
-                Do you want learn more (about say, sukuks, ETFs or BNPL)? <br />
-                Simply chat with our 24/7 A.I assistance.
+                Meet Sofie ,the most powerful natural language A.I. to help you<br/>
+                learn about anything say (Sukuks, blockchain, Islamic finance etc).
+                <br/> <br/>
+                Give it a try, <span className="tw-font-bold">type in any language?</span>  (Its free). 
               </p>
             </div>
             <div className="row align-items-center mt-5">
@@ -1428,12 +1430,12 @@ export default function Home({ features }) {
                                       : "tw-justify-start"
                                   }`}
                                 >
-                                  <div className="tw-rounded-lg tw-p-4 tw-text-white tw-max-w-sm">
+                                  <div className="tw-rounded-lg tw-text-white tw-max-w-sm">
                                     <span
                                       className={`${
                                         message.type === "user"
-                                          ? "tw-bg-[#A276FF] after:tw-content-[''] after:tw-bg-[#A276FF] tw-text-white"
-                                          : ""
+                                          ? "tw-bg-[#A276FF] after:tw-bg-[#A276FF] tw-text-white"
+                                          : "tw-bg-[#f0ecf7]"
                                       }`}
                                     >
                                       {message.message}
