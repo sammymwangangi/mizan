@@ -1363,7 +1363,7 @@ export default function Home({ features }) {
                 Meet Sofie ,the most powerful natural language A.I. to help you<br/>
                 learn about anything say (Sukuks, blockchain, Islamic finance etc).
                 <br/> <br/>
-                Give it a try, <span>type in any language?</span>  (Its free). 
+                Give it a try, <span className="tw-font-bold">type in any language?</span>  (Its free). 
               </p>
             </div>
             <div className="row align-items-center mt-5">
