@@ -501,16 +501,17 @@ export default function Home({ features }) {
                                                 type="text"
                                                 name="name"
                                                 id="name"
-                                                value={name}
-                                                onChange={handleInputChange}
+                                                value={formik.values.name}
+                                                onChange={formik.handleChange}
                                                 className="tw-block tw-w-full tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] placeholder:tw-font-[Poppinsregular] focus:tw-ring-0 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
                                                 placeholder="What is your name?"
+                                                onBlur={formik.handleBlur}
                                               />
                                             </div>
                                           </div>
-                                          {/* <div className="tw-text-red-700 tw-font-medium tw-p-1 tw-text-xs">
+                                          <div className="tw-text-red-700 tw-font-medium tw-p-1 tw-text-xs">
                                             {formik.errors.name}
-                                          </div> */}
+                                          </div>
                                         </div>
                                         <div className="tw-mt-4">
                                           <div className="tw-relative tw-mt-3 tw-rounded-full">
@@ -525,17 +526,17 @@ export default function Home({ features }) {
                                                 type="text"
                                                 name="phone"
                                                 id="phone"
-                                                value={phone}
-                                                onChange={handleInputChange}
+                                                value={formik.values.phone}
+                                                onChange={formik.handleChange}
                                                 className="tw-block tw-w-full tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] placeholder:tw-font-[Poppinsregular] focus:tw-ring-0 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
                                                 placeholder="How can we reach out to you?"
-                                                required
+                                                onBlur={formik.handleBlur}
                                               />
                                             </div>
                                           </div>
-                                          {/* <div className="tw-text-red-700 tw-font-medium tw-p-1 tw-text-xs">
+                                          <div className="tw-text-red-700 tw-font-medium tw-p-1 tw-text-xs">
                                             {formik.errors.phone}
-                                          </div> */}
+                                          </div>
                                         </div>
                                         <div className="tw-mt-4">
                                           <div className="tw-relative tw-mt-3 tw-rounded-full">
@@ -550,17 +551,17 @@ export default function Home({ features }) {
                                                 type="email"
                                                 name="email"
                                                 id="email"
-                                                value={email}
-                                                onChange={handleInputChange}
+                                                value={formik.values.email}
+                                                onChange={formik.handleChange}
                                                 className="tw-block tw-w-full tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] placeholder:tw-font-[Poppinsregular] focus:tw-ring-0 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
                                                 placeholder="or write to you?"
-                                                required
+                                                onBlur={formik.handleBlur}
                                               />
                                             </div>
                                           </div>
-                                          {/* <div className="tw-text-red-700 tw-font-medium tw-p-1 tw-text-xs">
+                                          <div className="tw-text-red-700 tw-font-medium tw-p-1 tw-text-xs">
                                             {formik.errors.email}
-                                          </div> */}
+                                          </div>
                                         </div>
                                         <div className="tw-mt-4">
                                           {/* <button
@@ -578,11 +579,9 @@ export default function Home({ features }) {
                                               openModal2();
                                               setIsVisible(true);
                                             }}
-                                            disabled={isFormEmpty}
+                                            disabled={formik.isSubmitting || !formik.isValid}
                                             className={styles.joinBtn}
-                                            style={{
-                                              opacity: isFormEmpty ? 0.2 : 1,
-                                            }}
+                                            style={{ opacity: formik.isValid ? 1 : 0.2 }}
                                           >
                                             APPLY FOR TRIAL
                                           </button>
