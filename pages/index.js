@@ -579,11 +579,9 @@ export default function Home({ features }) {
                                               openModal2();
                                               setIsVisible(true);
                                             }}
-                                            disabled={isFormEmpty}
+                                            disabled={formik.isSubmitting || !formik.isValid}
                                             className={styles.joinBtn}
-                                            style={{
-                                              opacity: isFormEmpty ? 0.2 : 1,
-                                            }}
+                                            style={{ opacity: formik.isValid ? 1 : 0.2 }}
                                           >
                                             APPLY FOR TRIAL
                                           </button>
