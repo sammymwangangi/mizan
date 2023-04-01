@@ -103,6 +103,9 @@ const testimonials = [
 
 export default function Home({ features }) {
   // form
+  const phoneRegex = RegExp(
+    /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
+  );
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -113,7 +116,7 @@ export default function Home({ features }) {
       name: Yup.string()
         .max(20, "Name must be 20 characters or less")
         .required("Name is required"),
-      phone: Yup.string().required("Phone is required"),
+      phone: Yup.string().matches(phoneRegex, "Invalid phone").required("Phone is required"),
       email: Yup.string()
         .email("Invalid email address")
         .required("Email is required"),
@@ -509,7 +512,7 @@ export default function Home({ features }) {
                                               />
                                             </div>
                                           </div>
-                                          <div className="tw-text-red-700 tw-font-medium tw-p-1 tw-text-xs">
+                                          <div className="tw-text-red-700 tw-font-medium tw-text-xs">
                                             {formik.errors.name}
                                           </div>
                                         </div>
@@ -534,7 +537,7 @@ export default function Home({ features }) {
                                               />
                                             </div>
                                           </div>
-                                          <div className="tw-text-red-700 tw-font-medium tw-p-1 tw-text-xs">
+                                          <div className="tw-text-red-700 tw-font-medium tw-text-xs">
                                             {formik.errors.phone}
                                           </div>
                                         </div>
@@ -559,20 +562,11 @@ export default function Home({ features }) {
                                               />
                                             </div>
                                           </div>
-                                          <div className="tw-text-red-700 tw-font-medium tw-p-1 tw-text-xs">
+                                          <div className="tw-text-red-700 tw-font-medium tw-text-xs">
                                             {formik.errors.email}
                                           </div>
                                         </div>
                                         <div className="tw-mt-4">
-                                          {/* <button
-                                            type="submit"
-                                            onClick={openModal2}
-                                            disabled={isFormEmpty}
-                                            className={styles.joinBtn}
-                                            style={{ opacity: isFormEmpty ? 0.2 : 1 }}
-                                          >
-                                            APPLY FOR TRIAL
-                                          </button> */}
                                           <button
                                             type="submit"
                                             onClick={() => {
