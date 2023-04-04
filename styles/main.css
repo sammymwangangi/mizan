@@ -4292,6 +4292,10 @@ p {
   margin-top: 300px;
 }
 
+.footer-brand {
+  margin-top: 300px;
+}
+
 .mizan-donate {
   margin-top: 60px;
 }
@@ -4424,6 +4428,10 @@ p {
   .footer-home {
     margin-top: 187px;
   }
+
+  .footer-brand {
+    margin-top: 0px;
+  }
 }
 
 @media (max-width: 1180px) {
@@ -4456,6 +4464,10 @@ p {
   }
 
   .footer-home {
+    margin-top: 0px;
+  }
+
+  .footer-brand {
     margin-top: 0px;
   }
 
