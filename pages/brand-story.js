@@ -513,7 +513,7 @@ export default function BrandStory() {
 
         <section className="tw-positive finance p-0 mizan-donate">
           <div className="last-img"></div>
-          <div className="tw-flex tw-gap-[50px] tw-absolute tw-bottom-[950px] tw-left-[80px] tw-items-center tw-justify-between">
+          <div className="tw-flex tw-gap-[50px] tw-absolute tw-bottom-[870px] tw-left-[80px] tw-items-center tw-justify-between">
             <div>
               <Image
                 src="https://ik.imagekit.io/qqkp8wchu/iphone1.png?updatedAt=1680611112626"
