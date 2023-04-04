@@ -3,20 +3,16 @@ import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 
-import {Images} from "../components/images";
+import { Images } from "../components/images";
 
 import dynamic from "next/dynamic";
 import React, { Suspense } from "react";
 
+const DynamicNav = dynamic(() => import("../components/nav"), {});
 
-const DynamicNav = dynamic(() => import("../components/nav"), {
-});
+const DynamicFooter = dynamic(() => import("../components/footer"), {});
 
-const DynamicFooter = dynamic(() => import("../components/footer"), {
-});
-
-const DynamicNavModal = dynamic(() => import("../components/navModal"), {
-});
+const DynamicNavModal = dynamic(() => import("../components/navModal"), {});
 
 const marks = [
   {
@@ -57,12 +53,11 @@ export default function BrandStory() {
       <Head>
         <meta charSet="utf-8" />
         <title>Mizan Money - Brand Story</title>
-        
       </Head>
-      
+
       <main>
         {/* Nav */}
-          <DynamicNav />
+        <DynamicNav />
         {/* End */}
 
         <section className="brand-story-hero">
@@ -164,7 +159,7 @@ export default function BrandStory() {
             <div className="row">
               <div className="col-lg-6 col-md-6 col-sm-12 order-md-1 order-2">
                 <img
-                  src="https://ik.imagekit.io/qqkp8wchu/neobank1.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677796279480"
+                  src="https://ik.imagekit.io/qqkp8wchu/2.png?updatedAt=1680610233112"
                   alt=""
                   width="100%"
                   className="neobank1"
@@ -172,7 +167,7 @@ export default function BrandStory() {
               </div>
               <div className="col-lg-6 col-md-6 col-sm-12 order-md-2 order-1">
                 <img
-                  src="https://ik.imagekit.io/qqkp8wchu/neobank2.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677796264438"
+                  src="https://ik.imagekit.io/qqkp8wchu/1.png?updatedAt=1680610247691"
                   alt=""
                   width="100%"
                   className="neobank2"
@@ -197,16 +192,12 @@ export default function BrandStory() {
                 </div>
                 <div className="col-lg-6 col-md-6 col-sm-12 mt-5 mt-md-0">
                   <ul>
-                  {marks.map((mark) => (
-                    <li key={mark.tag}>
-                      <img
-                        src={mark.imageUrl}
-                        width="58px"
-                        height="58px"
-                      />
-                      <div dangerouslySetInnerHTML={{ __html: mark.title }} />
-                    </li>
-                  ))}
+                    {marks.map((mark) => (
+                      <li key={mark.tag}>
+                        <img src={mark.imageUrl} width="58px" height="58px" />
+                        <div dangerouslySetInnerHTML={{ __html: mark.title }} />
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -252,7 +243,7 @@ export default function BrandStory() {
             <div className="row">
               <div className="col-lg-6 col-md-6 col-sm-12 ">
                 <img
-                  src="https://ik.imagekit.io/qqkp8wchu/outside2.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677796939572"
+                  src="https://ik.imagekit.io/qqkp8wchu/4.png?updatedAt=1680610243859"
                   alt=""
                   width="100%"
                   className="outside1"
@@ -260,7 +251,7 @@ export default function BrandStory() {
               </div>
               <div className="col-lg-6 col-md-6 col-sm-12 ">
                 <img
-                  src="https://ik.imagekit.io/qqkp8wchu/central-img.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677797005449"
+                  src="https://ik.imagekit.io/qqkp8wchu/3.png?updatedAt=1680610234446"
                   alt=""
                   width="100%"
                   className="outside2"
@@ -309,7 +300,7 @@ export default function BrandStory() {
 
         <section className="finance outside-main pt-0 pt-sm-5">
           <div className="finance-header">
-            <h2>Meet the team</h2>
+            <h2>First Sharia compliant BNPL</h2>
           </div>
           <div className="team-img"></div>
         </section>
@@ -354,7 +345,7 @@ export default function BrandStory() {
             <div className="row">
               <div className="col-lg-6 col-md-6 col-sm-12 ">
                 <img
-                  src="https://ik.imagekit.io/qqkp8wchu/pay2.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677796318651"
+                  src="https://ik.imagekit.io/qqkp8wchu/6.png?updatedAt=1680611122452"
                   alt=""
                   width="100%"
                   className="outside1"
@@ -362,7 +353,7 @@ export default function BrandStory() {
               </div>
               <div className="col-lg-6 col-md-6 col-sm-12 ">
                 <img
-                  src="https://ik.imagekit.io/qqkp8wchu/pay1.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677796885101"
+                  src="https://ik.imagekit.io/qqkp8wchu/7.png?updatedAt=1680611122013"
                   alt=""
                   width="100%"
                   className="outside2"
@@ -403,20 +394,54 @@ export default function BrandStory() {
           </div>
         </section>
 
-        <section className="finance p-0 mizan-donate">
+        <section className="tw-positive finance p-0 mizan-donate">
           <div className="last-img"></div>
+          <div className="tw-flex tw-gap-[50px] tw-absolute tw-bottom-[950px] tw-left-[80px] tw-items-center tw-justify-between">
+            <div>
+              <Image
+                src="https://ik.imagekit.io/qqkp8wchu/iphone1.png?updatedAt=1680611112626"
+                width={280}
+                height={567.4}
+                alt="iphone1"
+              />
+            </div>
+            <div>
+              <Image
+                src="https://ik.imagekit.io/qqkp8wchu/Union.png?updatedAt=1680613078943"
+                width={200}
+                height={103.57}
+                alt="iphone1"
+              />
+            </div>
+            <div>
+              <Image
+                src="https://ik.imagekit.io/qqkp8wchu/iphone2.png?updatedAt=1680611110813"
+                width={280}
+                height={567.4}
+                alt="iphone1"
+              />
+            </div>
+            <div>
+              <Image
+                src="https://ik.imagekit.io/qqkp8wchu/iphone3.png?updatedAt=1680611112251"
+                width={280}
+                height={567.4}
+                alt="iphone1"
+              />
+            </div>
+          </div>
         </section>
 
-        {/* Footer */}
         
-          <DynamicFooter />
-        {/* End */}
 
+        {/* Footer */}
+
+        <DynamicFooter />
+        {/* End */}
       </main>
 
       {/* models */}
-        <DynamicNavModal />
-
+      <DynamicNavModal />
     </>
   );
 }

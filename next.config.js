@@ -23,6 +23,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "images.ctfassets.net",
       },
+      {
+        protocol: "https",
+        hostname: "ik.imagekit.io",
+      },
     ],
     minimumCacheTTL: 1500000,
   },
