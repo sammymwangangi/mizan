@@ -425,8 +425,8 @@ export default function BrandStory() {
         <section className="Neobank team-bg">
           <div className="outside-working">
             <h2>
-              What is a Halal <br />
-              Buy now pay later?
+            What is Halal BNPL?<br />
+            Buy now pay later?
             </h2>
             <div className="row">
               <div className="col-lg-6 col-md-6 col-sm-12">
