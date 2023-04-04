@@ -180,30 +180,25 @@ export default function Home({ features }) {
   }, [chatLog]); // re-run this effect whenever the chat log updates
 
   const sendMessage = (message) => {
-    const url = "/api/chat";
+    const url = '/api/chat';
 
     const data = {
       model: "gpt-3.5-turbo-0301",
-      messages: [{ role: "user", content: message }],
+      messages: [{ "role": "user", "content": message }]
     };
 
     setIsLoading(true);
 
-    axios
-      .post(url, data)
-      .then((response) => {
-        console.log(response);
-        setChatLog((prevChatLog) => [
-          ...prevChatLog,
-          { type: "bot", message: response.data.choices[0].message.content },
-        ]);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        setIsLoading(false);
-        console.log(error);
-      });
-  };
+    axios.post(url, data).then((response) => {
+      console.log(response);
+      setChatLog((prevChatLog) => [...prevChatLog, { type: 'bot', message: response.data.choices[0].message.content }])
+      setIsLoading(false);
+    }).catch((error) => {
+      setIsLoading(false);
+      console.log(error);
+    })
+  }
+
   // console.log(features);
   const [avatarIndex, setAvatarIndex] = useState(0);
 
