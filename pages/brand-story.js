@@ -506,7 +506,7 @@ export default function BrandStory() {
                 <div className="col-lg-6 col-md-6 col-sm-12 mt-5 mt-md-0">
                   <p className="def-padding">
                     We are kicking off with powerful donation feature via
-                    <span> “Round-ups”</span>; a spare change account that round-ups your
+                    <Link href="/#rounds"> “Round-ups”</Link>; a spare change account that round-ups your
                     payment to the nearest whole figure.
                   </p>
                   <p>

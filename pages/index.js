@@ -939,7 +939,7 @@ export default function Home({ features }) {
               </div>
             </div>
           </div>
-          <div className="mizan-round">
+          <div className="mizan-round" id="rounds">
             <div className="row">
               <div className="col-xl-5 col-lg-5 col-md-12">
                 <div className="mizan-round-left">
