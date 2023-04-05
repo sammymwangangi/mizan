@@ -30,3 +30,12 @@
   width: fit-content;
   font-family: Poppinssemibold;
 }
+
+.works{
+font-family: Poppinssemibold;
+font-size: 36px;
+line-height: 180%;
+color: #1B1C39;
+margin-left: 120px;
+margin-top: 20px;
+}

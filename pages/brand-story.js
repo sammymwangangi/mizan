@@ -523,7 +523,10 @@ export default function BrandStory() {
         </section>
 
         <section className="tw-positive finance p-0 mizan-donate">
-          <div className="last-img"></div>
+          <div className="last-img">
+
+          <div className={styles3.works}>How it Works</div>
+          </div>
           <div className="tw-flex tw-gap-[50px] tw-absolute tw-bottom-[870px] tw-left-[80px] tw-items-center tw-justify-between">
             <div>
               <Image
