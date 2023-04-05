@@ -498,6 +498,7 @@ export default function BrandStory() {
                     digital payment options, more people are opting for
                     electronic transactions over cash.
                   </p>
+                  <br/>
                   <p className="def-padding">
                     Mizan Donate, aims to empower 500 million muslims in Africa
                     through a transparent, in app crowdfunding platform.
@@ -509,6 +510,7 @@ export default function BrandStory() {
                     <Link href="/#rounds" className={styles3.rounds}> “Round-ups”</Link>; a spare change account that round-ups your
                     payment to the nearest whole figure.
                   </p>
+                  <br/>
                   <p>
                     You can start throwing as little as $0.1 to your Jannah
                     account whenever you spend. Because its not about how much
