@@ -912,7 +912,7 @@ export default function Home({ features }) {
         </section>
 
         <section className="ups-work ">
-          <div className="ups-box position-relative">
+          <div className="ups-box position-relative" id="rounds">
             <img
               src="/images/homepage/pattern.svg"
               className="ups-bg"
@@ -939,7 +939,7 @@ export default function Home({ features }) {
               </div>
             </div>
           </div>
-          <div className="mizan-round" id="rounds">
+          <div className="mizan-round">
             <div className="row">
               <div className="col-xl-5 col-lg-5 col-md-12">
                 <div className="mizan-round-left">

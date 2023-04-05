@@ -1,50 +1,78 @@
 .joinBtn3 {
-    padding: 15px 0;
-    max-width: 100%;
-    width: 320px;
-    color: #fff;
-    border: none;
-    font-size: 17px;
-    border-radius: 50px;
-    background: linear-gradient(
-      75.68deg,
-      #d155ff 2.33%,
-      #b532f2 15.95%,
-      #a016e8 29.28%,
-      #9406e2 41.05%,
-      #8f00e0 50%,
-      #a08cff 97.67%
-    );
-    filter: drop-shadow(0px 15px 30px rgba(57, 26, 115, 0.15));
-    font-family: "Poppinsmedium";
-  }
+  padding: 15px 0;
+  max-width: 100%;
+  width: 320px;
+  color: #fff;
+  border: none;
+  font-size: 17px;
+  border-radius: 50px;
+  background: linear-gradient(
+    75.68deg,
+    #d155ff 2.33%,
+    #b532f2 15.95%,
+    #a016e8 29.28%,
+    #9406e2 41.05%,
+    #8f00e0 50%,
+    #a08cff 97.67%
+  );
+  filter: drop-shadow(0px 15px 30px rgba(57, 26, 115, 0.15));
+  font-family: "Poppinsmedium";
+}
 
 .rounds {
   font-size: 22px;
   line-height: 180%;
-  background: linear-gradient(80.75deg, #D155FF 4.6%, #B532F2 17.14%, #A016E8 29.4%, #9406E2 40.22%, #8F00E0 48.46%, #A08CFF 92.32%);
+  background: linear-gradient(
+    80.75deg,
+    #d155ff 4.6%,
+    #b532f2 17.14%,
+    #a016e8 29.4%,
+    #9406e2 40.22%,
+    #8f00e0 48.46%,
+    #a08cff 92.32%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
   width: fit-content;
   font-family: Poppinssemibold;
+  position: relative;
 }
 
-.works{
-font-family: Poppinssemibold;
-font-size: 36px;
-line-height: 180%;
-color: #1B1C39;
-margin-left: 120px;
-margin-top: 20px;
+.rounds::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(
+    80.75deg,
+    #d155ff 4.6%,
+    #b532f2 17.14%,
+    #a016e8 29.4%,
+    #9406e2 40.22%,
+    #8f00e0 48.46%,
+    #a08cff 92.32%
+  );
+}
+
+.works {
+  font-family: Poppinssemibold;
+  font-size: 36px;
+  line-height: 180%;
+  color: #1b1c39;
+  margin-left: 120px;
+  margin-top: 20px;
 }
 
 .works2 {
   font-family: Poppinssemibold;
-font-size: 20px;
-line-height: 180%;
-color: #1B1C39;
-margin-top: 45px;
-font-family: Poppinsbold;
+  font-size: 20px;
+  line-height: 180%;
+  color: #1b1c39;
+  margin-top: 45px;
+  font-family: Poppinsbold;
 }
