@@ -527,14 +527,15 @@ export default function BrandStory() {
 
           <div className={styles3.works}>How it Works</div>
           </div>
-          <div className="tw-flex tw-gap-[50px] tw-absolute tw-bottom-[870px] tw-left-[80px] tw-items-center tw-justify-between">
-            <div>
+          <div className="tw-flex tw-gap-[50px] tw-absolute tw-bottom-[800px] tw-left-[80px] tw-items-center tw-justify-between">
+            <div className="tw-flex tw-flex-col tw-items-center">
               <Image
                 src="https://ik.imagekit.io/qqkp8wchu/iphone1.png?updatedAt=1680611112626"
                 width={280}
                 height={567.4}
                 alt="iphone1"
               />
+              <div className={styles3.works2}>CHOOSE A CAMPAIGN</div>
             </div>
             <div>
               <Image
@@ -544,21 +545,23 @@ export default function BrandStory() {
                 alt="iphone1"
               />
             </div>
-            <div>
+            <div className="tw-flex tw-flex-col tw-items-center">
               <Image
                 src="https://ik.imagekit.io/qqkp8wchu/iphone2.png?updatedAt=1680611110813"
                 width={280}
                 height={567.4}
                 alt="iphone1"
               />
+              <div className={styles3.works2}>DONATE EFFORTLESSY</div>
             </div>
-            <div>
+            <div className="tw-flex tw-flex-col tw-items-center">
               <Image
                 src="https://ik.imagekit.io/qqkp8wchu/iphone3.png?updatedAt=1680611112251"
                 width={280}
                 height={567.4}
                 alt="iphone1"
               />
+              <div className={styles3.works2}>GET INSPIRED & SHARE</div>
             </div>
           </div>
         </section>
