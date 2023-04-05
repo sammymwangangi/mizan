@@ -43,10 +43,10 @@
 .rounds::before {
   content: "";
   position: absolute;
-  top: 100%;
+  top: 82%;
   width: 100%;
   left: 0;
-  height: 2px;
+  height: 1px;
   border-radius: 2px;
   background: linear-gradient(
     80.75deg,
