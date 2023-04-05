@@ -15,7 +15,10 @@ import styles3 from "../styles/Brand.module.css";
 const DynamicNav = dynamic(() => import("../components/nav"), {});
 
 const DynamicFooter = dynamic(() => import("../components/footer"), {});
-const DynamicBrandFooter = dynamic(() => import("../components/brandFooter"), {});
+const DynamicBrandFooter = dynamic(
+  () => import("../components/brandFooter"),
+  {}
+);
 
 const DynamicNavModal = dynamic(() => import("../components/navModal"), {});
 
@@ -425,8 +428,9 @@ export default function BrandStory() {
         <section className="Neobank team-bg">
           <div className="outside-working">
             <h2>
-            What is Halal BNPL?<br />
-            Buy now pay later?
+              What is Halal BNPL?
+              <br />
+              Buy now pay later?
             </h2>
             <div className="row">
               <div className="col-lg-6 col-md-6 col-sm-12">
@@ -490,20 +494,25 @@ export default function BrandStory() {
               <div className="row donate-margin">
                 <div className="col-lg-6 col-md-6 col-sm-12">
                   <p className="def-padding">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nunc vulputate libero et velit interdum, ac aliquet odio
-                    mattis. Class aptent taciti sociosqu ad litora torquent per
-                    conubia nostra, per inceptos himenaeos. Curabitur tempus
-                    urna at turpis condimentum lobortis.
+                    Let’s be honest, cash is no longer king. With the rise of
+                    digital payment options, more people are opting for
+                    electronic transactions over cash.
+                  </p>
+                  <p className="def-padding">
+                    Mizan Donate, aims to empower 500 million muslims in Africa
+                    through a transparent, in app crowdfunding platform.
                   </p>
                 </div>
                 <div className="col-lg-6 col-md-6 col-sm-12 mt-5 mt-md-0">
                   <p className="def-padding">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nunc vulputate libero et velit interdum, ac aliquet odio
-                    mattis. Class aptent taciti sociosqu ad litora torquent per
-                    conubia nostra, per inceptos himenaeos. Curabitur tempus
-                    urna at turpis condimentum lobortis.
+                    We are kicking off with powerful donation feature via
+                    <span> “Round-ups”</span>; a spare change account that round-ups your
+                    payment to the nearest whole figure.
+                  </p>
+                  <p>
+                    You can start throwing as little as $0.1 to your Jannah
+                    account whenever you spend. Because its not about how much
+                    really, it’s how often.
                   </p>
                 </div>
               </div>
