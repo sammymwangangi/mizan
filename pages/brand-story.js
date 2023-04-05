@@ -279,7 +279,7 @@ export default function BrandStory() {
             <div className="row">
               <div className="col-lg-6 col-md-6 col-sm-12 order-md-1 order-2">
                 <img
-                  src="https://ik.imagekit.io/qqkp8wchu/2.png?updatedAt=1680610233112"
+                  src="https://ik.imagekit.io/qqkp8wchu/New/8.svg?updatedAt=1680712198762"
                   alt=""
                   width="100%"
                   className="neobank1"
@@ -287,7 +287,7 @@ export default function BrandStory() {
               </div>
               <div className="col-lg-6 col-md-6 col-sm-12 order-md-2 order-1">
                 <img
-                  src="https://ik.imagekit.io/qqkp8wchu/1.png?updatedAt=1680610247691"
+                  src="https://ik.imagekit.io/qqkp8wchu/New/9.svg?updatedAt=1680712205966"
                   alt=""
                   width="100%"
                   className="neobank2"
@@ -363,7 +363,7 @@ export default function BrandStory() {
             <div className="row">
               <div className="col-lg-6 col-md-6 col-sm-12 ">
                 <img
-                  src="https://ik.imagekit.io/qqkp8wchu/4.png?updatedAt=1680610243859"
+                  src="https://ik.imagekit.io/qqkp8wchu/New/6.svg?updatedAt=1680712202701"
                   alt=""
                   width="100%"
                   className="outside1"
@@ -371,7 +371,7 @@ export default function BrandStory() {
               </div>
               <div className="col-lg-6 col-md-6 col-sm-12 ">
                 <img
-                  src="https://ik.imagekit.io/qqkp8wchu/3.png?updatedAt=1680610234446"
+                  src="https://ik.imagekit.io/qqkp8wchu/New/7.svg?updatedAt=1680712200444"
                   alt=""
                   width="100%"
                   className="outside2"
@@ -466,7 +466,7 @@ export default function BrandStory() {
             <div className="row">
               <div className="col-lg-6 col-md-6 col-sm-12 ">
                 <img
-                  src="https://ik.imagekit.io/qqkp8wchu/6.png?updatedAt=1680611122452"
+                  src="https://ik.imagekit.io/qqkp8wchu/New/1.svg?updatedAt=1680712107454"
                   alt=""
                   width="100%"
                   className="outside1"
@@ -474,7 +474,7 @@ export default function BrandStory() {
               </div>
               <div className="col-lg-6 col-md-6 col-sm-12 ">
                 <img
-                  src="https://ik.imagekit.io/qqkp8wchu/7.png?updatedAt=1680611122013"
+                  src="https://ik.imagekit.io/qqkp8wchu/New/2.svg?updatedAt=1680712105347"
                   alt=""
                   width="100%"
                   className="outside2"
@@ -530,7 +530,7 @@ export default function BrandStory() {
           <div className="tw-flex tw-gap-[50px] tw-absolute tw-bottom-[800px] tw-left-[80px] tw-items-center tw-justify-between">
             <div className="tw-flex tw-flex-col tw-items-center">
               <Image
-                src="https://ik.imagekit.io/qqkp8wchu/iphone1.png?updatedAt=1680611112626"
+                src="https://ik.imagekit.io/qqkp8wchu/New/3.svg?updatedAt=1680712112070"
                 width={280}
                 height={567.4}
                 alt="iphone1"
@@ -547,7 +547,7 @@ export default function BrandStory() {
             </div>
             <div className="tw-flex tw-flex-col tw-items-center">
               <Image
-                src="https://ik.imagekit.io/qqkp8wchu/iphone2.png?updatedAt=1680611110813"
+                src="https://ik.imagekit.io/qqkp8wchu/New/4.svg?updatedAt=1680712108717"
                 width={280}
                 height={567.4}
                 alt="iphone1"
@@ -556,7 +556,7 @@ export default function BrandStory() {
             </div>
             <div className="tw-flex tw-flex-col tw-items-center">
               <Image
-                src="https://ik.imagekit.io/qqkp8wchu/iphone3.png?updatedAt=1680611112251"
+                src="https://ik.imagekit.io/qqkp8wchu/New/5.svg?updatedAt=1680712113230"
                 width={280}
                 height={567.4}
                 alt="iphone1"
