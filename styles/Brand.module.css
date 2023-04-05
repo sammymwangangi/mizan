@@ -18,3 +18,15 @@
     filter: drop-shadow(0px 15px 30px rgba(57, 26, 115, 0.15));
     font-family: "Poppinsmedium";
   }
+
+.rounds {
+  font-size: 22px;
+  line-height: 180%;
+  background: linear-gradient(80.75deg, #D155FF 4.6%, #B532F2 17.14%, #A016E8 29.4%, #9406E2 40.22%, #8F00E0 48.46%, #A08CFF 92.32%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  width: fit-content;
+  font-family: Poppinssemibold;
+}
