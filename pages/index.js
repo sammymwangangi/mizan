@@ -100,8 +100,66 @@ const testimonials = [
       "When i joined beta program, i got to experience first hand how my financial future will be revolutionized. Ditching my bank for G.",
   },
 ];
+const features = [
+  {
+    tag: "feature1",
+    title: "Mizan Pay - Shop now pay at your own pace",
+    description:
+      "With our aethetically appealing mizan metal card, you can easily spread your payments upto 12 months. No late payment fees, no penalties. What you borrow is what you will pay. Let’s just keep it at that.",
+    imageUrl:
+      "https://ik.imagekit.io/qqkp8wchu/feature1.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677761579572",
+  },
+  {
+    tag: "feature2",
+    title: "Track Ur buck. “The Ostrich-effect”",
+    description:
+      "Here’s the thing,none of us like bad news, so we tend to bury our heads in the sand and pretend we did not just purchase that overpriced bag.",
+    imageUrl:
+      "https://ik.imagekit.io/qqkp8wchu/Features/feature2.svg?updatedAt=1680786519397",
+  },
+  {
+    tag: "feature3",
+    title: "Donate to a cause you care. (Effortlessly)",
+    description:
+      "Do you want to build your own palace made of golden bricks and silver in Paradise? Or just want to hang out with the prophet muhammad (P.BU.H)? Well, no one lives forever, so start prepping for tomorrow.",
+    imageUrl:
+      "https://ik.imagekit.io/qqkp8wchu/feature3.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677761792322",
+  },
+  {
+    tag: "feature4",
+    title: "Better Credit Score. Better future",
+    description:
+      "It takes years to build reputation and seconds to destory it. Sometimes we really dont know whether we are building a better credit score or destroying it.",
+    imageUrl:
+      "https://ik.imagekit.io/qqkp8wchu/feature4.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677761790412",
+  },
+  {
+    tag: "featur5",
+    title: "Mizan Round-Ups",
+    description:
+      "Whether that’s a new phone, a pair of sneakers or a ticket to Space - we can help you form the right saving habits to achive your goal.",
+    imageUrl:
+      "https://ik.imagekit.io/qqkp8wchu/feature5.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677757744980",
+  },
+  {
+    tag: "feature6",
+    title: "Meet Robin-Habibi, Your BFF (Best Financial Friend)",
+    description:
+      "Automate the big picture,with award winning, robo-advisor we nicknamed “Robin-Habibi” .",
+    imageUrl:
+      "https://ik.imagekit.io/qqkp8wchu/feature6.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677761733541",
+  },
+  {
+    tag: "feature7",
+    title: "Mizan Early Salary via Direct Deposits",
+    description:
+      "Don’t wait until payday to have a play day. Why wait anyway? You’ve worked hard for your moolah.",
+    imageUrl:
+      "https://ik.imagekit.io/qqkp8wchu/feature7.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677798389210",
+  },
+];
 
-export default function Home({ features }) {
+export default function Home() {
   // form
   const phoneRegex = RegExp(
     /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
@@ -881,27 +939,16 @@ export default function Home({ features }) {
               modules={[Pagination, Navigation]}
               className="swiper featureSwiper"
             >
-              {features.map((feature) => (
-                <SwiperSlide key={feature.sys.id} className="swiper-slide">
+               {features.map((feature) => (
+                <SwiperSlide key={feature.tag} className="swiper-slide">
                   <div className="light-border">
                     <div className="feature-card">
                       <div className="feature-card-img">
-                        <Image
-                          src={feature.fields.image.fields.file.url}
-                          alt={feature.fields.image.fields.title}
-                          loading="lazy"
-                          width={
-                            feature.fields.image.fields.file.details.image.width
-                          }
-                          height={
-                            feature.fields.image.fields.file.details.image
-                              .height
-                          }
-                        />
+                      <Image src={feature.imageUrl} alt={feature.tag} width={440} height={374} />
                       </div>
                       <div className="feature-card-def">
-                        <h3>{feature.fields.title}</h3>
-                        <p>{feature.fields.description}</p>
+                        <h3>{feature.title}</h3>
+                        <p>{feature.description}</p>
                       </div>
                     </div>
                   </div>
@@ -1475,17 +1522,17 @@ export default function Home({ features }) {
   );
 }
 
-export async function getStaticProps() {
-  const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-  });
+// export async function getStaticProps() {
+//   const client = createClient({
+//     space: process.env.CONTENTFUL_SPACE_ID,
+//     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+//   });
 
-  const res = await client.getEntries({ content_type: "feature" });
+//   const res = await client.getEntries({ content_type: "feature" });
 
-  return {
-    props: {
-      features: res.items,
-    }, // will be passed to the page component as props
-  };
-}
+//   return {
+//     props: {
+//       features: res.items,
+//     }, // will be passed to the page component as props
+//   };
+// }
