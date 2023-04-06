@@ -498,7 +498,7 @@ export default function BrandStory() {
                     digital payment options, more people are opting for
                     electronic transactions over cash.
                   </p>
-                  <br/>
+                  <br />
                   <p className="def-padding">
                     Mizan Donate, aims to empower 500 million muslims in Africa
                     through a transparent, in app crowdfunding platform.
@@ -507,10 +507,14 @@ export default function BrandStory() {
                 <div className="col-lg-6 col-md-6 col-sm-12 mt-5 mt-md-0">
                   <p className="def-padding">
                     We are kicking off with powerful donation feature via
-                    <Link href="/#rounds" className={styles3.rounds}> “Round-ups”</Link>; a spare change account that round-ups your
-                    payment to the nearest whole figure.
+                    <Link href="/#rounds" className={styles3.rounds}>
+                      {" "}
+                      “Round-ups”
+                    </Link>
+                    ; a spare change account that round-ups your payment to the
+                    nearest whole figure.
                   </p>
-                  <br/>
+                  <br />
                   <p>
                     You can start throwing as little as $0.1 to your Jannah
                     account whenever you spend. Because its not about how much
@@ -522,46 +526,45 @@ export default function BrandStory() {
           </div>
         </section>
 
-        <section className="tw-positive finance p-0 mizan-donate">
-          <div className="last-img">
-
-          <div className={styles3.works}>How it Works</div>
-          </div>
-          <div className="tw-flex tw-gap-[50px] tw-absolute tw-bottom-[800px] tw-left-[80px] tw-items-center tw-justify-between">
-            <div className="tw-flex tw-flex-col tw-items-center">
-              <Image
-                src="https://ik.imagekit.io/qqkp8wchu/New/3.svg?updatedAt=1680712112070"
-                width={280}
-                height={567.4}
-                alt="iphone1"
-              />
-              <div className={styles3.works2}>CHOOSE A CAMPAIGN</div>
-            </div>
-            <div>
-              <Image
-                src="https://ik.imagekit.io/qqkp8wchu/Union.png?updatedAt=1680613078943"
-                width={200}
-                height={103.57}
-                alt="iphone1"
-              />
-            </div>
-            <div className="tw-flex tw-flex-col tw-items-center">
-              <Image
-                src="https://ik.imagekit.io/qqkp8wchu/New/4.svg?updatedAt=1680712108717"
-                width={280}
-                height={567.4}
-                alt="iphone1"
-              />
-              <div className={styles3.works2}>DONATE EFFORTLESSY</div>
-            </div>
-            <div className="tw-flex tw-flex-col tw-items-center">
-              <Image
-                src="https://ik.imagekit.io/qqkp8wchu/New/5.svg?updatedAt=1680712113230"
-                width={280}
-                height={567.4}
-                alt="iphone1"
-              />
-              <div className={styles3.works2}>GET INSPIRED & SHARE</div>
+        <section className="tw-mt-[160px]">
+          <div className={styles3.finance}>
+            <div className={styles3.works}>How it Works</div>
+            <div className="tw-flex tw-gap-[40px] tw-bottom-[80px] tw-pl-[79px] tw-pr-[79px] tw-items-center tw-justify-between">
+              <div className="tw-flex tw-flex-col tw-items-center">
+                <div className={styles3.works2}>CHOOSE A CAMPAIGN</div>
+                <Image
+                  src="https://ik.imagekit.io/qqkp8wchu/New/3.svg?updatedAt=1680712112070"
+                  width={280}
+                  height={567.4}
+                  alt="iphone1"
+                />
+              </div>
+              <div>
+                <Image
+                  src="https://ik.imagekit.io/qqkp8wchu/Union.png?updatedAt=1680613078943"
+                  width={200}
+                  height={103.57}
+                  alt="iphone1"
+                />
+              </div>
+              <div className="tw-flex tw-flex-col tw-items-center">
+                <div className={styles3.works2}>DONATE EFFORTLESSY</div>
+                <Image
+                  src="https://ik.imagekit.io/qqkp8wchu/New/4.svg?updatedAt=1680712108717"
+                  width={280}
+                  height={567.4}
+                  alt="iphone1"
+                />
+              </div>
+              <div className="tw-flex tw-flex-col tw-items-center">
+                <div className={styles3.works2}>GET INSPIRED & SHARE</div>
+                <Image
+                  src="https://ik.imagekit.io/qqkp8wchu/New/5.svg?updatedAt=1680712113230"
+                  width={280}
+                  height={567.4}
+                  alt="iphone1"
+                />
+              </div>
             </div>
           </div>
         </section>

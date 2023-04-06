@@ -64,8 +64,9 @@
   font-size: 36px;
   line-height: 180%;
   color: #1b1c39;
-  margin-left: 120px;
+  margin-left: 79px;
   margin-top: 20px;
+  padding-top: 50px;
 }
 
 .works2 {
@@ -73,6 +74,15 @@
   font-size: 20px;
   line-height: 180%;
   color: #1b1c39;
-  margin-top: 45px;
+  margin-top: 48px;
   font-family: Poppinsbold;
+}
+
+.finance {
+  position: relative;
+  height: 877px;
+  margin-right: 51px;
+  margin-left: 51px;
+  background: linear-gradient(180deg, rgba(198, 186, 255, 0.28) 0%, rgba(198, 186, 255, 0) 100%);
+  border-radius: 25px;
 }

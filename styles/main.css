@@ -3900,10 +3900,12 @@ p {
 
 .finance .last-img {
   height: 835px;
-  width: 100%;
-  background-image: url("https://ik.imagekit.io/qqkp8wchu/background_for_dates.svg?updatedAt=1680611106238");
+  width: 80%;
+  background-image: url("https://ik.imagekit.io/qqkp8wchu/New/bg.svg?updatedAt=1680814444893");
   background-repeat: no-repeat;
   background-size: cover;
+  /* margin-left: 50px;
+  margin-right: 50px; */
 }
 
 @media (max-width: 1200px) {
@@ -4293,7 +4295,7 @@ p {
 }
 
 .footer-brand {
-  margin-top: 300px;
+  margin-top: 100px;
 }
 
 .mizan-donate {
