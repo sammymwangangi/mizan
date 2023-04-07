@@ -529,7 +529,7 @@ export default function BrandStory() {
         <section className="tw-mt-[160px]">
           <div className={styles3.finance}>
             <div className={styles3.works}>How it Works</div>
-            <div className="tw-flex tw-gap-[40px] tw-items-center tw-justify-between">
+            <div className="tw-flex tw-gap-[30px] tw-items-center tw-justify-between">
               <div className="tw-flex tw-flex-col tw-items-center">
                 <div className={styles3.works2}>CHOOSE A CAMPAIGN</div>
                 <Image
