@@ -64,6 +64,7 @@
   opacity: 0.2;
 }
 
+
 .yallahWaitlist {
   width: 320px;
   height: 55px;
@@ -77,4 +78,21 @@
   text-transform: uppercase;
   color: white;
   margin-top: 64px;
+}
+
+.ups1 {
+  position: relative;
+  width: 325px;
+  height: 325px;
+  background: linear-gradient(145.77deg, #FAF9FE 8.5%, #E0DFFB 90.85%);
+  border-radius: 9999px;
+  /* margin-right: -70px; */
+}
+.ups2 {
+  position: relative;
+  width: 343px;
+  height: 343px;
+  background: linear-gradient(145.77deg, #FAF9FE 8.5%, #C6BAFF 90.85%);
+  box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.01);
+  border-radius: 9999px;
 }

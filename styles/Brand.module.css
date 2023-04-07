@@ -64,9 +64,6 @@
   font-size: 36px;
   line-height: 180%;
   color: #1b1c39;
-  margin-left: 79px;
-  margin-top: 20px;
-  padding-top: 50px;
 }
 
 .works2 {
@@ -85,4 +82,7 @@
   margin-left: 51px;
   background: linear-gradient(180deg, rgba(198, 186, 255, 0.28) 0%, rgba(198, 186, 255, 0) 100%);
   border-radius: 25px;
+  padding-right: 79px;
+  padding-left: 79px;
+  padding-top: 20px;
 }

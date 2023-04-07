@@ -983,6 +983,13 @@ export default function Home() {
                 <div className="ups-right-box">
                   <img src="/images/homepage/ups.png" width="100%" alt="ups" />
                 </div>
+                {/* <div className={styles.ups2}>
+                  <div className="">Big</div>
+                  <div className="">Coffee</div>
+                  <div className="tw-bg-white tw-rounded-full tw-px-2.5 tw-py-0.5">$1.8</div>
+                </div>
+                <div className={styles.ups1}></div> */}
+
               </div>
             </div>
           </div>

@@ -529,7 +529,7 @@ export default function BrandStory() {
         <section className="tw-mt-[160px]">
           <div className={styles3.finance}>
             <div className={styles3.works}>How it Works</div>
-            <div className="tw-flex tw-gap-[40px] tw-bottom-[80px] tw-pl-[79px] tw-pr-[79px] tw-items-center tw-justify-between">
+            <div className="tw-flex tw-gap-[40px] tw-items-center tw-justify-between">
               <div className="tw-flex tw-flex-col tw-items-center">
                 <div className={styles3.works2}>CHOOSE A CAMPAIGN</div>
                 <Image
@@ -569,7 +569,7 @@ export default function BrandStory() {
           </div>
         </section>
 
-        <section className="tw-flex tw-items-center tw-justify-center tw-my-[30px]">
+        <section className="tw-flex tw-items-center tw-justify-center tw-mb-[100px]">
           <div>
             <button onClick={openModal} className={styles3.joinBtn3}>
               JOIN WAITLIST
