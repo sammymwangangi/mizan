@@ -79,6 +79,9 @@ import love2 from "../public/images/homepage/social/love.svg";
 import smile from "../public/images/homepage/social/smile.svg";
 import wink2 from "../public/images/homepage/social/wink.svg";
 import kiss from "../public/images/homepage/social/kiss.svg";
+import cup from "../public/images/homepage/ups/cup.svg";
+import phoneUps from "../public/images/homepage/ups/phone.svg";
+import phoneUps2 from "../public/images/homepage/ups/phone2.svg";
 
 export const Images = {
   cardsBG,
@@ -161,4 +164,7 @@ export const Images = {
   smile,
   wink2,
   kiss,
+  cup,
+  phoneUps,
+  phoneUps2,
 };

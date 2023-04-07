@@ -174,7 +174,9 @@ export default function Home() {
       name: Yup.string()
         .max(20, "Name must be 20 characters or less")
         .required("Name is required"),
-      phone: Yup.string().matches(phoneRegex, "Invalid phone").required("Phone is required"),
+      phone: Yup.string()
+        .matches(phoneRegex, "Invalid phone")
+        .required("Phone is required"),
       email: Yup.string()
         .email("Invalid email address")
         .required("Email is required"),
@@ -238,24 +240,30 @@ export default function Home() {
   }, [chatLog]); // re-run this effect whenever the chat log updates
 
   const sendMessage = (message) => {
-    const url = '/api/chat';
+    const url = "/api/chat";
 
     const data = {
       model: "gpt-3.5-turbo-0301",
-      messages: [{ "role": "user", "content": message }]
+      messages: [{ role: "user", content: message }],
     };
 
     setIsLoading(true);
 
-    axios.post(url, data).then((response) => {
-      console.log(response);
-      setChatLog((prevChatLog) => [...prevChatLog, { type: 'bot', message: response.data.choices[0].message.content }])
-      setIsLoading(false);
-    }).catch((error) => {
-      setIsLoading(false);
-      console.log(error);
-    })
-  }
+    axios
+      .post(url, data)
+      .then((response) => {
+        console.log(response);
+        setChatLog((prevChatLog) => [
+          ...prevChatLog,
+          { type: "bot", message: response.data.choices[0].message.content },
+        ]);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        setIsLoading(false);
+        console.log(error);
+      });
+  };
 
   // console.log(features);
   const [avatarIndex, setAvatarIndex] = useState(0);
@@ -626,9 +634,14 @@ export default function Home() {
                                               openModal2();
                                               setIsVisible(true);
                                             }}
-                                            disabled={formik.isSubmitting || !formik.isValid}
+                                            disabled={
+                                              formik.isSubmitting ||
+                                              !formik.isValid
+                                            }
                                             className={styles.joinBtn}
-                                            style={{ opacity: formik.isValid ? 1 : 0.2 }}
+                                            style={{
+                                              opacity: formik.isValid ? 1 : 0.2,
+                                            }}
                                           >
                                             APPLY FOR TRIAL
                                           </button>
@@ -939,12 +952,17 @@ export default function Home() {
               modules={[Pagination, Navigation]}
               className="swiper featureSwiper"
             >
-               {features.map((feature) => (
+              {features.map((feature) => (
                 <SwiperSlide key={feature.tag} className="swiper-slide">
                   <div className="light-border">
                     <div className="feature-card">
                       <div className="feature-card-img">
-                      <Image src={feature.imageUrl} alt={feature.tag} width={440} height={374} />
+                        <Image
+                          src={feature.imageUrl}
+                          alt={feature.tag}
+                          width={440}
+                          height={374}
+                        />
                       </div>
                       <div className="feature-card-def">
                         <h3>{feature.title}</h3>
@@ -980,16 +998,33 @@ export default function Home() {
                 </div>
               </div>
               <div className="col-xl-7 col-lg-7 col-md-12">
-                <div className="ups-right-box">
+                {/* <div className="ups-right-box">
                   <img src="/images/homepage/ups.png" width="100%" alt="ups" />
+                </div> */}
+                <div className={styles.ups2}>
+                  <div className={styles.upsCup}>
+                    <Image src={Images.cup} alt="cup" />
+                  </div>
+                  <div className={styles.upsText}>Buy</div>
+                  <div className={styles.upsText2}>Coffee</div>
+                  <div className={styles.upsPriceBadge}>
+                    <span className={styles.upsPrice}>$1.8</span>
+                  </div>
                 </div>
-                {/* <div className={styles.ups2}>
-                  <div className="">Big</div>
-                  <div className="">Coffee</div>
-                  <div className="tw-bg-white tw-rounded-full tw-px-2.5 tw-py-0.5">$1.8</div>
+                <div className={styles.ups1}>
+                  <div className={styles.upsPhone}>
+                    <Image src={Images.phoneUps} alt="phone" />
+                  </div>
+                  <div className={styles.upsText3}>Save</div>
+                  <div className={styles.upsText4}>Invest</div>
+                  <div className={styles.or}>or</div>
+                  <Link href="/brand-story/#howToDonate" className={styles.donate}>
+                    Donate
+                  </Link>
+                  <div className={styles.upsPriceBadge2}>
+                    <span className={styles.upsPrice2}>$0.2</span>
+                  </div>
                 </div>
-                <div className={styles.ups1}></div> */}
-
               </div>
             </div>
           </div>
@@ -1402,10 +1437,14 @@ export default function Home() {
             <div className="questions-header">
               <h1>Mizan Knowlege Central</h1>
               <p className="mt-3">
-                Meet Sofie ,the most powerful natural language A.I. to help you<br/>
-                learn about anything say (Sukuks, blockchain, Islamic finance etc).
-                <br/> <br/>
-                Give it a try, <span className="tw-font-bold">type in any language?</span>  (Its free). 
+                Meet Sofie ,the most powerful natural language A.I. to help you
+                <br />
+                learn about anything say (Sukuks, blockchain, Islamic finance
+                etc).
+                <br /> <br />
+                Give it a try,{" "}
+                <span className="tw-font-bold">type in any language?</span> (Its
+                free).
               </p>
             </div>
             <div className="row align-items-center -tw-mt-8">

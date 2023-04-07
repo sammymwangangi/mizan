@@ -526,7 +526,7 @@ export default function BrandStory() {
           </div>
         </section>
 
-        <section className="tw-mt-[160px]">
+        <section className="tw-mt-[160px]" id="howToDonate">
           <div className={styles3.finance}>
             <div className={styles3.works}>How it Works</div>
             <div className="tw-flex tw-gap-[30px] tw-items-center tw-justify-between">
