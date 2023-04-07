@@ -975,7 +975,9 @@ export default function Home() {
             </Swiper>
           </div>
         </section>
-
+        <Link href="/brand-story/#howToDonate" className={styles.donate}>
+                    Donate
+                  </Link>
         <section className="ups-work ">
           <div className="ups-box position-relative" id="rounds">
             <img
@@ -994,6 +996,7 @@ export default function Home() {
                     coffees, meals out—you name it. You’d likely have a good
                     amount of money saved up. Well, that’s the idea behind
                     Round-Ups.
+                    
                   </p>
                 </div>
               </div>

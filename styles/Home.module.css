@@ -191,8 +191,8 @@
 
 .donate {
   position: absolute;
-  right: 38px;
-  top: 176px;
+  right: 408px;
+  top: 4425px;
   font-style: normal;
   font-family: Poppinsbold;
   font-size: 34px;
@@ -205,6 +205,56 @@
 }
 
 .donate::before {
+  content: "";
+  position: absolute;
+  top: 82%;
+  width: 100%;
+  left: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(225deg, #80b2ff 0%, #7c27d9 51.55%, #ff68f0 100%);
+}
+
+@media screen and (max-width: 768px) {
+  .donate {
+    top: 4825px;
+  }
+}
+@media (max-width: 1250px) {
+  .donate {
+    right: 408px;
+    top: 4925px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .donate {
+    right: 408px;
+    top: 4925px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .donate {
+    top: 4425px;
+  }
+}
+
+.donate2 {
+  position: absolute;
+  right: 38px;
+  top: 176px;
+  font-style: normal;
+  font-family: Poppinsbold;
+  font-size: 34px;
+  line-height: 43px;
+  background: linear-gradient(225deg, #80b2ff 0%, #7c27d9 51.55%, #ff68f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.donate2::before {
   content: "";
   position: absolute;
   top: 82%;
