@@ -975,9 +975,9 @@ export default function Home() {
             </Swiper>
           </div>
         </section>
-        <Link href="/brand-story/#howToDonate" className={styles.donate}>
+        {/* <Link href="/brand-story/#howToDonate" className={styles.donate}>
                     Donate
-                  </Link>
+                  </Link> */}
         <section className="ups-work ">
           <div className="ups-box position-relative" id="rounds">
             <img
@@ -1021,7 +1021,7 @@ export default function Home() {
                   <div className={styles.upsText3}>Save</div>
                   <div className={styles.upsText4}>Invest</div>
                   <div className={styles.or}>or</div>
-                  <Link href="/brand-story/#howToDonate" className={styles.donate}>
+                  <Link href="/brand-story/#howToDonate" className={styles.donate2}>
                     Donate
                   </Link>
                   <div className={styles.upsPriceBadge2}>
