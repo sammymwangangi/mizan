@@ -24,6 +24,7 @@ import { Formik, Form, Field, ErrorMessage, useFormik } from "formik";
 import * as Yup from "yup";
 import TypingAnimation from "../components/TypingAnimation";
 // import Confetti from "react-confetti";
+import ImageAnimation from '../components/ImageAnimation';
 
 const DynamicNavbar = dynamic(() => import("../components/navbar"), {});
 
@@ -158,6 +159,14 @@ const features = [
       "https://ik.imagekit.io/qqkp8wchu/feature7.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677798389210",
   },
 ];
+const images = [
+  "/images/homepage/chat/voice1.svg",
+  "/images/homepage/chat/voice2.svg",
+  "/images/homepage/chat/voice3.svg",
+  "/images/homepage/chat/voice4.svg",
+  "/images/homepage/chat/voice5.svg",
+];
+const delays = [100, 600, 600, 600, 600];
 
 export default function Home() {
   // form
@@ -185,6 +194,18 @@ export default function Home() {
       console.log(values);
     },
   });
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+
+  useEffect(() => {
+    let timer = setTimeout(() => {
+      const nextImageIndex = (currentImageIndex + 1) % images.length;
+      setCurrentImageIndex(nextImageIndex);
+    }, delays[currentImageIndex]);
+
+    return () => clearTimeout(timer);
+  }, [currentImageIndex, images, delays]);
 
   // console.log(formik.values);
   // confetti
@@ -996,7 +1017,6 @@ export default function Home() {
                     coffees, meals out—you name it. You’d likely have a good
                     amount of money saved up. Well, that’s the idea behind
                     Round-Ups.
-                    
                   </p>
                 </div>
               </div>
@@ -1021,7 +1041,10 @@ export default function Home() {
                   <div className={styles.upsText3}>Save</div>
                   <div className={styles.upsText4}>Invest</div>
                   <div className={styles.or}>or</div>
-                  <Link href="/brand-story/#howToDonate" className={styles.donate2}>
+                  <Link
+                    href="/brand-story/#howToDonate"
+                    className={styles.donate2}
+                  >
                     Donate
                   </Link>
                   <div className={styles.upsPriceBadge2}>
@@ -1031,7 +1054,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="mizan-round">
+          <div className="mizan-round ">
             <div className="row">
               <div className="col-xl-5 col-lg-5 col-md-12">
                 <div className="mizan-round-left">
@@ -1454,6 +1477,9 @@ export default function Home() {
               <div className="col-lg-6 col-md-6 col-sm-12 text-start">
                 <div className="left-voice-img voice-img">
                   <Image src={Images.voice} className="voice" alt="" />
+                  {/* <ImageAnimation images={images} /> */}
+                  {/* <ImageAnimation currentImageIndex={currentImageIndex} /> */}
+
                   {/* <Image src={Images.zendesk} alt="" /> */}
                 </div>
               </div>
