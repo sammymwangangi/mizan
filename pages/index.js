@@ -1208,7 +1208,7 @@ export default function Home() {
                       </div>
                       <Image
                         src={Images.metal}
-                        style={{ width: "auto", height: "auto" }}
+                        width="100%"
                         alt=""
                       />
                     </div>
