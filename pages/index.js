@@ -25,6 +25,7 @@ import * as Yup from "yup";
 import TypingAnimation from "../components/TypingAnimation";
 // import Confetti from "react-confetti";
 import ImageAnimation from '../components/ImageAnimation';
+import { useRouter } from "next/router";
 
 const DynamicNavbar = dynamic(() => import("../components/navbar"), {});
 
@@ -169,6 +170,7 @@ const images = [
 const delays = [100, 600, 600, 600, 600];
 
 export default function Home() {
+  const router = useRouter();
   // form
   const phoneRegex = RegExp(
     /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
@@ -191,7 +193,9 @@ export default function Home() {
         .required("Email is required"),
     }),
     onSubmit: (values) => {
+      console.log("form submitted");
       console.log(values);
+      router.push({ pathname: "/thank-you", query: values });
     },
   });
 
@@ -485,7 +489,7 @@ export default function Home() {
                     </button>
 
                     {/* Join Waitlist Modal */}
-                    {isModalOpen && (
+                    
                       <Transition appear show={isModalOpen} as={Fragment}>
                         <Dialog
                           as="div"
@@ -651,10 +655,10 @@ export default function Home() {
                                         <div className="tw-mt-4">
                                           <button
                                             type="submit"
-                                            onClick={() => {
-                                              openModal2();
-                                              setIsVisible(true);
-                                            }}
+                                            // onClick={() => {
+                                            //   openModal2();
+                                            //   setIsVisible(true);
+                                            // }}
                                             disabled={
                                               formik.isSubmitting ||
                                               !formik.isValid
@@ -676,9 +680,8 @@ export default function Home() {
                           </div>
                         </Dialog>
                       </Transition>
-                    )}
 
-                    {isModal2Open && (
+                    
                       <Transition appear show={isModal2Open} as={Fragment}>
                         <Dialog
                           as="div"
@@ -829,7 +832,6 @@ export default function Home() {
                           </div>
                         </Dialog>
                       </Transition>
-                    )}
 
                     <div className="border-gradient">
                       <button className="see-now">
