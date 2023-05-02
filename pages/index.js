@@ -113,9 +113,9 @@ const features = [
   },
   {
     tag: "feature2",
-    title: "Track Ur buck. “The Ostrich-effect”",
+    title: "Track every dollar.",
     description:
-      "Here’s the thing,none of us like bad news, so we tend to bury our heads in the sand and pretend we did not just purchase that overpriced bag.",
+      "Put your budget on auto-pilot. Say goodbye to nasty surprises, know where every dollar goes and how much you can spend. Slice bills and request cash from your friends (we’ll handle the reminders).",
     imageUrl:
       "https://ik.imagekit.io/qqkp8wchu/Features/feature2.svg?updatedAt=1680786519397",
   },
@@ -155,7 +155,7 @@ const features = [
     tag: "feature7",
     title: "Mizan Early Salary via Direct Deposits",
     description:
-      "Don’t wait until payday to have a play day. Why wait anyway? You’ve worked hard for your moolah.",
+      "Leave living pay-to-pay behind. Get your salary 3 days earlier than your folks and start budgeting early. See exactly what bills and transfers are are due before pay day and set that aside. It pays to be smart about your money.",
     imageUrl:
       "https://ik.imagekit.io/qqkp8wchu/feature7.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677798389210",
   },
