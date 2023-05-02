@@ -520,7 +520,7 @@ export default function Home() {
                                 leaveFrom="tw-opacity-100 tw-scale-100"
                                 leaveTo="tw-opacity-0 tw-scale-95"
                               >
-                                <Dialog.Panel className="tw-w-[1148px] tw-h-[645px] tw-max-h-full tw-z-10 tw-transform tw-overflow-hidden tw-rounded-2xl tw-bg-white tw-p-6 tw-align-middle tw-shadow-xl tw-transition-all">
+                                <Dialog.Panel className="tw-w-[1148px] tw-h-[645px] tw-max-h-full tw-z-10 tw-transform tw-overflow-hidden tw-rounded-3xl tw-bg-white tw-p-6 tw-align-middle tw-shadow-xl tw-transition-all">
                                   {/* close */}
                                   <div className="tw-absolute tw-top-0 tw-right-0 tw-hidden tw-pt-4 tw-pr-4 sm:tw-block">
                                     <button
@@ -545,7 +545,7 @@ export default function Home() {
                                     />
                                   </div>
                                   {/* main */}
-                                  <div className="tw-flex tw-py-4 tw-pl-[54px] tw-pr-[76px]">
+                                  <div className="tw-flex tw-py-4 tw-pl-[55px] tw-pr-[35px]">
                                     <div className="-tw-z-1 tw-w-1/2 tw-mx-auto">
                                       <Image
                                         src={Images.join2}
@@ -560,8 +560,7 @@ export default function Home() {
                                         className="tw-text-lg tw-font-medium tw-leading-6 tw-text-gray-900"
                                       >
                                         <h2 className={styles.myModal}>
-                                          Apply for zero interest, 100% Islamic
-                                          neobank coming to Kenya.
+                                        It’s time to dip your toes in water. Apply for 100% islamic neobank bank.
                                         </h2>
                                       </Dialog.Title>
                                       {/* description */}
