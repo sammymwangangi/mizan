@@ -1218,7 +1218,7 @@ export default function Home() {
                     onClick={openModal}
                     className="purple-subscribe metal-bg"
                   >
-                    <span className="tw-line-through tw-px-1 tw-decoration-4 tw-decoration-black">$5/month</span>Get 1 months on us
+                    <span className="tw-line-through tw-px-1 tw-decoration-4 tw-decoration-black">$5/month</span>Get 1 month on us
                   </button>
                 </div>
               </div>
