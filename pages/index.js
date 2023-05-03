@@ -545,7 +545,7 @@ export default function Home() {
                                     />
                                   </div>
                                   {/* main */}
-                                  <div className="tw-flex tw-py-4 tw-pl-[55px] tw-pr-[35px]">
+                                  <div className="tw-flex tw-py-4 tw-pl-[35px] tw-pr-[44px]">
                                     <div className="-tw-z-1 tw-w-1/2 tw-mx-auto">
                                       <Image
                                         src={Images.join2}
@@ -560,7 +560,7 @@ export default function Home() {
                                         className="tw-text-lg tw-font-medium tw-leading-6 tw-text-gray-900"
                                       >
                                         <h2 className={styles.myModal}>
-                                        It’s time to dip your toes in water. Apply for 100% islamic neobank bank.
+                                        It’s time to dip your toes in water. Apply for Africa’s first Islamic neobank.
                                         </h2>
                                       </Dialog.Title>
                                       {/* description */}
@@ -1445,7 +1445,7 @@ export default function Home() {
             </div>
             <div className="text-center tw-z-10 tw-mt-[135px]">
               <h1>
-                Yallah, let’s
+                Yalla, let’s
                 <br /> get started
               </h1>
               <p>
