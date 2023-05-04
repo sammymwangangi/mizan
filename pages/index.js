@@ -1147,7 +1147,7 @@ export default function Home() {
                     </div>
                   </div>
                   <button onClick={openModal} className="purple-subscribe">
-                    <span className="tw-line-through tw-px-1 tw-decoration-4 tw-decoration-black">$1/month</span>Get 3 months on us
+                    <span className="tw-line-through tw-px-1 tw-decoration-2 tw-decoration-black">$1/month</span>Get 3 months on us
                   </button>
                 </div>
                 <div className="col-lg-4 col-md-8" id="premium-show">
@@ -1181,7 +1181,7 @@ export default function Home() {
                     onClick={openModal}
                     className="purple-subscribe premium-bg"
                   >
-                    <span className="tw-line-through tw-px-1 tw-decoration-4 tw-decoration-black">$3/month</span>Get 2 months on us
+                    <span className="tw-line-through tw-px-1 tw-decoration-2 tw-decoration-black">$3/month</span>Get 2 months on us
                   </button>
                 </div>
                 <div className="col-lg-4 col-md-8 metal-card" id="metal-show">
@@ -1218,7 +1218,7 @@ export default function Home() {
                     onClick={openModal}
                     className="purple-subscribe metal-bg"
                   >
-                    <span className="tw-line-through tw-px-1 tw-decoration-4 tw-decoration-black">$5/month</span>Get 1 month on us
+                    <span className="tw-line-through tw-px-1 tw-decoration-2 tw-decoration-black">$5/month</span>Get 1 month on us
                   </button>
                 </div>
               </div>
