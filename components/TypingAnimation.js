@@ -9,3 +9,4 @@ const TypingAnimation = () => {
   };
   
   export default TypingAnimation;
+  

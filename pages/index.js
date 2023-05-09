@@ -16,8 +16,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/free-mode";
 import { FreeMode, Autoplay, Pagination, Navigation } from "swiper";
-import { createClient } from "contentful";
-import openai from "../openai";
+
 import axios from "axios";
 import Confetti from "../components/Confetti";
 import { Formik, Form, Field, ErrorMessage, useFormik } from "formik";
@@ -25,6 +24,7 @@ import * as Yup from "yup";
 import TypingAnimation from "../components/TypingAnimation";
 // import Confetti from "react-confetti";
 import ImageAnimation from '../components/ImageAnimation';
+import PhoneNumberInput from '../components/PhoneNumberInput';
 import { useRouter } from "next/router";
 
 const DynamicNavbar = dynamic(() => import("../components/navbar"), {});
@@ -576,6 +576,7 @@ export default function Home() {
                                       </div>
                                       {/* form */}
                                       <form onSubmit={formik.handleSubmit}>
+                                      <PhoneNumberInput />
                                         <div className="tw-mt-4">
                                           <div className="tw-relative tw-mt-3 tw-rounded-full">
                                             <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
@@ -601,7 +602,7 @@ export default function Home() {
                                             {formik.errors.name}
                                           </div>
                                         </div>
-                                        <div className="tw-mt-4">
+                                        <div className="tw-mt-4 tw-flex tw-space-x-2">
                                           <div className="tw-relative tw-mt-3 tw-rounded-full">
                                             <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
                                               <Image
@@ -616,14 +617,31 @@ export default function Home() {
                                                 id="phone"
                                                 value={formik.values.phone}
                                                 onChange={formik.handleChange}
-                                                className="tw-block tw-w-full tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] placeholder:tw-font-[Poppinsregular] focus:tw-ring-0 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
+                                                className="tw-block tw-w-[166px] tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] placeholder:tw-font-[Poppinsregular] focus:tw-ring-0 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
                                                 placeholder="How can we reach out to you?"
                                                 onBlur={formik.handleBlur}
                                               />
                                             </div>
+                                            <div className="tw-text-red-700 tw-font-medium tw-text-xs">
+                                              {formik.errors.phone}
+                                            </div>
                                           </div>
-                                          <div className="tw-text-red-700 tw-font-medium tw-text-xs">
-                                            {formik.errors.phone}
+                                          <div className="tw-relative tw-mt-3 tw-rounded-full">
+                                            <div className="join-input">
+                                              <input
+                                                type="text"
+                                                name="phone"
+                                                id="phone"
+                                                value={formik.values.phone}
+                                                onChange={formik.handleChange}
+                                                className="tw-block tw-w-[293px] tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] placeholder:tw-font-[Poppinsregular] focus:tw-ring-0 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
+                                                placeholder="How can we reach out to you?"
+                                                onBlur={formik.handleBlur}
+                                              />
+                                            </div>
+                                            <div className="tw-text-red-700 tw-font-medium tw-text-xs">
+                                              {formik.errors.phone}
+                                            </div>
                                           </div>
                                         </div>
                                         <div className="tw-mt-4">
@@ -1597,18 +1615,3 @@ export default function Home() {
     </>
   );
 }
-
-// export async function getStaticProps() {
-//   const client = createClient({
-//     space: process.env.CONTENTFUL_SPACE_ID,
-//     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-//   });
-
-//   const res = await client.getEntries({ content_type: "feature" });
-
-//   return {
-//     props: {
-//       features: res.items,
-//     }, // will be passed to the page component as props
-//   };
-// }

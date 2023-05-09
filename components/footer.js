@@ -1,8 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Images } from "../components/images";
+import { useState, useEffect } from 'react';
 
 export default function Footer() {
+  const [currentYear, setCurrentYear] = useState('');
+
+  useEffect(() => {
+    const year = new Date().getFullYear();
+    setCurrentYear(year);
+  }, []);
   return (
     <footer className="footer footer-home">
       <div className="footer-working position-relative">
@@ -133,18 +140,11 @@ export default function Footer() {
         <div className="row footer-last ">
           <div className="col-lg-3 col-md-3 order-3 order-md-1">
             <p>Mizan Financial Ltd.</p>
-            <p className="mt-2 mt-sm-1">All rights reserved 2022</p>
+            <p className="mt-2 mt-sm-1">All rights reserved {currentYear}</p>
           </div>
           <div className="col-lg-7 col-md-7 order-1 order-md-2">
             <span>
-              Mizan Financial Ltd is a company registered in the Democratic
-              Republic of Kenya (Certificate of Incorporation No. No.
-              PVT-DLULVPV7) with a registered address: Le’Mac Towers, 4th floor,
-              Rhapta road, Westlands, Nairobi, Kenya. Mizan Financial Ltd is a
-              subsidiary of Mizan Group Ltd., registered in the Dubai
-              International Financial Centre (License No. XXXX), with the
-              registered address at: Unit 208, Level One, Gate Avenue, DIFC,
-              Dubai, United Arab Emirates.
+            Mizan Financial Ltd (operating with a brand name “Mizan Money) is an islamic financial technology company not currently a bank. Mizan Financial Ltd is registered in the Democratic Republic of Kenya (Certificate of Incorporation No. PVT-DLUXXX) with a registered address: The Address Complex, 7th floor, Muthungari drive, Westlands, Nairobi, Kenya. Mizan Financial Ltd has a management office in Madrid, Spain and engineering division in Lisbon, Portugal.
             </span>
           </div>
           <div className="col-lg-2 col-md-2 text-center order-2 order-md-3 footer-logo-img">
