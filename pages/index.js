@@ -576,6 +576,7 @@ export default function Home() {
                                       </div>
                                       {/* form */}
                                       <form onSubmit={formik.handleSubmit}>
+                                      
                                         <div className="tw-mt-4">
                                           <div className="tw-relative tw-mt-3 tw-rounded-full">
                                             <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
@@ -601,30 +602,8 @@ export default function Home() {
                                             {formik.errors.name}
                                           </div>
                                         </div>
-                                        <div className="tw-mt-4">
-                                          <div className="tw-relative tw-mt-3 tw-rounded-full">
-                                            <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
-                                              <Image
-                                                src={Images.phoneJoin}
-                                                alt={"phone-join"}
-                                              />
-                                            </div>
-                                            <div className="join-input">
-                                              <input
-                                                type="text"
-                                                name="phone"
-                                                id="phone"
-                                                value={formik.values.phone}
-                                                onChange={formik.handleChange}
-                                                className="tw-block tw-w-full tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] placeholder:tw-font-[Poppinsregular] focus:tw-ring-0 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
-                                                placeholder="How can we reach out to you?"
-                                                onBlur={formik.handleBlur}
-                                              />
-                                            </div>
-                                          </div>
-                                          <div className="tw-text-red-700 tw-font-medium tw-text-xs">
-                                            {formik.errors.phone}
-                                          </div>
+                                        <div className="tw-mt-4 tw-flex tw-space-x-2">
+                                        <PhoneNumberInput />
                                         </div>
                                         <div className="tw-mt-4">
                                           <div className="tw-relative tw-mt-3 tw-rounded-full">

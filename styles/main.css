@@ -4398,6 +4398,41 @@ p {
   background: linear-gradient( 80.75deg, #D155FF 4.6%, #B532F2 17.14%, #A016E8 29.4%, #9406E2 40.22%, #8F00E0 48.46%, #A08CFF 92.32% );
 }
 
+.react-tel-input {
+    border-radius: 52px !important;
+    width: 469px !important;
+    height: 64px !important;
+    background: linear-gradient( 80.75deg, #D155FF 4.6%, #B532F2 17.14%, #A016E8 29.4%, #9406E2 40.22%, #8F00E0 48.46%, #A08CFF 92.32% ) !important;
+    
+
+}
+
+.react-tel-input .form-control {
+  border-radius: 52px !important;
+  background: white !important;
+  width: 469px !important;
+  height: 64px !important;
+  font-family: Poppinsregular !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 15px !important;
+    line-height: 19px !important;
+    color: #6D6E8A !important;
+}
+
+.react-tel-input .flag-dropdown {
+  left: 10px;
+  background-color: #f5f5f500 !important;
+  border: none !important;
+}
+
+/* .react-tel-input .flag {
+  width: 25px !important;
+  height: 15px !important;
+} */
+
+
+
 .typing-box input::-webkit-input-placeholder {
   font-weight: 300;
   font-family: Poppinsregular;
