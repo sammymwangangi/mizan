@@ -26,6 +26,7 @@ import TypingAnimation from "../components/TypingAnimation";
 import ImageAnimation from "../components/ImageAnimation";
 import PhoneNumberInput from "../components/PhoneNumberInput";
 import { useRouter } from "next/router";
+import { supabase } from "./../lib/supabaseClient";
 
 const DynamicNavbar = dynamic(() => import("../components/navbar"), {});
 
@@ -169,35 +170,43 @@ const images = [
 ];
 const delays = [100, 600, 600, 600, 600];
 
-export default function Home() {
+export default function Home({ setFieldValue }) {
   const router = useRouter();
   // form
-  const phoneRegex = RegExp(
-    /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
-  );
+  // const phoneRegex = RegExp(
+  //   /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
+  // );
   const formik = useFormik({
     initialValues: {
       name: "",
-      // phone: "",
+      phone: "",
       email: "",
     },
     validationSchema: Yup.object({
       name: Yup.string()
         .max(20, "Name must be 20 characters or less")
         .required("Name is required"),
-      // phone: Yup.string()
-      //   .matches(phoneRegex, "Invalid phone")
-      //   .required("Phone is required"),
+      phone: Yup.string().required("Phone is required"),
       email: Yup.string()
         .email("Invalid email address")
         .required("Email is required"),
     }),
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
       console.log("form submitted");
       console.log(values);
-      router.push({ pathname: "/thank-you", query: values });
+      const { data, error } = await supabase.from("users").insert(values);
+      if (error) {
+        console.log(error);
+      } else {
+        console.log(data);
+        router.push({ pathname: "/thank-you", query: values });
+      }
     },
   });
+  const handleChange = (value) => {
+    setFieldValue('phone', value);
+  };
+
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -235,7 +244,7 @@ export default function Home() {
   const [formValues, setFormValues] = useState({
     name: "",
     email: "",
-    // phone: "",
+    phone: "",
   });
 
   function handleInputChange(event) {
@@ -243,8 +252,8 @@ export default function Home() {
     setFormValues({ ...formValues, [name]: value });
   }
 
-  const { name, email } = formValues;
-  const isFormEmpty = !name && !email;
+  const { name, email, phone } = formValues;
+  const isFormEmpty = !name && !email && !phone;
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -602,7 +611,10 @@ export default function Home() {
                                           {formik.errors.name}
                                         </div>
                                       </div>
-                                        <PhoneNumberInput />
+                                      <div className='tw-mt-4'>
+                                      <PhoneNumberInput onPhoneChange={(phone) => formik.setFieldValue('phone', phone)} />
+                                        <div className='tw-text-red-700 tw-font-medium tw-text-xs'>{formik.errors.phone}</div>
+                                      </div>
                                       
                                       <div className="tw-mt-4">
                                         <div className="tw-relative tw-mt-3 tw-rounded-full">

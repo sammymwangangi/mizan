@@ -1,10 +1,8 @@
 import { useState, useEffect } from 'react';
-import Image from "next/image";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import { Images } from "../components/images";
 
-const PhoneNumberInput = () => {
+const PhoneNumberInput = ({ onPhoneChange }) => {
   const [phone, setPhone] = useState("");
   const [value, setValue]= useState('')
   
@@ -18,6 +16,11 @@ const PhoneNumberInput = () => {
       clearTimeout(timer2)
     }
   }, [])
+
+
+  useEffect(() => {
+		onPhoneChange(phone);
+	}, [phone, onPhoneChange])
 
   return (
     <div className="tw-relative tw-mt-4 tw-flex tw-space-x-2">
