@@ -7,12 +7,11 @@ import { Images } from "../components/images";
 const PhoneNumberInput = () => {
   const [phone, setPhone] = useState("");
   const [value, setValue]= useState('')
-  // ...
+  
 
   useEffect(() => {
-    // tricky way of set as empty the phoneInput with a country code selected
 
-    let timer = setTimeout(() => setValue('1'), 100)  // or whatever state you have, Formik, RHF...
+    let timer = setTimeout(() => setValue('1'), 100)
     let timer2 = setTimeout(() => setValue(''), 200)
     return () => {
       clearTimeout(timer)
