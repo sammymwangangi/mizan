@@ -30,7 +30,6 @@ const PhoneNumberInput = () => {
         inputProps={{
           name: 'phone',
           required: true,
-          specialLabel: 'sdqwsqw'
         }}
       />
     </div>

@@ -4423,6 +4423,18 @@ p {
   padding: 1px !important;
 }
 
+.react-tel-input::after {
+  position: absolute;
+  content: "";
+  width: 21px;
+  height: 21px;
+  top: 25px;
+  left: 25px;
+  background-image: url("/images/homepage/phone.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
 .react-tel-input .form-control {
   border-radius: 52px !important;
   background: white !important;
