@@ -3358,7 +3358,7 @@ p {
 .questions .questions-header p {
   font-weight: 500;
   font-size: 16px;
-  background: linear-gradient(92.68deg, #000000 -26.9%, #A488FF 87.65%);
+  background: linear-gradient(92.68deg, #000000 -26.9%, #a488ff 87.65%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -3367,7 +3367,7 @@ p {
   font-family: Poppinssemibold;
 }
 
-.questions .questions-header p span{
+.questions .questions-header p span {
   font-weight: 700;
   font-family: Poppinsbold;
 }
@@ -4395,43 +4395,79 @@ p {
 .join-input {
   padding: 1px;
   border-radius: 50px;
-  background: linear-gradient( 80.75deg, #D155FF 4.6%, #B532F2 17.14%, #A016E8 29.4%, #9406E2 40.22%, #8F00E0 48.46%, #A08CFF 92.32% );
+  background: linear-gradient(
+    80.75deg,
+    #d155ff 4.6%,
+    #b532f2 17.14%,
+    #a016e8 29.4%,
+    #9406e2 40.22%,
+    #8f00e0 48.46%,
+    #a08cff 92.32%
+  );
 }
 
 .react-tel-input {
-    border-radius: 52px !important;
-    width: 469px !important;
-    height: 64px !important;
-    background: linear-gradient( 80.75deg, #D155FF 4.6%, #B532F2 17.14%, #A016E8 29.4%, #9406E2 40.22%, #8F00E0 48.46%, #A08CFF 92.32% ) !important;
-    
-
+  border-radius: 52px !important;
+  width: 514px !important;
+  height: 66px !important;
+  background: linear-gradient(
+    80.75deg,
+    #d155ff 4.6%,
+    #b532f2 17.14%,
+    #a016e8 29.4%,
+    #9406e2 40.22%,
+    #8f00e0 48.46%,
+    #a08cff 92.32%
+  ) !important;
+  border: none !important;
+  padding: 1px !important;
 }
 
 .react-tel-input .form-control {
   border-radius: 52px !important;
   background: white !important;
-  width: 469px !important;
+  width: 512px !important;
   height: 64px !important;
   font-family: Poppinsregular !important;
-    font-style: normal !important;
-    font-weight: 400 !important;
-    font-size: 15px !important;
-    line-height: 19px !important;
-    color: #6D6E8A !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 15px !important;
+  line-height: 19px !important;
+  color: #6d6e8a !important;
+  border: none !important;
 }
 
 .react-tel-input .flag-dropdown {
-  left: 10px;
+  left: 50px;
+  height: 64px !important;
   background-color: #f5f5f500 !important;
   border: none !important;
+}
+
+
+[type="tel"],
+textarea,
+select {
+  /* -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  border-color: #6b7280;
+  border-width: 1px;
+  border-radius: 0px;
+  padding-top: 0.5rem;
+  padding-right: 0.75rem;
+  padding-bottom: 0.5rem; */
+  padding-left: 5.75rem !important;
+  /* font-size: 1rem; */
+  /* line-height: 1.5rem;
+  --tw-shadow: 0 0 #0000; */
 }
 
 /* .react-tel-input .flag {
   width: 25px !important;
   height: 15px !important;
 } */
-
-
 
 .typing-box input::-webkit-input-placeholder {
   font-weight: 300;
