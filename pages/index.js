@@ -613,8 +613,8 @@ export default function Home({ setFieldValue }) {
                                       </div>
                                       <div className='tw-mt-4'>
                                       <PhoneNumberInput onPhoneChange={(phone) => formik.setFieldValue('phone', phone)} />
-                                        <div className='tw-text-red-700 tw-font-medium tw-text-xs'>{formik.errors.phone}</div>
                                       </div>
+                                      <div className='tw-text-red-700 tw-font-medium tw-text-xs'>{formik.errors.phone}</div>
                                       
                                       <div className="tw-mt-4">
                                         <div className="tw-relative tw-mt-3 tw-rounded-full">

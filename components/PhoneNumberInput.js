@@ -18,9 +18,10 @@ const PhoneNumberInput = ({ onPhoneChange }) => {
   }, [])
 
 
-  useEffect(() => {
-		onPhoneChange(phone);
-	}, [phone, onPhoneChange])
+  const handlePhoneChange = (phone) => {
+    setPhone(phone);
+    onPhoneChange(phone);
+  };
 
   return (
     <div className="tw-relative tw-mt-4 tw-flex tw-space-x-2">
@@ -28,7 +29,7 @@ const PhoneNumberInput = ({ onPhoneChange }) => {
         country={"ke"}
         placeholder={"How can we reach out to you?"}
         value={phone}
-        onChange={(phone) => setPhone(phone)}
+        onChange={handlePhoneChange}
         inputProps={{
           name: 'phone',
           required: true,
