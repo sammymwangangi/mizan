@@ -19,6 +19,7 @@ const flags = [
   },
 ];
 
+
 export default function Navbar() {
   const [imageDimensions, setImageDimensions] = useState({
     width: 150,
@@ -58,7 +59,7 @@ export default function Navbar() {
   const router = useRouter();
 
   return (
-    <section className="header tw-fixed" id="header">
+    <section className="header tw-static sm:tw-static md:tw-static lg:tw-static xl:tw-fixed" id="header">
       <div className="container_costome">
         <nav className="navbar navbar-expand-md">
           <div className="container-fluid">
