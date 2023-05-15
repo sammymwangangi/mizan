@@ -4452,8 +4452,13 @@ p {
 .react-tel-input .flag-dropdown {
   left: 50px;
   height: 64px !important;
-  background-color: #f5f5f500 !important;
+  background-color: transparent !important;
   border: none !important;
+}
+
+.react-tel-input .selected-flag {
+  height: 20px !important;
+  top: 24px !important;
 }
 
 
