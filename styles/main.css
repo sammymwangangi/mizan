@@ -416,6 +416,14 @@ p {
   font-family: Poppinsbold;
 } */
 
+.anime-gradient{
+  font-family: Poppinsbold;
+}
+
+.anime-gradient-p{
+  font-family: Poppinssemibold;
+}
+
 .hero .hero-left-text p {
   background: linear-gradient(101.73deg, #000000 -3.33%, #9e7afc 78.17%);
   -webkit-background-clip: text;
