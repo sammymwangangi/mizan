@@ -29,8 +29,8 @@ module.exports = {
         'gradient-1-end': '#9E7AFC',
         'gradient-2-start': '#7928CA',
         'gradient-2-end': '#FF0080',
-        'gradient-3-start': '#FF4D4D',
-        'gradient-3-end': '#F9CB28',
+        'gradient-3-start': '#7C27D9',
+        'gradient-3-end': '#FF68F0',
       },
       keyframes: {
         'gradient-foreground-1': {
