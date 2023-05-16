@@ -27,10 +27,10 @@ module.exports = {
       gradientColorStops: {
         'gradient-1-start': '#000000',
         'gradient-1-end': '#9E7AFC',
-        'gradient-2-start': '#7928CA',
-        'gradient-2-end': '#FF0080',
-        'gradient-3-start': '#7C27D9',
-        'gradient-3-end': '#FF68F0',
+        'gradient-2-start': '#000000',
+        'gradient-2-end': '#9E7AFC',
+        'gradient-3-start': '#000000',
+        'gradient-3-end': '#9E7AFC',
       },
       keyframes: {
         'gradient-foreground-1': {
