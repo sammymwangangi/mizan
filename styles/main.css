@@ -606,9 +606,9 @@ p {
     column-gap: 40px;
   }
 
-  .hero .hero-left-text h1 {
+  /* .hero .hero-left-text h1 {
     font-size: 50px;
-  }
+  } */
 
   .hero .hero-left-text p {
     font-size: 28px;
@@ -655,9 +655,9 @@ p {
     display: none;
   }
 
-  .hero .hero-left-text h1 {
+  /* .hero .hero-left-text h1 {
     font-size: 52px;
-  }
+  } */
 
   .hero .hero-left-text p {
     font-size: 24px;

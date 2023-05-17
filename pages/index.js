@@ -464,7 +464,7 @@ export default function Home({ setFieldValue }) {
                         {" "}
                         Salaam,
                       </span>
-                    </span>
+                    </span> 
                     <span
                       data-content="We are Mizan,"
                       className="anime-gradient-p tw-relative tw-block tw-text-[35px] tw-leading-[52px] tw-font-semibold before:tw-content-[attr(data-content)] before:tw-w-full before:tw-z-0 before:tw-block before:tw-absolute before:tw-top-0 before:tw-px-0 before:tw-bottom-0 before:tw-left-0 before:tw-text-left before:tw-text-black before:tw-animate-gradient-background-2"
