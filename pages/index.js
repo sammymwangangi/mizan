@@ -925,7 +925,7 @@ export default function Home({ setFieldValue }) {
                     <li>Open your account in minutes (Goodbye paper work).</li>
                     <li>Get upto 3 days early salary.</li>
                     <li>Track every buck. Know your spend.</li>
-                    <li>Buy now pay later,(interest free, forever).</li>
+                    <li>Buy now pay later,(Interest free, for real).</li>
                   </ul>
                   <p>
                     We didn’t just want to throw solutions around, in the hope
