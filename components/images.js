@@ -82,6 +82,13 @@ import kiss from "../public/images/homepage/social/kiss.svg";
 import cup from "../public/images/homepage/ups/cup.svg";
 import phoneUps from "../public/images/homepage/ups/phone.svg";
 import phoneUps2 from "../public/images/homepage/ups/phone2.svg";
+import bankCard from "../public/images/homepage/hover/card.svg";
+import bankIphone from "../public/images/homepage/hover/iphone.svg";
+import bankWatch from "../public/images/homepage/hover/watch.png";
+import bankTime from "../public/images/homepage/hover/time.png";
+import bankElipse from "../public/images/homepage/hover/elipse.svg";
+import bankElipse2 from "../public/images/homepage/hover/elipse2.svg";
+import bankCross from "../public/images/homepage/hover/cross.svg";
 
 export const Images = {
   cardsBG,
@@ -167,4 +174,11 @@ export const Images = {
   cup,
   phoneUps,
   phoneUps2,
+  bankCard,
+  bankIphone,
+  bankWatch,
+  bankTime,
+  bankElipse,
+  bankElipse2,
+  bankCross,
 };

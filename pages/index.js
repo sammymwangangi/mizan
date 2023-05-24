@@ -27,6 +27,8 @@ import ImageAnimation from "../components/ImageAnimation";
 import PhoneNumberInput from "../components/PhoneNumberInput";
 import { useRouter } from "next/router";
 import { supabase } from "./../lib/supabaseClient";
+import { Tooltip, Button, Grid, Avatar } from "@nextui-org/react";
+import { UserTwitterCard } from "../components/UserTwitterCard";
 
 const DynamicNavbar = dynamic(() => import("../components/navbar"), {});
 
@@ -464,7 +466,7 @@ export default function Home({ setFieldValue }) {
                         {" "}
                         Salaam,
                       </span>
-                    </span> 
+                    </span>
                     <span
                       data-content="We are Mizan,"
                       className="anime-gradient-p tw-relative tw-block tw-text-[35px] tw-leading-[52px] tw-font-semibold before:tw-content-[attr(data-content)] before:tw-w-full before:tw-z-0 before:tw-block before:tw-absolute before:tw-top-0 before:tw-px-0 before:tw-bottom-0 before:tw-left-0 before:tw-text-left before:tw-text-black before:tw-animate-gradient-background-2"
@@ -888,6 +890,162 @@ export default function Home({ setFieldValue }) {
               />
             </div>
           </div>
+        </section>
+
+        <section className="tw-relative tw-text-center">
+          <h1 className={styles.bankingHeader}>Islamic Banking Reimagined</h1>
+          <div className="tw-relative tw-mt-10">
+            <Image
+              src={Images.bankCard}
+              width={307.46}
+              height={360.72}
+              alt="hover"
+              className="-tw-mb-[170px] -tw-mr-[75px]"
+            />
+
+            <Image
+              src={Images.bankIphone}
+              width={257.3}
+              height={519.85}
+              alt="hover"
+              className="tw-relative tw-z-10"
+            />
+            <Image
+              src={Images.bankWatch}
+              width={300.04}
+              height={452.35}
+              alt="hover"
+              className="-tw-mb-[250px] -tw-ml-[55px] tw-z-0"
+            />
+          </div>
+
+          <div className="tw-absolute tw-bottom-[30px] tw-left-[575px] tw-z-20 tw-text-center tw-items-center">
+            <Tooltip placement="right" content={<UserTwitterCard />}>
+              <div className="tw-w-[35px] tw-h-[35px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
+                <div className="tw-ml-[5px] tw-w-[25px] tw-h-[25px] tw-rounded-full tw-bg-white tw-ring-2 tw-ring-inset tw-ring-white tw-animate-none">
+                  <svg
+                    className="tw-w-[11px] tw-h-[11] hover:tw-rotate-45"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 4.5v15m7.5-7.5h-15"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </Tooltip>
+          </div>
+          <div className="tw-absolute tw-bottom-[30px] tw-left-[435px] tw-z-20 tw-text-center tw-items-center">
+            <Tooltip placement="right" content={<UserTwitterCard />}>
+              <div className="tw-w-[35px] tw-h-[35px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
+                <div className="tw-ml-[5px] tw-w-[25px] tw-h-[25px] tw-rounded-full tw-bg-white tw-ring-2 tw-ring-inset tw-ring-white tw-animate-none">
+                  <svg
+                    className="tw-w-[11px] tw-h-[11] hover:tw-rotate-45"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 4.5v15m7.5-7.5h-15"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </Tooltip>
+          </div>
+          <div className="tw-absolute tw-bottom-[259px] tw-left-[335px] tw-z-20 tw-text-center tw-items-center">
+            <Tooltip placement="right" content={<UserTwitterCard />}>
+              <div className="tw-w-[35px] tw-h-[35px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
+                <div className="tw-ml-[5px] tw-w-[25px] tw-h-[25px] tw-rounded-full tw-bg-white tw-ring-2 tw-ring-inset tw-ring-white tw-animate-none">
+                  <svg
+                    className="tw-w-[11px] tw-h-[11] hover:tw-rotate-45"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 4.5v15m7.5-7.5h-15"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </Tooltip>
+          </div>
+          <div className="tw-absolute tw-top-[96px] tw-left-[744px] tw-z-20 tw-text-center tw-items-center">
+            <Tooltip placement="right" content={<UserTwitterCard />}>
+              <div className="tw-w-[35px] tw-h-[35px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
+                <div className="tw-ml-[5px] tw-w-[25px] tw-h-[25px] tw-rounded-full tw-bg-white tw-ring-2 tw-ring-inset tw-ring-white tw-animate-none">
+                  <svg
+                    className="tw-w-[11px] tw-h-[11] hover:tw-rotate-45"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 4.5v15m7.5-7.5h-15"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </Tooltip>
+          </div>
+
+          <div className="tw-absolute tw-bottom-[184px] tw-right-[339px] tw-z-20 tw-text-center tw-items-center">
+            <Tooltip placement="right" content={<UserTwitterCard />}>
+              <div className="tw-w-[35px] tw-h-[35px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
+                <div color="gradient" className="tw-ml-[5px] tw-w-[25px] tw-h-[25px] tw-rounded-full tw-bg-white tw-ring-2 tw-ring-inset tw-ring-white tw-animate-none">
+                  <svg
+                    className="tw-w-[11px] tw-h-[11] hover:tw-rotate-45"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 4.5v15m7.5-7.5h-15"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </Tooltip>
+          </div>
+{/* 
+          <Tooltip placement="top" content={<UserTwitterCard />}>
+            <Avatar
+              pointer
+              size="lg"
+              src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
+              color="gradient"
+              bordered
+              squared
+            />
+          </Tooltip> */}
         </section>
 
         <section className="banking">

@@ -8,12 +8,36 @@
   transition: opacity 1s;
 }
 
+.bankingHeader {
+  background: linear-gradient(90.29deg, #000000 4.24%, #a488ff 102.93%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  width: fit-content;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 60px;
+  font-family: Poppinsbold;
+  margin: 0 auto;
+}
+
+.c{
+  margin: 0 auto;
+}
+
+
 .myModal {
-  background: linear-gradient(89.84deg, #000000 -11.87%, #564786 37.22%, #A488FF 91.83%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-text-fill-color: transparent;
+  background: linear-gradient(
+    89.84deg,
+    #000000 -11.87%,
+    #564786 37.22%,
+    #a488ff 91.83%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
   font-weight: 700;
   font-size: 36px;
   line-height: 56px;
@@ -295,6 +319,6 @@ text-fill-color: transparent;
   mix-blend-mode: multiply;
   /* border-radius: 100px; */
   border-bottom-left-radius: 1000px; /* 4px */
-border-bottom-right-radius: 1000px; /* 4px */
+  border-bottom-right-radius: 1000px; /* 4px */
   user-select: none;
 }

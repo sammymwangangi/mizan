@@ -809,6 +809,13 @@ p {
   font-family: Poppinsbold;
 }
 
+.bankingHeader{
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 60px;
+  font-family: Poppinsbold;
+}
+
 .banking .banking-right-box ul {
   list-style: none;
   margin: 0;
@@ -877,6 +884,19 @@ p {
   position: relative;
   top: -13px;
   right: 2px;
+}
+
+.new_banking h1 {
+  background: linear-gradient(90.29deg, #000000 4.24%, #a488ff 102.93%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  width: fit-content;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 60px;
+  font-family: Poppinsbold;
 }
 
 @media (max-width: 1024px) {

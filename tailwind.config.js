@@ -95,7 +95,10 @@ module.exports = {
         'gradient-foreground-2': 'gradient-foreground-2 5s infinite',
         'gradient-background-3': 'gradient-background-3 5s infinite',
         'gradient-foreground-3': 'gradient-foreground-3 5s infinite',
-      }
+      },
+      backgroundImage: {
+        'custom-gradient': 'linear-gradient(90.29deg, #000000 4.24%, #A488FF 102.93%)',
+      },
     },
   },
   plugins: [
