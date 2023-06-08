@@ -916,7 +916,7 @@ export default function Home({ setFieldValue }) {
               width={257.3}
               height={519.85}
               alt="hover"
-              className="tw-relative tw-z-10"
+              className="tw-relative tw-z-10 tw-drop-shadow-2xl tw-rounded-b-[50px] tw-rounded-t-[50px]"
             />
             <Image
               src={Images.bankWatch}
@@ -1042,69 +1042,12 @@ export default function Home({ setFieldValue }) {
               </div>
             </Tooltip>
           </div>
-{/* 
-          <Tooltip placement="top" content={<UserTwitterCard />}>
-            <Avatar
-              pointer
-              size="lg"
-              src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
-              color="gradient"
-              bordered
-              squared
-            />
-          </Tooltip> */}
         </section>
-
-        <section className="banking">
-          <div className="container_costome">
-            <div className="row align-items-center">
-              <div className="col-xl-5 col-lg-5 col-md-5 col-sm-12">
-                <div className="position-relative">
-                  <Image
-                    src={Images.mobileBanking}
-                    width="100%"
-                    className="banking-web-img"
-                    alt=""
-                  />
-                  <Image
-                    loader={imageKitLoader}
-                    src="banking-mobile-img.svg"
-                    width={569}
-                    height={615}
-                    className="banking-mobile-img"
-                    alt=""
-                  />
-                  <Image
-                    src={Images.miniMobileBanking}
-                    width="100%"
-                    className="banking-mobile-img-mini"
-                    alt=""
-                  />
-                </div>
-              </div>
-              <div className="col-xl-7 col-lg-7 col-md-7 col-sm-12">
-                <div className="banking-right-box">
-                  <h1>Islamic Banking Reimagined</h1>
-                  <ul>
-                    <li>Halal ready without compromise.</li>
-                    <li>Open your account in minutes (Goodbye paper work).</li>
-                    <li>Get upto 3 days early salary.</li>
-                    <li>Track every buck. Know your spend.</li>
-                    <li>Buy now pay later,(Interest free, for real).</li>
-                  </ul>
-                  <p>
-                    We didn’t just want to throw solutions around, in the hope
-                    they find a problem to solve. Thats why we’ve chosen to run
-                    a beta phase.
-                  </p>
-                  <button onClick={openModal} className="apply-beta">
-                    Apply for the Beta Progam
-                  </button>
-                </div>
-              </div>
-            </div>
+          <div className={styles.bankText}>
+            <div>Be the first to join the “early access” program . <span onClick={openModal} className={styles.bankTextSpan}>Apply Now</span></div>
           </div>
-        </section>
+
+        
 
         <section className="cards position-relative">
           <div className="cards-box">
