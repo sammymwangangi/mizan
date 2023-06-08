@@ -16,7 +16,9 @@
     "@supabase/supabase-js": "^2.21.0",
     "axios": "^1.3.4",
     "bootstrap": "^5.2.3",
+    "class-variance-authority": "^0.6.0",
     "classnames": "^2.3.2",
+    "clsx": "^1.2.1",
     "contentful": "^9.3.5",
     "daisyui": "^2.51.5",
     "eslint": "8.35.0",
@@ -25,6 +27,7 @@
     "framer-motion": "^10.3.1",
     "keen-slider": "^6.8.5",
     "libphonenumber-js": "^1.10.30",
+    "lucide-react": "^0.230.0",
     "next": "^13.3.0",
     "openai": "^3.2.1",
     "react": "^18.2.0",
@@ -36,6 +39,8 @@
     "sharp": "^0.31.3",
     "styled-components": "^5.3.9",
     "swiper": "^9.1.0",
+    "tailwind-merge": "^1.12.0",
+    "tailwindcss-animate": "^1.0.5",
     "yup": "^1.0.2"
   },
   "devDependencies": {

@@ -86,6 +86,7 @@ import bankCard from "../public/images/homepage/hover/card.svg";
 import bankIphone from "../public/images/homepage/hover/iphone.svg";
 import bankWatch from "../public/images/homepage/hover/watch.png";
 import bankTime from "../public/images/homepage/hover/time.png";
+import bankCheck from "../public/images/homepage/hover/check.png";
 import bankElipse from "../public/images/homepage/hover/elipse.svg";
 import bankElipse2 from "../public/images/homepage/hover/elipse2.svg";
 import bankCross from "../public/images/homepage/hover/cross.svg";
@@ -181,4 +182,5 @@ export const Images = {
   bankElipse,
   bankElipse2,
   bankCross,
+  bankCheck
 };

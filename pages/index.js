@@ -27,8 +27,13 @@ import ImageAnimation from "../components/ImageAnimation";
 import PhoneNumberInput from "../components/PhoneNumberInput";
 import { useRouter } from "next/router";
 import { supabase } from "./../lib/supabaseClient";
-import { Tooltip, Button, Grid, Avatar } from "@nextui-org/react";
+import { Tooltip } from "@nextui-org/react";
 import { UserTwitterCard } from "../components/UserTwitterCard";
+import Hover from "../components/hover";
+import Hover1 from "../components/hover1";
+import Hover2 from "../components/hover2";
+import Hover3 from "../components/hover3";
+import Hover4 from "../components/hover4";
 
 const DynamicNavbar = dynamic(() => import("../components/navbar"), {});
 
@@ -178,254 +183,254 @@ export default function Home({ setFieldValue }) {
   // const phoneRegex = RegExp(
   //   /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
   // );
-  const formik = useFormik({
-    initialValues: {
-      name: "",
-      phone: "",
-      email: "",
-    },
-    validationSchema: Yup.object({
-      name: Yup.string()
-        .max(20, "Name must be 20 characters or less")
-        .required("Name is required"),
-      phone: Yup.string().required("Phone is required"),
-      email: Yup.string()
-        .email("Invalid email address")
-        .required("Email is required"),
-    }),
-    onSubmit: async (values) => {
-      console.log("form submitted");
-      console.log(values);
-      const { data, error } = await supabase.from("users").insert(values);
-      if (error) {
-        console.log(error);
-      } else {
-        console.log(data);
-        router.push({ pathname: "/thank-you", query: values });
-      }
-    },
-  });
-  const handleChange = (value) => {
-    setFieldValue("phone", value);
-  };
-
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  useEffect(() => {
-    let timer = setTimeout(() => {
-      const nextImageIndex = (currentImageIndex + 1) % images.length;
-      setCurrentImageIndex(nextImageIndex);
-    }, delays[currentImageIndex]);
-
-    return () => clearTimeout(timer);
-  }, [currentImageIndex, images, delays]);
-
-  // console.log(formik.values);
-  // confetti
-  const [isVisible, setIsVisible] = useState(false);
-
-  const [pieces, setPieces] = useState(200);
-
-  const stopConfetti = () => {
-    setTimeout(() => {
-      setPieces(0);
-    }, 3000);
-  };
-
-  useEffect(() => {
-    stopConfetti();
-  }, []);
-  // chatGPT integration
-  const chatContainerRef = useRef(null); // create a reference to the chat container
-  const [inputValue, setInputValue] = useState("");
-  const [chatLog, setChatLog] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-
-  // Disable Submit Button
-  const [formValues, setFormValues] = useState({
-    name: "",
-    email: "",
-    phone: "",
-  });
-
-  function handleInputChange(event) {
-    const { name, value } = event.target;
-    setFormValues({ ...formValues, [name]: value });
-  }
-
-  const { name, email, phone } = formValues;
-  const isFormEmpty = !name && !email && !phone;
-
-  function handleSubmit(event) {
-    event.preventDefault();
-
-    setChatLog([...chatLog, { type: "user", message: inputValue }]);
-
-    sendMessage(inputValue);
-
-    setInputValue("");
-  }
-  useEffect(() => {
-    if (chatContainerRef.current) {
-      // if the chat container reference exists
-      chatContainerRef.current.scrollTop =
-        chatContainerRef.current.scrollHeight; // scroll to the bottom of the chat container
-    }
-  }, [chatLog]); // re-run this effect whenever the chat log updates
-
-  const sendMessage = (message) => {
-    const url = "/api/chat";
-
-    const data = {
-      model: "gpt-3.5-turbo-0301",
-      messages: [{ role: "user", content: message }],
+    const formik = useFormik({
+      initialValues: {
+        name: "",
+        phone: "",
+        email: "",
+      },
+      validationSchema: Yup.object({
+        name: Yup.string()
+          .max(20, "Name must be 20 characters or less")
+          .required("Name is required"),
+        phone: Yup.string().required("Phone is required"),
+        email: Yup.string()
+          .email("Invalid email address")
+          .required("Email is required"),
+      }),
+      onSubmit: async (values) => {
+        console.log("form submitted");
+        console.log(values);
+        const { data, error } = await supabase.from("users").insert(values);
+        if (error) {
+          console.log(error);
+        } else {
+          console.log(data);
+          router.push({ pathname: "/thank-you", query: values });
+        }
+      },
+    });
+    const handleChange = (value) => {
+      setFieldValue("phone", value);
     };
 
-    setIsLoading(true);
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-    axios
-      .post(url, data)
-      .then((response) => {
-        console.log(response);
-        setChatLog((prevChatLog) => [
-          ...prevChatLog,
-          { type: "bot", message: response.data.choices[0].message.content },
-        ]);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        setIsLoading(false);
-        console.log(error);
-      });
-  };
+    useEffect(() => {
+      let timer = setTimeout(() => {
+        const nextImageIndex = (currentImageIndex + 1) % images.length;
+        setCurrentImageIndex(nextImageIndex);
+      }, delays[currentImageIndex]);
 
-  // console.log(features);
-  const [avatarIndex, setAvatarIndex] = useState(0);
+      return () => clearTimeout(timer);
+    }, [currentImageIndex, images, delays]);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setAvatarIndex((avatarIndex) => (avatarIndex + 1) % 2);
-    }, 3000);
+    // console.log(formik.values);
+    // confetti
+    const [isVisible, setIsVisible] = useState(false);
 
-    return () => clearInterval(interval);
-  }, []);
+    const [pieces, setPieces] = useState(200);
 
-  const [loveIndex, setLoveIndex] = useState(0);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setLoveIndex((loveIndex) => (loveIndex + 1) % 2);
-    }, 3500);
+    const stopConfetti = () => {
+      setTimeout(() => {
+        setPieces(0);
+      }, 3000);
+    };
 
-    return () => clearInterval(interval);
-  }, []);
+    useEffect(() => {
+      stopConfetti();
+    }, []);
+    // chatGPT integration
+    const chatContainerRef = useRef(null); // create a reference to the chat container
+    const [inputValue, setInputValue] = useState("");
+    const [chatLog, setChatLog] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
-  const [thumbIndex, setThumbIndex] = useState(0);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setThumbIndex((thumbIndex) => (thumbIndex + 1) % 2);
-    }, 5000);
+    // Disable Submit Button
+    const [formValues, setFormValues] = useState({
+      name: "",
+      email: "",
+      phone: "",
+    });
 
-    return () => clearInterval(interval);
-  }, []);
+    function handleInputChange(event) {
+      const { name, value } = event.target;
+      setFormValues({ ...formValues, [name]: value });
+    }
 
-  const [googlesIndex, setGooglesIndex] = useState(0);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setGooglesIndex((googlesIndex) => (googlesIndex + 1) % 2);
-    }, 4500);
+    const { name, email, phone } = formValues;
+    const isFormEmpty = !name && !email && !phone;
 
-    return () => clearInterval(interval);
-  }, []);
+    function handleSubmit(event) {
+      event.preventDefault();
 
-  useEffect(() => {
-    function handleButtonClick(event) {
-      const target = event.target;
+      setChatLog([...chatLog, { type: "user", message: inputValue }]);
+
+      sendMessage(inputValue);
+
+      setInputValue("");
+    }
+    useEffect(() => {
+      if (chatContainerRef.current) {
+        // if the chat container reference exists
+        chatContainerRef.current.scrollTop =
+          chatContainerRef.current.scrollHeight; // scroll to the bottom of the chat container
+      }
+    }, [chatLog]); // re-run this effect whenever the chat log updates
+
+    const sendMessage = (message) => {
+      const url = "/api/chat";
+
+      const data = {
+        model: "gpt-3.5-turbo-0301",
+        messages: [{ role: "user", content: message }],
+      };
+
+      setIsLoading(true);
+
+      axios
+        .post(url, data)
+        .then((response) => {
+          console.log(response);
+          setChatLog((prevChatLog) => [
+            ...prevChatLog,
+            { type: "bot", message: response.data.choices[0].message.content },
+          ]);
+          setIsLoading(false);
+        })
+        .catch((error) => {
+          setIsLoading(false);
+          console.log(error);
+        });
+    };
+
+    // console.log(features);
+    const [avatarIndex, setAvatarIndex] = useState(0);
+
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setAvatarIndex((avatarIndex) => (avatarIndex + 1) % 2);
+      }, 3000);
+
+      return () => clearInterval(interval);
+    }, []);
+
+    const [loveIndex, setLoveIndex] = useState(0);
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setLoveIndex((loveIndex) => (loveIndex + 1) % 2);
+      }, 3500);
+
+      return () => clearInterval(interval);
+    }, []);
+
+    const [thumbIndex, setThumbIndex] = useState(0);
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setThumbIndex((thumbIndex) => (thumbIndex + 1) % 2);
+      }, 5000);
+
+      return () => clearInterval(interval);
+    }, []);
+
+    const [googlesIndex, setGooglesIndex] = useState(0);
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setGooglesIndex((googlesIndex) => (googlesIndex + 1) % 2);
+      }, 4500);
+
+      return () => clearInterval(interval);
+    }, []);
+
+    useEffect(() => {
+      function handleButtonClick(event) {
+        const target = event.target;
+        const buttons = document.querySelectorAll(
+          ".pricing .pricing-top-btn button"
+        );
+        buttons.forEach((button) => {
+          button.classList.remove("active");
+        });
+        target.classList.add("active");
+      }
+
+      function handlePurpleClick() {
+        document.getElementById("purple-show").style.display = "block";
+        document.getElementById("metal-show").style.display = "none";
+        document.getElementById("premium-show").style.display = "none";
+      }
+
+      function handlePremiumClick() {
+        document.getElementById("purple-show").style.display = "none";
+        document.getElementById("metal-show").style.display = "none";
+        document.getElementById("premium-show").style.display = "block";
+      }
+
+      function handleMetalClick() {
+        document.getElementById("purple-show").style.display = "none";
+        document.getElementById("metal-show").style.display = "block";
+        document.getElementById("premium-show").style.display = "none";
+      }
+
       const buttons = document.querySelectorAll(
         ".pricing .pricing-top-btn button"
       );
       buttons.forEach((button) => {
-        button.classList.remove("active");
+        button.addEventListener("click", handleButtonClick);
       });
-      target.classList.add("active");
-    }
 
-    function handlePurpleClick() {
-      document.getElementById("purple-show").style.display = "block";
-      document.getElementById("metal-show").style.display = "none";
-      document.getElementById("premium-show").style.display = "none";
-    }
-
-    function handlePremiumClick() {
-      document.getElementById("purple-show").style.display = "none";
-      document.getElementById("metal-show").style.display = "none";
-      document.getElementById("premium-show").style.display = "block";
-    }
-
-    function handleMetalClick() {
-      document.getElementById("purple-show").style.display = "none";
-      document.getElementById("metal-show").style.display = "block";
-      document.getElementById("premium-show").style.display = "none";
-    }
-
-    const buttons = document.querySelectorAll(
-      ".pricing .pricing-top-btn button"
-    );
-    buttons.forEach((button) => {
-      button.addEventListener("click", handleButtonClick);
-    });
-
-    document
-      .getElementById("purple")
-      .addEventListener("click", handlePurpleClick);
-    document
-      .getElementById("premium")
-      .addEventListener("click", handlePremiumClick);
-    document
-      .getElementById("metal")
-      .addEventListener("click", handleMetalClick);
-
-    // Cleanup function to remove the event listeners when the component unmounts
-    return () => {
-      buttons.forEach((button) => {
-        button.removeEventListener("click", handleButtonClick);
-      });
       document
         .getElementById("purple")
-        ?.removeEventListener("click", handlePurpleClick);
+        .addEventListener("click", handlePurpleClick);
       document
         .getElementById("premium")
-        ?.removeEventListener("click", handlePremiumClick);
+        .addEventListener("click", handlePremiumClick);
       document
         .getElementById("metal")
-        ?.removeEventListener("click", handleMetalClick);
+        .addEventListener("click", handleMetalClick);
+
+      // Cleanup function to remove the event listeners when the component unmounts
+      return () => {
+        buttons.forEach((button) => {
+          button.removeEventListener("click", handleButtonClick);
+        });
+        document
+          .getElementById("purple")
+          ?.removeEventListener("click", handlePurpleClick);
+        document
+          .getElementById("premium")
+          ?.removeEventListener("click", handlePremiumClick);
+        document
+          .getElementById("metal")
+          ?.removeEventListener("click", handleMetalClick);
+      };
+    }, []);
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isModal2Open, setIsModal2Open] = useState(false);
+
+    const openModal = () => {
+      setIsModalOpen(true);
     };
-  }, []);
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isModal2Open, setIsModal2Open] = useState(false);
+    const closeModal = () => {
+      setIsModalOpen(false);
+    };
 
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
+    const openModal2 = () => {
+      setIsModal2Open(true);
+    };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+    const closeModal2 = () => {
+      setIsModal2Open(false);
+      closeModal(); // Close the first modal as well
+    };
 
-  const openModal2 = () => {
-    setIsModal2Open(true);
-  };
+    const swiperRefLocal = useRef();
 
-  const closeModal2 = () => {
-    setIsModal2Open(false);
-    closeModal(); // Close the first modal as well
-  };
-
-  const swiperRefLocal = useRef();
-
-  const handleMouseEnter = () => {
-    swiperRefLocal?.current?.swiper?.autoplay?.stop();
-  };
+    const handleMouseEnter = () => {
+      swiperRefLocal?.current?.swiper?.autoplay?.stop();
+    };
 
   const handleMouseLeave = () => {
     swiperRefLocal?.current?.swiper?.autoplay?.start();
@@ -892,7 +897,10 @@ export default function Home({ setFieldValue }) {
           </div>
         </section>
 
+        {/* <hoverCard/> */}
+
         <section className="tw-relative tw-text-center">
+        {/* <Hover /> */}
           <h1 className={styles.bankingHeader}>Islamic Banking Reimagined</h1>
           <div className="tw-relative tw-mt-10">
             <Image
@@ -920,7 +928,7 @@ export default function Home({ setFieldValue }) {
           </div>
 
           <div className="tw-absolute tw-bottom-[30px] tw-left-[575px] tw-z-20 tw-text-center tw-items-center">
-            <Tooltip placement="right" content={<UserTwitterCard />}>
+            <Tooltip placement="top" content={<Hover3 />}>
               <div className="tw-w-[35px] tw-h-[35px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
                 <div className="tw-ml-[5px] tw-w-[25px] tw-h-[25px] tw-rounded-full tw-bg-white tw-ring-2 tw-ring-inset tw-ring-white tw-animate-none">
                   <svg
@@ -943,7 +951,7 @@ export default function Home({ setFieldValue }) {
             </Tooltip>
           </div>
           <div className="tw-absolute tw-bottom-[30px] tw-left-[435px] tw-z-20 tw-text-center tw-items-center">
-            <Tooltip placement="right" content={<UserTwitterCard />}>
+            <Tooltip placement="topEnd" content={<Hover2 />}>
               <div className="tw-w-[35px] tw-h-[35px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
                 <div className="tw-ml-[5px] tw-w-[25px] tw-h-[25px] tw-rounded-full tw-bg-white tw-ring-2 tw-ring-inset tw-ring-white tw-animate-none">
                   <svg
@@ -966,7 +974,7 @@ export default function Home({ setFieldValue }) {
             </Tooltip>
           </div>
           <div className="tw-absolute tw-bottom-[259px] tw-left-[335px] tw-z-20 tw-text-center tw-items-center">
-            <Tooltip placement="right" content={<UserTwitterCard />}>
+            <Tooltip placement="left" content={<Hover1 />}>
               <div className="tw-w-[35px] tw-h-[35px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
                 <div className="tw-ml-[5px] tw-w-[25px] tw-h-[25px] tw-rounded-full tw-bg-white tw-ring-2 tw-ring-inset tw-ring-white tw-animate-none">
                   <svg
@@ -989,7 +997,7 @@ export default function Home({ setFieldValue }) {
             </Tooltip>
           </div>
           <div className="tw-absolute tw-top-[96px] tw-left-[744px] tw-z-20 tw-text-center tw-items-center">
-            <Tooltip placement="right" content={<UserTwitterCard />}>
+            <Tooltip placement="bottom" content={<Hover4 />}>
               <div className="tw-w-[35px] tw-h-[35px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
                 <div className="tw-ml-[5px] tw-w-[25px] tw-h-[25px] tw-rounded-full tw-bg-white tw-ring-2 tw-ring-inset tw-ring-white tw-animate-none">
                   <svg
@@ -1011,9 +1019,8 @@ export default function Home({ setFieldValue }) {
               </div>
             </Tooltip>
           </div>
-
-          <div className="tw-absolute tw-bottom-[184px] tw-right-[339px] tw-z-20 tw-text-center tw-items-center">
-            <Tooltip placement="right" content={<UserTwitterCard />}>
+          <div className="tw-absolute tw-bottom-[184px] tw-right-[339px] tw-z-20 tw-items-center">
+            <Tooltip placement="right" content={<Hover />}>
               <div className="tw-w-[35px] tw-h-[35px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
                 <div color="gradient" className="tw-ml-[5px] tw-w-[25px] tw-h-[25px] tw-rounded-full tw-bg-white tw-ring-2 tw-ring-inset tw-ring-white tw-animate-none">
                   <svg
