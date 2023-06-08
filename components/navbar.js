@@ -77,7 +77,7 @@ export default function Navbar() {
             >
               <Image src={Images.Logo} alt="image" />
             </Link>
-            <div className="mobile-view-header d-flex align-items-end gap-4">
+            <div className="mobile-view-header d-flex align-items-center gap-4">
               <button
                 className="navbar-toggler order-2"
                 type="button"
@@ -87,19 +87,19 @@ export default function Navbar() {
                 <Image src={Images.Toggle} width="30px" alt="toggle" />
               </button>
               <div className="navbar-collapse" id="navbarSupportedContent">
-                <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
-                  <li className="nav-item">
+                <ul className="navbar-nav mx-auto mb-lg-0 d-flex align-items-center">
+                  <li className="nav-item mb-0">
                     <Link
-                      className="nav-link active"
+                      className="nav-link m-0 p-0 active"
                       aria-current="page"
                       href="/"
                     >
                       Personal
                     </Link>
                   </li>
-                  <li className="nav-item">
+                  <li className="nav-item mb-0">
                     <Link
-                      className="nav-link"
+                      className="nav-link m-0 p-0"
                       href="/brand-story"
                       tabIndex="-1"
                       aria-disabled="true"

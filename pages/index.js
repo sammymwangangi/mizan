@@ -2,38 +2,36 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
-import { Images } from "../components/images";
+import {Images} from "../components/images";
 import styles from "../styles/Home.module.css";
 import dynamic from "next/dynamic";
-import { Dialog, Transition } from "@headlessui/react";
-import { XMarkIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
-import React, { Suspense, Fragment, useRef, useState, useEffect } from "react";
+import {Dialog, Transition} from "@headlessui/react";
+import {XMarkIcon, EnvelopeIcon} from "@heroicons/react/24/outline";
+import React, {Suspense, Fragment, useRef, useState, useEffect} from "react";
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import {Swiper, SwiperSlide} from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/free-mode";
-import { FreeMode, Autoplay, Pagination, Navigation } from "swiper";
+import {FreeMode, Autoplay, Pagination, Navigation} from "swiper";
 
 import axios from "axios";
 import Confetti from "../components/Confetti";
-import { Formik, Form, Field, ErrorMessage, useFormik } from "formik";
+import {Formik, Form, Field, ErrorMessage, useFormik} from "formik";
 import * as Yup from "yup";
 import TypingAnimation from "../components/TypingAnimation";
 // import Confetti from "react-confetti";
 import ImageAnimation from "../components/ImageAnimation";
 import PhoneNumberInput from "../components/PhoneNumberInput";
-import { useRouter } from "next/router";
-import { supabase } from "./../lib/supabaseClient";
-import { Tooltip } from "@nextui-org/react";
-import { UserTwitterCard } from "../components/UserTwitterCard";
-import Hover from "../components/hover";
-import Hover1 from "../components/hover1";
-import Hover2 from "../components/hover2";
-import Hover3 from "../components/hover3";
-import Hover4 from "../components/hover4";
+import {useRouter} from "next/router";
+// import { supabase } from "./../lib/supabaseClient";
+import {Tooltip, Button, Grid, Avatar} from "@nextui-org/react";
+import {UserTwitterCard} from "../components/UserTwitterCard";
+
+import {motion} from "framer-motion";
+import heroPhone from "@/public/images/homepage/heroPhone.png";
 
 const DynamicNavbar = dynamic(() => import("../components/navbar"), {});
 
@@ -41,7 +39,7 @@ const DynamicFooter = dynamic(() => import("../components/footer"), {});
 
 const DynamicNavModal = dynamic(() => import("../components/navModal"), {});
 
-const imageKitLoader = ({ src, width, quality }) => {
+const imageKitLoader = ({src, width, quality}) => {
   if (src[0] === "/") src = src.slice(1);
   const params = [`w-${width}`];
   if (quality) {
@@ -177,269 +175,322 @@ const images = [
 ];
 const delays = [100, 600, 600, 600, 600];
 
-export default function Home({ setFieldValue }) {
+export default function Home({setFieldValue}) {
   const router = useRouter();
   // form
   // const phoneRegex = RegExp(
   //   /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
   // );
-    const formik = useFormik({
-      initialValues: {
-        name: "",
-        phone: "",
-        email: "",
-      },
-      validationSchema: Yup.object({
-        name: Yup.string()
-          .max(20, "Name must be 20 characters or less")
-          .required("Name is required"),
-        phone: Yup.string().required("Phone is required"),
-        email: Yup.string()
-          .email("Invalid email address")
-          .required("Email is required"),
-      }),
-      onSubmit: async (values) => {
-        console.log("form submitted");
-        console.log(values);
-        const { data, error } = await supabase.from("users").insert(values);
-        if (error) {
-          console.log(error);
-        } else {
-          console.log(data);
-          router.push({ pathname: "/thank-you", query: values });
-        }
-      },
-    });
-    const handleChange = (value) => {
-      setFieldValue("phone", value);
-    };
-
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-    useEffect(() => {
-      let timer = setTimeout(() => {
-        const nextImageIndex = (currentImageIndex + 1) % images.length;
-        setCurrentImageIndex(nextImageIndex);
-      }, delays[currentImageIndex]);
-
-      return () => clearTimeout(timer);
-    }, [currentImageIndex, images, delays]);
-
-    // console.log(formik.values);
-    // confetti
-    const [isVisible, setIsVisible] = useState(false);
-
-    const [pieces, setPieces] = useState(200);
-
-    const stopConfetti = () => {
-      setTimeout(() => {
-        setPieces(0);
-      }, 3000);
-    };
-
-    useEffect(() => {
-      stopConfetti();
-    }, []);
-    // chatGPT integration
-    const chatContainerRef = useRef(null); // create a reference to the chat container
-    const [inputValue, setInputValue] = useState("");
-    const [chatLog, setChatLog] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
-
-    // Disable Submit Button
-    const [formValues, setFormValues] = useState({
+  const formik = useFormik({
+    initialValues: {
       name: "",
-      email: "",
       phone: "",
-    });
-
-    function handleInputChange(event) {
-      const { name, value } = event.target;
-      setFormValues({ ...formValues, [name]: value });
-    }
-
-    const { name, email, phone } = formValues;
-    const isFormEmpty = !name && !email && !phone;
-
-    function handleSubmit(event) {
-      event.preventDefault();
-
-      setChatLog([...chatLog, { type: "user", message: inputValue }]);
-
-      sendMessage(inputValue);
-
-      setInputValue("");
-    }
-    useEffect(() => {
-      if (chatContainerRef.current) {
-        // if the chat container reference exists
-        chatContainerRef.current.scrollTop =
-          chatContainerRef.current.scrollHeight; // scroll to the bottom of the chat container
+      email: "",
+    },
+    validationSchema: Yup.object({
+      name: Yup.string()
+        .max(20, "Name must be 20 characters or less")
+        .required("Name is required"),
+      phone: Yup.string().required("Phone is required"),
+      email: Yup.string()
+        .email("Invalid email address")
+        .required("Email is required"),
+    }),
+    onSubmit: async (values) => {
+      console.log("form submitted");
+      console.log(values);
+      const {data, error} = await supabase.from("users").insert(values);
+      if (error) {
+        console.log(error);
+      } else {
+        console.log(data);
+        router.push({pathname: "/thank-you", query: values});
       }
-    }, [chatLog]); // re-run this effect whenever the chat log updates
+    },
+  });
+  const handleChange = (value) => {
+    setFieldValue("phone", value);
+  };
 
-    const sendMessage = (message) => {
-      const url = "/api/chat";
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-      const data = {
-        model: "gpt-3.5-turbo-0301",
-        messages: [{ role: "user", content: message }],
-      };
+  useEffect(() => {
+    let timer = setTimeout(() => {
+      const nextImageIndex = (currentImageIndex + 1) % images.length;
+      setCurrentImageIndex(nextImageIndex);
+    }, delays[currentImageIndex]);
 
-      setIsLoading(true);
+    return () => clearTimeout(timer);
+  }, [currentImageIndex, images, delays]);
 
-      axios
-        .post(url, data)
-        .then((response) => {
-          console.log(response);
-          setChatLog((prevChatLog) => [
-            ...prevChatLog,
-            { type: "bot", message: response.data.choices[0].message.content },
-          ]);
-          setIsLoading(false);
-        })
-        .catch((error) => {
-          setIsLoading(false);
-          console.log(error);
-        });
+  // console.log(formik.values);
+  // confetti
+  const [isVisible, setIsVisible] = useState(false);
+
+  const [pieces, setPieces] = useState(200);
+
+  const stopConfetti = () => {
+    setTimeout(() => {
+      setPieces(0);
+    }, 3000);
+  };
+
+  useEffect(() => {
+    stopConfetti();
+  }, []);
+  // chatGPT integration
+  const chatContainerRef = useRef(null); // create a reference to the chat container
+  const [inputValue, setInputValue] = useState("");
+  const [chatLog, setChatLog] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  // Disable Submit Button
+  const [formValues, setFormValues] = useState({
+    name: "",
+    email: "",
+    phone: "",
+  });
+
+  function handleInputChange(event) {
+    const {name, value} = event.target;
+    setFormValues({...formValues, [name]: value});
+  }
+
+  const {name, email, phone} = formValues;
+  const isFormEmpty = !name && !email && !phone;
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    setChatLog([...chatLog, {type: "user", message: inputValue}]);
+
+    sendMessage(inputValue);
+
+    setInputValue("");
+  }
+
+  useEffect(() => {
+    if (chatContainerRef.current) {
+      // if the chat container reference exists
+      chatContainerRef.current.scrollTop =
+        chatContainerRef.current.scrollHeight; // scroll to the bottom of the chat container
+    }
+  }, [chatLog]); // re-run this effect whenever the chat log updates
+
+  const sendMessage = (message) => {
+    const url = "/api/chat";
+
+    const data = {
+      model: "gpt-3.5-turbo-0301",
+      messages: [{role: "user", content: message}],
     };
 
-    // console.log(features);
-    const [avatarIndex, setAvatarIndex] = useState(0);
+    setIsLoading(true);
 
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setAvatarIndex((avatarIndex) => (avatarIndex + 1) % 2);
-      }, 3000);
+    axios
+      .post(url, data)
+      .then((response) => {
+        console.log(response);
+        setChatLog((prevChatLog) => [
+          ...prevChatLog,
+          {type: "bot", message: response.data.choices[0].message.content},
+        ]);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        setIsLoading(false);
+        console.log(error);
+      });
+  };
 
-      return () => clearInterval(interval);
-    }, []);
+  // console.log(features);
+  const [avatarIndex, setAvatarIndex] = useState(0);
 
-    const [loveIndex, setLoveIndex] = useState(0);
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setLoveIndex((loveIndex) => (loveIndex + 1) % 2);
-      }, 3500);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAvatarIndex((avatarIndex) => (avatarIndex + 1) % 2);
+    }, 3000);
 
-      return () => clearInterval(interval);
-    }, []);
+    return () => clearInterval(interval);
+  }, []);
 
-    const [thumbIndex, setThumbIndex] = useState(0);
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setThumbIndex((thumbIndex) => (thumbIndex + 1) % 2);
-      }, 5000);
+  const [loveIndex, setLoveIndex] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setLoveIndex((loveIndex) => (loveIndex + 1) % 2);
+    }, 3500);
 
-      return () => clearInterval(interval);
-    }, []);
+    return () => clearInterval(interval);
+  }, []);
 
-    const [googlesIndex, setGooglesIndex] = useState(0);
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setGooglesIndex((googlesIndex) => (googlesIndex + 1) % 2);
-      }, 4500);
+  const [thumbIndex, setThumbIndex] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setThumbIndex((thumbIndex) => (thumbIndex + 1) % 2);
+    }, 5000);
 
-      return () => clearInterval(interval);
-    }, []);
+    return () => clearInterval(interval);
+  }, []);
 
-    useEffect(() => {
-      function handleButtonClick(event) {
-        const target = event.target;
-        const buttons = document.querySelectorAll(
-          ".pricing .pricing-top-btn button"
-        );
-        buttons.forEach((button) => {
-          button.classList.remove("active");
-        });
-        target.classList.add("active");
-      }
+  const [googlesIndex, setGooglesIndex] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setGooglesIndex((googlesIndex) => (googlesIndex + 1) % 2);
+    }, 4500);
 
-      function handlePurpleClick() {
-        document.getElementById("purple-show").style.display = "block";
-        document.getElementById("metal-show").style.display = "none";
-        document.getElementById("premium-show").style.display = "none";
-      }
+    return () => clearInterval(interval);
+  }, []);
 
-      function handlePremiumClick() {
-        document.getElementById("purple-show").style.display = "none";
-        document.getElementById("metal-show").style.display = "none";
-        document.getElementById("premium-show").style.display = "block";
-      }
-
-      function handleMetalClick() {
-        document.getElementById("purple-show").style.display = "none";
-        document.getElementById("metal-show").style.display = "block";
-        document.getElementById("premium-show").style.display = "none";
-      }
-
+  useEffect(() => {
+    function handleButtonClick(event) {
+      const target = event.target;
       const buttons = document.querySelectorAll(
         ".pricing .pricing-top-btn button"
       );
       buttons.forEach((button) => {
-        button.addEventListener("click", handleButtonClick);
+        button.classList.remove("active");
       });
+      target.classList.add("active");
+    }
 
+    function handlePurpleClick() {
+      document.getElementById("purple-show").style.display = "block";
+      document.getElementById("metal-show").style.display = "none";
+      document.getElementById("premium-show").style.display = "none";
+    }
+
+    function handlePremiumClick() {
+      document.getElementById("purple-show").style.display = "none";
+      document.getElementById("metal-show").style.display = "none";
+      document.getElementById("premium-show").style.display = "block";
+    }
+
+    function handleMetalClick() {
+      document.getElementById("purple-show").style.display = "none";
+      document.getElementById("metal-show").style.display = "block";
+      document.getElementById("premium-show").style.display = "none";
+    }
+
+    const buttons = document.querySelectorAll(
+      ".pricing .pricing-top-btn button"
+    );
+    buttons.forEach((button) => {
+      button.addEventListener("click", handleButtonClick);
+    });
+
+    document
+      .getElementById("purple")
+      .addEventListener("click", handlePurpleClick);
+    document
+      .getElementById("premium")
+      .addEventListener("click", handlePremiumClick);
+    document
+      .getElementById("metal")
+      .addEventListener("click", handleMetalClick);
+
+    // Cleanup function to remove the event listeners when the component unmounts
+    return () => {
+      buttons.forEach((button) => {
+        button.removeEventListener("click", handleButtonClick);
+      });
       document
         .getElementById("purple")
-        .addEventListener("click", handlePurpleClick);
+        ?.removeEventListener("click", handlePurpleClick);
       document
         .getElementById("premium")
-        .addEventListener("click", handlePremiumClick);
+        ?.removeEventListener("click", handlePremiumClick);
       document
         .getElementById("metal")
-        .addEventListener("click", handleMetalClick);
-
-      // Cleanup function to remove the event listeners when the component unmounts
-      return () => {
-        buttons.forEach((button) => {
-          button.removeEventListener("click", handleButtonClick);
-        });
-        document
-          .getElementById("purple")
-          ?.removeEventListener("click", handlePurpleClick);
-        document
-          .getElementById("premium")
-          ?.removeEventListener("click", handlePremiumClick);
-        document
-          .getElementById("metal")
-          ?.removeEventListener("click", handleMetalClick);
-      };
-    }, []);
-
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [isModal2Open, setIsModal2Open] = useState(false);
-
-    const openModal = () => {
-      setIsModalOpen(true);
+        ?.removeEventListener("click", handleMetalClick);
     };
+  }, []);
 
-    const closeModal = () => {
-      setIsModalOpen(false);
-    };
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModal2Open, setIsModal2Open] = useState(false);
 
-    const openModal2 = () => {
-      setIsModal2Open(true);
-    };
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
 
-    const closeModal2 = () => {
-      setIsModal2Open(false);
-      closeModal(); // Close the first modal as well
-    };
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
-    const swiperRefLocal = useRef();
+  const openModal2 = () => {
+    setIsModal2Open(true);
+  };
 
-    const handleMouseEnter = () => {
-      swiperRefLocal?.current?.swiper?.autoplay?.stop();
-    };
+  const closeModal2 = () => {
+    setIsModal2Open(false);
+    closeModal(); // Close the first modal as well
+  };
+
+  const swiperRefLocal = useRef();
+
+  const handleMouseEnter = () => {
+    swiperRefLocal?.current?.swiper?.autoplay?.stop();
+  };
 
   const handleMouseLeave = () => {
     swiperRefLocal?.current?.swiper?.autoplay?.start();
   };
+  const textAnimation = {
+    hidden: {
+      y: 150,
+      opacity: 0,
+    },
+    visible: {
+      y: -10,
+      opacity: 1,
 
+    },
+  };
+
+  const divAnimation = {
+    hidden: {
+      y: 180,
+      opacity: 1,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+
+    },
+  };
+  const phoneAnimation = {
+    hidden: {
+      y: -180,
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+
+    },
+  };
+  const imgAnimation = {
+    hidden: {
+      scale: 0.5,
+      opacity: 0,
+      x: 210,
+      y: -215
+    },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      x: 0,
+      y: 0
+    },
+  };
+  // useEffect(() => {
+  //   if (inView) {
+  //     control.start("visible");
+  //   }
+  // }, [control, inView]);
   return (
     <>
       <Head>
-        <meta charSet="utf-8" />
+        <meta charSet="utf-8"/>
         <title>Mizan money</title>
         <link
           rel="stylesheet"
@@ -448,49 +499,72 @@ export default function Home({ setFieldValue }) {
       </Head>
 
       <main className="landing-bg position-relative">
-        <Image src={Images.cardsBG} className="card-bg" alt="image" />
-        <Image src={Images.cardsBGTab} className="card-bg-tab" alt="image" />
-        <Image src={Images.lastPageBg} className="last-page-bg" alt="image" />
+        <Image src={Images.cardsBG} className="card-bg" alt="image"/>
+        <Image src={Images.cardsBGTab} className="card-bg-tab" alt="image"/>
+        <Image src={Images.lastPageBg} className="last-page-bg" alt="image"/>
 
         {/* Navbar */}
 
-        <DynamicNavbar />
+        <DynamicNavbar/>
         {/* End */}
 
         <section className="hero">
+          <motion.div className={"heroBg"} initial="hidden"
+                      whileInView="visible"
+                      variants={imgAnimation}
+                      transition={{duration: 1, type: 'spring', stiffness: 35}}
+          >
+            <Image src={Images.heroBg} className="heroBg" alt="image"/>
+          </motion.div>
+
           <div className="container_costome">
             <div className="row m-0">
               <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                 <div className="hero-left-text">
-                  <h1 className="anime-gradient tw-text-[62px] tw-text-left sm:text-10xl tw-leading-none tw-select-none tw-font-bold">
-                    <span
+
+                  <h1
+                    className="anime-gradient tw-text-[62px] tw-text-left sm:text-10xl tw-leading-none tw-select-none tw-font-bold">
+                    <motion.span
+                      initial="hidden"
+                      whileInView="visible"
+                      variants={textAnimation}
+                      transition={{duration: 1, type: 'spring', stiffness: 35}}
                       data-content="Salaam,"
-                      className="tw-relative tw-leading-[93px] tw-block before:tw-content-[attr(data-content)] before:tw-w-full before:tw-z-0 before:tw-block before:tw-absolute before:tw-top-0 before:tw-px-0 before:tw-bottom-0 before:tw-left-0 before:tw-text-left before:tw-text-black before:tw-animate-gradient-background-1"
-                    >
-                      <span className="tw-px-0 tw-leading-[93px] tw-text-transparent tw-bg-clip-text tw-bg-gradient-to-r tw-from-gradient-1-start tw-to-gradient-1-end tw-animate-gradient-foreground-1">
+                      className="tw-relative tw-leading-[93px] tw-block before:tw-content-[attr(data-content)] before:tw-w-full before:tw-z-0 before:tw-block before:tw-absolute before:tw-top-0 before:tw-px-0 before:tw-bottom-0 before:tw-left-0 before:tw-text-left before:tw-text-black before:tw-animate-gradient-background-1">
+                      <span
+                        className="tw-px-0 tw-leading-[93px] tw-text-transparent tw-bg-clip-text tw-bg-gradient-to-r tw-from-gradient-1-start tw-to-gradient-1-end tw-animate-gradient-foreground-1">
                         {" "}
                         Salaam,
                       </span>
-                    </span> 
-                    <span
+                    </motion.span>
+                    <motion.span
+                      initial="hidden"
+                      whileInView="visible"
+                      variants={textAnimation}
+                      transition={{duration: 1, type: 'spring', stiffness: 35}}
                       data-content="We are Mizan,"
-                      className="anime-gradient-p tw-relative tw-block tw-text-[35px] tw-leading-[52px] tw-font-semibold before:tw-content-[attr(data-content)] before:tw-w-full before:tw-z-0 before:tw-block before:tw-absolute before:tw-top-0 before:tw-px-0 before:tw-bottom-0 before:tw-left-0 before:tw-text-left before:tw-text-black before:tw-animate-gradient-background-2"
-                    >
-                      <span className="anime-gradient-p tw-px-0 tw-text-transparent tw-text-[35px] tw-leading-[52px] tw-font-semibold tw-bg-clip-text tw-bg-gradient-to-r tw-from-gradient-2-start tw-to-gradient-2-end tw-animate-gradient-foreground-2">
+                      className="anime-gradient-p tw-relative tw-block tw-text-[35px] tw-leading-[52px] tw-font-semibold before:tw-content-[attr(data-content)] before:tw-w-full before:tw-z-0 before:tw-block before:tw-absolute before:tw-top-0 before:tw-px-0 before:tw-bottom-0 before:tw-left-0 before:tw-text-left before:tw-text-black before:tw-animate-gradient-background-2">
+                      <span
+                        className="anime-gradient-p tw-px-0 tw-text-transparent tw-text-[35px] tw-leading-[52px] tw-font-semibold tw-bg-clip-text tw-bg-gradient-to-r tw-from-gradient-2-start tw-to-gradient-2-end tw-animate-gradient-foreground-2">
                         {" "}
                         We are Mizan,
                       </span>
-                    </span>
-                    <span
+                    </motion.span>
+                    <motion.span
+                      initial="hidden"
+                      whileInView="visible"
+                      variants={textAnimation}
+                      transition={{duration: 1, type: 'spring', stiffness: 35}}
                       data-content="Africa’s first Islamic neobank."
-                      className="anime-gradient-p tw-relative tw-text-[35px] tw-leading-[52px] tw-font-semibold tw-block before:tw-content-[attr(data-content)] before:tw-w-full before:tw-z-0 before:tw-block before:tw-absolute before:tw-top-0 before:tw-px-0 before:tw-bottom-0 before:tw-left-0 before:tw-text-left before:tw-text-black before:tw-animate-gradient-background-3"
-                    >
-                      <span className="anime-gradient-p tw-px-0 tw-text-[35px] tw-leading-[52px] tw-font-semibold tw-text-transparent tw-bg-clip-text tw-bg-gradient-to-r tw-from-gradient-3-start tw-to-gradient-3-end tw-animate-gradient-foreground-3">
+                      className="anime-gradient-p tw-relative tw-text-[35px] tw-leading-[52px] tw-font-semibold tw-block before:tw-content-[attr(data-content)] before:tw-w-full before:tw-z-0 before:tw-block before:tw-absolute before:tw-top-0 before:tw-px-0 before:tw-bottom-0 before:tw-left-0 before:tw-text-left before:tw-text-black before:tw-animate-gradient-background-3">
+                      <span
+                        className="anime-gradient-p tw-px-0 tw-text-[35px] tw-leading-[52px] tw-font-semibold tw-text-transparent tw-bg-clip-text tw-bg-gradient-to-r tw-from-gradient-3-start tw-to-gradient-3-end tw-animate-gradient-foreground-3">
                         {" "}
                         Africa’s first Islamic neobank.
                       </span>
-                    </span>
+                    </motion.span>
                   </h1>
+
                   <img
                     src="https://res.cloudinary.com/dyto3sfmh/image/upload/v1677517396/phonenew_kudnab.png"
                     className="hero-img-mobile"
@@ -498,28 +572,22 @@ export default function Home({ setFieldValue }) {
                     fetchpriority="high"
                     alt=""
                   />
+                  {/*<Image src={Images.heroPhones} fetchpriority="high" className="hero-img-mobile" alt="image"/>*/}
+                  {/*<div className="phonesWrapper">*/}
+
+                  {/*</div>*/}
                 </div>
-                <span className="def">
-                  We are excited to have crafted a piece of tech that <br /> is
-                  seamless, without walls, borders or physical limits, <br />{" "}
+                <motion.span initial="hidden"
+                             whileInView="visible"
+                             variants={textAnimation}
+                             transition={{duration: 2, type: 'spring', stiffness: 60}}
+                             className="def">
+                  We are excited to have crafted a piece of tech that <br/> is
+                  seamless, without walls, borders or physical limits, <br/>{" "}
                   built on an ethical islamic framework.
-                </span>
-              </div>
-              <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                <div className="position-relative hero-img-view">
-                  <img
-                    src="https://res.cloudinary.com/dyto3sfmh/image/upload/v1677517396/phonenew_kudnab.png"
-                    className="hero-img"
-                    width="100%"
-                    fetchpriority="high"
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-xl-6 col-lg-6 col-md-8 col-sm-12">
-                <div className="join-our-team">
+                </motion.span>
+                <motion.div initial="hidden" whileInView="visible" variants={divAnimation}
+                            transition={{duration: 3, type: 'spring', stiffness: 60}} className="join-our-team">
                   <label>Join our waiting list.</label>
                   <div className="join-btn-group d-flex align-items-center">
                     <button onClick={openModal} className="join">
@@ -533,8 +601,7 @@ export default function Home({ setFieldValue }) {
                         as="div"
                         className="tw-relative"
                         onClose={closeModal}
-                        style={{ zIndex: "1000" }}
-                      >
+                        style={{zIndex: "1000"}}>
                         <Transition.Child
                           as={Fragment}
                           enter="tw-ease-out tw-duration-300"
@@ -542,9 +609,8 @@ export default function Home({ setFieldValue }) {
                           enterTo="tw-opacity-100"
                           leave="tw-ease-in tw-duration-200"
                           leaveFrom="tw-opacity-100"
-                          leaveTo="tw-opacity-0"
-                        >
-                          <div className="tw-fixed tw-inset-0 tw-bg-black tw-bg-opacity-25" />
+                          leaveTo="tw-opacity-0">
+                          <div className="tw-fixed tw-inset-0 tw-bg-black tw-bg-opacity-25"/>
                         </Transition.Child>
 
                         <div className="tw-fixed tw-inset-0 tw-overflow-y-auto">
@@ -556,23 +622,21 @@ export default function Home({ setFieldValue }) {
                               enterTo="tw-opacity-100 tw-scale-100"
                               leave="tw-ease-in tw-duration-200"
                               leaveFrom="tw-opacity-100 tw-scale-100"
-                              leaveTo="tw-opacity-0 tw-scale-95"
-                            >
-                              <Dialog.Panel className="tw-w-[1148px] tw-h-[645px] tw-max-h-full tw-z-10 tw-transform tw-overflow-hidden tw-rounded-3xl tw-bg-white tw-p-6 tw-align-middle tw-shadow-xl tw-transition-all">
+                              leaveTo="tw-opacity-0 tw-scale-95">
+                              <Dialog.Panel
+                                className="tw-w-[1148px] tw-h-[645px] tw-max-h-full tw-z-10 tw-transform tw-overflow-hidden tw-rounded-3xl tw-bg-white tw-p-6 tw-align-middle tw-shadow-xl tw-transition-all">
                                 {/* close */}
                                 <div className="tw-absolute tw-top-0 tw-right-0 tw-hidden tw-pt-4 tw-pr-4 sm:tw-block">
                                   <button
                                     type="button"
                                     className="tw-border-0 tw-bg-white tw-text-[#6D6E8A] focus:tw-outline-none"
-                                    onClick={() => setIsModalOpen(false)}
-                                  >
+                                    onClick={() => setIsModalOpen(false)}>
                                     <span className="tw-sr-only">Close</span>
                                     <span
                                       className="tw-text-[#6D6E8A] tw-underline"
-                                      aria-hidden="true"
-                                    >
-                                      exit beta
-                                    </span>{" "}
+                                      aria-hidden="true">
+                                        exit beta
+                                      </span>{" "}
                                     {">"}
                                   </button>
                                 </div>
@@ -595,8 +659,7 @@ export default function Home({ setFieldValue }) {
                                   <div className="tw-w-1/2 tw-mx-auto">
                                     <Dialog.Title
                                       as="h2"
-                                      className="tw-text-lg tw-font-medium tw-leading-6 tw-text-gray-900"
-                                    >
+                                      className="tw-text-lg tw-font-medium tw-leading-6 tw-text-gray-900">
                                       <h2 className={styles.myModal}>
                                         It’s time to dip your toes in water.
                                         Apply for Africa’s first Islamic
@@ -605,12 +668,13 @@ export default function Home({ setFieldValue }) {
                                     </Dialog.Title>
                                     {/* description */}
                                     <div className="tw-mt-4 tw-w-[445px]">
-                                      <p className="tw-text-[15px] tw-leading-[22.5px] tw-font-medium tw-font-[Poppinsmedium] tw-text-[#6D6E8A]">
+                                      <p
+                                        className="tw-text-[15px] tw-leading-[22.5px] tw-font-medium tw-font-[Poppinsmedium] tw-text-[#6D6E8A]">
                                         Join a movement, where people speak your
                                         language,
-                                        <br /> understand your hopes and help
+                                        <br/> understand your hopes and help
                                         you reach your financial
-                                        <br /> goals. Help us to fix banking for
+                                        <br/> goals. Help us to fix banking for
                                         G. (In Shaa Allah).
                                       </p>
                                     </div>
@@ -618,7 +682,8 @@ export default function Home({ setFieldValue }) {
                                     <form onSubmit={formik.handleSubmit}>
                                       <div className="tw-mt-4">
                                         <div className="tw-relative tw-mt-3 tw-rounded-full">
-                                          <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
+                                          <div
+                                            className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
                                             <Image
                                               src={Images.smileJoin}
                                               alt={"smile-join"}
@@ -654,7 +719,8 @@ export default function Home({ setFieldValue }) {
 
                                       <div className="tw-mt-4">
                                         <div className="tw-relative tw-mt-3 tw-rounded-full">
-                                          <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
+                                          <div
+                                            className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
                                             <Image
                                               src={Images.mailJoin}
                                               alt={"mail-join"}
@@ -691,8 +757,7 @@ export default function Home({ setFieldValue }) {
                                           className={styles.joinBtn}
                                           style={{
                                             opacity: formik.isValid ? 1 : 0.2,
-                                          }}
-                                        >
+                                          }}>
                                           APPLY FOR TRIAL
                                         </button>
                                       </div>
@@ -711,8 +776,7 @@ export default function Home({ setFieldValue }) {
                         as="div"
                         className="tw-relative"
                         onClose={closeModal2}
-                        style={{ zIndex: "1000" }}
-                      >
+                        style={{zIndex: "1000"}}>
                         <Transition.Child
                           as={Fragment}
                           enter="tw-ease-out tw-duration-300"
@@ -720,9 +784,8 @@ export default function Home({ setFieldValue }) {
                           enterTo="tw-opacity-100"
                           leave="tw-ease-in tw-duration-200"
                           leaveFrom="tw-opacity-100"
-                          leaveTo="tw-opacity-0"
-                        >
-                          <div className="tw-fixed tw-inset-0 tw-bg-black tw-bg-opacity-25" />
+                          leaveTo="tw-opacity-0">
+                          <div className="tw-fixed tw-inset-0 tw-bg-black tw-bg-opacity-25"/>
                         </Transition.Child>
 
                         <div className="tw-fixed tw-inset-0 tw-overflow-y-auto">
@@ -734,23 +797,21 @@ export default function Home({ setFieldValue }) {
                               enterTo="tw-opacity-100 tw-scale-100"
                               leave="tw-ease-in tw-duration-200"
                               leaveFrom="tw-opacity-100 tw-scale-100"
-                              leaveTo="tw-opacity-0 tw-scale-95"
-                            >
-                              <Dialog.Panel className="tw-w-[1148px] tw-h-[645px] tw-max-h-full tw-z-10 tw-transform tw-overflow-hidden tw-rounded-2xl tw-bg-white tw-p-6 tw-align-middle tw-shadow-xl tw-transition-all">
+                              leaveTo="tw-opacity-0 tw-scale-95">
+                              <Dialog.Panel
+                                className="tw-w-[1148px] tw-h-[645px] tw-max-h-full tw-z-10 tw-transform tw-overflow-hidden tw-rounded-2xl tw-bg-white tw-p-6 tw-align-middle tw-shadow-xl tw-transition-all">
                                 {/* close */}
                                 <div className="tw-absolute tw-top-0 tw-right-0 tw-hidden tw-pt-4 tw-pr-4 sm:tw-block">
                                   <button
                                     type="button"
                                     className="tw-border-0 tw-bg-white tw-text-[#6D6E8A] focus:tw-outline-none"
-                                    onClick={() => setIsModal2Open(false)}
-                                  >
+                                    onClick={() => setIsModal2Open(false)}>
                                     <span className="tw-sr-only">Close</span>
                                     <span
                                       className="tw-text-[#6D6E8A] tw-underline"
-                                      aria-hidden="true"
-                                    >
-                                      exit beta
-                                    </span>{" "}
+                                      aria-hidden="true">
+                                        exit beta
+                                      </span>{" "}
                                     {">"}
                                   </button>
                                 </div>
@@ -795,19 +856,20 @@ export default function Home({ setFieldValue }) {
                                 </div>
                                 {/* main */}
                                 <div className="tw-py-4 tw-pl-[54px] tw-pr-[76px]">
-                                  <div className="tw-mx-auto tw-flex tw-flex-col tw-text-center tw-items-center tw-justify-center tw-w-[600px] tw-pt-[70px]">
-                                    <Image src={Images.love2} alt={"love"} />
+                                  <div
+                                    className="tw-mx-auto tw-flex tw-flex-col tw-text-center tw-items-center tw-justify-center tw-w-[600px] tw-pt-[70px]">
+                                    <Image src={Images.love2} alt={"love"}/>
                                     <Dialog.Title
                                       as="h2"
-                                      className="tw-text-lg tw-font-medium tw-leading-6 tw-text-gray-900 tw-pt-4"
-                                    >
+                                      className="tw-text-lg tw-font-medium tw-leading-6 tw-text-gray-900 tw-pt-4">
                                       <h2 className={styles.myModal}>
                                         A great big thank you Habibi!
                                       </h2>
                                     </Dialog.Title>
                                     {/* description */}
                                     <div className="tw-mt-4 tw-w-[445px]">
-                                      <p className="tw-text-[15px] tw-leading-[22.5px] tw-font-medium tw-font-[PoppinsMedium] tw-text-[#6D6E8A]">
+                                      <p
+                                        className="tw-text-[15px] tw-leading-[22.5px] tw-font-medium tw-font-[PoppinsMedium] tw-text-[#6D6E8A]">
                                         Now sit back and relax, we’ll take it up
                                         from here. We’ll be in your inbox soon
                                         :-). It pays to be smart about your
@@ -845,11 +907,11 @@ export default function Home({ setFieldValue }) {
                                   </div>
                                 </div>
                                 {/* <Confetti
-                                    recycle={false}
-                                    numberOfPieces={800}
-                                    gravity={0.05}
-                                  /> */}
-                                {isVisible && <Confetti />}
+                                      recycle={false}
+                                      numberOfPieces={800}
+                                      gravity={0.05}
+                                    /> */}
+                                {isVisible && <Confetti/>}
                               </Dialog.Panel>
                             </Transition.Child>
                           </div>
@@ -860,17 +922,57 @@ export default function Home({ setFieldValue }) {
                     <div className="border-gradient">
                       <button className="see-now">
                         SEE HOW
-                        <Image src={Images.showMoreBtn} width="15px" alt="" />
+                        <Image src={Images.showMoreBtn} width="15px" alt=""/>
                       </button>
                     </div>
                   </div>
-                </div>
+                </motion.div>
+              </div>
+              <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 text-center tw-relative">
+                {/*<div className="position-relative hero-img-view">*/}
+                {/*<img*/}
+                {/*  src="https://res.cloudinary.com/dyto3sfmh/image/upload/v1677517396/phonenew_kudnab.png"*/}
+                {/*  className="hero-img"*/}
+                {/*  width="100%"*/}
+                {/*  fetchpriority="high"*/}
+                {/*  alt=""*/}
+                {/*/>*/}
+                <motion.div initial="hidden"
+                            whileInView="visible"
+                            variants={phoneAnimation}
+                            transition={{duration: 2, type: 'spring', stiffness: 60}}
+                            className="phone1 tw-absolute tw-left-0">
+                  <Image src={Images.heroPhone1} fetchpriority="high" alt="image"
+                         className={"phone1 "}/>
+                </motion.div>
+                <motion.div initial="hidden"
+                            whileInView="visible"
+                            variants={phoneAnimation}
+                            transition={{duration: 2, type: 'spring', stiffness: 60}}
+                            className="phone2 tw-absolute tw-right-36 tw-bottom-20">
+                  <Image src={Images.heroPhone2} fetchpriority="high" alt="image"
+                         className={"phone2"}/>
+                </motion.div>
+                <Image src={Images.heroPhone} fetchpriority="high" className="tw-relative tw-z-30" alt="image"/>
+              </div>
+              {/*</div>*/}
+              <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+
+              </div>
+
+            </div>
+            <div className="row">
+              <div className="col-xl-6 col-lg-6 col-md-8 col-sm-12">
+
               </div>
             </div>
           </div>
         </section>
 
-        <section className="logos">
+        <motion.section initial="hidden"
+                        whileInView="visible"
+                        variants={textAnimation}
+                        transition={{duration: 2, type: 'spring', stiffness: 60}} className="logos">
           <div className="logos-div d-flex align-items-center justify-content-center">
             <div className="logos-img d-flex align-items-center justify-content-center">
               <Image
@@ -895,12 +997,9 @@ export default function Home({ setFieldValue }) {
               />
             </div>
           </div>
-        </section>
-
-        {/* <hoverCard/> */}
+        </motion.section>
 
         <section className="tw-relative tw-text-center">
-        {/* <Hover /> */}
           <h1 className={styles.bankingHeader}>Islamic Banking Reimagined</h1>
           <div className="tw-relative tw-mt-10">
             <Image
@@ -916,7 +1015,7 @@ export default function Home({ setFieldValue }) {
               width={257.3}
               height={519.85}
               alt="hover"
-              className="tw-relative tw-z-10 tw-drop-shadow-2xl tw-rounded-b-[50px] tw-rounded-t-[50px]"
+              className="tw-relative tw-z-10"
             />
             <Image
               src={Images.bankWatch}
@@ -928,9 +1027,11 @@ export default function Home({ setFieldValue }) {
           </div>
 
           <div className="tw-absolute tw-bottom-[30px] tw-left-[575px] tw-z-20 tw-text-center tw-items-center">
-            <Tooltip placement="top" content={<Hover3 />}>
-              <div className="tw-w-[35px] tw-h-[35px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
-                <div className="tw-ml-[5px] tw-w-[25px] tw-h-[25px] tw-rounded-full tw-bg-white tw-ring-2 tw-ring-inset tw-ring-white tw-animate-none">
+            <Tooltip placement="right" content={<UserTwitterCard/>}>
+              <div
+                className="tw-w-[35px] tw-h-[35px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
+                <div
+                  className="tw-ml-[5px] tw-w-[25px] tw-h-[25px] tw-rounded-full tw-bg-white tw-ring-2 tw-ring-inset tw-ring-white tw-animate-none">
                   <svg
                     className="tw-w-[11px] tw-h-[11] hover:tw-rotate-45"
                     fill="none"
@@ -938,22 +1039,22 @@ export default function Home({ setFieldValue }) {
                     strokeWidth="1.5"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
+                    aria-hidden="true">
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      d="M12 4.5v15m7.5-7.5h-15"
-                    ></path>
+                      d="M12 4.5v15m7.5-7.5h-15"></path>
                   </svg>
                 </div>
               </div>
             </Tooltip>
           </div>
           <div className="tw-absolute tw-bottom-[30px] tw-left-[435px] tw-z-20 tw-text-center tw-items-center">
-            <Tooltip placement="topEnd" content={<Hover2 />}>
-              <div className="tw-w-[35px] tw-h-[35px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
-                <div className="tw-ml-[5px] tw-w-[25px] tw-h-[25px] tw-rounded-full tw-bg-white tw-ring-2 tw-ring-inset tw-ring-white tw-animate-none">
+            <Tooltip placement="right" content={<UserTwitterCard/>}>
+              <div
+                className="tw-w-[35px] tw-h-[35px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
+                <div
+                  className="tw-ml-[5px] tw-w-[25px] tw-h-[25px] tw-rounded-full tw-bg-white tw-ring-2 tw-ring-inset tw-ring-white tw-animate-none">
                   <svg
                     className="tw-w-[11px] tw-h-[11] hover:tw-rotate-45"
                     fill="none"
@@ -961,22 +1062,22 @@ export default function Home({ setFieldValue }) {
                     strokeWidth="1.5"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
+                    aria-hidden="true">
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      d="M12 4.5v15m7.5-7.5h-15"
-                    ></path>
+                      d="M12 4.5v15m7.5-7.5h-15"></path>
                   </svg>
                 </div>
               </div>
             </Tooltip>
           </div>
           <div className="tw-absolute tw-bottom-[259px] tw-left-[335px] tw-z-20 tw-text-center tw-items-center">
-            <Tooltip placement="left" content={<Hover1 />}>
-              <div className="tw-w-[35px] tw-h-[35px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
-                <div className="tw-ml-[5px] tw-w-[25px] tw-h-[25px] tw-rounded-full tw-bg-white tw-ring-2 tw-ring-inset tw-ring-white tw-animate-none">
+            <Tooltip placement="right" content={<UserTwitterCard/>}>
+              <div
+                className="tw-w-[35px] tw-h-[35px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
+                <div
+                  className="tw-ml-[5px] tw-w-[25px] tw-h-[25px] tw-rounded-full tw-bg-white tw-ring-2 tw-ring-inset tw-ring-white tw-animate-none">
                   <svg
                     className="tw-w-[11px] tw-h-[11] hover:tw-rotate-45"
                     fill="none"
@@ -984,22 +1085,22 @@ export default function Home({ setFieldValue }) {
                     strokeWidth="1.5"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
+                    aria-hidden="true">
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      d="M12 4.5v15m7.5-7.5h-15"
-                    ></path>
+                      d="M12 4.5v15m7.5-7.5h-15"></path>
                   </svg>
                 </div>
               </div>
             </Tooltip>
           </div>
           <div className="tw-absolute tw-top-[96px] tw-left-[744px] tw-z-20 tw-text-center tw-items-center">
-            <Tooltip placement="bottom" content={<Hover4 />}>
-              <div className="tw-w-[35px] tw-h-[35px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
-                <div className="tw-ml-[5px] tw-w-[25px] tw-h-[25px] tw-rounded-full tw-bg-white tw-ring-2 tw-ring-inset tw-ring-white tw-animate-none">
+            <Tooltip placement="right" content={<UserTwitterCard/>}>
+              <div
+                className="tw-w-[35px] tw-h-[35px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
+                <div
+                  className="tw-ml-[5px] tw-w-[25px] tw-h-[25px] tw-rounded-full tw-bg-white tw-ring-2 tw-ring-inset tw-ring-white tw-animate-none">
                   <svg
                     className="tw-w-[11px] tw-h-[11] hover:tw-rotate-45"
                     fill="none"
@@ -1007,52 +1108,109 @@ export default function Home({ setFieldValue }) {
                     strokeWidth="1.5"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
+                    aria-hidden="true">
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      d="M12 4.5v15m7.5-7.5h-15"
-                    ></path>
+                      d="M12 4.5v15m7.5-7.5h-15"></path>
                   </svg>
                 </div>
               </div>
             </Tooltip>
-          </div>
-          <div className="tw-absolute tw-bottom-[184px] tw-right-[339px] tw-z-20 tw-items-center">
-            <Tooltip placement="right" content={<Hover />}>
-              <div className="tw-w-[35px] tw-h-[35px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
-                <div color="gradient" className="tw-ml-[5px] tw-w-[25px] tw-h-[25px] tw-rounded-full tw-bg-white tw-ring-2 tw-ring-inset tw-ring-white tw-animate-none">
-                  <svg
-                    className="tw-w-[11px] tw-h-[11] hover:tw-rotate-45"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 4.5v15m7.5-7.5h-15"
-                    ></path>
-                  </svg>
-                </div>
-              </div>
-            </Tooltip>
-          </div>
-        </section>
-          <div className={styles.bankText}>
-            <div>Be the first to join the “early access” program . <span onClick={openModal} className={styles.bankTextSpan}>Apply Now</span></div>
           </div>
 
-        
+          <div className="tw-absolute tw-bottom-[184px] tw-right-[339px] tw-z-20 tw-items-center">
+            <Tooltip placement="right" content={<UserTwitterCard/>}>
+              <div
+                className="tw-w-[35px] tw-h-[35px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
+                <div
+                  color="gradient"
+                  className="tw-ml-[5px] tw-w-[25px] tw-h-[25px] tw-rounded-full tw-bg-white tw-ring-2 tw-ring-inset tw-ring-white tw-animate-none">
+                  <svg
+                    className="tw-w-[11px] tw-h-[11] hover:tw-rotate-45"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 4.5v15m7.5-7.5h-15"></path>
+                  </svg>
+                </div>
+              </div>
+            </Tooltip>
+          </div>
+          {/* 
+          <Tooltip placement="top" content={<UserTwitterCard />}>
+            <Avatar
+              pointer
+              size="lg"
+              src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
+              color="gradient"
+              bordered
+              squared
+            />
+          </Tooltip> */}
+        </section>
+
+        <section className="banking">
+          <div className="container_costome">
+            <div className="row align-items-center">
+              <div className="col-xl-5 col-lg-5 col-md-5 col-sm-12">
+                <div className="position-relative">
+                  <Image
+                    src={Images.mobileBanking}
+                    width="100%"
+                    className="banking-web-img"
+                    alt=""
+                  />
+                  <Image
+                    loader={imageKitLoader}
+                    src="banking-mobile-img.svg"
+                    width={569}
+                    height={615}
+                    className="banking-mobile-img"
+                    alt=""
+                  />
+                  <Image
+                    src={Images.miniMobileBanking}
+                    width="100%"
+                    className="banking-mobile-img-mini"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div className="col-xl-7 col-lg-7 col-md-7 col-sm-12">
+                <div className="banking-right-box">
+                  <h1>Islamic Banking Reimagined</h1>
+                  <ul>
+                    <li>Halal ready without compromise.</li>
+                    <li>Open your account in minutes (Goodbye paper work).</li>
+                    <li>Get upto 3 days early salary.</li>
+                    <li>Track every buck. Know your spend.</li>
+                    <li>Buy now pay later,(Interest free, for real).</li>
+                  </ul>
+                  <p>
+                    We didn’t just want to throw solutions around, in the hope
+                    they find a problem to solve. Thats why we’ve chosen to run
+                    a beta phase.
+                  </p>
+                  <button onClick={openModal} className="apply-beta">
+                    Apply for the Beta Progam
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <section className="cards position-relative">
           <div className="cards-box">
             <h1>
-              Turn heads with our <br /> <span>purple</span>
+              Turn heads with our <br/> <span>purple</span>
               cards made from steel.
             </h1>
             <p>Pay or get paid, wherever, whenever.</p>
@@ -1098,8 +1256,7 @@ export default function Home({ setFieldValue }) {
               }}
               speed={3000}
               modules={[Pagination, Navigation]}
-              className="swiper featureSwiper"
-            >
+              className="swiper featureSwiper">
               {features.map((feature) => (
                 <SwiperSlide key={feature.tag} className="swiper-slide">
                   <div className="light-border">
@@ -1153,7 +1310,7 @@ export default function Home({ setFieldValue }) {
                 </div> */}
                 <div className={styles.ups2}>
                   <div className={styles.upsCup}>
-                    <Image src={Images.cup} alt="cup" />
+                    <Image src={Images.cup} alt="cup"/>
                   </div>
                   <div className={styles.upsText}>Buy</div>
                   <div className={styles.upsText2}>Coffee</div>
@@ -1163,15 +1320,14 @@ export default function Home({ setFieldValue }) {
                 </div>
                 <div className={styles.ups1}>
                   <div className={styles.upsPhone}>
-                    <Image src={Images.phoneUps} alt="phone" />
+                    <Image src={Images.phoneUps} alt="phone"/>
                   </div>
                   <div className={styles.upsText3}>Save</div>
                   <div className={styles.upsText4}>Invest</div>
                   <div className={styles.or}>or</div>
                   <Link
                     href="/brand-story/#howToDonate"
-                    className={styles.donate2}
-                  >
+                    className={styles.donate2}>
                     Donate
                   </Link>
                   <div className={styles.upsPriceBadge2}>
@@ -1200,7 +1356,7 @@ export default function Home({ setFieldValue }) {
               <div className="col-xl-7 col-lg-7 col-md-12">
                 <div className="mizan-round-right p-4">
                   <div className="chart-box position-relative">
-                    <Image src={Images.graph} className="chart-img" alt="" />
+                    <Image src={Images.graph} className="chart-img" alt=""/>
                     <div className="weekly-depo-border set-position">
                       <button className="weekly-depo chart-depo">$500</button>
                     </div>
@@ -1214,7 +1370,7 @@ export default function Home({ setFieldValue }) {
                   <div className="text-start last-def mt-4">
                     <p>
                       Use this tool to see how round-ups and depositing money
-                      each month can impact the <br /> long term value of your
+                      each month can impact the <br/> long term value of your
                       account.
                     </p>
                   </div>
@@ -1228,7 +1384,7 @@ export default function Home({ setFieldValue }) {
           <div className="pricing-gradiant">
             <div className="pricing-header">
               <h1>
-                Simple Pricing. <br /> No Complex Contracts
+                Simple Pricing. <br/> No Complex Contracts
               </h1>
             </div>
             <div className="pricing-box mt-5">
@@ -1303,13 +1459,12 @@ export default function Home({ setFieldValue }) {
                           <li>Save Better +</li>
                         </ul>
                       </div>
-                      <Image src={Images.premium} width="100%" alt="" />
+                      <Image src={Images.premium} width="100%" alt=""/>
                     </div>
                   </div>
                   <button
                     onClick={openModal}
-                    className="purple-subscribe premium-bg"
-                  >
+                    className="purple-subscribe premium-bg">
                     <span className="tw-line-through tw-px-1 tw-decoration-2 tw-decoration-black">
                       $3/month
                     </span>
@@ -1339,13 +1494,12 @@ export default function Home({ setFieldValue }) {
                           <li>Invest better Pro</li>
                         </ul>
                       </div>
-                      <Image src={Images.metal} width="100%" alt="" />
+                      <Image src={Images.metal} width="100%" alt=""/>
                     </div>
                   </div>
                   <button
                     onClick={openModal}
-                    className="purple-subscribe metal-bg"
-                  >
+                    className="purple-subscribe metal-bg">
                     <span className="tw-line-through tw-px-1 tw-decoration-2 tw-decoration-black">
                       $5/month
                     </span>
@@ -1384,8 +1538,7 @@ export default function Home({ setFieldValue }) {
           <div
             className="early-user-slider slider-working"
             onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
+            onMouseLeave={handleMouseLeave}>
             <Swiper
               slidesPerView={3}
               ref={swiperRefLocal}
@@ -1412,21 +1565,20 @@ export default function Home({ setFieldValue }) {
                 },
               }}
               modules={[FreeMode, Autoplay]}
-              className="swiper mySwiper mt-5"
-            >
+              className="swiper mySwiper mt-5">
               {testimonials.map((testimonial) => (
-                <SwiperSlide>
+                <SwiperSlide key={testimonial.id}>
                   <div className="early-user-border">
                     <div className="early-user-box p-4">
                       <div className="user-info d-flex align-items-center gap-3">
-                        <Image src={testimonial.imageUrl} alt="" />
+                        <Image src={testimonial.imageUrl} alt=""/>
                         <div className="user-name">
                           <span>Aldo P.</span>
-                          <Image src={testimonial.ratingImageUrl} alt="" />
+                          <Image src={testimonial.ratingImageUrl} alt=""/>
                         </div>
                       </div>
                       <div className="verified d-flex align-items-center gap-2 mt-3">
-                        <Image src={Images.verified} alt="" />
+                        <Image src={Images.verified} alt=""/>
                         <label>{testimonial.label}</label>
                       </div>
                       <p>{testimonial.description}</p>
@@ -1457,28 +1609,28 @@ export default function Home({ setFieldValue }) {
                   />
                   <div className="mind-mobile-view">
                     <div className="peace-box d-flex align-items-center gap-3 p-4 mt-5">
-                      <Image src={Images.frame1} width="58px" alt="" />
+                      <Image src={Images.frame1} width="58px" alt=""/>
                       <label>
                         Swiss level bank security with PCI /DSS certified.
                       </label>
                     </div>
                     <div className="peace-box d-flex align-items-center gap-3 p-4">
-                      <Image src={Images.frame2} width="58px" alt="" />
+                      <Image src={Images.frame2} width="58px" alt=""/>
                       <label>
                         Instantly freeze your lost card, wherever, whenever.
                       </label>
                     </div>
                     <div className="peace-box d-flex align-items-center gap-3 p-4">
-                      <Image src={Images.frame3} width="58px" alt="" />
+                      <Image src={Images.frame3} width="58px" alt=""/>
                       <label>
                         Biometrics login, with enhanced 2FA.
-                        <br /> No more (xh!#12@?3) passwords.
+                        <br/> No more (xh!#12@?3) passwords.
                       </label>
                     </div>
                     <div className="peace-box d-flex align-items-center gap-3 p-4">
-                      <Image src={Images.frame4} width="58px" alt="" />
+                      <Image src={Images.frame4} width="58px" alt=""/>
                       <label>
-                        Built on blockchain technology (will take <br />{" "}
+                        Built on blockchain technology (will take <br/>{" "}
                         approximately 1,000,000,000,000 years to crack).
                       </label>
                     </div>
@@ -1577,10 +1729,10 @@ export default function Home({ setFieldValue }) {
             <div className="text-center tw-z-10 tw-mt-[135px]">
               <h1>
                 Yalla, let’s
-                <br /> get started
+                <br/> get started
               </h1>
               <p>
-                Habibi, its time to level up your money <br />
+                Habibi, its time to level up your money <br/>
                 game, be part of the first 1,000 subscribers.
               </p>
               <button onClick={openModal} className={styles.yallahWaitlist}>
@@ -1596,10 +1748,10 @@ export default function Home({ setFieldValue }) {
               <h1>Mizan Knowlege Central</h1>
               <p className="mt-3">
                 Meet Sofie ,the most powerful natural language A.I. to help you
-                <br />
+                <br/>
                 learn about anything say (Sukuks, blockchain, Islamic finance
                 etc).
-                <br /> <br />
+                <br/> <br/>
                 Give it a try,{" "}
                 <span className="tw-font-bold">type in any language?</span> (Its
                 free).
@@ -1608,7 +1760,7 @@ export default function Home({ setFieldValue }) {
             <div className="row align-items-center -tw-mt-8">
               <div className="col-lg-6 col-md-6 col-sm-12 text-start">
                 <div className="left-voice-img voice-img">
-                  <Image src={Images.voice} className="voice" alt="" />
+                  <Image src={Images.voice} className="voice" alt=""/>
                   {/* <ImageAnimation images={images} /> */}
                   {/* <ImageAnimation currentImageIndex={currentImageIndex} /> */}
 
@@ -1622,19 +1774,17 @@ export default function Home({ setFieldValue }) {
                       <div className="chatbox-main">
                         <ul
                           ref={chatContainerRef}
-                          className="tw-scrollbar-thin"
-                        >
+                          className="tw-scrollbar-thin">
                           <li>
                             <div
                               className="d-flex align-items-end"
-                              style={{ columnGap: "1.5rem" }}
-                            >
+                              style={{columnGap: "1.5rem"}}>
                               <Image
                                 loader={imageKitLoader}
                                 src="chat-user.svg"
                                 width={64}
                                 height={64}
-                                style={{ position: "relative", zIndex: "99" }}
+                                style={{position: "relative", zIndex: "99"}}
                                 alt="user"
                               />
                               <span>
@@ -1650,8 +1800,7 @@ export default function Home({ setFieldValue }) {
                                     ? "tw-justify-end"
                                     : "tw-justify-start"
                                 }`}
-                                style={{ columnGap: "1.5rem" }}
-                              >
+                                style={{columnGap: "1.5rem"}}>
                                 {message.type != "user" && (
                                   <Image
                                     src={Images.chatUser}
@@ -1670,16 +1819,14 @@ export default function Home({ setFieldValue }) {
                                     message.type === "user"
                                       ? "tw-justify-end"
                                       : "tw-justify-start"
-                                  }`}
-                                >
+                                  }`}>
                                   <div className="tw-rounded-lg tw-text-white tw-max-w-sm">
                                     <span
                                       className={`${
                                         message.type === "user"
                                           ? "tw-bg-[#A276FF] after:tw-bg-[#A276FF] tw-text-white"
                                           : "tw-bg-[#f0ecf7]"
-                                      }`}
-                                    >
+                                      }`}>
                                       {message.message}
                                     </span>
                                   </div>
@@ -1690,16 +1837,15 @@ export default function Home({ setFieldValue }) {
                           {isLoading && (
                             <div
                               key={chatLog.length}
-                              className="tw-flex tw-justify-start tw-mb-3"
-                            >
+                              className="tw-flex tw-justify-start tw-mb-3">
                               <div className="tw-bg-[#f0ecf7] tw-rounded-full tw-p-4 tw-text-[#6d6e8a] tw-max-w-sm">
-                                <TypingAnimation />
+                                <TypingAnimation/>
                               </div>
                             </div>
                           )}
                         </ul>
                         <div className="typing-box d-flex align-items-center gap-3">
-                          <Image src={Images.typeIcon} alt="" />
+                          <Image src={Images.typeIcon} alt=""/>
                           <input
                             type="text"
                             placeholder="Start typing.."
@@ -1718,13 +1864,13 @@ export default function Home({ setFieldValue }) {
         </section>
 
         {/* Footer */}
-        <DynamicFooter />
+        <DynamicFooter/>
         {/* End */}
       </main>
 
       {/* models */}
 
-      <DynamicNavModal />
+      <DynamicNavModal/>
     </>
   );
 }

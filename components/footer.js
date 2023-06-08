@@ -17,7 +17,7 @@ export default function Footer() {
           <div className="col-lg-3 col-md-4 col-sm-12 ">
             <div className="footer-box1">
               <Image src={Images.footerLogo} alt="" />
-              <ul className="web-points">
+              <ul className="web-points ml-0">
                 <li>
                   <Link href="/">Terms and Conditions</Link>
                 </li>
@@ -139,7 +139,7 @@ export default function Footer() {
         </div>
         <div className="row footer-last ">
           <div className="col-lg-3 col-md-3 order-3 order-md-1">
-            <p>Mizan Financial Ltd.</p>
+            <p cla>About Mizan Money</p>
             <p className="mt-2 mt-sm-1">All rights reserved {currentYear}</p>
           </div>
           <div className="col-lg-7 col-md-7 order-1 order-md-2">

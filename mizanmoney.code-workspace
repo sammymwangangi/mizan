@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "../mizmoney_new (1)"
 		}
 	],
 	"settings": {}

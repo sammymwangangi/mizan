@@ -5,6 +5,8 @@ import Logo from "../public/images/homepage/logo.svg";
 import Toggle from "../public/images/homepage/toggle.svg";
 import US from "../public/images/homepage/united-states.svg";
 // import HomePageNew from "../public/images/homepage/phonenew.png";
+
+import heroBg from "../public/images/homepage/hero-bg.png"
 import showMoreBtn from "../public/images/homepage/show-more-btn.svg";
 import firstCo from "../public/images/homepage/company1.svg";
 import secondCo from "../public/images/homepage/company2.svg";
@@ -86,12 +88,20 @@ import bankCard from "../public/images/homepage/hover/card.svg";
 import bankIphone from "../public/images/homepage/hover/iphone.svg";
 import bankWatch from "../public/images/homepage/hover/watch.png";
 import bankTime from "../public/images/homepage/hover/time.png";
-import bankCheck from "../public/images/homepage/hover/check.png";
 import bankElipse from "../public/images/homepage/hover/elipse.svg";
 import bankElipse2 from "../public/images/homepage/hover/elipse2.svg";
 import bankCross from "../public/images/homepage/hover/cross.svg";
+import heroPhones from "../public/images/homepage/hero-phones.png";
+import heroPhone from "../public/images/homepage/heroPhone.png";
+import heroPhone1 from "../public/images/homepage/heroPhone1.png";
+import heroPhone2 from "../public/images/homepage/debitCard.png";
 
 export const Images = {
+  heroPhone1,
+  heroPhone2,
+  heroPhone,
+  heroPhones,
+  heroBg,
   cardsBG,
   cardsBGTab,
   lastPageBg,
@@ -182,5 +192,4 @@ export const Images = {
   bankElipse,
   bankElipse2,
   bankCross,
-  bankCheck
 };

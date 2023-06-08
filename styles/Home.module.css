@@ -22,42 +22,10 @@
   margin: 0 auto;
 }
 
-.bankText {
-  padding-top: 30px;
-  font-family: Poppinsregular;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 30px;
-  text-align: center;
-  color: #1b1c39;
-}
-
-.bankTextSpan {
-  background: linear-gradient(225deg, #80b2ff 0%, #7c27d9 51.55%, #ff68f0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-  width: fit-content;
-  cursor: pointer;
-  position: relative;
-}
-
-.bankTextSpan::before {
-  content: "";
-  position: absolute;
-  top: 82%;
-  width: 100%;
-  left: 0;
-  height: 2px;
-  border-radius: 2px;
-  background: linear-gradient(225deg, #80b2ff 0%, #7c27d9 51.55%, #ff68f0 100%);
-}
-
-.c {
+.c{
   margin: 0 auto;
 }
+
 
 .myModal {
   background: linear-gradient(
