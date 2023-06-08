@@ -108,6 +108,6 @@ module.exports = {
     require("@tailwindcss/aspect-ratio"),
     require("@tailwindcss/container-queries"),
     require("tailwind-scrollbar"),
-    require("daisyui"),
+    // require("daisyui"),
   ],
 };
