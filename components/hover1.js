@@ -23,7 +23,7 @@ export default function Hover1() {
                 height={15}
                 alt="check-mark"
                 />
-                <div className='tw-text-[14px] tw-text-black tw-font-medium tw-text-left'>Surgical grade stainless steel card</div>
+                <div className='myFont tw-text-[14px] tw-text-black tw-text-left'>Surgical grade stainless steel card</div>
             </div>
             <div className='tw-flex tw-space-x-[8px]'>
                 <Image
@@ -32,7 +32,7 @@ export default function Hover1() {
                 height={15}
                 alt="check-mark"
                 />
-                <div className='tw-text-[14px] tw-text-black tw-font-medium tw-font-poppins tw-text-left'>Stunningly beautiful design</div>
+                <div className='myFont tw-text-[14px] tw-text-black tw-font-poppins tw-text-left'>Stunningly beautiful design</div>
             </div>
             <div className='tw-flex tw-space-x-[8px]'>
                 <Image
@@ -41,7 +41,7 @@ export default function Hover1() {
                 height={15}
                 alt="check-mark"
                 />
-                <div className='tw-text-[14px] tw-text-black tw-font-medium tw-text-left'>100% shariah compliant</div>
+                <div className='myFont tw-text-[14px] tw-text-black tw-text-left'>100% shariah compliant</div>
             </div>
       </div>
     </div>

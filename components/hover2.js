@@ -23,7 +23,7 @@ export default function Hover2() {
                 height={15}
                 alt="check-mark"
                 />
-                <div className='tw-text-[14px] tw-text-black tw-font-medium tw-text-left'>No wallet? No problem.</div>
+                <div className='myFont tw-text-[14px] tw-text-black tw-text-left'>No wallet? No problem.</div>
             </div>
             <div className='tw-flex tw-space-x-[8px]'>
                 <Image
@@ -32,7 +32,7 @@ export default function Hover2() {
                 height={15}
                 alt="check-mark"
                 />
-                <div className='tw-text-[14px] tw-text-black tw-font-medium tw-font-poppins tw-text-left'>Buy now, pay at your own pace</div>
+                <div className='myFont tw-text-[14px] tw-text-black tw-font-poppins tw-text-left'>Buy now, pay at your own pace</div>
             </div>
             <div className='tw-flex tw-space-x-[8px]'>
                 <Image
@@ -41,7 +41,7 @@ export default function Hover2() {
                 height={15}
                 alt="check-mark"
                 />
-                <div className='tw-text-[14px] tw-text-black tw-font-medium tw-text-left'>Access to 2000 ATMs nation wide</div>
+                <div className='myFont tw-text-[14px] tw-text-black tw-text-left'>Access to 2000 ATMs nation wide</div>
             </div>
       </div>
     </div>

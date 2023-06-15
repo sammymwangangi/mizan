@@ -23,7 +23,7 @@ export default function Hover() {
                 height={15}
                 alt="check-mark"
                 />
-                <div className='tw-text-[14px] tw-text-black tw-font-medium tw-text-left'>Halal-driven investment portfolios</div>
+                <div className='myFont tw-text-[14px] tw-text-black tw-text-left'>Halal-driven investment portfolios</div>
             </div>
             <div className='tw-flex tw-space-x-[8px]'>
                 <Image
@@ -32,7 +32,7 @@ export default function Hover() {
                 height={15}
                 alt="check-mark"
                 />
-                <div className='tw-text-[14px] tw-text-black tw-font-medium tw-font-poppins tw-text-left'>Robin Habibi - Your personal broker</div>
+                <div className='myFont tw-text-[14px] tw-text-black tw-font-poppins tw-text-left'>Robin Habibi - Your personal broker</div>
             </div>
             <div className='tw-flex tw-space-x-[8px]'>
                 <Image
@@ -41,7 +41,7 @@ export default function Hover() {
                 height={15}
                 alt="check-mark"
                 />
-                <div className='tw-text-[14px] tw-text-black tw-font-medium tw-text-left'>Start saving & investing effortlessly  via Round-ups feature</div>
+                <div className='myFont tw-text-[14px] tw-text-black tw-text-left'>Start saving & investing effortlessly  via Round-ups feature</div>
             </div>
       </div>
     </div>

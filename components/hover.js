@@ -23,7 +23,7 @@ export default function Hover() {
                 height={15}
                 alt="check-mark"
                 />
-                <div className='tw-text-[14px] tw-text-black tw-font-medium tw-text-left'>Revolutionary payment tech</div>
+                <div className='myFont tw-text-[14px] tw-text-black tw-text-left'>Revolutionary payment tech</div>
             </div>
             <div className='tw-flex tw-space-x-[8px]'>
                 <Image
@@ -32,7 +32,7 @@ export default function Hover() {
                 height={15}
                 alt="check-mark"
                 />
-                <div className='tw-text-[14px] tw-text-black tw-font-medium tw-font-poppins tw-text-left'>Track your finances</div>
+                <div className='myFont tw-text-[14px] tw-text-black tw-font-poppins tw-text-left'>Track your finances</div>
             </div>
             <div className='tw-flex tw-space-x-[8px]'>
                 <Image
@@ -41,7 +41,7 @@ export default function Hover() {
                 height={15}
                 alt="check-mark"
                 />
-                <div className='tw-text-[14px] tw-text-black tw-font-medium tw-text-left'>Instant financial health checks</div>
+                <div className='myFont tw-text-[14px] tw-text-black tw-text-left'>Instant financial health checks</div>
             </div>
       </div>
     </div>

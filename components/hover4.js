@@ -23,7 +23,7 @@ export default function Hover4() {
                 height={15}
                 alt="check-mark"
                 />
-                <div className='tw-text-[14px] tw-text-black tw-font-medium tw-text-left'>Open your account in 3 minutes</div>
+                <div className='myFont tw-text-[14px] tw-text-black tw-text-left'>Open your account in 3 minutes</div>
             </div>
             <div className='tw-flex tw-space-x-[8px]'>
                 <Image
@@ -32,7 +32,7 @@ export default function Hover4() {
                 height={15}
                 alt="check-mark"
                 />
-                <div className='tw-text-[14px] tw-text-black tw-font-medium tw-font-poppins tw-text-left'>No hidden fees & tricks (ever)</div>
+                <div className='myFont tw-text-[14px] tw-text-black tw-font-poppins tw-text-left'>No hidden fees & tricks (ever)</div>
             </div>
             <div className='tw-flex tw-space-x-[8px]'>
                 <Image
@@ -41,7 +41,7 @@ export default function Hover4() {
                 height={15}
                 alt="check-mark"
                 />
-                <div className='tw-text-[14px] tw-text-black tw-font-medium tw-text-left'>Your new BFF (Best Financial Friend)</div>
+                <div className='myFont tw-text-[14px] tw-text-black tw-text-left'>Your new BFF (Best Financial Friend)</div>
             </div>
       </div>
     </div>
