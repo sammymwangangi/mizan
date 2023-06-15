@@ -4,17 +4,17 @@ import { Images } from "../components/images";
 
 export default function Hover2() {
   return (
-    <div className="relative tw-flex tw-flex-col tw-w-[274px] tw-h-[290px] tw-bg-white tw-rounded-t-[15px] tw-rounded-bl-[15px] tw-shadow-lg">
-      <div className='tw-h-[171px]'>
+    <div className="relative tw-flex tw-flex-col tw-w-[274px] tw-h-[330px] tw-bg-white tw-rounded-t-[15px] tw-rounded-bl-[15px] tw-shadow-lg">
+      <div className='tw-h-[210px]'>
         <Image
           src="/images/homepage/hover/2.svg"
           width={274}
-          height={171}
+          height={210}
           alt="Shoes"
           className='tw-rounded-t-[15px] tw-object-cover'
         />
       </div>
-      <div className='tw-absolute tw-top-[153px] tw-w-[274px] tw-h-[18px] tw-bg-white tw-rounded-t-[15px]'></div>
+      <div className='tw-absolute tw-top-[193px] tw-w-[274px] tw-h-[20px] tw-bg-white tw-rounded-t-[15px]'></div>
       <div className='tw-h-[101px] tw-space-y-[10px] tw-px-2'>
             <div className='tw-flex tw-items-center tw-space-x-[8px]'>
                 <Image
