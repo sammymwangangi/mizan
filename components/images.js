@@ -95,6 +95,7 @@ import heroPhones from "../public/images/homepage/hero-phones.png";
 import heroPhone from "../public/images/homepage/heroPhone.png";
 import heroPhone1 from "../public/images/homepage/heroPhone1.png";
 import heroPhone2 from "../public/images/homepage/debitCard.png";
+import bankCheck from "../public/images/homepage/hover/check.png";
 
 export const Images = {
   heroPhone1,
@@ -192,4 +193,5 @@ export const Images = {
   bankElipse,
   bankElipse2,
   bankCross,
+  bankCheck,
 };

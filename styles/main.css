@@ -4937,3 +4937,20 @@
       height: 166vw;
     }
   }
+
+  .nextui-c-cFCyVg {
+    padding: 0 !important;
+  }
+
+  .nextui-c-kXAjmv-ijnpYvx-css {
+    inset: 50% 5px auto auto !important;
+  }
+  .nextui-c-kXAjmv-iccwAr-css {
+    inset: auto 5px calc(15% + 1px) auto !important;
+  }
+  .nextui-c-kXAjmv-ifyudKp-css {
+    inset: calc(15% + -5px) auto auto 5px !important;
+  }
+  .nextui-c-kXAjmv-ifeNNlb-css {
+    inset: 50% auto auto 5px;
+  }

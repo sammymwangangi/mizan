@@ -22,11 +22,17 @@ import Confetti from "../components/Confetti";
 import { Formik, Form, Field, ErrorMessage, useFormik } from "formik";
 import * as Yup from "yup";
 import TypingAnimation from "../components/TypingAnimation";
-// import Confetti from "react-confetti";
 import ImageAnimation from "../components/ImageAnimation";
 import PhoneNumberInput from "../components/PhoneNumberInput";
 import { useRouter } from "next/router";
 import { supabase } from "./../lib/supabaseClient";
+import { Tooltip } from "@nextui-org/react";
+import { UserTwitterCard } from "../components/UserTwitterCard";
+import Hover from "../components/hover";
+import Hover1 from "../components/hover1";
+import Hover2 from "../components/hover2";
+import Hover3 from "../components/hover3";
+import Hover4 from "../components/hover4";
 
 const DynamicNavbar = dynamic(() => import("../components/navbar"), {});
 
@@ -866,56 +872,155 @@ export default function Home({ setFieldValue }) {
           </div>
         </section>
 
-        <section className="banking">
-          <div className="container_costome">
-            <div className="row align-items-center">
-              <div className="col-xl-5 col-lg-5 col-md-5 col-sm-12">
-                <div className="position-relative">
-                  <Image
-                    src={Images.mobileBanking}
-                    width="100%"
-                    className="banking-web-img"
-                    alt=""
-                  />
-                  <Image
-                    loader={imageKitLoader}
-                    src="banking-mobile-img.svg"
-                    width={569}
-                    height={615}
-                    className="banking-mobile-img"
-                    alt=""
-                  />
-                  <Image
-                    src={Images.miniMobileBanking}
-                    width="100%"
-                    className="banking-mobile-img-mini"
-                    alt=""
-                  />
+        <section className="tw-relative tw-text-center">
+        {/* <Hover /> */}
+          <h1 className={styles.bankingHeader}>Islamic Banking Reimagined</h1>
+          <div className="tw-relative tw-mt-10">
+            <Image
+              src={Images.bankCard}
+              width={307.46}
+              height={360.72}
+              alt="hover"
+              className="-tw-mb-[170px] -tw-mr-[75px]"
+            />
+
+            <Image
+              src={Images.bankIphone}
+              width={257.3}
+              height={519.85}
+              alt="hover"
+              className="tw-relative tw-z-10 tw-drop-shadow-2xl tw-rounded-b-[50px] tw-rounded-t-[50px]"
+            />
+            <Image
+              src={Images.bankWatch}
+              width={300.04}
+              height={452.35}
+              alt="hover"
+              className="-tw-mb-[250px] -tw-ml-[55px] tw-z-0"
+            />
+            <div className="tw-absolute tw-bottom-[30px] tw-left-[975px] md:tw-left-[600px] tw-z-20 tw-text-center tw-items-center">
+              <Tooltip placement="leftEnd" content={<Hover3 />}>
+                <div className="tw-w-[35px] tw-h-[35px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
+                  <div className="tw-ml-[5px] tw-w-[25px] tw-h-[25px] tw-rounded-full tw-bg-white tw-ring-2 tw-ring-inset tw-ring-white tw-animate-none">
+                    <svg
+                      className="tw-w-[11px] tw-h-[11] hover:tw-rotate-45"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 4.5v15m7.5-7.5h-15"
+                      ></path>
+                    </svg>
+                  </div>
                 </div>
-              </div>
-              <div className="col-xl-7 col-lg-7 col-md-7 col-sm-12">
-                <div className="banking-right-box">
-                  <h1>Islamic Banking Reimagined</h1>
-                  <ul>
-                    <li>Halal ready without compromise.</li>
-                    <li>Open your account in minutes (Goodbye paper work).</li>
-                    <li>Get upto 3 days early salary.</li>
-                    <li>Track every buck. Know your spend.</li>
-                    <li>Buy now pay later,(interest free, forever).</li>
-                  </ul>
-                  <p>
-                    We didn’t just want to throw solutions around, in the hope
-                    they find a problem to solve. Thats why we’ve chosen to run
-                    a beta phase.
-                  </p>
-                  <button onClick={openModal} className="apply-beta">
-                    Apply for the Beta Progam
-                  </button>
+              </Tooltip>
+            </div>
+            <div className="tw-absolute tw-bottom-[30px] tw-left-[450px] tw-z-20 tw-text-center tw-items-center">
+              <Tooltip placement="leftEnd" content={<Hover2 />}>
+                <div className="tw-w-[35px] tw-h-[35px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
+                  <div className="tw-ml-[5px] tw-w-[25px] tw-h-[25px] tw-rounded-full tw-bg-white tw-ring-2 tw-ring-inset tw-ring-white tw-animate-none">
+                    <svg
+                      className="tw-w-[11px] tw-h-[11] hover:tw-rotate-45"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 4.5v15m7.5-7.5h-15"
+                      ></path>
+                    </svg>
+                  </div>
                 </div>
-              </div>
+              </Tooltip>
+            </div>
+            <div className="tw-absolute tw-bottom-[259px] tw-left-[370px] tw-z-20 tw-text-center tw-items-center">
+              <Tooltip placement="left" content={<Hover1 />}>
+                <div className="tw-w-[35px] tw-h-[35px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
+                  <div className="tw-ml-[5px] tw-w-[25px] tw-h-[25px] tw-rounded-full tw-bg-white tw-ring-2 tw-ring-inset tw-ring-white tw-animate-none">
+                    <svg
+                      className="tw-w-[11px] tw-h-[11] hover:tw-rotate-45"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 4.5v15m7.5-7.5h-15"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+              </Tooltip>
+            </div>
+            <div className="tw-absolute tw-top-[0px] tw-left-[780px] tw-z-20 tw-text-center tw-items-center">
+              <Tooltip placement="rightStart" content={<Hover4 />}>
+                <div className="tw-w-[35px] tw-h-[35px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
+                  <div className="tw-ml-[5px] tw-w-[25px] tw-h-[25px] tw-rounded-full tw-bg-white tw-ring-2 tw-ring-inset tw-ring-white tw-animate-none">
+                    <svg
+                      className="tw-w-[11px] tw-h-[11] hover:tw-rotate-45"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 4.5v15m7.5-7.5h-15"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+              </Tooltip>
+            </div>
+            <div className="tw-absolute tw-bottom-[184px] tw-right-[375px] tw-z-20 tw-items-center">
+              <Tooltip placement="right" content={<Hover />}>
+                <div className="tw-w-[35px] tw-h-[35px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
+                  <div color="gradient" className="tw-ml-[5px] tw-w-[25px] tw-h-[25px] tw-rounded-full tw-bg-white tw-ring-2 tw-ring-inset tw-ring-white tw-animate-none">
+                    <svg
+                      className="tw-w-[11px] tw-h-[11] hover:tw-rotate-45"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 4.5v15m7.5-7.5h-15"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+              </Tooltip>
             </div>
           </div>
+
         </section>
+        <div className={styles.bankText}>
+          <div>Be the first to join the “early access” program . <span onClick={openModal} className={styles.bankTextSpan}>Apply Now</span></div>
+        </div>
+
+        
 
         <section className="cards position-relative">
           <div className="cards-box">
