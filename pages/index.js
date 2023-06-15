@@ -26,7 +26,7 @@ import ImageAnimation from "../components/ImageAnimation";
 import PhoneNumberInput from "../components/PhoneNumberInput";
 import { useRouter } from "next/router";
 import { supabase } from "./../lib/supabaseClient";
-import { Tooltip } from "@nextui-org/react";
+import { Button, Grid, Tooltip, Avatar } from "@nextui-org/react";
 import { UserTwitterCard } from "../components/UserTwitterCard";
 import Hover from "../components/hover";
 import Hover1 from "../components/hover1";
@@ -900,116 +900,66 @@ export default function Home({ setFieldValue }) {
             />
             <div className="tw-absolute tw-bottom-[30px] tw-left-[975px] md:tw-left-[600px] tw-z-20 tw-text-center tw-items-center">
               <Tooltip placement="leftEnd" content={<Hover3 />}>
-                <div className="tw-w-[35px] tw-h-[35px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
-                  <div className="tw-ml-[5px] tw-w-[25px] tw-h-[25px] tw-rounded-full tw-bg-white tw-ring-2 tw-ring-inset tw-ring-white tw-animate-none">
-                    <svg
-                      className="tw-w-[11px] tw-h-[11] hover:tw-rotate-45"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M12 4.5v15m7.5-7.5h-15"
-                      ></path>
-                    </svg>
-                  </div>
+                <div className="tw-w-[36px] tw-h-[36px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
+                  <Avatar
+                    size="sm"
+                    src="/images/homepage/hover/cross2.svg"
+                    color="gradient"
+                    bordered
+                    className="hover:tw-rotate-45 tw-ml-[4px]"
+                  />
                 </div>
               </Tooltip>
             </div>
             <div className="tw-absolute tw-bottom-[30px] tw-left-[450px] tw-z-20 tw-text-center tw-items-center">
               <Tooltip placement="leftEnd" content={<Hover2 />}>
-                <div className="tw-w-[35px] tw-h-[35px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
-                  <div className="tw-ml-[5px] tw-w-[25px] tw-h-[25px] tw-rounded-full tw-bg-white tw-ring-2 tw-ring-inset tw-ring-white tw-animate-none">
-                    <svg
-                      className="tw-w-[11px] tw-h-[11] hover:tw-rotate-45"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M12 4.5v15m7.5-7.5h-15"
-                      ></path>
-                    </svg>
-                  </div>
+                <div className="tw-w-[36px] tw-h-[36px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
+                  <Avatar
+                    size="sm"
+                    src="/images/homepage/hover/cross2.svg"
+                    color="gradient"
+                    bordered
+                    className="hover:tw-rotate-45 tw-ml-[4px]"
+                  />
                 </div>
               </Tooltip>
             </div>
             <div className="tw-absolute tw-bottom-[259px] tw-left-[370px] tw-z-20 tw-text-center tw-items-center">
               <Tooltip placement="left" content={<Hover1 />}>
-                <div className="tw-w-[35px] tw-h-[35px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
-                  <div className="tw-ml-[5px] tw-w-[25px] tw-h-[25px] tw-rounded-full tw-bg-white tw-ring-2 tw-ring-inset tw-ring-white tw-animate-none">
-                    <svg
-                      className="tw-w-[11px] tw-h-[11] hover:tw-rotate-45"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M12 4.5v15m7.5-7.5h-15"
-                      ></path>
-                    </svg>
-                  </div>
+                <div className="tw-w-[36px] tw-h-[36px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
+                  <Avatar
+                    size="sm"
+                    src="/images/homepage/hover/cross2.svg"
+                    color="gradient"
+                    bordered
+                    className="hover:tw-rotate-45 tw-ml-[4px]"
+                  />
                 </div>
               </Tooltip>
             </div>
-            <div className="tw-absolute tw-top-[0px] tw-left-[780px] tw-z-20 tw-text-center tw-items-center">
+            <div className="tw-absolute tw-top-[70px] tw-left-[780px] tw-z-20 tw-text-center tw-items-center">
               <Tooltip placement="rightStart" content={<Hover4 />}>
-                <div className="tw-w-[35px] tw-h-[35px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
-                  <div className="tw-ml-[5px] tw-w-[25px] tw-h-[25px] tw-rounded-full tw-bg-white tw-ring-2 tw-ring-inset tw-ring-white tw-animate-none">
-                    <svg
-                      className="tw-w-[11px] tw-h-[11] hover:tw-rotate-45"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M12 4.5v15m7.5-7.5h-15"
-                      ></path>
-                    </svg>
-                  </div>
+                <div className="tw-w-[36px] tw-h-[36px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
+                  <Avatar
+                    size="sm"
+                    src="/images/homepage/hover/cross2.svg"
+                    color="gradient"
+                    bordered
+                    className="hover:tw-rotate-45 tw-ml-[4px]"
+                  />
                 </div>
               </Tooltip>
             </div>
             <div className="tw-absolute tw-bottom-[184px] tw-right-[375px] tw-z-20 tw-items-center">
               <Tooltip placement="right" content={<Hover />}>
-                <div className="tw-w-[35px] tw-h-[35px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
-                  <div color="gradient" className="tw-ml-[5px] tw-w-[25px] tw-h-[25px] tw-rounded-full tw-bg-white tw-ring-2 tw-ring-inset tw-ring-white tw-animate-none">
-                    <svg
-                      className="tw-w-[11px] tw-h-[11] hover:tw-rotate-45"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M12 4.5v15m7.5-7.5h-15"
-                      ></path>
-                    </svg>
-                  </div>
+              <div className="tw-w-[36px] tw-h-[36px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
+                  <Avatar
+                    size="sm"
+                    src="/images/homepage/hover/cross2.svg"
+                    color="gradient"
+                    bordered
+                    className="hover:tw-rotate-45 tw-ml-[4px]"
+                  />
                 </div>
               </Tooltip>
             </div>

@@ -505,6 +505,14 @@
       rgba(128, 178, 255, 1) 100%
     );
   }
+  .nextui-c-gEEnVX-lcNuyd-color-gradient .nextui-avatar-bg {
+    background: linear-gradient(
+      8deg,
+      rgba(255, 104, 240, 1) 0%,
+      rgba(124, 39, 217, 1) 50%,
+      rgba(128, 178, 255, 1) 100%
+    ) !important;
+}
   
   .hero .join-btn-group {
     column-gap: 80px;
@@ -4957,4 +4965,49 @@
 
   .myFont {
     font-family: Poppinssemibold;
+  }
+
+  .reim{
+    border: none;
+    border-radius: 9999px;
+    padding: 1.4px 0px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* column-gap: 10px; */
+  }
+
+  .borderGradient {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: .5em;
+    border: solid .25em transparent;
+    padding: 1em 1.5em;
+    border-radius: 9em;
+    background: 
+    linear-gradient(to right bottom, var(--slist)) 
+    border-box;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font: 700 1.5em/ 1.25 ubuntu, sans-serif;
+    text-transform: uppercase;
+    
+    &::after { content: attr(data-ico) }
+
+    position: relative;
+    border: solid .25em transparent;
+    
+    &::before { 
+      position: absolute;
+      z-index: -1;
+      inset: -.25em;
+      border: inherit;
+      border-radius: inherit;
+      background: inherit;
+      background-clip: border-box;
+      content: '';
+    }
+    
   }
