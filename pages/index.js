@@ -455,35 +455,11 @@ export default function Home({ setFieldValue }) {
             <div className="row m-0">
               <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                 <div className="hero-left-text">
-                  <h1 className="anime-gradient tw-text-[62px] tw-text-left sm:text-10xl tw-leading-none tw-select-none tw-font-bold">
-                    <span
-                      data-content="Salaam,"
-                      className="tw-relative tw-leading-[93px] tw-block before:tw-content-[attr(data-content)] before:tw-w-full before:tw-z-0 before:tw-block before:tw-absolute before:tw-top-0 before:tw-px-0 before:tw-bottom-0 before:tw-left-0 before:tw-text-left before:tw-text-black before:tw-animate-gradient-background-1"
-                    >
-                      <span className="tw-px-0 tw-leading-[93px] tw-text-transparent tw-bg-clip-text tw-bg-gradient-to-r tw-from-gradient-1-start tw-to-gradient-1-end tw-animate-gradient-foreground-1">
-                        {" "}
-                        Salaam,
-                      </span>
-                    </span>
-                    <span
-                      data-content="We are Mizan,"
-                      className="anime-gradient-p tw-relative tw-block tw-text-[35px] tw-leading-[52px] tw-font-semibold before:tw-content-[attr(data-content)] before:tw-w-full before:tw-z-0 before:tw-block before:tw-absolute before:tw-top-0 before:tw-px-0 before:tw-bottom-0 before:tw-left-0 before:tw-text-left before:tw-text-black before:tw-animate-gradient-background-2"
-                    >
-                      <span className="anime-gradient-p tw-px-0 tw-text-transparent tw-text-[35px] tw-leading-[52px] tw-font-semibold tw-bg-clip-text tw-bg-gradient-to-r tw-from-gradient-2-start tw-to-gradient-2-end tw-animate-gradient-foreground-2">
-                        {" "}
-                        We are Mizan,
-                      </span>
-                    </span>
-                    <span
-                      data-content="Africa’s first Islamic neobank."
-                      className="anime-gradient-p tw-relative tw-text-[35px] tw-leading-[52px] tw-font-semibold tw-block before:tw-content-[attr(data-content)] before:tw-w-full before:tw-z-0 before:tw-block before:tw-absolute before:tw-top-0 before:tw-px-0 before:tw-bottom-0 before:tw-left-0 before:tw-text-left before:tw-text-black before:tw-animate-gradient-background-3"
-                    >
-                      <span className="anime-gradient-p tw-px-0 tw-text-[35px] tw-leading-[52px] tw-font-semibold tw-text-transparent tw-bg-clip-text tw-bg-gradient-to-r tw-from-gradient-3-start tw-to-gradient-3-end tw-animate-gradient-foreground-3">
-                        {" "}
-                        Africa’s first Islamic neobank.
-                      </span>
-                    </span>
-                  </h1>
+                  <h1>Salaam,</h1>
+                  <p>
+                    We are Mizan, <br />
+                    Africa’s first Islamic neobank.
+                  </p>
                   <img
                     src="https://res.cloudinary.com/dyto3sfmh/image/upload/v1677517396/phonenew_kudnab.png"
                     className="hero-img-mobile"

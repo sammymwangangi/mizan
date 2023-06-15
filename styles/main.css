@@ -405,7 +405,7 @@
     overflow: hidden;
   }
   
-  /* .hero .hero-left-text h1 {
+  .hero .hero-left-text h1 {
     background: linear-gradient(97.82deg, #000000 6.24%, #9e7afc 93.95%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -414,7 +414,7 @@
     font-weight: 700;
     font-size: 62px;
     font-family: Poppinsbold;
-  } */
+  }
   
   .anime-gradient{
     font-family: Poppinsbold;
