@@ -354,3 +354,219 @@
   border-bottom-right-radius: 1000px; /* 4px */
   user-select: none;
 }
+
+.hover3 {
+  position: absolute;
+  bottom: 30px;
+  left: 360px;
+  z-index: 20;
+  text-align: center;
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .hover3 {
+    left: 560px;
+  }
+}
+@media (min-width: 768px) {
+  .hover3 {
+    left: 760px;
+  }
+}
+@media (min-width: 1024px) {
+  .hover3 {
+    left: 360px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hover3 {
+    left: 425px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .hover3 {
+    left: 500px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .hover3 {
+    left: 600px;
+  }
+}
+
+.hover2 {
+  position: absolute;
+  bottom: 30px;
+  left: 500px;
+  z-index: 20;
+  text-align: center;
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .hover2 {
+    left: 500px;
+  }
+}
+@media (min-width: 768px) {
+  .hover2 {
+    left: 500px;
+  }
+}
+@media (min-width: 1024px) {
+  .hover2 {
+    left: 510px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hover2 {
+    left: 570px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .hover2 {
+    left: 650px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .hover2 {
+    left: 750px;
+  }
+}
+
+
+.hover1 {
+  position: absolute;
+  bottom: 259px;
+  left: 320px;
+  z-index: 20;
+  text-align: center;
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .hover1 {
+    left: 500px;
+  }
+}
+@media (min-width: 768px) {
+  .hover1 {
+    left: 500px;
+  }
+}
+@media (min-width: 1024px) {
+  .hover1 {
+    left: 315px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hover1 {
+    left: 375px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .hover1 {
+    left: 450px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .hover1 {
+    left: 540px;
+  }
+}
+
+.hover4 {
+  position: absolute;
+  top: 70px;
+  left: 680px;
+  z-index: 20;
+  text-align: center;
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .hover4 {
+    left: 680px;
+  }
+}
+@media (min-width: 768px) {
+  .hover4 {
+    left: 680px;
+  }
+}
+@media (min-width: 1024px) {
+  .hover4 {
+    left: 680px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hover4 {
+    left: 740px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .hover4 {
+    left: 815px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .hover4 {
+    left: 910px;
+  }
+}
+
+.hover {
+  position: absolute;
+  bottom: 184px;
+  right: 275px;
+  z-index: 20;
+  text-align: center;
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .hover {
+    right: 275px;
+  }
+}
+@media (min-width: 768px) {
+  .hover {
+    right: 275px;
+  }
+}
+@media (min-width: 1024px) {
+  .hover {
+    right: 278px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hover {
+    right: 340px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .hover {
+    right: 415px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .hover {
+    right: 509px;
+  }
+}
