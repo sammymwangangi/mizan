@@ -377,6 +377,12 @@
       width: 100px;
     }
   }
+
+  /* @media (min-width: 1280px) {
+    .header .navbar-brand img {
+      width: 10px;
+    }
+  } */
   
   @media (max-width: 425px) {
     .navbar-brand img {
