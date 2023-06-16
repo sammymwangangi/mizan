@@ -459,7 +459,7 @@ export default function Home({ setFieldValue }) {
 
         <section className="hero">
           <div className="container_costome">
-            <div className="row tw-m-0">
+            <div className="row m-0">
               <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                 <div className="hero-left-text">
                   <h1>Salaam,</h1>
