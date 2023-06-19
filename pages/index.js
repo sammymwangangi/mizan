@@ -874,7 +874,7 @@ export default function Home({ setFieldValue }) {
         </section>
 
         <section className="tw-relative tw-text-center">
-        {/* <Hover /> */}
+          {/* <Hover /> */}
           <h1 className={styles.bankingHeader}>Islamic Banking Reimagined</h1>
           <div className="tw-relative tw-mt-10">
             <Image
@@ -965,13 +965,15 @@ export default function Home({ setFieldValue }) {
               </Tooltip>
             </div>
           </div>
-
         </section>
         <div className={styles.bankText}>
-          <div>Be the first to join the “early access” program . <span onClick={openModal} className={styles.bankTextSpan}>Apply Now</span></div>
+          <div>
+            Be the first to join the “early access” program .{" "}
+            <span onClick={openModal} className={styles.bankTextSpan}>
+              Apply Now
+            </span>
+          </div>
         </div>
-
-        
 
         <section className="cards position-relative">
           <div className="cards-box">
