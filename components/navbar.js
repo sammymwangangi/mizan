@@ -5,16 +5,17 @@ import { Fragment, useEffect, useRef, useState } from "react";
 import { Menu, Popover, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Images } from "../components/images";
+import GoogleTranslate from "../components/GoogleTranslate";
 
 const flags = [
   {
-    name: "ENG",
-    href: "/en",
+    label: "ENG",
+    value: "/auto/en",
     icon: IconOne,
   },
   {
-    name: "AR",
-    href: "/ar",
+    label: "AR",
+    value: "/auto/ar",
     icon: IconTwo,
   },
 ];
@@ -77,6 +78,7 @@ export default function Navbar() {
             >
               <Image src={Images.Logo} alt="image" />
             </Link>
+            
             <div className="mobile-view-header d-flex align-items-center gap-4">
               <button
                 className="navbar-toggler order-2"
@@ -107,8 +109,12 @@ export default function Navbar() {
                       Brand Story
                     </Link>
                   </li>
+                  
+
                 </ul>
               </div>
+
+              <GoogleTranslate />
 
               {/* Flags */}
               <div className="country-select order-1 pointer">

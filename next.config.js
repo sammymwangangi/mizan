@@ -3,15 +3,16 @@
 // https://nextjs.org/docs/api-reference/next.config.js/introduction
 // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
 const { withSentryConfig } = require('@sentry/nextjs');
+// const nextTranslate = require('next-translate-plugin')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  i18n: {
-    locales: ['en', 'ar'],
-    defaultLocale: 'en',
-  },
+  // i18n: {
+  //   locales: ['en', 'ar'],
+  //   defaultLocale: 'en',
+  // },
   optimizeFonts: true,
   images: {
     dangerouslyAllowSVG: true,
@@ -42,3 +43,6 @@ module.exports = withSentryConfig(
   { silent: true },
   { hideSourcemaps: true },
 );
+
+
+// module.exports = nextTranslate()

@@ -12,6 +12,7 @@ import * as Yup from "yup";
 import styles from "../styles/Home.module.css";
 import styles3 from "../styles/Brand.module.css";
 import PhoneNumberInput from "../components/PhoneNumberInput";
+import GoogleTranslate from "../components/GoogleTranslate";
 
 const DynamicNav = dynamic(() => import("../components/nav"), {});
 
@@ -302,6 +303,7 @@ export default function BrandStory() {
               <div className="certification-title">
                 <h2>Halal Certification</h2>
               </div>
+              
               <div className="row def-margin">
                 <div className="col-lg-6 col-md-6 col-sm-12">
                   <p>

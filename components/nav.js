@@ -5,6 +5,7 @@ import { Fragment, useEffect, useRef, useState } from "react";
 import { Menu, Popover, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Images } from "../components/images";
+import GoogleTranslate from "../components/GoogleTranslate";
 
 
 const flags = [
@@ -105,6 +106,7 @@ export default function Nav() {
                   </li>
                 </ul>
               </div>
+              <GoogleTranslate />
 
               {/* Flags */}
               <div className="country-select order-1 pointer">
