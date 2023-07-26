@@ -482,11 +482,11 @@ export default function Home({ setFieldValue }) {
                 </span>
               </div>
               <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                <div className="position-relative hero-img-view">
+                <div className="hero-img-view">
                   <img
                     src="https://res.cloudinary.com/dyto3sfmh/image/upload/v1677517396/phonenew_kudnab.png"
-                    className="hero-img"
-                    width="100%"
+                    className="tw-absolute tw-top-[220px] tw-right-[100px]"
+                    width={950}
                     fetchpriority="high"
                     alt=""
                   />

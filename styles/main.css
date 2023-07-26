@@ -525,7 +525,8 @@
   }
   
   .hero .join-our-team {
-    margin-top: -340px;
+    margin-top: 120px;
+    margin-bottom: 200px;
     padding: 0 15px;
   }
   
@@ -539,7 +540,7 @@
   
   .hero-img {
     float: right;
-    width: 123%;
+    /* width: 123%; */
   }
   
   .hero-img-mobile {
@@ -548,19 +549,19 @@
   
   @media (max-width: 1740px) {
     .hero .join-our-team {
-      margin-top: -300px;
+      /* margin-top: 300px; */
     }
   }
   
   @media (max-width: 1600px) {
     .hero .join-our-team {
-      margin-top: -200px;
+      /* margin-top: 200px; */
     }
   }
   
   @media (max-width: 1450px) {
     .hero .join-our-team {
-      margin-top: -270px;
+      /* margin-top: 270px; */
     }
   }
   
@@ -575,7 +576,7 @@
     }
   
     .hero .join-our-team {
-      margin-top: -190px;
+      /* margin-top: 190px; */
     }
   }
   
