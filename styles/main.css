@@ -526,8 +526,8 @@
   
   .hero .join-our-team {
     margin-top: 70px;
-    margin-bottom: 70px;
-    padding: 0 15px;
+    /* margin-bottom: 70px; */
+    /* padding: 0 15px; */
   }
   
   .hero .join-our-team label {
@@ -582,7 +582,7 @@
   
   @media (max-width: 1180px) {
     .hero .join-our-team {
-      margin-top: 50px;
+      /* margin-top: 50px; */
     }
   
     .hero .hero-img {
@@ -715,7 +715,7 @@
   
   /* ======================== logos ======================== */
   .logos {
-    margin: 50px 0 50px 0;
+    margin: 20px 0 50px 0;
   }
   
   .logos .logos-div {
