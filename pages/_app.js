@@ -11,8 +11,19 @@ const poppins = Poppins({
 })
 
 export default function App({ Component, pageProps }) {
+
+
   useEffect(() => {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
+
+    // Get the iframe element by its ID or class name
+    const iframe = document.getElementById(':2.container');
+
+    // Check if the iframe element exists
+    if (iframe) {
+      // Update the style attribute to set visibility to hidden
+      iframe.style.visibility = 'hidden';
+    }
   }, []);
   return (
     <>
