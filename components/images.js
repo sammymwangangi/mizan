@@ -4,7 +4,7 @@ import lastPageBg from "../public/images/homepage/last-page.svg";
 import Logo from "../public/images/homepage/logo.svg";
 import Toggle from "../public/images/homepage/toggle.svg";
 import US from "../public/images/homepage/united-states.svg";
-// import HomePageNew from "../public/images/homepage/phonenew.png";
+import HomePageNew from "../public/images/homepage/phonenew.png";
 
 import heroBg from "../public/images/homepage/hero-bg.png"
 import showMoreBtn from "../public/images/homepage/show-more-btn.svg";
@@ -102,6 +102,7 @@ export const Images = {
   heroPhone2,
   heroPhone,
   heroPhones,
+  HomePageNew,
   heroBg,
   cardsBG,
   cardsBGTab,
