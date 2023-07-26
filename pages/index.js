@@ -485,7 +485,7 @@ export default function Home({ setFieldValue }) {
                 <div className="hero-img-view">
                   <img
                     src="https://res.cloudinary.com/dyto3sfmh/image/upload/v1677517396/phonenew_kudnab.png"
-                    className="tw-absolute tw-top-[220px] tw-right-[20px]"
+                    className="hero-img tw-absolute tw-right-[20px]"
                     width={850}
                     fetchpriority="high"
                     alt=""
