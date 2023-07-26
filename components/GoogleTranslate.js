@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { getCookie, hasCookie, setCookie } from "cookies-next";
 
+
 const languages = [
   { label: "ENG", value: "/auto/en" },
   { label: "AR", value: "/auto/ar" }
