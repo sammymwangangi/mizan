@@ -98,7 +98,10 @@ export default function Nav() {
   };
 
   const langChange = (selectedLanguage) => {
-    setCookie("googtrans", selectedLanguage);
+    setCookie("googtrans", selectedLanguage, {
+      sameSite: "none",
+      secure: true, // Set the cookie to be sent only over HTTPS
+    });
     setSelected(selectedLanguage);
     window.location.reload();
   };
