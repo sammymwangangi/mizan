@@ -97,8 +97,7 @@ export default function Nav() {
     );
   };
 
-  const langChange = (e) => {
-    const selectedLanguage = e.target.value;
+  const langChange = (selectedLanguage) => {
     setCookie("googtrans", selectedLanguage);
     setSelected(selectedLanguage);
     window.location.reload();

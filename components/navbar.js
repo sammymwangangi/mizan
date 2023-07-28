@@ -90,7 +90,7 @@ export default function Navbar() {
       {
         pageLanguage: "auto",
         autoDisplay: false,
-        includedLanguages: "en,ar",
+        includedLanguages: "ar,en",
         layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
       },
       "google_translate_element"
