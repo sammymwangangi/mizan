@@ -88,9 +88,9 @@ export default function Navbar() {
   const googleTranslateElementInit = () => {
     new window.google.translate.TranslateElement(
       {
-        pageLanguage: "auto",
+        pageLanguage: "en",
         autoDisplay: false,
-        includedLanguages: "ar,en",
+        includedLanguages: "en,ar",
         layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
       },
       "google_translate_element"

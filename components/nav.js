@@ -88,7 +88,7 @@ export default function Nav() {
   const googleTranslateElementInit = () => {
     new window.google.translate.TranslateElement(
       {
-        pageLanguage: "auto",
+        pageLanguage: "en",
         autoDisplay: false,
         includedLanguages: "en,ar",
         layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
