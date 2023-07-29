@@ -9,10 +9,10 @@ const { withSentryConfig } = require('@sentry/nextjs');
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  i18n: {
-    locales: ['en', 'ar'],
-    defaultLocale: 'en',
-  },
+  // i18n: {
+  //   locales: ['en', 'ar'],
+  //   defaultLocale: 'en',
+  // },
   optimizeFonts: true,
   images: {
     dangerouslyAllowSVG: true,
