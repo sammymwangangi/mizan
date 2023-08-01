@@ -9,19 +9,6 @@ import { getCookie, hasCookie, setCookie } from "cookies-next";
 
 import GoogleTranslate from "../components/GoogleTranslate";
 
-const flags = [
-  {
-    name: "ENG",
-    href: "/en",
-    icon: IconOne,
-  },
-  {
-    name: "AR",
-    href: "/ar",
-    icon: IconTwo,
-  },
-];
-
 const languages = [
   { label: "ENG", value: "/auto/en", icon: IconOne },
   { label: "AR", value: "/auto/ar", icon: IconTwo },
