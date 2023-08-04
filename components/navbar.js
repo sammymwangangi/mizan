@@ -6,20 +6,7 @@ import { Menu, Popover, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Images } from "../components/images";
 import { getCookie, hasCookie, setCookie } from "cookies-next";
-import GoogleTranslate from "../components/GoogleTranslate";
 
-const flags = [
-  {
-    label: "ENG",
-    value: "/auto/en",
-    icon: IconOne,
-  },
-  {
-    label: "AR",
-    value: "/auto/ar",
-    icon: IconTwo,
-  },
-];
 
 const languages = [
   { label: "ENG", value: "/auto/en", icon: IconOne },

@@ -7,21 +7,6 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Images } from "../components/images";
 import { getCookie, hasCookie, setCookie } from "cookies-next";
 
-import GoogleTranslate from "../components/GoogleTranslate";
-
-const flags = [
-  {
-    name: "ENG",
-    href: "/en",
-    icon: IconOne,
-  },
-  {
-    name: "AR",
-    href: "/ar",
-    icon: IconTwo,
-  },
-];
-
 const languages = [
   { label: "ENG", value: "/auto/en", icon: IconOne },
   { label: "AR", value: "/auto/ar", icon: IconTwo },
@@ -88,7 +73,7 @@ export default function Nav() {
   const googleTranslateElementInit = () => {
     new window.google.translate.TranslateElement(
       {
-        pageLanguage: "auto",
+        pageLanguage: "en",
         autoDisplay: false,
         includedLanguages: "en,ar",
         layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
