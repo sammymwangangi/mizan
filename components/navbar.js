@@ -7,10 +7,12 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Images } from "../components/images";
 import { getCookie, hasCookie, setCookie } from "cookies-next";
 
+
 const languages = [
   { label: "ENG", value: "/auto/en", icon: IconOne },
   { label: "AR", value: "/auto/ar", icon: IconTwo },
 ];
+
 
 export default function Navbar() {
   const [imageDimensions, setImageDimensions] = useState({
@@ -34,9 +36,9 @@ export default function Navbar() {
       }
 
       if (window.scrollY > 50) {
-        header.classList.add("header-scroll");
+        header.classList.add('header-scroll');
       } else {
-        header.classList.remove("header-scroll");
+        header.classList.remove('header-scroll');
       }
     }
 
@@ -47,6 +49,7 @@ export default function Navbar() {
     };
   }, []);
 
+  
   const router = useRouter();
 
   // const [selected, setSelected] = useState(null);
@@ -63,8 +66,8 @@ export default function Navbar() {
     window.googleTranslateElementInit = googleTranslateElementInit;
 
     // Determine the selected language from cookie
-    const initialLanguage = hasCookie("appLang")
-      ? getCookie("appLang")
+    const initialLanguage = hasCookie("googtrans")
+      ? getCookie("googtrans")
       : "/auto/en";
     setSelected(initialLanguage);
   }, []);
@@ -72,6 +75,7 @@ export default function Navbar() {
   const googleTranslateElementInit = () => {
     new window.google.translate.TranslateElement(
       {
+        pageLanguage: "auto",
         autoDisplay: false,
         includedLanguages: "en,ar",
         layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
@@ -81,20 +85,16 @@ export default function Navbar() {
   };
 
   const langChange = (selectedLanguage) => {
-    setCookie("appLang", selectedLanguage, {
-      path: "/",
+    setCookie("googtrans", selectedLanguage, {
       sameSite: "none",
-      secure: true,
+      secure: true, // Set the cookie to be sent only over HTTPS
     });
     setSelected(selectedLanguage);
     window.location.reload();
   };
 
   return (
-    <section
-      className="header tw-static sm:tw-static md:tw-static lg:tw-static xl:tw-fixed"
-      id="header"
-    >
+    <section className="header tw-static sm:tw-static md:tw-static lg:tw-static xl:tw-fixed" id="header">
       <div className="container_costome">
         <nav className="navbar navbar-expand-md">
           <div className="container-fluid">
@@ -106,10 +106,13 @@ export default function Navbar() {
                 alt="image"
               />
             </Link>
-            <Link className="navbar-brand m-0 home-page-logo" href="/">
+            <Link
+              className="navbar-brand m-0 home-page-logo"
+              href="/"
+            >
               <Image src={Images.Logo} alt="image" />
             </Link>
-
+            
             <div className="mobile-view-header d-flex align-items-center gap-4">
               <button
                 className="navbar-toggler order-2"
@@ -140,6 +143,8 @@ export default function Navbar() {
                       Brand Story
                     </Link>
                   </li>
+                  
+
                 </ul>
               </div>
 
