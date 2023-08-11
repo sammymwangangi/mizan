@@ -12,9 +12,7 @@ import * as Yup from "yup";
 import styles from "../styles/Home.module.css";
 import styles3 from "../styles/Brand.module.css";
 import PhoneNumberInput from "../components/PhoneNumberInput";
-import GoogleTranslate from "../components/GoogleTranslate";
-
-const DynamicNav = dynamic(() => import("../components/nav"), {});
+import DynamicNav from "../components/nav";
 
 const DynamicFooter = dynamic(() => import("../components/footer"), {});
 const DynamicBrandFooter = dynamic(

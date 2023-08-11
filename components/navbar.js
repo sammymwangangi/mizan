@@ -63,8 +63,8 @@ export default function Navbar() {
     window.googleTranslateElementInit = googleTranslateElementInit;
 
     // Determine the selected language from cookie
-    const initialLanguage = hasCookie("googtrans")
-      ? getCookie("googtrans")
+    const initialLanguage = hasCookie("appLang")
+      ? getCookie("appLang")
       : "/auto/en";
     setSelected(initialLanguage);
   }, []);
@@ -72,7 +72,6 @@ export default function Navbar() {
   const googleTranslateElementInit = () => {
     new window.google.translate.TranslateElement(
       {
-        pageLanguage: "en",
         autoDisplay: false,
         includedLanguages: "en,ar",
         layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
@@ -82,10 +81,11 @@ export default function Navbar() {
   };
 
   const langChange = (selectedLanguage) => {
-    setCookie("googtrans", selectedLanguage, {
+    setCookie("appLang", selectedLanguage, {
       path: "/",
       sameSite: "none",
       secure: true,
+      httpOnly: true
     });
     setSelected(selectedLanguage);
     window.location.reload();
