@@ -2454,7 +2454,7 @@
   
   .early-user .early-user-working,
   .slider-working {
-    width: 82%;
+    width: 80%;
     margin: 0 auto;
   }
   
@@ -4977,4 +4977,13 @@
 
   .VIpgJd-ZVi9od-ORHb-OEVmcd {
     display: none;
+}
+/* .swiper-wrapper {
+  transition-timing-function: linear;
+} */
+
+.swiper-free-mode > .swiper-wrapper {
+  -webkit-transition-timing-function:linear!important; 
+  -o-transition-timing-function:linear!important;
+  transition-timing-function:linear!important;
 }

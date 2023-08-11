@@ -54,6 +54,7 @@ export default function Navbar() {
 
   // const [selected, setSelected] = useState(null);
   const [selected, setSelected] = useState(languages[0]);
+  
 
   useEffect(() => {
     // Load Google Translate script dynamically
@@ -75,7 +76,7 @@ export default function Navbar() {
   const googleTranslateElementInit = () => {
     new window.google.translate.TranslateElement(
       {
-        pageLanguage: "en",
+        pageLanguage: selected.value, // Use the selected language as the pageLanguage
         autoDisplay: false,
         includedLanguages: "en,ar",
         layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
@@ -85,10 +86,14 @@ export default function Navbar() {
   };
 
   const langChange = (selectedLanguage) => {
-    setCookie("googtrans", selectedLanguage, {
+    const domain = window.location.hostname;
+
+    setCookie("googtrans", selectedLanguage.value, {
       sameSite: "none",
       secure: true, // Set the cookie to be sent only over HTTPS
+      domain: domain.startsWith("localhost") ? "localhost" : "mizanmoney.com", // Set the appropriate domain
     });
+
     setSelected(selectedLanguage);
     window.location.reload();
   };
@@ -202,15 +207,13 @@ export default function Navbar() {
                                 <a
                                   key={item.label}
                                   onClick={() => langChange(item.value)}
-                                  className="-tw-m-3 tw-flex tw-items-center tw-rounded-lg tw-p-2 tw-transition tw-duration-150 tw-ease-in-out hover:tw-bg-gray-50 focus:tw-outline-none focus-visible:tw-ring focus-visible:ring-orange-500 focus-visible:tw-ring-opacity-50 tw-no-underline"
+                                  className={`tw-flex tw-items-center tw-rounded-lg tw-p-2 tw-transition tw-duration-150 tw-ease-in-out hover:tw-bg-gray-50 focus:tw-outline-none focus-visible:tw-ring focus-visible:ring-orange-500 focus-visible:tw-ring-opacity-50 tw-no-underline ${
+                                    selected.label === item.label ? "tw-bg-gray-300" : ""
+                                  }`}
                                 >
                                   <div className="tw-flex tw-h-10 tw-w-10 tw-shrink-0 tw-items-center tw-justify-center tw-text-white sm:tw-h-12 sm:tw-w-12">
                                     {/* Replace this with your custom icon component */}
-                                    {item.label === "ENG" ? (
-                                      <IconOne />
-                                    ) : (
-                                      <IconTwo />
-                                    )}
+                                    {item.icon()}
                                   </div>
                                   <div className="tw-ml-4">
                                     <p className="tw-text-sm tw-font-medium tw-text-gray-900">
@@ -308,4 +311,3 @@ function IconTwo() {
     </svg>
   );
 }
-

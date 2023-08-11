@@ -33,6 +33,7 @@ import Hover1 from "../components/hover1";
 import Hover2 from "../components/hover2";
 import Hover3 from "../components/hover3";
 import Hover4 from "../components/hover4";
+import { CldImage } from 'next-cloudinary';
 
 const DynamicNavbar = dynamic(() => import("../components/navbar"), {});
 
@@ -101,6 +102,24 @@ const testimonials = [
   },
   {
     id: "6",
+    name: "Aldo P.",
+    label: "Verified Testimonial",
+    imageUrl: Images.user,
+    ratingImageUrl: Images.rating,
+    description:
+      "When i joined beta program, i got to experience first hand how my financial future will be revolutionized. Ditching my bank for G.",
+  },
+  {
+    id: "7",
+    name: "Aldo P.",
+    label: "Verified Testimonial",
+    imageUrl: Images.user,
+    ratingImageUrl: Images.rating,
+    description:
+      "When i joined beta program, i got to experience first hand how my financial future will be revolutionized. Ditching my bank for G.",
+  },
+  {
+    id: "8",
     name: "Aldo P.",
     label: "Verified Testimonial",
     imageUrl: Images.user,
@@ -467,13 +486,14 @@ export default function Home({ setFieldValue }) {
                     We are Mizan, <br />
                     Africa’s first Islamic neobank.
                   </p>
-                  <img
+                  {/* <img
                     src="https://res.cloudinary.com/dyto3sfmh/image/upload/v1677517396/phonenew_kudnab.png"
                     className="hero-img-mobile"
                     width="100%"
                     fetchpriority="high"
                     alt=""
-                  />
+                  /> */}
+                  
                 </div>
                 <span className="def">
                   We are excited to have crafted a piece of tech that <br /> is
@@ -831,12 +851,20 @@ export default function Home({ setFieldValue }) {
               </div>
               <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                 <div className="position-relative hero-img-view">
-                  <img
+                  {/* <img
                     src="https://res.cloudinary.com/dyto3sfmh/image/upload/v1677517396/phonenew_kudnab.png"
                     className="hero-img"
                     width="100%"
                     fetchpriority="high"
                     alt=""
+                  /> */}
+                  <CldImage
+                    width="1022"
+                    height="854"
+                    src="phone_2_ywgtop"
+                    crop="fill"
+                    className="hero-img"
+                    alt="Description of my image"
                   />
                 </div>
               </div>
@@ -1306,37 +1334,37 @@ export default function Home({ setFieldValue }) {
             </div>
           </div>
           <div
-            className="early-user-slider slider-working"
+            className="early-user-slider"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
             <Swiper
-              slidesPerView={3}
+              slidesPerView={4}
               ref={swiperRefLocal}
               spaceBetween={20}
               loop={true}
               freeMode={true}
               autoplay={{
-                delay: 0,
+                delay: 1,
                 disableOnInteraction: true,
               }}
-              speed={3000}
+              speed={5000}
               breakpoints={{
                 769: {
                   slidesPerView: 2,
                   spaceBetween: 20,
                 },
                 1025: {
-                  slidesPerView: 3,
+                  slidesPerView: 4,
                   spaceBetween: 20,
                 },
                 1441: {
-                  slidesPerView: 3,
+                  slidesPerView: 4,
                   spaceBetween: 20,
                 },
               }}
               modules={[FreeMode, Autoplay]}
-              className="swiper mySwiper mt-5"
+              className="swiper mySwiper mt-5 tw-overflow-hidden"
             >
               {testimonials.map((testimonial) => (
                 <SwiperSlide>
