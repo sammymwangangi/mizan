@@ -85,7 +85,6 @@ export default function Navbar() {
       path: "/",
       sameSite: "none",
       secure: true,
-      httpOnly: true
     });
     setSelected(selectedLanguage);
     window.location.reload();
