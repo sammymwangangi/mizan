@@ -7,12 +7,10 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Images } from "../components/images";
 import { getCookie, hasCookie, setCookie } from "cookies-next";
 
-
 const languages = [
   { label: "ENG", value: "/auto/en", icon: IconOne },
   { label: "AR", value: "/auto/ar", icon: IconTwo },
 ];
-
 
 export default function Navbar() {
   const [imageDimensions, setImageDimensions] = useState({
@@ -36,9 +34,9 @@ export default function Navbar() {
       }
 
       if (window.scrollY > 50) {
-        header.classList.add('header-scroll');
+        header.classList.add("header-scroll");
       } else {
-        header.classList.remove('header-scroll');
+        header.classList.remove("header-scroll");
       }
     }
 
@@ -49,7 +47,6 @@ export default function Navbar() {
     };
   }, []);
 
-  
   const router = useRouter();
 
   // const [selected, setSelected] = useState(null);
@@ -84,17 +81,37 @@ export default function Navbar() {
     );
   };
 
-  const langChange = (selectedLanguage) => {
-    setCookie("googtrans", selectedLanguage, {
-      sameSite: "none",
-      secure: true, // Set the cookie to be sent only over HTTPS
-    });
-    setSelected(selectedLanguage);
+  // const langChange = (selectedLanguage) => {
+  //   setCookie("googtrans", selectedLanguage, {
+  //     secure: true, // Set the cookie to be sent only over HTTPS
+  //   });
+  //   setSelected(selectedLanguage);
+  //   window.location.reload();
+  // };
+
+  // const langChange = (e) => {
+  //   const selectedLanguage = e.target.value;
+  //   setCookie("googtrans", selectedLanguage);
+  //   setSelected(selectedLanguage);
+  //   window.location.reload();
+  // };
+
+  const langChange = (e) => {
+    if (hasCookie("googtrans")) {
+      setCookie("googtrans", decodeURI(e));
+      setSelected(e);
+    } else {
+      setCookie("googtrans", e);
+      setSelected(e);
+    }
     window.location.reload();
   };
 
   return (
-    <section className="header tw-static sm:tw-static md:tw-static lg:tw-static xl:tw-fixed" id="header">
+    <section
+      className="header tw-static sm:tw-static md:tw-static lg:tw-static xl:tw-fixed"
+      id="header"
+    >
       <div className="container_costome">
         <nav className="navbar navbar-expand-md">
           <div className="container-fluid">
@@ -106,13 +123,10 @@ export default function Navbar() {
                 alt="image"
               />
             </Link>
-            <Link
-              className="navbar-brand m-0 home-page-logo"
-              href="/"
-            >
+            <Link className="navbar-brand m-0 home-page-logo" href="/">
               <Image src={Images.Logo} alt="image" />
             </Link>
-            
+
             <div className="mobile-view-header d-flex align-items-center gap-4">
               <button
                 className="navbar-toggler order-2"
@@ -143,8 +157,6 @@ export default function Navbar() {
                       Brand Story
                     </Link>
                   </li>
-                  
-
                 </ul>
               </div>
 
@@ -201,7 +213,7 @@ export default function Navbar() {
                               {languages.map((item) => (
                                 <a
                                   key={item.label}
-                                  onClick={() => langChange(item.value)}
+                                  onClick={(e) => langChange(item.value, e)}
                                   className="-tw-m-3 tw-flex tw-items-center tw-rounded-lg tw-p-2 tw-transition tw-duration-150 tw-ease-in-out hover:tw-bg-gray-50 focus:tw-outline-none focus-visible:tw-ring focus-visible:ring-orange-500 focus-visible:tw-ring-opacity-50 tw-no-underline"
                                 >
                                   <div className="tw-flex tw-h-10 tw-w-10 tw-shrink-0 tw-items-center tw-justify-center tw-text-white sm:tw-h-12 sm:tw-w-12">
