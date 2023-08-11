@@ -92,10 +92,10 @@ export default function Nav() {
 
   return (
     <>
-      <Script
+      {/* <Script
         src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
         strategy="lazyOnload"
-      />
+      /> */}
       <section className="header brand-header1" id="header">
         <div className="container_costome">
           <nav className="navbar navbar-expand-md">
