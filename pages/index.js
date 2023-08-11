@@ -33,9 +33,10 @@ import Hover1 from "../components/hover1";
 import Hover2 from "../components/hover2";
 import Hover3 from "../components/hover3";
 import Hover4 from "../components/hover4";
+import DynamicNavbar from "../components/navbar";
 import { CldImage } from 'next-cloudinary';
 
-const DynamicNavbar = dynamic(() => import("../components/navbar"), {});
+// const DynamicNavbar = dynamic(() => import("../components/navbar"), {});
 
 const DynamicFooter = dynamic(() => import("../components/footer"), {});
 
