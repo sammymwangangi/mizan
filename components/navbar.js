@@ -6,6 +6,7 @@ import { Menu, Popover, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Images } from "../components/images";
 import { getCookie, hasCookie, setCookie } from "cookies-next";
+import Script from "next/script";
 
 const languages = [
   { label: "ENG", value: "/auto/en", icon: IconOne },
@@ -53,26 +54,19 @@ export default function Navbar() {
   const [selected, setSelected] = useState(languages[0]);
 
   useEffect(() => {
-    // Load Google Translate script dynamically
-    const addScript = document.createElement("script");
+    var addScript = document.createElement('script');
     addScript.setAttribute(
-      "src",
-      "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+      'src',
+      '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
     );
     document.body.appendChild(addScript);
     window.googleTranslateElementInit = googleTranslateElementInit;
-
-    // Determine the selected language from cookie
-    const initialLanguage = hasCookie("googtrans")
-      ? getCookie("googtrans")
-      : "/auto/en";
-    setSelected(initialLanguage);
   }, []);
 
   const googleTranslateElementInit = () => {
     new window.google.translate.TranslateElement(
       {
-        pageLanguage: "auto",
+        pageLanguage: "en",
         autoDisplay: false,
         includedLanguages: "en,ar",
         layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
@@ -80,21 +74,6 @@ export default function Navbar() {
       "google_translate_element"
     );
   };
-
-  // const langChange = (selectedLanguage) => {
-  //   setCookie("googtrans", selectedLanguage, {
-  //     secure: true, // Set the cookie to be sent only over HTTPS
-  //   });
-  //   setSelected(selectedLanguage);
-  //   window.location.reload();
-  // };
-
-  // const langChange = (e) => {
-  //   const selectedLanguage = e.target.value;
-  //   setCookie("googtrans", selectedLanguage);
-  //   setSelected(selectedLanguage);
-  //   window.location.reload();
-  // };
 
   const langChange = (e) => {
     if (hasCookie("googtrans")) {
@@ -108,143 +87,155 @@ export default function Navbar() {
   };
 
   return (
-    <section
-      className="header tw-static sm:tw-static md:tw-static lg:tw-static xl:tw-fixed"
-      id="header"
-    >
-      <div className="container_costome">
-        <nav className="navbar navbar-expand-md">
-          <div className="container-fluid">
-            <Link className="navbar-brand -tw-ml-2.5 brand-page-logo" href="/">
-              <Image
-                src={Images.Logo}
-                width={imageDimensions.width}
-                height={imageDimensions.height}
-                alt="image"
-              />
-            </Link>
-            <Link className="navbar-brand m-0 home-page-logo" href="/">
-              <Image src={Images.Logo} alt="image" />
-            </Link>
-
-            <div className="mobile-view-header d-flex align-items-center gap-4">
-              <button
-                className="navbar-toggler order-2"
-                type="button"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
+    <>
+      {/* <Script
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+        strategy="lazyOnload"
+        onLoad={() => {
+          googleTranslateElementInit();
+        }}
+      /> */}
+      <section
+        className="header tw-static sm:tw-static md:tw-static lg:tw-static xl:tw-fixed"
+        id="header"
+      >
+        <div className="container_costome">
+          <nav className="navbar navbar-expand-md">
+            <div className="container-fluid">
+              <Link
+                className="navbar-brand -tw-ml-2.5 brand-page-logo"
+                href="/"
               >
-                <Image src={Images.Toggle} width="30px" alt="toggle" />
-              </button>
-              <div className="navbar-collapse" id="navbarSupportedContent">
-                <ul className="navbar-nav mx-auto mb-lg-0 d-flex align-items-center">
-                  <li className="nav-item mb-0">
-                    <Link
-                      className="nav-link m-0 p-0 active"
-                      aria-current="page"
-                      href="/"
-                    >
-                      Personal
-                    </Link>
-                  </li>
-                  <li className="nav-item mb-0">
-                    <Link
-                      className="nav-link m-0 p-0"
-                      href="/brand-story"
-                      tabIndex="-1"
-                      aria-disabled="true"
-                    >
-                      Brand Story
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+                <Image
+                  src={Images.Logo}
+                  width={imageDimensions.width}
+                  height={imageDimensions.height}
+                  alt="image"
+                />
+              </Link>
+              <Link className="navbar-brand m-0 home-page-logo" href="/">
+                <Image src={Images.Logo} alt="image" />
+              </Link>
 
-              {/* <GoogleTranslate /> */}
-
-              {/* Flags */}
-              <div
-                id="google_translate_element"
-                style={{
-                  width: "0px",
-                  height: "0px",
-                  position: "absolute",
-                  left: "50%",
-                  zIndex: -99999,
-                  display: "none",
-                }}
-              ></div>
-              <div className="country-select order-1 pointer">
-                <Popover
-                  className="tw-relative tw-items-center"
-                  value={selected}
-                  onChange={setSelected}
+              <div className="mobile-view-header d-flex align-items-center gap-4">
+                <button
+                  className="navbar-toggler order-2"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
                 >
-                  {({ open }) => (
-                    <>
-                      <Popover.Button
-                        className={`${
-                          open ? "" : "tw-text-opacity-90"
-                        } tw-group tw-inline-flex tw-gap-[10px] tw-items-center tw-border-0 tw-bg-[#FFFFFF42] tw-rounded-md tw-px-3 tw-py-2 tw-text-sm tw-font-medium tw-text-[#6D6E8A] hover:tw-text-opacity-100 focus:tw-outline-none`}
-                        icon={<IconOne />}
-                        label="ENG"
+                  <Image src={Images.Toggle} width="30px" alt="toggle" />
+                </button>
+                <div className="navbar-collapse" id="navbarSupportedContent">
+                  <ul className="navbar-nav mx-auto mb-lg-0 d-flex align-items-center">
+                    <li className="nav-item mb-0">
+                      <Link
+                        className="nav-link m-0 p-0 active"
+                        aria-current="page"
+                        href="/"
                       >
-                        {selected?.icon ?? <IconOne />}
-                        <span>{selected?.label ?? "ENG"}</span>
-                        <ChevronDownIcon
+                        Personal
+                      </Link>
+                    </li>
+                    <li className="nav-item mb-0">
+                      <Link
+                        className="nav-link m-0 p-0"
+                        href="/brand-story"
+                        tabIndex="-1"
+                        aria-disabled="true"
+                      >
+                        Brand Story
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* <GoogleTranslate /> */}
+
+                {/* Flags */}
+                <div
+                  id="google_translate_element"
+                  style={{
+                    width: "0px",
+                    height: "0px",
+                    position: "absolute",
+                    left: "50%",
+                    zIndex: -99999,
+                    display: "none",
+                  }}
+                ></div>
+                <div className="country-select order-1 pointer">
+                  <Popover
+                    className="tw-relative tw-items-center"
+                    value={selected}
+                    onChange={setSelected}
+                  >
+                    {({ open }) => (
+                      <>
+                        <Popover.Button
                           className={`${
-                            open ? "" : "tw-text-opacity-70"
-                          } tw-h-5 tw-w-5 tw-text-[#6D6E8A] tw-transition tw-duration-150 tw-ease-in-out group-hover:tw-text-opacity-80`}
-                          aria-hidden="true"
-                        />
-                      </Popover.Button>
-                      <Transition
-                        as={Fragment}
-                        enter="tw-transition tw-ease-out tw-duration-200"
-                        enterFrom="tw-opacity-0 tw-translate-y-1"
-                        enterTo="tw-opacity-100 tw-translate-y-0"
-                        leave="tw-transition tw-ease-in tw-duration-150"
-                        leaveFrom="tw-opacity-100 tw-translate-y-0"
-                        leaveTo="tw-opacity-0 tw-translate-y-1"
-                      >
-                        <Popover.Panel className="tw-absolute tw-left-1/2 tw-z-10 tw-mt-3 tw-w-40 tw-max-w-sm -tw-translate-x-1/2 tw-transform tw-px-4 sm:tw-px-0 lg:tw-max-w-3xl">
-                          <div className="tw-overflow-hidden tw-rounded-lg tw-shadow-lg tw-ring-1 tw-ring-black tw-ring-opacity-5">
-                            <div className="tw-relative tw-grid tw-gap-2 tw-bg-white tw-p-7 lg:tw-grid-cols-1">
-                              {languages.map((item) => (
-                                <a
-                                  key={item.label}
-                                  onClick={(e) => langChange(item.value, e)}
-                                  className="-tw-m-3 tw-flex tw-items-center tw-rounded-lg tw-p-2 tw-transition tw-duration-150 tw-ease-in-out hover:tw-bg-gray-50 focus:tw-outline-none focus-visible:tw-ring focus-visible:ring-orange-500 focus-visible:tw-ring-opacity-50 tw-no-underline"
-                                >
-                                  <div className="tw-flex tw-h-10 tw-w-10 tw-shrink-0 tw-items-center tw-justify-center tw-text-white sm:tw-h-12 sm:tw-w-12">
-                                    {/* Replace this with your custom icon component */}
-                                    {item.label === "ENG" ? (
-                                      <IconOne />
-                                    ) : (
-                                      <IconTwo />
-                                    )}
-                                  </div>
-                                  <div className="tw-ml-4">
-                                    <p className="tw-text-sm tw-font-medium tw-text-gray-900">
-                                      {item.label}
-                                    </p>
-                                  </div>
-                                </a>
-                              ))}
+                            open ? "" : "tw-text-opacity-90"
+                          } tw-group tw-inline-flex tw-gap-[10px] tw-items-center tw-border-0 tw-bg-[#FFFFFF42] tw-rounded-md tw-px-3 tw-py-2 tw-text-sm tw-font-medium tw-text-[#6D6E8A] hover:tw-text-opacity-100 focus:tw-outline-none`}
+                          icon={<IconOne />}
+                          label="ENG"
+                        >
+                          {selected?.icon ?? <IconOne />}
+                          <span>{selected?.label ?? "ENG"}</span>
+                          <ChevronDownIcon
+                            className={`${
+                              open ? "" : "tw-text-opacity-70"
+                            } tw-h-5 tw-w-5 tw-text-[#6D6E8A] tw-transition tw-duration-150 tw-ease-in-out group-hover:tw-text-opacity-80`}
+                            aria-hidden="true"
+                          />
+                        </Popover.Button>
+                        <Transition
+                          as={Fragment}
+                          enter="tw-transition tw-ease-out tw-duration-200"
+                          enterFrom="tw-opacity-0 tw-translate-y-1"
+                          enterTo="tw-opacity-100 tw-translate-y-0"
+                          leave="tw-transition tw-ease-in tw-duration-150"
+                          leaveFrom="tw-opacity-100 tw-translate-y-0"
+                          leaveTo="tw-opacity-0 tw-translate-y-1"
+                        >
+                          <Popover.Panel className="tw-absolute tw-left-1/2 tw-z-10 tw-mt-3 tw-w-40 tw-max-w-sm -tw-translate-x-1/2 tw-transform tw-px-4 sm:tw-px-0 lg:tw-max-w-3xl">
+                            <div className="tw-overflow-hidden tw-rounded-lg tw-shadow-lg tw-ring-1 tw-ring-black tw-ring-opacity-5">
+                              <div className="tw-relative tw-grid tw-gap-2 tw-bg-white tw-p-7 lg:tw-grid-cols-1">
+                                {languages.map((item) => (
+                                  <a
+                                    key={item.label}
+                                    onClick={(e) => langChange(item.value, e)}
+                                    className="-tw-m-3 tw-flex tw-items-center tw-rounded-lg tw-p-2 tw-transition tw-duration-150 tw-ease-in-out hover:tw-bg-gray-50 focus:tw-outline-none focus-visible:tw-ring focus-visible:ring-orange-500 focus-visible:tw-ring-opacity-50 tw-no-underline"
+                                  >
+                                    <div className="tw-flex tw-h-10 tw-w-10 tw-shrink-0 tw-items-center tw-justify-center tw-text-white sm:tw-h-12 sm:tw-w-12">
+                                      {/* Replace this with your custom icon component */}
+                                      {item.label === "ENG" ? (
+                                        <IconOne />
+                                      ) : (
+                                        <IconTwo />
+                                      )}
+                                    </div>
+                                    <div className="tw-ml-4">
+                                      <p className="tw-text-sm tw-font-medium tw-text-gray-900">
+                                        {item.label}
+                                      </p>
+                                    </div>
+                                  </a>
+                                ))}
+                              </div>
                             </div>
-                          </div>
-                        </Popover.Panel>
-                      </Transition>
-                    </>
-                  )}
-                </Popover>
+                          </Popover.Panel>
+                        </Transition>
+                      </>
+                    )}
+                  </Popover>
+                </div>
+                {/* End Flags */}
               </div>
-              {/* End Flags */}
             </div>
-          </div>
-        </nav>
-      </div>
-    </section>
+          </nav>
+        </div>
+      </section>
+    </>
   );
 }
 
