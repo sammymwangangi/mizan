@@ -75,14 +75,11 @@ export default function Navbar() {
   };
 
   const langChange = (e) => {
-    // URL-encode the value before setting the cookie
-    const encodedValue = encodeURIComponent(e);
-    
     if (hasCookie("googtrans")) {
-      setCookie("googtrans", encodedValue);
+      setCookie("googtrans", encodeURI(e));
       setSelected(e);
     } else {
-      setCookie("googtrans", encodedValue);
+      setCookie("googtrans", e);
       setSelected(e);
     }
     window.location.reload();
