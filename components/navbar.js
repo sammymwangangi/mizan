@@ -67,8 +67,7 @@ export default function Navbar() {
     new window.google.translate.TranslateElement(
       {
         pageLanguage: "en",
-        autoDisplay: false,
-        includedLanguages: "en,ar",
+        includedLanguages: "ar,en",
         layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
       },
       "google_translate_element"
@@ -88,13 +87,7 @@ export default function Navbar() {
 
   return (
     <>
-      {/* <Script
-        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-        strategy="lazyOnload"
-        onLoad={() => {
-          googleTranslateElementInit();
-        }}
-      /> */}
+      
       <section
         className="header tw-static sm:tw-static md:tw-static lg:tw-static xl:tw-fixed"
         id="header"

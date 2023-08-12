@@ -15,6 +15,13 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
+        <Script
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+        strategy="lazyOnload"
+        onLoad={() => {
+          googleTranslateElementInit();
+        }}
+      />
       </body>
     </Html>
   );
