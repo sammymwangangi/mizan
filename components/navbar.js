@@ -78,13 +78,6 @@ export default function Navbar() {
     );
   };
 
-  // const langChange = (e) => {
-  //   const selectedLanguage = e.target.value;
-  //   setCookie("googtrans", selectedLanguage);
-  //   setSelected(selectedLanguage);
-  //   window.location.reload();
-  // };
-
   const langChange = (selectedLanguage) => {
     setCookie("googtrans", selectedLanguage, {
       sameSite: "none",
