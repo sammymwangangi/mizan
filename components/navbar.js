@@ -5,7 +5,7 @@ import { Fragment, useEffect, useRef, useState } from "react";
 import { Menu, Popover, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Images } from "../components/images";
-import { getCookie, hasCookie, setCookie } from "cookies-next";
+import { getCookie, hasCookie, setCookie, deleteCookie } from "cookies-next";
 import Script from "next/script";
 
 const languages = [
@@ -61,6 +61,10 @@ export default function Navbar() {
     );
     document.body.appendChild(addScript);
     window.googleTranslateElementInit = googleTranslateElementInit;
+
+    // Determine the selected language from cookie
+    const initialLanguage = hasCookie("googtrans") ? getCookie("googtrans") : "/auto/en";
+    setSelected(initialLanguage);
   }, []);
 
   const googleTranslateElementInit = () => {
@@ -86,11 +90,6 @@ export default function Navbar() {
       sameSite: "none",
       secure: true, // Set the cookie to be sent only over HTTPS
       domain: ".mizanmoney.com", // Set the more persistent domain
-    });
-    setCookie("googtrans", selectedLanguage, {
-      sameSite: "none",
-      secure: true, // Set the cookie to be sent only over HTTPS
-      domain: "mizanmoney.com", // Set the second domain variation
     });
     setSelected(selectedLanguage);
     window.location.reload();
