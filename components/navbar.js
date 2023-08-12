@@ -54,10 +54,10 @@ export default function Navbar() {
   const [selected, setSelected] = useState(languages[0]);
 
   useEffect(() => {
-    var addScript = document.createElement('script');
+    var addScript = document.createElement("script");
     addScript.setAttribute(
-      'src',
-      '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
+      "src",
+      "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
     );
     document.body.appendChild(addScript);
     window.googleTranslateElementInit = googleTranslateElementInit;
@@ -74,20 +74,30 @@ export default function Navbar() {
     );
   };
 
-  const langChange = (e) => {
-    if (hasCookie("googtrans")) {
-      setCookie("googtrans", encodeURI(e));
-      setSelected(e);
-    } else {
-      setCookie("googtrans", e);
-      setSelected(e);
-    }
+  // const langChange = (e) => {
+  //   const selectedLanguage = e.target.value;
+  //   setCookie("googtrans", selectedLanguage);
+  //   setSelected(selectedLanguage);
+  //   window.location.reload();
+  // };
+
+  const langChange = (selectedLanguage) => {
+    setCookie("googtrans", selectedLanguage, {
+      sameSite: "none",
+      secure: true, // Set the cookie to be sent only over HTTPS
+      domain: ".mizanmoney.com", // Set the more persistent domain
+    });
+    setCookie("googtrans", selectedLanguage, {
+      sameSite: "none",
+      secure: true, // Set the cookie to be sent only over HTTPS
+      domain: "mizanmoney.com", // Set the second domain variation
+    });
+    setSelected(selectedLanguage);
     window.location.reload();
   };
 
   return (
     <>
-      
       <section
         className="header tw-static sm:tw-static md:tw-static lg:tw-static xl:tw-fixed"
         id="header"
