@@ -487,13 +487,13 @@ export default function Home({ setFieldValue }) {
                     We are Mizan, <br />
                     Africa’s first Islamic neobank.
                   </p>
-                  {/* <img
+                  <img
                     src="https://res.cloudinary.com/dyto3sfmh/image/upload/v1677517396/phonenew_kudnab.png"
                     className="hero-img-mobile"
                     width="100%"
                     fetchpriority="high"
                     alt=""
-                  /> */}
+                  />
                   
                 </div>
                 <span className="def">
@@ -852,21 +852,21 @@ export default function Home({ setFieldValue }) {
               </div>
               <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                 <div className="position-relative hero-img-view">
-                  {/* <img
+                  <img
                     src="https://res.cloudinary.com/dyto3sfmh/image/upload/v1677517396/phonenew_kudnab.png"
                     className="hero-img"
                     width="100%"
                     fetchpriority="high"
                     alt=""
-                  /> */}
-                  <CldImage
+                  />
+                  {/* <CldImage
                     width="1022"
                     height="854"
                     src="phone_2_ywgtop"
                     crop="fill"
                     className="hero-img"
                     alt="Description of my image"
-                  />
+                  /> */}
                 </div>
               </div>
             </div>

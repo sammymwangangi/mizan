@@ -9,8 +9,8 @@ import { getCookie, hasCookie, setCookie, deleteCookie } from "cookies-next";
 import Script from "next/script";
 
 const languages = [
-  { label: "ENG", value: "/auto/en", icon: IconOne },
-  { label: "AR", value: "/auto/ar", icon: IconTwo },
+  { label: "ENG", value: "/en", icon: IconOne },
+  { label: "AR", value: "/ar", icon: IconTwo },
 ];
 
 export default function Navbar() {
