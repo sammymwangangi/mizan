@@ -364,6 +364,13 @@
   align-items: center;
 }
 
+@media (max-width: 480px) {
+  .hover3 {
+    left: 40px;
+    bottom: 30px;
+  }
+}
+
 @media (min-width: 640px) {
   .hover3 {
     left: 560px;
@@ -405,6 +412,13 @@
   z-index: 20;
   text-align: center;
   align-items: center;
+}
+
+@media (max-width: 480px) {
+  .hover2 {
+    left: 120px;
+    bottom: 30px;
+  }
 }
 
 @media (min-width: 640px) {
@@ -451,6 +465,13 @@
   align-items: center;
 }
 
+@media (max-width: 480px) {
+  .hover1 {
+    left: 20px;
+    top: 120px;
+  }
+}
+
 @media (min-width: 640px) {
   .hover1 {
     left: 500px;
@@ -492,6 +513,13 @@
   z-index: 20;
   text-align: center;
   align-items: center;
+}
+
+@media (max-width: 480px) {
+  .hover4 {
+    left: 202px;
+    top: 30px;
+  }
 }
 
 @media (min-width: 640px) {
@@ -537,6 +565,12 @@
   align-items: center;
 }
 
+@media (max-width: 480px) {
+  .hover {
+    right: 45px;
+    bottom: 105px;
+  }
+}
 @media (min-width: 640px) {
   .hover {
     right: 275px;
