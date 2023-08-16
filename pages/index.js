@@ -1,12 +1,10 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import Script from "next/script";
 import { Images } from "../components/images";
 import styles from "../styles/Home.module.css";
 import dynamic from "next/dynamic";
 import { Dialog, Transition } from "@headlessui/react";
-import { XMarkIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 import React, { Suspense, Fragment, useRef, useState, useEffect } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -22,12 +20,10 @@ import Confetti from "../components/Confetti";
 import { Formik, Form, Field, ErrorMessage, useFormik } from "formik";
 import * as Yup from "yup";
 import TypingAnimation from "../components/TypingAnimation";
-import ImageAnimation from "../components/ImageAnimation";
 import PhoneNumberInput from "../components/PhoneNumberInput";
 import { useRouter } from "next/router";
 import { supabase } from "./../lib/supabaseClient";
 import { Button, Grid, Tooltip, Avatar } from "@nextui-org/react";
-import { UserTwitterCard } from "../components/UserTwitterCard";
 import Hover from "../components/hover";
 import Hover1 from "../components/hover1";
 import Hover2 from "../components/hover2";
@@ -35,8 +31,6 @@ import Hover3 from "../components/hover3";
 import Hover4 from "../components/hover4";
 import DynamicNavbar from "../components/navbar";
 import { CldImage } from 'next-cloudinary';
-
-// const DynamicNavbar = dynamic(() => import("../components/navbar"), {});
 
 const DynamicFooter = dynamic(() => import("../components/footer"), {});
 
@@ -131,6 +125,7 @@ const testimonials = [
 ];
 const features = [
   {
+    id: 1,
     tag: "feature1",
     title: "Mizan Pay - Shop now pay at your own pace",
     description:
@@ -139,6 +134,7 @@ const features = [
       "https://ik.imagekit.io/qqkp8wchu/feature1.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677761579572",
   },
   {
+    id: 2,
     tag: "feature2",
     title: "Track every dollar.",
     description:
@@ -147,6 +143,7 @@ const features = [
       "https://ik.imagekit.io/qqkp8wchu/Features/feature2.svg?updatedAt=1680786519397",
   },
   {
+    id: 3,
     tag: "feature3",
     title: "Donate to a cause you care. (Effortlessly)",
     description:
@@ -155,6 +152,7 @@ const features = [
       "https://ik.imagekit.io/qqkp8wchu/feature3.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677761792322",
   },
   {
+    id: 4,
     tag: "feature4",
     title: "Better Credit Score. Better future",
     description:
@@ -163,6 +161,7 @@ const features = [
       "https://ik.imagekit.io/qqkp8wchu/feature4.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677761790412",
   },
   {
+    id: 5,
     tag: "featur5",
     title: "Mizan Round-Ups",
     description:
@@ -171,6 +170,7 @@ const features = [
       "https://ik.imagekit.io/qqkp8wchu/feature5.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677757744980",
   },
   {
+    id: 6,
     tag: "feature6",
     title: "Meet Robin-Habibi, Your BFF (Best Financial Friend)",
     description:
@@ -179,6 +179,7 @@ const features = [
       "https://ik.imagekit.io/qqkp8wchu/feature6.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677761733541",
   },
   {
+    id: 7,
     tag: "feature7",
     title: "Mizan Early Salary via Direct Deposits",
     description:
@@ -198,10 +199,7 @@ const delays = [100, 600, 600, 600, 600];
 
 export default function Home({ setFieldValue }) {
   const router = useRouter();
-  // form
-  // const phoneRegex = RegExp(
-  //   /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
-  // );
+
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -272,10 +270,6 @@ export default function Home({ setFieldValue }) {
     phone: "",
   });
 
-  function handleInputChange(event) {
-    const { name, value } = event.target;
-    setFormValues({ ...formValues, [name]: value });
-  }
 
   const { name, email, phone } = formValues;
   const isFormEmpty = !name && !email && !phone;
@@ -461,16 +455,13 @@ export default function Home({ setFieldValue }) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Mizan money</title>
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
-        />
+        
       </Head>
 
       <main className="landing-bg position-relative">
-        <Image src={Images.cardsBG} className="card-bg" alt="image" />
-        <Image src={Images.cardsBGTab} className="card-bg-tab" alt="image" />
-        <Image src={Images.lastPageBg} className="last-page-bg" alt="image" />
+        <Image src={Images.cardsBG} className="card-bg" alt="image" style={{"width": "auto", "height": "auto"}} />
+        <Image src={Images.cardsBGTab} className="card-bg-tab" alt="image" style={{"width": "auto", "height": "auto"}} />
+        <Image src={Images.lastPageBg} className="last-page-bg" alt="image" style={{"width": "auto", "height": "auto"}} />
 
         {/* Navbar */}
 
@@ -563,6 +554,7 @@ export default function Home({ setFieldValue }) {
                                     <Image
                                       src={Images.joinLogo}
                                       alt={"join-logo"}
+                                      style={{"width": "auto", "height": "auto"}}
                                     />
                                   </div>
                                   {/* main */}
@@ -909,7 +901,7 @@ export default function Home({ setFieldValue }) {
               width={307.46}
               height={360.72}
               alt="hover"
-              className="-tw-mb-[170px] -tw-mr-[75px]"
+              className="tw-hidden lg:tw-inline -tw-mb-[170px] -tw-mr-[75px]"
             />
 
             <Image
@@ -917,15 +909,43 @@ export default function Home({ setFieldValue }) {
               width={257.3}
               height={519.85}
               alt="hover"
-              className="tw-relative tw-z-10 tw-drop-shadow-2xl tw-rounded-b-[50px] tw-rounded-t-[50px]"
+              className="tw-hidden lg:tw-inline tw-relative tw-z-10 tw-drop-shadow-2xl tw-rounded-b-[50px] tw-rounded-t-[50px]"
             />
             <Image
               src={Images.bankWatch}
               width={300.04}
               height={452.35}
               alt="hover"
-              className="-tw-mb-[250px] -tw-ml-[55px] tw-z-0"
+              className="tw-hidden lg:tw-inline -tw-mb-[250px] -tw-ml-[55px] tw-z-0"
             />
+            {/* Mobile Images */}
+            <div className="tw-flex lg:tw-hidden tw-items-center tw-mx-auto">
+              <Image
+                src={Images.bankCard}
+                width={150.46}
+                height={180.72}
+                alt="hover"
+                className="tw-inline lg:tw-hidden -tw-mb-[80px] -tw-mr-[35px]"
+              />
+
+              <Image
+                src={Images.bankIphone}
+                width={129.3}
+                height={300.85}
+                alt="hover"
+                className="tw-inline lg:tw-hidden tw-relative tw-z-10 tw-drop-shadow-2xl tw-rounded-b-[50px] tw-rounded-t-[50px]"
+              />
+              <Image
+                src={Images.bankWatch}
+                width={150.04}
+                height={225.35}
+                alt="hover"
+                className="tw-inline lg:tw-hidden -tw-mb-[120px] -tw-ml-[25px] tw-z-0 tw-top-10"
+              />
+            </div>
+            <div>
+
+            </div>
             <div className={styles.hover3}>
               <Tooltip placement="leftEnd" content={<Hover3 />}>
                 <div className="tw-w-[36px] tw-h-[36px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
@@ -1015,6 +1035,7 @@ export default function Home({ setFieldValue }) {
             width="100%"
             className="card-web"
             alt="car-main"
+            loading="lazy"
             fetchpriority="high"
           />
           <img
@@ -1022,6 +1043,7 @@ export default function Home({ setFieldValue }) {
             width="100%"
             className="card-mobile"
             fetchpriority="high"
+            loading="lazy"
             alt="ard-main-tablet"
           />
         </section>
@@ -1054,7 +1076,7 @@ export default function Home({ setFieldValue }) {
               className="swiper featureSwiper"
             >
               {features.map((feature) => (
-                <SwiperSlide key={feature.tag} className="swiper-slide">
+                <SwiperSlide key={feature.id} className="swiper-slide">
                   <div className="light-border">
                     <div className="feature-card">
                       <div className="feature-card-img">
@@ -1153,7 +1175,7 @@ export default function Home({ setFieldValue }) {
               <div className="col-xl-7 col-lg-7 col-md-12">
                 <div className="mizan-round-right p-4">
                   <div className="chart-box position-relative">
-                    <Image src={Images.graph} className="chart-img" alt="" />
+                    <Image src={Images.graph} className="chart-img" alt="graph" style={{"width": "auto", "height": "auto"}} />
                     <div className="weekly-depo-border set-position">
                       <button className="weekly-depo chart-depo">$500</button>
                     </div>
@@ -1256,7 +1278,7 @@ export default function Home({ setFieldValue }) {
                           <li>Save Better +</li>
                         </ul>
                       </div>
-                      <Image src={Images.premium} width="100%" alt="" />
+                      <Image src={Images.premium} alt="premium" />
                     </div>
                   </div>
                   <button
@@ -1292,7 +1314,7 @@ export default function Home({ setFieldValue }) {
                           <li>Invest better Pro</li>
                         </ul>
                       </div>
-                      <Image src={Images.metal} width="100%" alt="" />
+                      <Image src={Images.metal} alt="metal" />
                     </div>
                   </div>
                   <button
@@ -1368,18 +1390,18 @@ export default function Home({ setFieldValue }) {
               className="swiper mySwiper mt-5 tw-overflow-hidden"
             >
               {testimonials.map((testimonial) => (
-                <SwiperSlide>
+                <SwiperSlide key={testimonial.id}>
                   <div className="early-user-border">
                     <div className="early-user-box p-4">
                       <div className="user-info d-flex align-items-center gap-3">
-                        <Image src={testimonial.imageUrl} alt="" />
+                        <Image src={testimonial.imageUrl} alt="user" style={{"width": "auto", "height": "auto"}} />
                         <div className="user-name">
                           <span>Aldo P.</span>
                           <Image src={testimonial.ratingImageUrl} alt="" />
                         </div>
                       </div>
                       <div className="verified d-flex align-items-center gap-2 mt-3">
-                        <Image src={Images.verified} alt="" />
+                        <Image src={Images.verified} style={{"width": "auto", "height": "auto"}} alt="verified" />
                         <label>{testimonial.label}</label>
                       </div>
                       <p>{testimonial.description}</p>
@@ -1441,8 +1463,8 @@ export default function Home({ setFieldValue }) {
               <Image
                 src={Images.phoneMind}
                 className="peace-img"
-                width="50%"
-                alt=""
+                style={{"width": "auto", "height": "auto"}}
+                alt="phonemind"
               />
             </div>
           </div>
@@ -1459,7 +1481,8 @@ export default function Home({ setFieldValue }) {
                             src={Images.aws}
                             className="provider1"
                             width={123}
-                            alt=""
+                            alt="google"
+                            style={{"width": "auto", "height": "auto"}}
                           />
                         </div>
                       </div>
@@ -1470,7 +1493,8 @@ export default function Home({ setFieldValue }) {
                           <Image
                             src={Images.provider2}
                             className="provider2"
-                            alt=""
+                            alt="google"
+                            style={{"width": "auto", "height": "auto"}}
                           />
                         </div>
                       </div>
@@ -1485,7 +1509,8 @@ export default function Home({ setFieldValue }) {
                           <Image
                             src={Images.provider3}
                             className="provider3"
-                            alt=""
+                            alt="google"
+                            style={{"width": "auto", "height": "auto"}}
                           />
                         </div>
                       </div>
@@ -1496,7 +1521,8 @@ export default function Home({ setFieldValue }) {
                           <Image
                             src={Images.google}
                             className="provider4"
-                            alt=""
+                            alt="google"
+                            style={{"width": "auto", "height": "auto"}}
                             width={202.86}
                           />
                         </div>
