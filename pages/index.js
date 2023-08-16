@@ -986,7 +986,7 @@ export default function Home({ setFieldValue }) {
               </Tooltip>
             </div>
             <div className={styles.hover4}>
-              <Tooltip placement="rightStart" content={<Hover4 />}>
+              <Tooltip placement="bottom" content={<Hover4 />}>
                 <div className="tw-w-[36px] tw-h-[36px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
                   <Avatar
                     size="sm"
@@ -999,7 +999,7 @@ export default function Home({ setFieldValue }) {
               </Tooltip>
             </div>
             <div className={styles.hover}>
-              <Tooltip placement="right" content={<Hover />}>
+              <Tooltip placement="left" content={<Hover />}>
                 <div className="tw-w-[36px] tw-h-[36px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
                   <Avatar
                     size="sm"
