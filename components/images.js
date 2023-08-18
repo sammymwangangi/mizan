@@ -82,6 +82,7 @@ import smile from "../public/images/homepage/social/smile.svg";
 import wink2 from "../public/images/homepage/social/wink.svg";
 import kiss from "../public/images/homepage/social/kiss.svg";
 import cup from "../public/images/homepage/ups/cup.svg";
+import cupMobile from "../public/images/homepage/ups/cupMobile.svg";
 import phoneUps from "../public/images/homepage/ups/phone.svg";
 import phoneUps2 from "../public/images/homepage/ups/phone2.svg";
 import bankCard from "../public/images/homepage/hover/card.svg";
@@ -185,6 +186,7 @@ export const Images = {
   wink2,
   kiss,
   cup,
+  cupMobile,
   phoneUps,
   phoneUps2,
   bankCard,

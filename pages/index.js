@@ -1153,6 +1153,34 @@ export default function Home({ setFieldValue }) {
                     <span className={styles.upsPrice2}>$0.2</span>
                   </div>
                 </div>
+
+                <div className={styles.ups4}>
+                  <div className={styles.upsCupMobile}>
+                    <Image src={Images.cup} alt="cup" style={{"width": "171.97px", "height": "221.38px"}} />
+                  </div>
+                  <div className={styles.upsTextMobile}>Buy</div>
+                  <div className={styles.upsText2Mobile}>Coffee</div>
+                  <div className={styles.upsPriceBadgeMobile}>
+                    <span className={styles.upsPriceMobile}>$1.8</span>
+                  </div>
+                </div>
+                <div className={styles.ups3}>
+                  <div className={styles.upsPhoneMobile}>
+                    <Image src={Images.phoneUps} alt="phone" style={{"width": "92.76px", "height": "184.76px"}} />
+                  </div>
+                  <div className={styles.upsText3Mobile}>Save</div>
+                  <div className={styles.upsText4Mobile}>Invest</div>
+                  <div className={styles.orMobile}>or</div>
+                  <Link
+                    href="/brand-story/#howToDonate"
+                    className={styles.donate2Mobile}
+                  >
+                    Donate
+                  </Link>
+                  <div className={styles.upsPriceBadge2Mobile}>
+                    <span className={styles.upsPrice2Mobile}>$0.2</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

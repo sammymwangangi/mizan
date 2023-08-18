@@ -157,6 +157,24 @@
   /* user-select: text; */
 }
 
+@media screen and (max-width: 480px) {
+  .ups2{
+    display: none;
+  }
+  .ups1{
+    display: none;
+  }
+}
+
+@media screen and (min-width: 481px) {
+  .ups4{
+    display: none;
+  }
+  .ups3{
+    display: none;
+  }
+}
+
 .upsText {
   font-style: normal;
   font-family: Poppinsbold;
@@ -355,6 +373,221 @@
   user-select: none;
 }
 
+
+
+
+
+
+
+/* Mobile for ROUND-UPS */
+
+.ups3 {
+  position: relative;
+  width: 169.06px;
+  height: 169.06px;
+  background: linear-gradient(145.77deg, #faf9fe 8.5%, #e0dffb 90.85%);
+  border-radius: 9999px;
+  margin-left: 30px;
+  margin-top: -44px;
+  margin-bottom: 34px;
+  z-index: 1;
+}
+.ups4 {
+  position: relative;
+  width: 178.42px;
+  height: 178.42px;
+  background: linear-gradient(145.77deg, #faf9fe 8.5%, #c6baff 90.85%);
+  box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.01);
+  border-radius: 9999px;
+  margin-left: 156px;
+  /* user-select: text; */
+}
+
+.upsTextMobile {
+  font-style: normal;
+  font-family: Poppinsbold;
+  font-size: 17px;
+  line-height: 25.5px;
+  text-align: center;
+  color: #4f4f4f;
+  position: absolute;
+  left: 34px;
+  top: 96px;
+}
+.upsText2Mobile {
+  font-style: normal;
+  font-family: Poppinsbold;
+  font-size: 17px;
+  line-height: 25.5px;
+  text-align: center;
+  color: #4f4f4f;
+  position: absolute;
+  left: 34px;
+  top: 116px;
+}
+
+.upsPriceMobile {
+  font-style: normal;
+  font-family: Poppinsbold;
+  font-size: 11px;
+  line-height: 16.5px;
+  text-align: center;
+  color: #333333;
+}
+.upsPriceBadgeMobile {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 24px;
+  gap: 10px;
+  background: #ffffff;
+  border-radius: 19px;
+  width: 43.69px;
+  height: 20.29px;
+  position: absolute;
+  left: 70px;
+  top: 65px;
+}
+.upsCupMobile {
+  position: absolute;
+  left: 80px;
+  top: 0px;
+  user-select: none;
+}
+
+/* Ups Phone */
+.upsText3Mobile {
+  font-style: normal;
+  font-family: Poppinsbold;
+  font-size: 17px;
+  line-height: 21.5px;
+  text-align: center;
+  color: #4f4f4f;
+  position: absolute;
+  right: 60px;
+  top: 46px;
+}
+.upsText4Mobile {
+  font-style: normal;
+  font-family: Poppinsbold;
+  font-size: 17px;
+  line-height: 21.5px;
+  text-align: center;
+  color: #4f4f4f;
+  position: absolute;
+  right: 49px;
+  top: 64px;
+}
+
+.orMobile {
+  font-style: normal;
+  font-family: Poppinsbold;
+  font-size: 15px;
+  line-height: 18.97px;
+  color: #a08cff;
+  position: absolute;
+  right: 86px;
+  top: 80px;
+  z-index: 2;
+}
+
+.donateMobile {
+  position: absolute;
+  right: 408px;
+  top: 4425px;
+  font-style: normal;
+  font-family: Poppinsbold;
+  font-size: 17px;
+  line-height: 21.51px;
+  background: linear-gradient(225deg, #80b2ff 0%, #7c27d9 51.55%, #ff68f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.donateMobile::before {
+  content: "";
+  position: absolute;
+  top: 82%;
+  width: 100%;
+  left: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(225deg, #80b2ff 0%, #7c27d9 51.55%, #ff68f0 100%);
+}
+
+.donate2Mobile {
+  position: absolute;
+  right: 39px;
+  top: 94px;
+  font-style: normal;
+  font-family: Poppinsbold;
+  font-size: 17px;
+  line-height: 21.51px;
+  background: linear-gradient(225deg, #80b2ff 0%, #7c27d9 51.55%, #ff68f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.donate2Mobile::before {
+  content: "";
+  position: absolute;
+  top: 82%;
+  width: 100%;
+  left: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(225deg, #80b2ff 0%, #7c27d9 51.55%, #ff68f0 100%);
+}
+
+.upsPrice2Mobile {
+  font-style: normal;
+  font-family: Poppinsbold;
+  font-size: 11px;
+  line-height: 16.5px;
+  text-align: center;
+  color: #333333;
+}
+.upsPriceBadge2Mobile {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 24px;
+  gap: 10px;
+  background: #ffffff;
+  border-radius: 19px;
+  width: 45.26px;
+  height: 20.29px;
+  position: absolute;
+  right: 80px;
+  top: 20px;
+  z-index: 10;
+}
+.upsPhoneMobile {
+  position: absolute;
+  right: 103.91px;
+  bottom: 22.72px;
+  mix-blend-mode: multiply;
+  /* border-radius: 100px; */
+  border-bottom-left-radius: 1000px; /* 4px */
+  border-bottom-right-radius: 1000px; /* 4px */
+  user-select: none;
+}
+
+
+
+
+/* End Mobile ROUND-UPS */
+
+
+
+
+
+
 .hover3 {
   position: absolute;
   bottom: 30px;
@@ -454,7 +687,6 @@
     left: 750px;
   }
 }
-
 
 .hover1 {
   position: absolute;
