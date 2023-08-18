@@ -4521,6 +4521,15 @@
     height: 20px !important;
     top: 24px !important;
   }
+
+  @media screen and (max-width: 480px) {
+    .react-tel-input {
+      width: 360px !important;
+    }
+    .react-tel-input .form-control {
+      width: 360px !important;
+    }
+  }
   
   
   [type="tel"],

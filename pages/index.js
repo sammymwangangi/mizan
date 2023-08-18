@@ -541,7 +541,7 @@ export default function Home({ setFieldValue }) {
                           </Transition.Child>
 
                           <div className="tw-fixed tw-inset-0 tw-overflow-y-auto">
-                            <div className="tw-flex tw-min-h-full tw-items-center tw-justify-center tw-p-4">
+                            <div className="tw-flex tw-flex-col md:flex-row tw-min-h-full tw-items-center tw-justify-center tw-p-4">
                               <Transition.Child
                                 as={Fragment}
                                 enter="tw-ease-out tw-duration-300"
@@ -551,9 +551,9 @@ export default function Home({ setFieldValue }) {
                                 leaveFrom="tw-opacity-100 tw-scale-100"
                                 leaveTo="tw-opacity-0 tw-scale-95"
                               >
-                                <Dialog.Panel className="tw-w-[1148px] tw-h-[645px] tw-max-h-full tw-z-10 tw-transform tw-overflow-hidden tw-rounded-3xl tw-bg-white tw-p-6 tw-align-middle tw-shadow-xl tw-transition-all">
+                                <Dialog.Panel className="tw-w-[400px] md:tw-w-[1148px] md:tw-h-[645px] tw-max-h-full tw-z-10 tw-transform tw-overflow-hidden tw-rounded-3xl tw-bg-white tw-p-6 tw-align-middle tw-shadow-xl tw-transition-all">
                                   {/* close */}
-                                  <div className="tw-absolute tw-top-0 tw-right-0 tw-hidden tw-pt-4 tw-pr-4 sm:tw-block">
+                                  <div className="tw-absolute tw-top-0 tw-right-0 tw-pt-4 tw-pr-4 sm:tw-block">
                                     <button
                                       type="button"
                                       className="tw-border-0 tw-bg-white tw-text-[#6D6E8A] focus:tw-outline-none"
@@ -577,16 +577,16 @@ export default function Home({ setFieldValue }) {
                                     />
                                   </div>
                                   {/* main */}
-                                  <div className="tw-flex tw-py-4 tw-pl-[35px] tw-pr-[44px]">
-                                    <div className="-tw-z-1 tw-w-1/2 tw-mx-auto">
+                                  <div className="tw-flex tw-flex-col md:flex-row tw-py-4 md:tw-pl-[35px] md:tw-pr-[44px]">
+                                    <div className="md:tw-w-1/2 md:tw-mx-auto">
                                       <Image
                                         src={Images.join2}
                                         width={500}
-                                        className="tw-absolute tw-bottom-0"
+                                        className="md:tw-absolute md:tw-bottom-0"
                                         alt={"join"}
                                       />
                                     </div>
-                                    <div className="tw-w-1/2 tw-mx-auto">
+                                    <div className="md:tw-w-1/2 md:tw-mx-auto">
                                       <Dialog.Title
                                         as="h2"
                                         className="tw-text-lg tw-font-medium tw-leading-6 tw-text-gray-900"
@@ -598,7 +598,7 @@ export default function Home({ setFieldValue }) {
                                         </h2>
                                       </Dialog.Title>
                                       {/* description */}
-                                      <div className="tw-mt-4 tw-w-[445px]">
+                                      <div className="tw-mt-4 md:tw-w-[445px]">
                                         <p className="tw-text-[15px] tw-leading-[22.5px] tw-font-medium tw-font-[Poppinsmedium] tw-text-[#6D6E8A]">
                                           Join a movement, where people speak your
                                           language,
