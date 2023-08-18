@@ -2982,6 +2982,12 @@
     opacity: 0.2;
     transform: matrix(0, -1, -1, 0, 0, 0);
   }
+
+  @media (max-width: 480px) {
+    .yallah-big {
+      display: none;
+    }
+  }
   
   @media (min-width: 1440px) {
     .yallah-big {

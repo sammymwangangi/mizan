@@ -387,7 +387,7 @@
   height: 169.06px;
   background: linear-gradient(145.77deg, #faf9fe 8.5%, #e0dffb 90.85%);
   border-radius: 9999px;
-  margin-left: 30px;
+  margin-left: 5px;
   margin-top: -44px;
   margin-bottom: 34px;
   z-index: 1;
@@ -399,7 +399,7 @@
   background: linear-gradient(145.77deg, #faf9fe 8.5%, #c6baff 90.85%);
   box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.01);
   border-radius: 9999px;
-  margin-left: 156px;
+  margin-left: 126px;
   /* user-select: text; */
 }
 
