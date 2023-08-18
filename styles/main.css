@@ -2987,6 +2987,31 @@
     .yallah-big {
       display: none;
     }
+    .yallah-bg2 {
+      position: absolute;
+      width: 100%;
+      top: -40px;
+      left: -10rem;
+      transform: rotate(20deg);
+    }
+
+    .yallah .yallah-main-box h1 {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 46px;
+      color: #ffffff;
+      margin-top: 35px;
+    }
+    .yallah .yallah-main-box p {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 19px;
+      text-align: center;
+      margin-top: 20px;
+      color: #ffffff;
+    }
   }
   
   @media (min-width: 1440px) {
@@ -3246,7 +3271,7 @@
     }
   }
   
-  @media (max-width: 500px) {
+  @media (max-width: 480px) {
     .provider .provider-box {
       height: 100px;
     }
@@ -3435,6 +3460,12 @@
   
     .questions .questions-header p br {
       display: none;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .voice {
+      margin-top: 70px;
     }
   }
   

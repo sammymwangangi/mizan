@@ -1554,27 +1554,26 @@ export default function Home({ setFieldValue }) {
                 </div>
                 <div className="col-lg-6 col-md-12 col-sm-12">
                   <div className="row">
-                    <div className="col mt-3 mt-lg-0">
+                    <div className="col col-xs-6 mt-3 mt-lg-0">
                       <div className="provider-border">
                         <div className="provider-box d-flex align-items-center justify-content-center">
                           <Image
                             src={Images.provider3}
                             className="provider3"
                             alt="google"
-                            style={{"width": "auto", "height": "auto"}}
                           />
                         </div>
                       </div>
                     </div>
-                    <div className="col mt-3 mt-lg-0">
+                    <div className="col col-xs-6 mt-3 mt-lg-0">
                       <div className="provider-border">
                         <div className="provider-box d-flex align-items-center justify-content-center">
                           <Image
                             src={Images.google}
                             className="provider4"
                             alt="google"
-                            style={{"width": "auto", "height": "auto"}}
-                            width={202.86}
+                            width={280}
+                            height={201}
                           />
                         </div>
                       </div>
