@@ -1390,7 +1390,7 @@ export default function Home({ setFieldValue }) {
             onMouseLeave={handleMouseLeave}
           >
             <Swiper
-              slidesPerView={4}
+              slidesPerView={1}
               ref={swiperRefLocal}
               spaceBetween={20}
               loop={true}
@@ -1401,6 +1401,10 @@ export default function Home({ setFieldValue }) {
               }}
               speed={5000}
               breakpoints={{
+                481: {
+                  slidesPerView: 2,
+                  spaceBetween: 20,
+                },
                 769: {
                   slidesPerView: 2,
                   spaceBetween: 20,
