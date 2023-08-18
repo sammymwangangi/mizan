@@ -91,6 +91,8 @@
 @media screen and (max-width: 480px) {
   .finance {
     height: 2500px;
+    margin-right: 25px;
+    margin-left: 25px;
   }
   .financeArrow{
     transform: rotate(90deg);
