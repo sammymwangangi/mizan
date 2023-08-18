@@ -530,7 +530,7 @@ export default function BrandStory() {
         <section className="tw-mt-[160px]" id="howToDonate">
           <div className={styles3.finance}>
             <div className={styles3.works}>How it Works</div>
-            <div className="tw-flex tw-gap-[30px] tw-items-center tw-justify-between">
+            <div className="tw-flex tw-flex-col md:tw-flex-row tw-gap-[30px] tw-items-center tw-justify-between">
               <div className="tw-flex tw-flex-col tw-items-center">
                 <div className={styles3.works2}>CHOOSE A CAMPAIGN</div>
                 <Image
@@ -540,7 +540,7 @@ export default function BrandStory() {
                   alt="iphone1"
                 />
               </div>
-              <div>
+              <div className={styles3.financeArrow}>
                 <Image
                   src="https://ik.imagekit.io/qqkp8wchu/Union.png?updatedAt=1680613078943"
                   width={200}

@@ -449,6 +449,25 @@ export default function Home({ setFieldValue }) {
     swiperRefLocal?.current?.swiper?.autoplay?.start();
   };
 
+  const [avatarSize, setAvatarSize] = useState('sm'); // Default size
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 480) {
+        setAvatarSize('xs');
+      } else {
+        setAvatarSize('sm');
+      }
+    };
+
+    handleResize(); // Set initial size
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <>
       <Head>
@@ -948,65 +967,65 @@ export default function Home({ setFieldValue }) {
             </div>
             <div className={styles.hover3}>
               <Tooltip placement="rightEnd" content={<Hover3 />}>
-                <div className="tw-w-[36px] tw-h-[36px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
+                <div className="tw-w-[26px] tw-h-[26px] md:tw-w-[36px] md:tw-h-[36px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
                   <Avatar
-                    size="sm"
+                    size={avatarSize}
                     src="/images/homepage/hover/cross2.svg"
                     color="gradient"
                     bordered
-                    className="hover:tw-rotate-45 tw-ml-[4px]"
+                    className="hover:tw-rotate-45 tw-ml-[3px] md:tw-ml-[4px]"
                   />
                 </div>
               </Tooltip>
             </div>
             <div className={styles.hover2}>
               <Tooltip placement="top" content={<Hover2 />}>
-                <div className="tw-w-[36px] tw-h-[36px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
+                <div className="tw-w-[26px] tw-h-[26px] md:tw-w-[36px] md:tw-h-[36px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
                   <Avatar
-                    size="sm"
+                    size={avatarSize}
                     src="/images/homepage/hover/cross2.svg"
                     color="gradient"
                     bordered
-                    className="hover:tw-rotate-45 tw-ml-[4px]"
+                    className="hover:tw-rotate-45 tw-ml-[3px] md:tw-ml-[4px]"
                   />
                 </div>
               </Tooltip>
             </div>
             <div className={styles.hover1}>
               <Tooltip placement="right" content={<Hover1 />}>
-                <div className="tw-w-[36px] tw-h-[36px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
+                <div className="tw-w-[26px] tw-h-[26px] md:tw-w-[36px] md:tw-h-[36px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
                   <Avatar
-                    size="sm"
+                    size={avatarSize}
                     src="/images/homepage/hover/cross2.svg"
                     color="gradient"
                     bordered
-                    className="hover:tw-rotate-45 tw-ml-[4px]"
+                    className="hover:tw-rotate-45 tw-ml-[3px] md:tw-ml-[4px]"
                   />
                 </div>
               </Tooltip>
             </div>
             <div className={styles.hover4}>
               <Tooltip placement="bottom" content={<Hover4 />}>
-                <div className="tw-w-[36px] tw-h-[36px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
+                <div className="tw-w-[26px] tw-h-[26px] md:tw-w-[36px] md:tw-h-[36px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
                   <Avatar
-                    size="sm"
+                    size={avatarSize}
                     src="/images/homepage/hover/cross2.svg"
                     color="gradient"
                     bordered
-                    className="hover:tw-rotate-45 tw-ml-[4px]"
+                    className="hover:tw-rotate-45 tw-ml-[3px] md:tw-ml-[4px]"
                   />
                 </div>
               </Tooltip>
             </div>
             <div className={styles.hover}>
               <Tooltip placement="left" content={<Hover />}>
-                <div className="tw-w-[36px] tw-h-[36px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
+                <div className="tw-w-[26px] tw-h-[26px] md:tw-w-[36px] md:tw-h-[36px] tw-inline-flex tw-items-center tw-rounded-full tw-ring-2 tw-ring-inset tw-ring-white tw-animate-pulse tw-cursor-pointer">
                   <Avatar
-                    size="sm"
+                    size={avatarSize}
                     src="/images/homepage/hover/cross2.svg"
                     color="gradient"
                     bordered
-                    className="hover:tw-rotate-45 tw-ml-[4px]"
+                    className="hover:tw-rotate-45 tw-ml-[3px] md:tw-ml-[4px]"
                   />
                 </div>
               </Tooltip>

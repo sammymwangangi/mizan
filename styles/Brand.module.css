@@ -87,3 +87,13 @@
   padding-left: 39px;
   padding-top: 20px;
 }
+
+@media screen and (max-width: 480px) {
+  .finance {
+    height: 2300px;
+  }
+  .financeArrow{
+    transform: rotate(90deg);
+    padding: 2rem;
+  }
+}
