@@ -18,7 +18,6 @@ export default function Navbar() {
     width: 150,
     height: 76.36,
   });
-
   useEffect(() => {
     function handleScroll() {
       const header = document.getElementById("header");
@@ -143,8 +142,6 @@ export default function Navbar() {
                     </li>
                   </ul>
                 </div>
-
-                {/* <GoogleTranslate /> */}
 
                 {/* Flags */}
                 <div

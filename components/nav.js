@@ -6,46 +6,15 @@ import { Menu, Popover, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Images } from "../components/images";
 import { getCookie, hasCookie, setCookie } from "cookies-next";
+import Script from "next/script";
 
 const languages = [
-  { label: "ENG", value: "/auto/en", icon: IconOne },
-  { label: "AR", value: "/auto/ar", icon: IconTwo },
+  { label: "ENG", value: "/en", icon: IconOne },
+  { label: "AR", value: "/ar", icon: IconTwo },
 ];
 
 export default function Nav() {
-  const [imageDimensions, setImageDimensions] = useState({
-    width: 150,
-    height: 76.36,
-  });
-
-  useEffect(() => {
-    function handleScroll() {
-      const header = document.getElementById("header");
-      if (header.classList.contains("header-scroll")) {
-        setImageDimensions({
-          width: 175,
-          height: 41,
-        });
-      } else {
-        setImageDimensions({
-          width: 150,
-          height: 76.36,
-        });
-      }
-
-      if (window.scrollY > 50) {
-        header.classList.add("header-scroll");
-      } else {
-        header.classList.remove("header-scroll");
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  
 
   // const [selected, setSelected] = useState(flags[0]);
   const router = useRouter();
@@ -54,26 +23,23 @@ export default function Nav() {
   const [selected, setSelected] = useState(languages[0]);
 
   useEffect(() => {
-    // Load Google Translate script dynamically
-    const script = document.createElement("script");
-    script.src =
-      "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-    script.async = true;
-    document.body.appendChild(script);
-
-    // Define the callback function
+    var addScript = document.createElement("script");
+    addScript.setAttribute(
+      "src",
+      "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    );
+    document.body.appendChild(addScript);
     window.googleTranslateElementInit = googleTranslateElementInit;
 
     // Determine the selected language from cookie
-    const initialLanguage = getCookie("appLang") || "en";
+    const initialLanguage = hasCookie("googtrans") ? getCookie("googtrans") : "/auto/en";
     setSelected(initialLanguage);
   }, []);
 
   const googleTranslateElementInit = () => {
     new window.google.translate.TranslateElement(
       {
-        pageLanguage: "auto",
-        autoDisplay: false,
+        pageLanguage: "en",
         includedLanguages: "ar,en",
         layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
       },
@@ -82,7 +48,7 @@ export default function Nav() {
   };
 
   const langChange = (selectedLanguage) => {
-    setCookie("appLang", selectedLanguage, {
+    setCookie("googtrans", selectedLanguage, {
       sameSite: "none",
       secure: true, // Set the cookie to be sent only over HTTPS
     });
@@ -92,10 +58,6 @@ export default function Nav() {
 
   return (
     <>
-      {/* <Script
-        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-        strategy="lazyOnload"
-      /> */}
       <section className="header brand-header1" id="header">
         <div className="container_costome">
           <nav className="navbar navbar-expand-md">
