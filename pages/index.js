@@ -551,7 +551,7 @@ export default function Home({ setFieldValue }) {
                                 leaveFrom="tw-opacity-100 tw-scale-100"
                                 leaveTo="tw-opacity-0 tw-scale-95"
                               >
-                                <Dialog.Panel className="tw-w-[400px] md:tw-w-[1148px] md:tw-h-[645px] tw-max-h-full tw-z-10 tw-transform tw-overflow-hidden tw-rounded-3xl tw-bg-white tw-p-6 tw-align-middle tw-shadow-xl tw-transition-all">
+                                <Dialog.Panel className="tw-w-[400px] lg:tw-w-[1148px] lg:tw-h-[645px] tw-max-h-full tw-z-10 tw-transform tw-overflow-hidden tw-rounded-3xl tw-bg-white tw-p-6 tw-align-middle tw-shadow-xl tw-transition-all">
                                   {/* close */}
                                   <div className="tw-absolute tw-top-0 tw-right-0 tw-pt-4 tw-pr-4 sm:tw-block">
                                     <button
@@ -577,16 +577,16 @@ export default function Home({ setFieldValue }) {
                                     />
                                   </div>
                                   {/* main */}
-                                  <div className="tw-flex tw-flex-col md:flex-row tw-py-4 md:tw-pl-[35px] md:tw-pr-[44px]">
-                                    <div className="md:tw-w-1/2 md:tw-mx-auto">
+                                  <div className="lg:tw-flex tw-py-4 lg:tw-pl-[35px] lg:tw-pr-[44px]">
+                                    <div className="lg:tw-w-1/2 lg:tw-mx-auto">
                                       <Image
                                         src={Images.join2}
                                         width={500}
-                                        className="md:tw-absolute md:tw-bottom-0"
+                                        className="lg:tw-absolute lg:tw-bottom-0"
                                         alt={"join"}
                                       />
                                     </div>
-                                    <div className="md:tw-w-1/2 md:tw-mx-auto">
+                                    <div className="lg:tw-w-1/2 lg:tw-mx-auto">
                                       <Dialog.Title
                                         as="h2"
                                         className="tw-text-lg tw-font-medium tw-leading-6 tw-text-gray-900"
