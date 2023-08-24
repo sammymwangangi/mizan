@@ -30,11 +30,10 @@ import Hover2 from "../components/hover2";
 import Hover3 from "../components/hover3";
 import Hover4 from "../components/hover4";
 import DynamicNavbar from "../components/navbar";
+import DynamicFooter from "../components/footer";
+import DynamicNavModal from "../components/navModal";
 import { CldImage } from 'next-cloudinary';
 
-const DynamicFooter = dynamic(() => import("../components/footer"), {});
-
-const DynamicNavModal = dynamic(() => import("../components/navModal"), {});
 
 const imageKitLoader = ({ src, width, quality }) => {
   if (src[0] === "/") src = src.slice(1);
@@ -198,7 +197,7 @@ const images = [
 const delays = [100, 600, 600, 600, 600];
 
 export default function Home({ setFieldValue }) {
-  const router = useRouter();
+  // const router = useRouter();
 
   const formik = useFormik({
     initialValues: {

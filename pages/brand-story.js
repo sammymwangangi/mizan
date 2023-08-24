@@ -10,17 +10,11 @@ import Confetti from "../components/Confetti";
 import { Formik, Form, Field, ErrorMessage, useFormik } from "formik";
 import * as Yup from "yup";
 import styles from "../styles/Home.module.css";
-import styles3 from "../styles/Brand.module.css";
+import styles3 from "../styles/Brand.module.css"; 
 import PhoneNumberInput from "../components/PhoneNumberInput";
 import DynamicNav from "../components/nav";
-
-const DynamicFooter = dynamic(() => import("../components/footer"), {});
-const DynamicBrandFooter = dynamic(
-  () => import("../components/brandFooter"),
-  {}
-);
-
-const DynamicNavModal = dynamic(() => import("../components/navModal"), {});
+import DynamicBrandFooter from "../components/brandFooter";
+import DynamicNavModal from "../components/navModal";
 
 const marks = [
   {
