@@ -197,7 +197,7 @@ const images = [
 const delays = [100, 600, 600, 600, 600];
 
 export default function Home({ setFieldValue }) {
-  // const router = useRouter();
+  const router = useRouter();
 
   const formik = useFormik({
     initialValues: {
