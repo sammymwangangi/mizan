@@ -74,7 +74,7 @@
   font-size: 36px;
   line-height: 56px;
   font-family: Poppinsbold;
-  text-align: left;
+  text-align: center;
 }
 
 .joinBtn {
@@ -149,6 +149,23 @@
     text-transform: uppercase;
     color: white;
     margin-top: 64px;
+  }
+  .myModal {
+    background: linear-gradient(
+      89.84deg,
+      #000000 -11.87%,
+      #564786 37.22%,
+      #a488ff 91.83%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    font-family: Poppinsbold;
+    text-align: center;
   }
 }
 
