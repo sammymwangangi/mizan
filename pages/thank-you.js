@@ -104,9 +104,9 @@ export default function ThankYou() {
 
       {/* Mobile Devices */}
 
-      <div className="tw-block lg:tw-hidden tw-w-[574px] tw-h-[645px] tw-max-h-full tw-transform tw-overflow-hidden tw-rounded-2xl tw-bg-white tw-p-6 tw-align-middle tw-shadow-xl tw-transition-all tw-mx-auto tw-my-auto">
+      <div className="tw-block lg:tw-hidden tw-w-[574px] tw-h-[575px] tw-max-h-full tw-transform tw-overflow-hidden tw-rounded-2xl tw-bg-white tw-p-6 tw-align-middle tw-shadow-xl tw-transition-all tw-mx-auto tw-my-auto">
         {/* close */}
-        <div className="tw-absolute tw-top-[20px] tw-right-[20px] tw-hidden tw-pt-2 tw-pr-4">
+        <div className="tw-absolute tw-top-0 tw-right-0 tw-pt-2 tw-pr-4">
           <Link
             href="/"
             className="tw-border-0 tw-bg-white tw-text-[#6D6E8A] focus:tw-outline-none"
@@ -127,14 +127,14 @@ export default function ThankYou() {
             alt=""
           />
         </div>
-        <div className="tw-absolute tw-bottom-40 tw-right-0 tw-pb-2 tw-pr-[74px]">
+        <div className="tw-absolute tw-bottom-[80px] tw-right-0 tw-pb-2 tw-pr-[30px]">
           <Image
             src={loveIndex === 0 ? Images.avatar2 : Images.thumbsup}
             className="avtar2"
             alt=""
           />
         </div>
-        <div className="tw-absolute tw-bottom-[110px] tw-right-20 tw-pb-2 tw-pr-[80px]">
+        <div className="tw-absolute tw-bottom-[10px] tw-right-10 tw-pb-2 tw-pr-[50px]">
           <Image
             src={thumbIndex === 0 ? Images.avatar3 : Images.love}
             className="avtar3"
@@ -153,7 +153,7 @@ export default function ThankYou() {
             </div>
             {/* description */}
             <div className="tw-mt-4 tw-w-[223px]">
-              <p className="tw-text-[12px] tw-leading-[11.5px] tw-font-medium tw-font-[PoppinsMedium] tw-text-[#6D6E8A]">
+              <p className="tw-text-[12px] tw-leading-[14px] tw-font-medium tw-font-[PoppinsMedium] tw-text-[#6D6E8A]">
                 Now sit back and relax, we’ll take it up from here. We’ll be in
                 your inbox soon :-). It pays to be smart about your money, why
                 not share with your smart friends?
