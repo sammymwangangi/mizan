@@ -1,6 +1,7 @@
 import { Images } from "../components/images";
 import styles from "../styles/Home.module.css";
 import Confetti from "../components/Confetti";
+import Confetti2 from "../components/Confetti2";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -27,7 +28,8 @@ export default function ThankYou() {
 
   return (
     <>
-      <div className="tw-hidden lg:tw-block tw-w-[1148px] tw-h-[645px] tw-max-h-full tw-transform tw-overflow-hidden tw-rounded-2xl tw-bg-white tw-p-6 tw-align-middle tw-shadow-xl tw-transition-all tw-mx-auto tw-my-auto">
+    <Confetti />
+      <div className="thanks-desktop tw-w-[1148px] tw-h-[645px] tw-max-h-full tw-transform tw-overflow-hidden tw-rounded-2xl tw-bg-white tw-p-6 tw-align-middle tw-shadow-xl tw-transition-all tw-mx-auto tw-my-auto">
         {/* close */}
         <div className="tw-absolute tw-top-0 tw-right-0 tw-hidden tw-pt-4 tw-pr-4 sm:tw-block">
           <Link
@@ -99,12 +101,12 @@ export default function ThankYou() {
             </div>
           </div>
         </div>
-        <Confetti />
+        
       </div>
 
       {/* Mobile Devices */}
 
-      <div className="tw-block lg:tw-hidden tw-w-[574px] tw-h-[575px] tw-max-h-full tw-transform tw-overflow-hidden tw-rounded-2xl tw-bg-white tw-p-6 tw-align-middle tw-shadow-xl tw-transition-all tw-mx-auto tw-my-auto">
+      <div className="thanks-mobile tw-w-[574px] tw-h-[575px] tw-max-h-full tw-transform tw-overflow-hidden tw-rounded-2xl tw-bg-white tw-p-6 tw-align-middle tw-shadow-xl tw-transition-all tw-mx-auto tw-my-auto">
         {/* close */}
         <div className="tw-absolute tw-top-0 tw-right-0 tw-pt-2 tw-pr-4">
           <Link
@@ -176,7 +178,6 @@ export default function ThankYou() {
             </div>
           </div>
         </div>
-        <Confetti />
       </div>
     </>
   );
