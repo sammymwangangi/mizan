@@ -56,10 +56,10 @@ export default function Confetti() {
         position: 'fixed',
         zIndex: 99,
         pointerEvents: 'none',
-        width: '95%',
-        height: '95%',
+        width: '100%',
+        height: '100%',
         top: 0,
-        left: 10
+        left: 0
       }}
     />
   );

@@ -151,6 +151,7 @@
   body {
     font-family: "Poppins";
     position: relative;
+    overflow: auto !important;
   }
   
   h1,
@@ -4711,7 +4712,7 @@
   
   .join-modal .join-left {
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
     height: 100%;
   }
   
@@ -5033,7 +5034,7 @@
   -o-transition-timing-function:linear!important;
   transition-timing-function:linear!important;
 }
-/* .modal-backdrop {
+.modal-backdrop {
   position: fixed;
   top: 0;
   right: 0;
@@ -5041,16 +5042,118 @@
   left: 0;
   z-index: -1;
   display: none;
-} */
+}
 
 @media screen and (max-width: 480px) {
-  .thanks-desktop {
-    display: none;
+  .thanks {
+    width: 574px !important;
+    height: 575px !important;
+  }
+  .thanks .exit {
+    padding-top: 0.5rem/* 8px */ !important;
+  }
+  .thanks .join-logo {
+    padding-bottom: 0.5rem/* 8px */ !important;
+    padding-left: 37px !important;
+  }
+  .thanks .avatar1 {
+    position: absolute !important;
+    top: 11rem/* 176px */ !important;
+    left: 0px !important;
+    padding-top: 0.5rem/* 8px */ !important;
+    padding-left: 37px !important;
+  }
+  .thanks .avatar2 {
+    position: absolute !important;
+    bottom: 80px !important;
+    right: 0px !important;
+    padding-bottom: 0.5rem/* 8px */ !important;
+    padding-right: 30px !important;
+  }
+  .thanks .avatar3 {
+    position: absolute !important;
+    bottom: 10px !important;
+    right: 2.5rem/* 40px */ !important;
+    padding-bottom: 0.5rem/* 8px */ !important;
+    padding-right: 50px !important;
+  }
+  .thanks .main {
+    padding-top: 0.5rem/* 8px */ !important;
+    padding-bottom: 0.5rem/* 8px */ !important;
+    padding-left: 54px !important;
+    padding-right: 38px !important;
+  }
+  .thanks .main .main-body {
+    width: 300px !important;
+    padding-top: 35px !important;
+  }
+  .thanks .main .main-body .main-title {
+    padding-top: 0.5rem/* 8px */ !important;
+  }
+  .thanks .main .main-body .main-description {
+    margin-top: 1rem/* 16px */ !important;
+    width: 223px !important;
+  }
+  .thanks .main .main-body .main-description .main-description-content {
+    font-size: 12px !important;
+    line-height: 14px !important;
   }
 }
 @media screen and (min-width: 1024px) {
-  .thanks-mobile {
-    display: none;
+  .thanks {
+    width: 1148px !important;
+    height: 645px !important;
+  }
+
+  .thanks .exit {
+    padding-top: 1rem/* 16px */ !important;
+  }
+
+  .thanks .join-logo {
+    padding-bottom: 1rem/* 16px */ !important;
+    padding-left: 74px !important;
+  }
+  .thanks .avatar1 {
+    position: absolute !important;
+    top: 15rem/* 240px */ !important;
+    left: 0px !important;
+    padding-top: 1rem/* 16px */ !important;
+    padding-left: 74px !important;
+  }
+  .thanks .avatar2 {
+    position: absolute !important;
+    bottom: 10rem/* 160px */ !important;
+    right: 0px !important;
+    padding-bottom: 1rem/* 16px */ !important;
+    padding-right: 74px !important;
+  }
+  .thanks .avatar3 {
+    position: absolute !important;
+    bottom: 110px !important;
+    right: 5rem/* 80px */ !important;
+    padding-bottom: 1rem/* 16px */ !important;
+    padding-right: 80px !important;
+  }
+  .thanks .main {
+    padding-top: 1rem/* 16px */ !important;
+    padding-bottom: 1rem/* 16px */ !important;
+    padding-left: 54px !important;
+    padding-right: 76px !important;
+  }
+  .thanks .main .main-body {
+    width: 600px !important;
+    padding-top: 70px !important;
+  }
+  .thanks .main .main-body .main-title {
+    padding-top: 1rem/* 16px */ !important;
+  }
+  .thanks .main .main-body .main-description {
+    margin-top: 1rem/* 16px */ !important;
+    width: 445px !important;
+  }
+  .thanks .main .main-body .main-description .main-description-content {
+    font-size: 15px !important;
+    line-height: 22.5px !important;
   }
 }
 
