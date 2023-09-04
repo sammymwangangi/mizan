@@ -1032,13 +1032,15 @@ export default function Home({ setFieldValue }) {
           </div>
         </section>
         <div className={styles.bankText}>
-          <div>
+          <div dir="rtl">
             Be the first to join the “early access” program .{" "}
             <span onClick={openModal} className={styles.bankTextSpan}>
               Apply Now
             </span>
           </div>
+          
         </div>
+
 
         <section className="cards position-relative">
           <div className="cards-box">

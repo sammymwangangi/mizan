@@ -218,13 +218,20 @@ export default function BrandStory() {
               </div>
               <div className="col-lg-6 col-md-6 col-sm-12">
                 <div className="mizan-right-box">
-                  <p>
-                    <span>M</span>icro-lending & <br />
-                    <span>I</span>nvestment <br />
-                    <span>Z</span>ero-interest <br />
-                    <span>A</span>pplication for <br />
-                    <span>N</span>ovice.
-                  </p>
+                <style jsx>{`
+        p::first-letter {
+          color: #8f00e0;
+        }
+      `}</style>
+                
+        <p>Micro-lending &</p>
+        <p>Investment</p>
+        <p>Zero-interest</p>
+        <p>Application for</p>
+        <p>Novice.</p>
+      
+
+      
                 </div>
               </div>
             </div>

@@ -3831,10 +3831,10 @@
     font-family: Poppinssemibold;
   }
   
-  .what-is-mizan .mizan-left-box p span,
+  /* .what-is-mizan .mizan-left-box p span,
   .what-is-mizan .mizan-right-box p span {
     color: #8f00e0;
-  }
+  } */
   
   .what-is-mizan .mizan-left-box p {
     font-weight: 400;
