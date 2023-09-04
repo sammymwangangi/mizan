@@ -29,8 +29,11 @@
   font-weight: 400;
   font-size: 20px;
   line-height: 30px;
-  text-align: center;
+  text-align: center; /* Center the text horizontally */
   color: #1b1c39;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center; /* Center the content horizontally */
 }
 
 .bankTextSpan {
@@ -42,6 +45,7 @@
   width: fit-content;
   cursor: pointer;
   position: relative;
+  margin-left: 0.3rem;
 }
 
 .bankTextSpan::before {
