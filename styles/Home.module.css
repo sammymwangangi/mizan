@@ -36,6 +36,13 @@
   justify-content: center; /* Center the content horizontally */
 }
 
+@media screen and (max-width: 480px) {
+  .bankText {
+    display: flex;
+    flex-direction: column !important;
+  }
+}
+
 .bankTextSpan {
   background: linear-gradient(225deg, #80b2ff 0%, #7c27d9 51.55%, #ff68f0 100%);
   -webkit-background-clip: text;
@@ -110,6 +117,27 @@
   border: none;
   font-size: 17px;
   border-radius: 50px;
+  background: linear-gradient(
+    75.68deg,
+    #d155ff 2.33%,
+    #b532f2 15.95%,
+    #a016e8 29.28%,
+    #9406e2 41.05%,
+    #8f00e0 50%,
+    #a08cff 97.67%
+  );
+  filter: drop-shadow(0px 15px 30px rgba(57, 26, 115, 0.15));
+  font-family: "Poppinsmedium";
+  opacity: 0.2;
+}
+.joinBtn3 {
+  padding: 8px;
+  max-width: 100%;
+  width: 60px;
+  color: #fff;
+  border: none;
+  font-size: 17px;
+  border-radius: 10px;
   background: linear-gradient(
     75.68deg,
     #d155ff 2.33%,

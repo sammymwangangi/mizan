@@ -473,13 +473,13 @@ export default function Home({ setFieldValue }) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Mizan money</title>
-        
+
       </Head>
 
       <main className="landing-bg position-relative">
-        <Image src={Images.cardsBG} className="card-bg" alt="image" style={{"width": "auto", "height": "auto"}} />
-        <Image src={Images.cardsBGTab} className="card-bg-tab" alt="image" style={{"width": "auto", "height": "auto"}} />
-        <Image src={Images.lastPageBg} className="last-page-bg" alt="image" style={{"width": "auto", "height": "auto"}} />
+        <Image src={Images.cardsBG} className="card-bg" alt="image" style={{ "width": "auto", "height": "auto" }} />
+        <Image src={Images.cardsBGTab} className="card-bg-tab" alt="image" style={{ "width": "auto", "height": "auto" }} />
+        <Image src={Images.lastPageBg} className="last-page-bg" alt="image" style={{ "width": "auto", "height": "auto" }} />
 
         {/* Navbar */}
 
@@ -503,7 +503,7 @@ export default function Home({ setFieldValue }) {
                     fetchpriority="high"
                     alt=""
                   />
-                  
+
                 </div>
                 <span className="def">
                   We are excited to have crafted a piece of tech that <br /> is
@@ -572,7 +572,7 @@ export default function Home({ setFieldValue }) {
                                     <Image
                                       src={Images.joinLogo}
                                       alt={"join-logo"}
-                                      style={{"width": "auto", "height": "auto"}}
+                                      style={{ "width": "auto", "height": "auto" }}
                                     />
                                   </div>
                                   {/* main */}
@@ -1031,14 +1031,15 @@ export default function Home({ setFieldValue }) {
             </div>
           </div>
         </section>
+
         <div className={styles.bankText}>
-          <div>
+          <div className="tw-flex-col">
             Be the first to join the “early access” program.{" "}
           </div>
-            <div dir="rtl" onClick={openModal} className={styles.bankTextSpan}>
-              Apply Now
-            </div>
-          
+          <div dir="rtl" onClick={openModal} className={styles.bankTextSpan}>
+            Apply Now
+          </div>
+
         </div>
 
 
@@ -1176,7 +1177,7 @@ export default function Home({ setFieldValue }) {
 
                 <div className={styles.ups4}>
                   <div className={styles.upsCupMobile}>
-                    <Image src={Images.cup} alt="cup" style={{"width": "171.97px", "height": "221.38px"}} />
+                    <Image src={Images.cup} alt="cup" style={{ "width": "171.97px", "height": "221.38px" }} />
                   </div>
                   <div className={styles.upsTextMobile}>Buy</div>
                   <div className={styles.upsText2Mobile}>Coffee</div>
@@ -1186,7 +1187,7 @@ export default function Home({ setFieldValue }) {
                 </div>
                 <div className={styles.ups3}>
                   <div className={styles.upsPhoneMobile}>
-                    <Image src={Images.phoneUps} alt="phone" style={{"width": "92.76px", "height": "184.76px"}} />
+                    <Image src={Images.phoneUps} alt="phone" style={{ "width": "92.76px", "height": "184.76px" }} />
                   </div>
                   <div className={styles.upsText3Mobile}>Save</div>
                   <div className={styles.upsText4Mobile}>Invest</div>
@@ -1223,7 +1224,7 @@ export default function Home({ setFieldValue }) {
               <div className="col-xl-7 col-lg-7 col-md-12">
                 <div className="mizan-round-right p-4">
                   <div className="chart-box position-relative">
-                    <Image src={Images.graph} className="chart-img" alt="graph" style={{"width": "auto", "height": "auto"}} />
+                    <Image src={Images.graph} className="chart-img" alt="graph" style={{ "width": "auto", "height": "auto" }} />
                     <div className="weekly-depo-border set-position">
                       <button className="weekly-depo chart-depo">$500</button>
                     </div>
@@ -1446,14 +1447,14 @@ export default function Home({ setFieldValue }) {
                   <div className="early-user-border">
                     <div className="early-user-box p-4">
                       <div className="user-info d-flex align-items-center gap-3">
-                        <Image src={testimonial.imageUrl} alt="user" style={{"width": "auto", "height": "auto"}} />
+                        <Image src={testimonial.imageUrl} alt="user" style={{ "width": "auto", "height": "auto" }} />
                         <div className="user-name">
                           <span>Aldo P.</span>
                           <Image src={testimonial.ratingImageUrl} alt="" />
                         </div>
                       </div>
                       <div className="verified d-flex align-items-center gap-2 mt-3">
-                        <Image src={Images.verified} style={{"width": "auto", "height": "auto"}} alt="verified" />
+                        <Image src={Images.verified} style={{ "width": "auto", "height": "auto" }} alt="verified" />
                         <label>{testimonial.label}</label>
                       </div>
                       <p>{testimonial.description}</p>
@@ -1515,7 +1516,7 @@ export default function Home({ setFieldValue }) {
               <Image
                 src={Images.phoneMind}
                 className="peace-img"
-                style={{"width": "auto", "height": "auto"}}
+                style={{ "width": "auto", "height": "auto" }}
                 alt="phonemind"
               />
             </div>
@@ -1534,7 +1535,7 @@ export default function Home({ setFieldValue }) {
                             className="provider1"
                             width={123}
                             alt="google"
-                            style={{"width": "auto", "height": "auto"}}
+                            style={{ "width": "auto", "height": "auto" }}
                           />
                         </div>
                       </div>
@@ -1546,7 +1547,7 @@ export default function Home({ setFieldValue }) {
                             src={Images.provider2}
                             className="provider2"
                             alt="google"
-                            style={{"width": "auto", "height": "auto"}}
+                            style={{ "width": "auto", "height": "auto" }}
                           />
                         </div>
                       </div>
@@ -1573,8 +1574,8 @@ export default function Home({ setFieldValue }) {
                             src={Images.google}
                             className="provider4"
                             alt="google"
-                            width={280}
-                            height={201}
+                            width={208}
+                            height={60}
                           />
                         </div>
                       </div>
@@ -1675,11 +1676,10 @@ export default function Home({ setFieldValue }) {
                           {chatLog.map((message, index) => (
                             <li key={index}>
                               <div
-                                className={`d-flex align-items-end ${
-                                  message.type === "user"
+                                className={`d-flex align-items-end ${message.type === "user"
                                     ? "tw-justify-end"
                                     : "tw-justify-start"
-                                }`}
+                                  }`}
                                 style={{ columnGap: "1.5rem" }}
                               >
                                 {message.type != "user" && (
@@ -1696,19 +1696,17 @@ export default function Home({ setFieldValue }) {
                                 )}
                                 <div
                                   key={index}
-                                  className={`tw-flex ${
-                                    message.type === "user"
+                                  className={`tw-flex ${message.type === "user"
                                       ? "tw-justify-end"
                                       : "tw-justify-start"
-                                  }`}
+                                    }`}
                                 >
                                   <div className="tw-rounded-lg tw-text-white tw-max-w-sm">
                                     <span
-                                      className={`${
-                                        message.type === "user"
+                                      className={`${message.type === "user"
                                           ? "tw-bg-[#A276FF] after:tw-bg-[#A276FF] tw-text-white"
                                           : "tw-bg-[#f0ecf7]"
-                                      }`}
+                                        }`}
                                     >
                                       {message.message}
                                     </span>
@@ -1737,6 +1735,17 @@ export default function Home({ setFieldValue }) {
                             onChange={(e) => setInputValue(e.target.value)}
                             className="focus:tw-ring-0"
                           />
+                          <button
+                            type="submit"
+                            className={styles.joinBtn3}
+                            style={{
+                              opacity: formik.isValid ? 1 : 0.2,
+                            }}
+                          >
+                            <svg className="tw-w-8 tw-h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"></path>
+                            </svg>
+                          </button>
                         </div>
                       </div>
                     </form>

@@ -10,11 +10,13 @@ import Confetti from "../components/Confetti";
 import { Formik, Form, Field, ErrorMessage, useFormik } from "formik";
 import * as Yup from "yup";
 import styles from "../styles/Home.module.css";
-import styles3 from "../styles/Brand.module.css"; 
+import styles3 from "../styles/Brand.module.css";
 import PhoneNumberInput from "../components/PhoneNumberInput";
 import DynamicNav from "../components/nav";
 import DynamicBrandFooter from "../components/brandFooter";
 import DynamicNavModal from "../components/navModal";
+import { useRouter } from "next/router";
+import { supabase } from "./../lib/supabaseClient";
 
 const marks = [
   {
@@ -51,9 +53,8 @@ const marks = [
 
 export default function BrandStory() {
   // form
-  const phoneRegex = RegExp(
-    /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
-  );
+  const router = useRouter();
+
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -64,15 +65,21 @@ export default function BrandStory() {
       name: Yup.string()
         .max(20, "Name must be 20 characters or less")
         .required("Name is required"),
-      phone: Yup.string()
-        .matches(phoneRegex, "Invalid phone")
-        .required("Phone is required"),
+      phone: Yup.string().required("Phone is required"),
       email: Yup.string()
         .email("Invalid email address")
         .required("Email is required"),
     }),
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
+      console.log("form submitted");
       console.log(values);
+      const { data, error } = await supabase.from("users").insert(values);
+      if (error) {
+        console.log(error);
+      } else {
+        console.log(data);
+        router.push({ pathname: "/thank-you", query: values });
+      }
     },
   });
   // console.log(formik.values);
@@ -218,20 +225,20 @@ export default function BrandStory() {
               </div>
               <div className="col-lg-6 col-md-6 col-sm-12">
                 <div className="mizan-right-box">
-                <style jsx>{`
-        p::first-letter {
-          color: #8f00e0;
-        }
-      `}</style>
-                
-        <p>Micro-lending &</p>
-        <p>Investment</p>
-        <p>Zero-interest</p>
-        <p>Application for</p>
-        <p>Novice.</p>
-      
+                  <style jsx>{`
+                    p::first-letter {
+                      color: #8f00e0;
+                    }
+                  `}</style>
 
-      
+                  <p>Micro-lending &</p>
+                  <p>Investment</p>
+                  <p>Zero-interest</p>
+                  <p>Application for</p>
+                  <p>Novice.</p>
+
+
+
                 </div>
               </div>
             </div>
@@ -302,7 +309,7 @@ export default function BrandStory() {
               <div className="certification-title">
                 <h2>Halal Certification</h2>
               </div>
-              
+
               <div className="row def-margin">
                 <div className="col-lg-6 col-md-6 col-sm-12">
                   <p>
@@ -578,314 +585,336 @@ export default function BrandStory() {
             </button>
           </div>
           {/* Join Waitlist Modal */}
-          {isModalOpen && (
-            <Transition appear show={isModalOpen} as={Fragment}>
-              <Dialog
-                as="div"
-                className="tw-relative"
-                onClose={closeModal}
-                style={{ zIndex: "1000" }}
-              >
-                <Transition.Child
-                  as={Fragment}
-                  enter="tw-ease-out tw-duration-300"
-                  enterFrom="tw-opacity-0"
-                  enterTo="tw-opacity-100"
-                  leave="tw-ease-in tw-duration-200"
-                  leaveFrom="tw-opacity-100"
-                  leaveTo="tw-opacity-0"
-                >
-                  <div className="tw-fixed tw-inset-0 tw-bg-black tw-bg-opacity-25" />
-                </Transition.Child>
-
-                <div className="tw-fixed tw-inset-0 tw-overflow-y-auto">
-                  <div className="tw-flex tw-min-h-full tw-items-center tw-justify-center tw-p-4">
-                    <Transition.Child
-                      as={Fragment}
-                      enter="tw-ease-out tw-duration-300"
-                      enterFrom="tw-opacity-0 tw-scale-95"
-                      enterTo="tw-opacity-100 tw-scale-100"
-                      leave="tw-ease-in tw-duration-200"
-                      leaveFrom="tw-opacity-100 tw-scale-100"
-                      leaveTo="tw-opacity-0 tw-scale-95"
-                    >
-                      <Dialog.Panel className="tw-w-[1148px] tw-h-[645px] tw-max-h-full tw-z-10 tw-transform tw-overflow-hidden tw-rounded-2xl tw-bg-white tw-p-6 tw-align-middle tw-shadow-xl tw-transition-all">
-                        {/* close */}
-                        <div className="tw-absolute tw-top-0 tw-right-0 tw-hidden tw-pt-4 tw-pr-4 sm:tw-block">
-                          <button
-                            type="button"
-                            className="tw-border-0 tw-bg-white tw-text-[#6D6E8A] focus:tw-outline-none"
-                            onClick={() => setIsModalOpen(false)}
+          
+          <Transition appear show={isModalOpen} as={Fragment}>
+                        <Dialog
+                          as="div"
+                          className="tw-relative"
+                          onClose={closeModal}
+                          style={{ zIndex: "1000" }}
+                        >
+                          <Transition.Child
+                            as={Fragment}
+                            enter="tw-ease-out tw-duration-300"
+                            enterFrom="tw-opacity-0"
+                            enterTo="tw-opacity-100"
+                            leave="tw-ease-in tw-duration-200"
+                            leaveFrom="tw-opacity-100"
+                            leaveTo="tw-opacity-0"
                           >
-                            <span className="tw-sr-only">Close</span>
-                            <span
-                              className="tw-text-[#6D6E8A] tw-underline"
-                              aria-hidden="true"
-                            >
-                              exit beta
-                            </span>{" "}
-                            {">"}
-                          </button>
-                        </div>
-                        <div className="tw-absolute tw-bottom-0 tw-left-0 tw-pb-4 tw-pl-[74px]">
-                          <Image src={Images.joinLogo} alt={"join-logo"} />
-                        </div>
-                        {/* main */}
-                        <div className="tw-flex tw-py-4 tw-pl-[54px] tw-pr-[76px]">
-                          <div className="-tw-z-1 tw-w-1/2 tw-mx-auto">
-                            <Image
-                              src={Images.join2}
-                              width={500}
-                              className="tw-absolute tw-bottom-0"
-                              alt={"join"}
-                            />
-                          </div>
-                          <div className="tw-w-1/2 tw-mx-auto">
-                            <Dialog.Title
-                              as="h2"
-                              className="tw-text-lg tw-font-medium tw-leading-6 tw-text-gray-900"
-                            >
-                              <h2 className={styles.myModal}>
-                                Apply for zero interest, 100% Islamic neobank
-                                coming to Kenya.
-                              </h2>
-                            </Dialog.Title>
-                            {/* description */}
-                            <div className="tw-mt-4 tw-w-[445px]">
-                              <p className="tw-text-[15px] tw-leading-[22.5px] tw-font-medium tw-font-[Poppinsmedium] tw-text-[#6D6E8A]">
-                                Join a movement, where people speak your
-                                language,
-                                <br /> understand your hopes and help you reach
-                                your financial
-                                <br /> goals. Help us to fix banking for G. (In
-                                Shaa Allah).
-                              </p>
+                            <div className="tw-fixed tw-inset-0 tw-bg-black tw-bg-opacity-25" />
+                          </Transition.Child>
+
+                          <div className="tw-fixed tw-inset-0 tw-overflow-y-auto">
+                            <div className="tw-flex tw-flex-col md:flex-row tw-min-h-full tw-items-center tw-justify-center tw-p-4">
+                              <Transition.Child
+                                as={Fragment}
+                                enter="tw-ease-out tw-duration-300"
+                                enterFrom="tw-opacity-0 tw-scale-95"
+                                enterTo="tw-opacity-100 tw-scale-100"
+                                leave="tw-ease-in tw-duration-200"
+                                leaveFrom="tw-opacity-100 tw-scale-100"
+                                leaveTo="tw-opacity-0 tw-scale-95"
+                              >
+                                <Dialog.Panel className="tw-w-[400px] lg:tw-w-[1148px] lg:tw-h-[645px] tw-max-h-full tw-z-10 tw-transform tw-overflow-hidden tw-rounded-3xl tw-bg-white tw-p-6 tw-align-middle tw-shadow-xl tw-transition-all">
+                                  {/* close */}
+                                  <div className="tw-absolute tw-top-0 tw-right-0 tw-pt-4 tw-pr-4 sm:tw-block">
+                                    <button
+                                      type="button"
+                                      className="tw-border-0 tw-bg-white tw-text-[#6D6E8A] focus:tw-outline-none"
+                                      onClick={() => setIsModalOpen(false)}
+                                    >
+                                      <span className="tw-sr-only">Close</span>
+                                      <span
+                                        className="tw-text-[#6D6E8A] tw-underline"
+                                        aria-hidden="true"
+                                      >
+                                        exit beta
+                                      </span>{" "}
+                                      {">"}
+                                    </button>
+                                  </div>
+                                  <div className="tw-absolute tw-bottom-0 tw-left-0 tw-pb-4 tw-pl-[74px]">
+                                    <Image
+                                      src={Images.joinLogo}
+                                      alt={"join-logo"}
+                                      style={{"width": "auto", "height": "auto"}}
+                                    />
+                                  </div>
+                                  {/* main */}
+                                  <div className="lg:tw-flex tw-py-4 lg:tw-pl-[35px] lg:tw-pr-[44px]">
+                                    <div className="lg:tw-w-1/2 lg:tw-mx-auto">
+                                      <Image
+                                        src={Images.join2}
+                                        width={500}
+                                        className="lg:tw-absolute lg:tw-bottom-0"
+                                        alt={"join"}
+                                      />
+                                    </div>
+                                    <div className="lg:tw-w-1/2 lg:tw-mx-auto">
+                                      <Dialog.Title
+                                        as="h2"
+                                        className="tw-text-lg tw-font-medium tw-leading-6 tw-text-gray-900"
+                                      >
+                                        <h2 className={styles.myModal}>
+                                          It’s time to dip your toes in water.
+                                          Apply for Africa’s first Islamic
+                                          neobank.
+                                        </h2>
+                                      </Dialog.Title>
+                                      {/* description */}
+                                      <div className="tw-mt-4 md:tw-w-[445px]">
+                                        <p className="tw-text-[15px] tw-leading-[22.5px] tw-font-medium tw-font-[Poppinsmedium] tw-text-[#6D6E8A]">
+                                          Join a movement, where people speak your
+                                          language,
+                                          <br /> understand your hopes and help
+                                          you reach your financial
+                                          <br /> goals. Help us to fix banking for
+                                          G. (In Shaa Allah).
+                                        </p>
+                                      </div>
+                                      {/* form */}
+                                      <form onSubmit={formik.handleSubmit}>
+                                        <div className="tw-mt-4">
+                                          <div className="tw-relative tw-mt-3 tw-rounded-full">
+                                            <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
+                                              <Image
+                                                src={Images.smileJoin}
+                                                alt={"smile-join"}
+                                              />
+                                            </div>
+                                            <div className="join-input">
+                                              <input
+                                                type="text"
+                                                name="name"
+                                                id="name"
+                                                value={formik.values.name}
+                                                onChange={formik.handleChange}
+                                                className="tw-block tw-w-full tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] placeholder:tw-font-[Poppinsregular] focus:tw-ring-0 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
+                                                placeholder="What is your name?"
+                                                onBlur={formik.handleBlur}
+                                              />
+                                            </div>
+                                          </div>
+                                          <div className="tw-text-red-700 tw-font-medium tw-text-xs">
+                                            {formik.errors.name}
+                                          </div>
+                                        </div>
+                                        <div className="tw-mt-4">
+                                          <PhoneNumberInput
+                                            onPhoneChange={(phone) =>
+                                              formik.setFieldValue("phone", phone)
+                                            }
+                                          />
+                                        </div>
+                                        <div className="tw-text-red-700 tw-font-medium tw-text-xs">
+                                          {formik.errors.phone}
+                                        </div>
+
+                                        <div className="tw-mt-4">
+                                          <div className="tw-relative tw-mt-3 tw-rounded-full">
+                                            <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
+                                              <Image
+                                                src={Images.mailJoin}
+                                                alt={"mail-join"}
+                                              />
+                                            </div>
+                                            <div className="join-input">
+                                              <input
+                                                type="email"
+                                                name="email"
+                                                id="email"
+                                                value={formik.values.email}
+                                                onChange={formik.handleChange}
+                                                className="tw-block tw-w-full tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] placeholder:tw-font-[Poppinsregular] focus:tw-ring-0 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
+                                                placeholder="or write to you?"
+                                                onBlur={formik.handleBlur}
+                                              />
+                                            </div>
+                                          </div>
+                                          <div className="tw-text-red-700 tw-font-medium tw-text-xs">
+                                            {formik.errors.email}
+                                          </div>
+                                        </div>
+                                        <div className="tw-mt-4">
+                                          <button
+                                            type="submit"
+                                            // onClick={() => {
+                                            //   openModal2();
+                                            //   setIsVisible(true);
+                                            // }}
+                                            disabled={
+                                              formik.isSubmitting ||
+                                              !formik.isValid
+                                            }
+                                            className={styles.joinBtn}
+                                            style={{
+                                              opacity: formik.isValid ? 1 : 0.2,
+                                            }}
+                                          >
+                                            APPLY FOR TRIAL
+                                          </button>
+                                        </div>
+                                      </form>
+                                    </div>
+                                  </div>
+                                </Dialog.Panel>
+                              </Transition.Child>
                             </div>
-                            {/* form */}
-                            <form onSubmit={formik.handleSubmit}>
-                              <div className="tw-mt-4">
-                                <div className="tw-relative tw-mt-3 tw-rounded-full">
-                                  <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
-                                    <Image
-                                      src={Images.smileJoin}
-                                      alt={"smile-join"}
-                                    />
-                                  </div>
-                                  <div className="join-input">
-                                    <input
-                                      type="text"
-                                      name="name"
-                                      id="name"
-                                      value={formik.values.name}
-                                      onChange={formik.handleChange}
-                                      className="tw-block tw-w-full tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] placeholder:tw-font-[Poppinsregular] focus:tw-ring-0 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
-                                      placeholder="What is your name?"
-                                      onBlur={formik.handleBlur}
-                                    />
-                                  </div>
-                                </div>
-                                <div className="tw-text-red-700 tw-font-medium tw-text-xs">
-                                  {formik.errors.name}
-                                </div>
-                              </div>
-                              <div className="tw-mt-4">
-                                <PhoneNumberInput
-                                  onPhoneChange={(phone) =>
-                                    formik.setFieldValue("phone", phone)
-                                  }
-                                />
-                                <div className="tw-text-red-700 tw-font-medium tw-text-xs">
-                                  {formik.errors.phone}
-                                </div>
-                              </div>
-                              <div className="tw-mt-4">
-                                <div className="tw-relative tw-mt-3 tw-rounded-full">
-                                  <div className="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-6">
-                                    <Image
-                                      src={Images.mailJoin}
-                                      alt={"mail-join"}
-                                    />
-                                  </div>
-                                  <div className="join-input">
-                                    <input
-                                      type="email"
-                                      name="email"
-                                      id="email"
-                                      value={formik.values.email}
-                                      onChange={formik.handleChange}
-                                      className="tw-block tw-w-full tw-h-[62px] tw-bg-white tw-border-0 tw-rounded-full tw-py-1.5 tw-pl-16 tw-text-gray-900 placeholder:tw-text-[15px] placeholder:tw-text-[#6D6E8A] placeholder:tw-font-[Poppinsregular] focus:tw-ring-0 focus:tw-ring-inset focus:tw-ring-indigo-600 sm:tw-text-sm sm:tw-leading-6"
-                                      placeholder="or write to you?"
-                                      onBlur={formik.handleBlur}
-                                    />
-                                  </div>
-                                </div>
-                                <div className="tw-text-red-700 tw-font-medium tw-text-xs">
-                                  {formik.errors.email}
-                                </div>
-                              </div>
-                              <div className="tw-mt-4">
-                                <button
-                                  type="submit"
-                                  onClick={() => {
-                                    openModal2();
-                                    setIsVisible(true);
-                                  }}
-                                  disabled={
-                                    formik.isSubmitting || !formik.isValid
-                                  }
-                                  className={styles.joinBtn}
-                                  style={{ opacity: formik.isValid ? 1 : 0.2 }}
-                                >
-                                  APPLY FOR TRIAL
-                                </button>
-                              </div>
-                            </form>
                           </div>
-                        </div>
-                      </Dialog.Panel>
-                    </Transition.Child>
-                  </div>
-                </div>
-              </Dialog>
-            </Transition>
-          )}
+                        </Dialog>
+                      </Transition>
 
-          {isModal2Open && (
-            <Transition appear show={isModal2Open} as={Fragment}>
-              <Dialog
-                as="div"
-                className="tw-relative"
-                onClose={closeModal2}
-                style={{ zIndex: "1000" }}
-              >
-                <Transition.Child
-                  as={Fragment}
-                  enter="tw-ease-out tw-duration-300"
-                  enterFrom="tw-opacity-0"
-                  enterTo="tw-opacity-100"
-                  leave="tw-ease-in tw-duration-200"
-                  leaveFrom="tw-opacity-100"
-                  leaveTo="tw-opacity-0"
-                >
-                  <div className="tw-fixed tw-inset-0 tw-bg-black tw-bg-opacity-25" />
-                </Transition.Child>
-
-                <div className="tw-fixed tw-inset-0 tw-overflow-y-auto">
-                  <div className="tw-flex tw-min-h-full tw-items-center tw-justify-center tw-p-4">
-                    <Transition.Child
-                      as={Fragment}
-                      enter="tw-ease-out tw-duration-300"
-                      enterFrom="tw-opacity-0 tw-scale-95"
-                      enterTo="tw-opacity-100 tw-scale-100"
-                      leave="tw-ease-in tw-duration-200"
-                      leaveFrom="tw-opacity-100 tw-scale-100"
-                      leaveTo="tw-opacity-0 tw-scale-95"
-                    >
-                      <Dialog.Panel className="tw-w-[1148px] tw-h-[645px] tw-max-h-full tw-z-10 tw-transform tw-overflow-hidden tw-rounded-2xl tw-bg-white tw-p-6 tw-align-middle tw-shadow-xl tw-transition-all">
-                        {/* close */}
-                        <div className="tw-absolute tw-top-0 tw-right-0 tw-hidden tw-pt-4 tw-pr-4 sm:tw-block">
-                          <button
-                            type="button"
-                            className="tw-border-0 tw-bg-white tw-text-[#6D6E8A] focus:tw-outline-none"
-                            onClick={() => setIsModal2Open(false)}
+                      <Transition appear show={isModal2Open} as={Fragment}>
+                        <Dialog
+                          as="div"
+                          className="tw-relative"
+                          onClose={closeModal2}
+                          style={{ zIndex: "1000" }}
+                        >
+                          <Transition.Child
+                            as={Fragment}
+                            enter="tw-ease-out tw-duration-300"
+                            enterFrom="tw-opacity-0"
+                            enterTo="tw-opacity-100"
+                            leave="tw-ease-in tw-duration-200"
+                            leaveFrom="tw-opacity-100"
+                            leaveTo="tw-opacity-0"
                           >
-                            <span className="tw-sr-only">Close</span>
-                            <span
-                              className="tw-text-[#6D6E8A] tw-underline"
-                              aria-hidden="true"
-                            >
-                              exit beta
-                            </span>{" "}
-                            {">"}
-                          </button>
-                        </div>
-                        <div className="tw-absolute tw-bottom-0 tw-left-0 tw-pb-4 tw-pl-[74px]">
-                          <Image src={Images.joinLogo} alt={"join-logo"} />
-                        </div>
-                        <div className="tw-absolute tw-top-60 tw-left-0 tw-pt-4 tw-pl-[74px]">
-                          <Image
-                            src={
-                              thumbIndex === 0 ? Images.love : Images.avatar3
-                            }
-                            className="avtar3 tw-rotate-[-10.28deg]"
-                            alt=""
-                          />
-                        </div>
-                        <div className="tw-absolute tw-bottom-40 tw-right-0 tw-pb-4 tw-pr-[74px]">
-                          <Image
-                            src={
-                              loveIndex === 0 ? Images.avatar2 : Images.thumbsup
-                            }
-                            className="avtar2"
-                            alt=""
-                          />
-                        </div>
-                        <div className="tw-absolute tw-bottom-[110px] tw-right-20 tw-pb-4 tw-pr-[80px]">
-                          <Image
-                            src={
-                              thumbIndex === 0 ? Images.avatar3 : Images.love
-                            }
-                            className="avtar3"
-                            alt=""
-                          />
-                        </div>
-                        {/* main */}
-                        <div className="tw-py-4 tw-pl-[54px] tw-pr-[76px]">
-                          <div className="tw-mx-auto tw-flex tw-flex-col tw-text-center tw-items-center tw-justify-center tw-w-[600px] tw-pt-[70px]">
-                            <Image src={Images.love2} alt={"love"} />
-                            <Dialog.Title
-                              as="h2"
-                              className="tw-text-lg tw-font-medium tw-leading-6 tw-text-gray-900 tw-pt-4"
-                            >
-                              <h2 className={styles.myModal}>
-                                A great big thank you Habibi!
-                              </h2>
-                            </Dialog.Title>
-                            {/* description */}
-                            <div className="tw-mt-4 tw-w-[445px]">
-                              <p className="tw-text-[15px] tw-leading-[22.5px] tw-font-medium tw-font-[PoppinsMedium] tw-text-[#6D6E8A]">
-                                Now sit back and relax, we’ll take it up from
-                                here. We’ll be in your inbox soon :-). It pays
-                                to be smart about your money, why not share with
-                                your smart friends?
-                              </p>
-                            </div>
-                            {/* social buttons */}
-                            <div className="tw-flex tw-gap-4 tw-mt-10 tw-items-center">
-                              <div>
-                                <Image
-                                  src={Images.linkedin2}
-                                  alt={"linkedin"}
-                                />
-                              </div>
-                              <div>
-                                <Image src={Images.youtube2} alt={"youtube"} />
-                              </div>
-                              <div>
-                                <Image
-                                  src={Images.facebook2}
-                                  alt={"facebook"}
-                                />
-                              </div>
-                              <div>
-                                <Image src={Images.twitter2} alt={"twitter"} />
-                              </div>
+                            <div className="tw-fixed tw-inset-0 tw-bg-black tw-bg-opacity-25" />
+                          </Transition.Child>
+
+                          <div className="tw-fixed tw-inset-0 tw-overflow-y-auto">
+                            <div className="tw-flex tw-min-h-full tw-items-center tw-justify-center tw-p-4">
+                              <Transition.Child
+                                as={Fragment}
+                                enter="tw-ease-out tw-duration-300"
+                                enterFrom="tw-opacity-0 tw-scale-95"
+                                enterTo="tw-opacity-100 tw-scale-100"
+                                leave="tw-ease-in tw-duration-200"
+                                leaveFrom="tw-opacity-100 tw-scale-100"
+                                leaveTo="tw-opacity-0 tw-scale-95"
+                              >
+                                <Dialog.Panel className="tw-w-[1148px] tw-h-[645px] tw-max-h-full tw-z-10 tw-transform tw-overflow-hidden tw-rounded-2xl tw-bg-white tw-p-6 tw-align-middle tw-shadow-xl tw-transition-all">
+                                  {/* close */}
+                                  <div className="tw-absolute tw-top-0 tw-right-0 tw-hidden tw-pt-4 tw-pr-4 sm:tw-block">
+                                    <button
+                                      type="button"
+                                      className="tw-border-0 tw-bg-white tw-text-[#6D6E8A] focus:tw-outline-none"
+                                      onClick={() => setIsModal2Open(false)}
+                                    >
+                                      <span className="tw-sr-only">Close</span>
+                                      <span
+                                        className="tw-text-[#6D6E8A] tw-underline"
+                                        aria-hidden="true"
+                                      >
+                                        exit beta
+                                      </span>{" "}
+                                      {">"}
+                                    </button>
+                                  </div>
+                                  <div className="tw-absolute tw-bottom-0 tw-left-0 tw-pb-4 tw-pl-[74px]">
+                                    <Image
+                                      src={Images.joinLogo}
+                                      alt={"join-logo"}
+                                    />
+                                  </div>
+                                  <div className="tw-absolute tw-top-60 tw-left-0 tw-pt-4 tw-pl-[74px]">
+                                    <Image
+                                      src={
+                                        thumbIndex === 0
+                                          ? Images.love
+                                          : Images.avatar3
+                                      }
+                                      className="avtar3 tw-rotate-[-10.28deg]"
+                                      alt=""
+                                    />
+                                  </div>
+                                  <div className="tw-absolute tw-bottom-40 tw-right-0 tw-pb-4 tw-pr-[74px]">
+                                    <Image
+                                      src={
+                                        loveIndex === 0
+                                          ? Images.avatar2
+                                          : Images.thumbsup
+                                      }
+                                      className="avtar2"
+                                      alt=""
+                                    />
+                                  </div>
+                                  <div className="tw-absolute tw-bottom-[110px] tw-right-20 tw-pb-4 tw-pr-[80px]">
+                                    <Image
+                                      src={
+                                        thumbIndex === 0
+                                          ? Images.avatar3
+                                          : Images.love
+                                      }
+                                      className="avtar3"
+                                      alt=""
+                                    />
+                                  </div>
+                                  {/* main */}
+                                  <div className="tw-py-4 tw-pl-[54px] tw-pr-[76px]">
+                                    <div className="tw-mx-auto tw-flex tw-flex-col tw-text-center tw-items-center tw-justify-center tw-w-[600px] tw-pt-[70px]">
+                                      <Image src={Images.love2} alt={"love"} />
+                                      <Dialog.Title
+                                        as="h2"
+                                        className="tw-text-lg tw-font-medium tw-leading-6 tw-text-gray-900 tw-pt-4"
+                                      >
+                                        <h2 className={styles.myModal}>
+                                          A great big thank you Habibi!
+                                        </h2>
+                                      </Dialog.Title>
+                                      {/* description */}
+                                      <div className="tw-mt-4 tw-w-[445px]">
+                                        <p className="tw-text-[15px] tw-leading-[22.5px] tw-font-medium tw-font-[PoppinsMedium] tw-text-[#6D6E8A]">
+                                          Now sit back and relax, we’ll take it up
+                                          from here. We’ll be in your inbox soon
+                                          :-). It pays to be smart about your
+                                          money, why not share with your smart
+                                          friends?
+                                        </p>
+                                      </div>
+                                      {/* social buttons */}
+                                      <div className="tw-flex tw-gap-4 tw-mt-10 tw-items-center">
+                                        <div>
+                                          <Image
+                                            src={Images.linkedin2}
+                                            alt={"linkedin"}
+                                          />
+                                        </div>
+                                        <div>
+                                          <Image
+                                            src={Images.youtube2}
+                                            alt={"youtube"}
+                                          />
+                                        </div>
+                                        <div>
+                                          <Image
+                                            src={Images.facebook2}
+                                            alt={"facebook"}
+                                          />
+                                        </div>
+                                        <div>
+                                          <Image
+                                            src={Images.twitter2}
+                                            alt={"twitter"}
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  {/* <Confetti
+                                      recycle={false}
+                                      numberOfPieces={800}
+                                      gravity={0.05}
+                                    /> */}
+                                  {isVisible && <Confetti />}
+                                </Dialog.Panel>
+                              </Transition.Child>
                             </div>
                           </div>
-                        </div>
-                        {/* <Confetti
-                                    recycle={false}
-                                    numberOfPieces={800}
-                                    gravity={0.05}
-                                  /> */}
-                        {isVisible && <Confetti />}
-                      </Dialog.Panel>
-                    </Transition.Child>
-                  </div>
-                </div>
-              </Dialog>
-            </Transition>
-          )}
+                        </Dialog>
+                      </Transition>
         </section>
 
         {/* Footer */}
