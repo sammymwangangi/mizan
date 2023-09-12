@@ -79,7 +79,8 @@ export default function ThankYou() {
               as="h2"
               className="modal-title tw-text-lg tw-font-medium tw-leading-6 tw-text-gray-900"
             >
-              <h2 className={styles.myModal}>A great big thank you Habibi!</h2>
+              <h2 className={styles.myModal}>A great big thank you <br/>Habibi!</h2>
+
             </div>
             {/* description */}
             <div className="main-description">

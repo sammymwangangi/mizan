@@ -1046,8 +1046,8 @@ export default function Home({ setFieldValue }) {
         <section className="cards position-relative">
           <div className="cards-box">
             <h1>
-              Turn heads with our <br /> <span>purple</span>
-              cards made from steel.
+              Turn heads with our <br />
+              cards made from steel. (for real).
             </h1>
             <p>Pay or get paid, wherever, whenever.</p>
           </div>
