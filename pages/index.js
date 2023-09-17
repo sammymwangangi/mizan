@@ -585,13 +585,13 @@ export default function Home({ setFieldValue }) {
                                         alt={"join"}
                                       />
                                     </div>
-                                    <div className="lg:tw-w-1/2 lg:tw-mx-auto">
+                                    <div className="lg:tw-w-1/2">
                                       <Dialog.Title
                                         as="h2"
-                                        className="tw-text-lg tw-font-medium tw-leading-6 tw-text-gray-900"
+                                        className=""
                                       >
                                         <h2 className={styles.myModal}>
-                                          It’s time to dip your toes in water.
+                                          It’s time to dip your toes in the water.
                                           Apply for Africa’s first Islamic
                                           neobank.
                                         </h2>
