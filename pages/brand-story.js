@@ -657,7 +657,7 @@ export default function BrandStory() {
                                         className="tw-text-lg tw-font-medium tw-leading-6 tw-text-gray-900"
                                       >
                                         <h2 className={styles.myModal}>
-                                          It’s time to dip your toes in water.
+                                          It’s time to dip your toes in the water.
                                           Apply for Africa’s first Islamic
                                           neobank.
                                         </h2>
