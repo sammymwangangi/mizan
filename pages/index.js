@@ -51,9 +51,9 @@ const imageKitLoader = ({ src, width, quality }) => {
 const testimonials = [
   {
     id: "1",
-    name: "Aldo P.",
+    name: "Shamila S.",
     label: "Verified Testimonial",
-    imageUrl: Images.user,
+    imageUrl: Images.shamila,
     ratingImageUrl: Images.rating,
     description:
       "Just wow, i used revolut in the UK, when i came to Africa, i came across Mizan App, it took minutes to setup. I’d say its like the Islamic “Revolt App” version.",
@@ -62,16 +62,16 @@ const testimonials = [
     id: "2",
     name: "Aldo P.",
     label: "Verified Testimonial",
-    imageUrl: Images.user,
+    imageUrl: Images.aldo,
     ratingImageUrl: Images.rating,
     description:
       "Convenience comes from not having to worry about having too much (or too little) cash on hand, Mizan comes in handy especially with the Mizan app that works seemlessy with the card.",
   },
   {
     id: "3",
-    name: "Aldo P.",
+    name: "Fatima A.",
     label: "Verified Testimonial",
-    imageUrl: Images.user,
+    imageUrl: Images.fatima,
     ratingImageUrl: Images.rating,
     description:
       "When i joined beta program, i got to experience first hand how my financial future will be revolutionized. Ditching my bank for G.",
@@ -80,47 +80,47 @@ const testimonials = [
     id: "4",
     name: "Aldo P.",
     label: "Verified Testimonial",
-    imageUrl: Images.user,
+    imageUrl: Images.aldo2,
     ratingImageUrl: Images.rating,
     description:
       "Just wow, i used revolut in the UK, when i came to Africa, i came across Mizan App, it took minutes to setup. I’d say its like the Islamic “Revolt App” version.",
   },
-  {
-    id: "5",
-    name: "Aldo P.",
-    label: "Verified Testimonial",
-    imageUrl: Images.user,
-    ratingImageUrl: Images.rating,
-    description:
-      "Convenience comes from not having to worry about having too much (or too little) cash on hand, Mizan comes in handy especially with the Mizan app that works seemlessy with the card.",
-  },
-  {
-    id: "6",
-    name: "Aldo P.",
-    label: "Verified Testimonial",
-    imageUrl: Images.user,
-    ratingImageUrl: Images.rating,
-    description:
-      "When i joined beta program, i got to experience first hand how my financial future will be revolutionized. Ditching my bank for G.",
-  },
-  {
-    id: "7",
-    name: "Aldo P.",
-    label: "Verified Testimonial",
-    imageUrl: Images.user,
-    ratingImageUrl: Images.rating,
-    description:
-      "When i joined beta program, i got to experience first hand how my financial future will be revolutionized. Ditching my bank for G.",
-  },
-  {
-    id: "8",
-    name: "Aldo P.",
-    label: "Verified Testimonial",
-    imageUrl: Images.user,
-    ratingImageUrl: Images.rating,
-    description:
-      "When i joined beta program, i got to experience first hand how my financial future will be revolutionized. Ditching my bank for G.",
-  },
+  // {
+  //   id: "5",
+  //   name: "Aldo P.",
+  //   label: "Verified Testimonial",
+  //   imageUrl: Images.user,
+  //   ratingImageUrl: Images.rating,
+  //   description:
+  //     "Convenience comes from not having to worry about having too much (or too little) cash on hand, Mizan comes in handy especially with the Mizan app that works seemlessy with the card.",
+  // },
+  // {
+  //   id: "6",
+  //   name: "Aldo P.",
+  //   label: "Verified Testimonial",
+  //   imageUrl: Images.user,
+  //   ratingImageUrl: Images.rating,
+  //   description:
+  //     "When i joined beta program, i got to experience first hand how my financial future will be revolutionized. Ditching my bank for G.",
+  // },
+  // {
+  //   id: "7",
+  //   name: "Aldo P.",
+  //   label: "Verified Testimonial",
+  //   imageUrl: Images.user,
+  //   ratingImageUrl: Images.rating,
+  //   description:
+  //     "When i joined beta program, i got to experience first hand how my financial future will be revolutionized. Ditching my bank for G.",
+  // },
+  // {
+  //   id: "8",
+  //   name: "Aldo P.",
+  //   label: "Verified Testimonial",
+  //   imageUrl: Images.user,
+  //   ratingImageUrl: Images.rating,
+  //   description:
+  //     "When i joined beta program, i got to experience first hand how my financial future will be revolutionized. Ditching my bank for G.",
+  // },
 ];
 const features = [
   {
@@ -1449,7 +1449,7 @@ export default function Home({ setFieldValue }) {
                       <div className="user-info d-flex align-items-center gap-3">
                         <Image src={testimonial.imageUrl} alt="user" style={{ "width": "auto", "height": "auto" }} />
                         <div className="user-name">
-                          <span>Aldo P.</span>
+                          <span>{testimonial.name}</span>
                           <Image src={testimonial.ratingImageUrl} alt="" />
                         </div>
                       </div>

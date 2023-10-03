@@ -97,6 +97,10 @@ import heroPhone from "../public/images/homepage/heroPhone.png";
 import heroPhone1 from "../public/images/homepage/heroPhone1.png";
 import heroPhone2 from "../public/images/homepage/debitCard.png";
 import bankCheck from "../public/images/homepage/hover/check.png";
+import aldo from "../public/images/homepage/testimonials/aldo.svg";
+import aldo2 from "../public/images/homepage/testimonials/aldo2.svg";
+import fatima from "../public/images/homepage/testimonials/fatima.svg";
+import shamila from "../public/images/homepage/testimonials/shamila.svg";
 
 export const Images = {
   heroPhone1,
@@ -197,4 +201,8 @@ export const Images = {
   bankElipse2,
   bankCross,
   bankCheck,
+  aldo,
+aldo2,
+fatima,
+shamila
 };
