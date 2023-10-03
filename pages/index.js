@@ -78,7 +78,7 @@ const testimonials = [
   },
   {
     id: "4",
-    name: "Aldo P.",
+    name: "Evans",
     label: "Verified Testimonial",
     imageUrl: Images.aldo2,
     ratingImageUrl: Images.rating,
@@ -114,7 +114,7 @@ const testimonials = [
   },
   {
     id: "8",
-    name: "Aldo P.",
+    name: "Evans",
     label: "Verified Testimonial",
     imageUrl: Images.aldo2,
     ratingImageUrl: Images.rating,
