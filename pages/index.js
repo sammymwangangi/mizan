@@ -51,36 +51,36 @@ const imageKitLoader = ({ src, width, quality }) => {
 const testimonials = [
   {
     id: "1",
-    name: "Shamila S.",
+    name: "Ghazali A.",
     label: "Verified Testimonial",
-    imageUrl: Images.shamila,
+    imageUrl: Images.ghazali,
     ratingImageUrl: Images.rating,
     description:
-      "Just wow, i used revolut in the UK, when i came to Africa, i came across Mizan App, it took minutes to setup. I’d say its like the Islamic “Revolt App” version.",
+      "Allahmdoullilah, much awaited fully regulated shariah compliant islamic super app coming to Kenya.",
   },
   {
     id: "2",
-    name: "Aldo P.",
+    name: "Hadia",
     label: "Verified Testimonial",
     imageUrl: Images.aldo,
     ratingImageUrl: Images.rating,
     description:
       "Convenience comes from not having to worry about having too much (or too little) cash on hand, Mizan comes in handy especially with the Mizan app that works seemlessy with the card.",
-  },
+  },  
   {
     id: "3",
-    name: "Fatima A.",
+    name: "Hanako T.",
     label: "Verified Testimonial",
-    imageUrl: Images.fatima,
+    imageUrl: Images.hanako,
     ratingImageUrl: Images.rating,
     description:
       "When i joined beta program, i got to experience first hand how my financial future will be revolutionized. Ditching my bank for G.",
   },
   {
     id: "4",
-    name: "Evans",
+    name: "Amina C.",
     label: "Verified Testimonial",
-    imageUrl: Images.aldo2,
+    imageUrl: Images.amina,
     ratingImageUrl: Images.rating,
     description:
       "Just wow, i used revolut in the UK, when i came to Africa, i came across Mizan App, it took minutes to setup. I’d say its like the Islamic “Revolt App” version.",
@@ -92,19 +92,11 @@ const testimonials = [
     imageUrl: Images.shamila,
     ratingImageUrl: Images.rating,
     description:
-      "Just wow, i used revolut in the UK, when i came to Africa, i came across Mizan App, it took minutes to setup. I’d say its like the Islamic “Revolt App” version.",
-  },
-  {
-    id: "6",
-    name: "Aldo P.",
-    label: "Verified Testimonial",
-    imageUrl: Images.aldo,
-    ratingImageUrl: Images.rating,
-    description:
       "Convenience comes from not having to worry about having too much (or too little) cash on hand, Mizan comes in handy especially with the Mizan app that works seemlessy with the card.",
   },
+  
   {
-    id: "7",
+    id: "6",
     name: "Fatima A.",
     label: "Verified Testimonial",
     imageUrl: Images.fatima,
@@ -113,13 +105,23 @@ const testimonials = [
       "When i joined beta program, i got to experience first hand how my financial future will be revolutionized. Ditching my bank for G.",
   },
   {
-    id: "8",
+    id: "7",
     name: "Evans",
     label: "Verified Testimonial",
     imageUrl: Images.aldo2,
     ratingImageUrl: Images.rating,
     description:
       "Just wow, i used revolut in the UK, when i came to Africa, i came across Mizan App, it took minutes to setup. I’d say its like the Islamic “Revolt App” version.",
+  },
+
+  {
+    id: "8",
+    name: "Amina C.",
+    label: "Verified Testimonial",
+    imageUrl: Images.amina,
+    ratingImageUrl: Images.rating,
+    description:
+      "Convenience comes from not having to worry about having too much (or too little) cash on hand, Mizan comes in handy especially with the Mizan app that works seemlessy with the card.",
   },
 ];
 const features = [

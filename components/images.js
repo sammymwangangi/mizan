@@ -101,6 +101,9 @@ import aldo from "../public/images/homepage/testimonials/aldo.svg";
 import aldo2 from "../public/images/homepage/testimonials/aldo2.svg";
 import fatima from "../public/images/homepage/testimonials/fatima.svg";
 import shamila from "../public/images/homepage/testimonials/shamila.svg";
+import amina from "../public/images/homepage/testimonials/amina.svg";
+import ghazali from "../public/images/homepage/testimonials/ghazali.svg";
+import hanako from "../public/images/homepage/testimonials/hanako.svg";
 
 export const Images = {
   heroPhone1,
@@ -204,5 +207,8 @@ export const Images = {
   aldo,
 aldo2,
 fatima,
-shamila
+shamila,
+amina,
+hanako,
+ghazali
 };
