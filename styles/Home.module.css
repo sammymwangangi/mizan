@@ -88,6 +88,24 @@
   text-align: left;
 }
 
+.myModal2 {
+  background: linear-gradient(
+    89.84deg,
+    #000000 -11.87%,
+    #564786 37.22%,
+    #a488ff 91.83%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 56px;
+  font-family: Poppinsbold;
+  text-align: center;
+}
+
 .joinBtn {
   padding: 15px 0;
   max-width: 100%;
@@ -198,6 +216,23 @@
     line-height: 34px;
     font-family: Poppinsbold;
     text-align: left;
+  }
+  .myModal2 {
+    background: linear-gradient(
+      89.84deg,
+      #000000 -11.87%,
+      #564786 37.22%,
+      #a488ff 91.83%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 34px;
+    font-family: Poppinsbold;
+    text-align: center;
   }
 }
 
