@@ -5,8 +5,7 @@ import Logo from "../public/images/homepage/logo.svg";
 import Toggle from "../public/images/homepage/toggle.svg";
 import US from "../public/images/homepage/united-states.svg";
 import HomePageNew from "../public/images/homepage/phonenew.png";
-
-import heroBg from "../public/images/homepage/hero-bg.png"
+import heroBg from "../public/images/homepage/hero-bg.png";
 import showMoreBtn from "../public/images/homepage/show-more-btn.svg";
 import firstCo from "../public/images/homepage/company1.svg";
 import secondCo from "../public/images/homepage/company2.svg";

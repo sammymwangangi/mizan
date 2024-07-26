@@ -1518,7 +1518,8 @@ export default function Home({ setFieldValue }) {
               <Image
                 src={Images.phoneMind}
                 className="peace-img"
-                style={{ "width": "auto", "height": "auto" }}
+                width={760}
+                height={1257}
                 alt="phonemind"
               />
             </div>
