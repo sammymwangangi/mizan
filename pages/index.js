@@ -487,7 +487,6 @@ export default function Home({ setFieldValue }) {
 
         <DynamicNavbar />
         {/* End */}
-
         <section className="hero">
           <div className="container_costome">
             <div className="row m-0">
@@ -499,7 +498,7 @@ export default function Home({ setFieldValue }) {
                     Africa’s first Islamic neobank.
                   </p>
                   <img
-                    src="https://res.cloudinary.com/dyto3sfmh/image/upload/v1677517396/phonenew_kudnab.png"
+                    src="/images/homepage/phonenew.png"
                     className="hero-img-mobile"
                     width="100%"
                     fetchpriority="high"
@@ -865,7 +864,7 @@ export default function Home({ setFieldValue }) {
               <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                 <div className="position-relative hero-img-view">
                   <img
-                    src="https://res.cloudinary.com/dyto3sfmh/image/upload/v1677517396/phonenew_kudnab.png"
+                    src="/images/homepage/phonenew.png"
                     className="hero-img"
                     width="100%"
                     fetchpriority="high"
@@ -1054,7 +1053,7 @@ export default function Home({ setFieldValue }) {
             <p>Pay or get paid, wherever, whenever.</p>
           </div>
           <img
-            src="https://res.cloudinary.com/dyto3sfmh/image/upload/v1677853930/card-main_fka8u6.svg"
+            src="/images/homepage/card-main.svg"
             width="100%"
             className="card-web"
             alt="car-main"
@@ -1062,7 +1061,7 @@ export default function Home({ setFieldValue }) {
             fetchpriority="high"
           />
           <img
-            src="https://res.cloudinary.com/dyto3sfmh/image/upload/v1677853890/card-main-tablet_ncybbe.svg"
+            src="/images/homepage/card-main-tablet.svg"
             width="100%"
             className="card-mobile"
             fetchpriority="high"
